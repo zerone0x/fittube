@@ -96,10 +96,13 @@ def fetch_posts(client: ArcticShiftClient, subreddit: str, max_posts: int) -> li
             params = {"subreddit": subreddit, "query": config.POST_QUERY, "fields": config.POST_FIELDS,
                       "limit": limit, "after": after, "before": cursor}
             try:
-                data, limit = client.search(params, window_end=before, url=config.ARCTIC_SHIFT_POSTS_URL)
+                data, limit = client.search(params, window_end=before, url=config.ARCTIC_SHIFT_POSTS_URL,
+                                            retries=config.POST_MAX_RETRIES)
             except FetchError as exc:
-                log.error("r/%s posts: skipping rest of window: %s", subreddit, exc)
-                break
+                # Usually the subreddit is too active for keyword search: the
+                # other windows would time out the same way.
+                log.error("r/%s posts: skipping the rest of this subreddit: %s", subreddit, exc)
+                return out
             out.extend(data)
             got += len(data)
             remaining -= len(data)

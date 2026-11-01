@@ -104,8 +104,9 @@ class ArcticShiftClient:
             raise FetchError("time budget exhausted")
         time.sleep(delay)
 
-    def _get(self, params: dict, url: str = config.ARCTIC_SHIFT_URL) -> tuple[list, int]:
-        for attempt in range(1, config.MAX_RETRIES + 1):
+    def _get(self, params: dict, url: str = config.ARCTIC_SHIFT_URL, retries: int | None = None) -> tuple[list, int]:
+        retries = retries or config.MAX_RETRIES
+        for attempt in range(1, retries + 1):
             self._throttle()
             started = time.monotonic()
             try:
@@ -141,15 +142,17 @@ class ArcticShiftClient:
                 self._sleep(delay)
                 continue
             raise FetchError(f"HTTP {resp.status_code}: {resp.text[:200]}")
-        raise FetchError(f"giving up after {config.MAX_RETRIES} attempts: {params}")
+        raise FetchError(f"giving up after {retries} attempts: {params}")
 
-    def search(self, params: dict, window_end: int, url: str = config.ARCTIC_SHIFT_URL) -> tuple[list, int]:
+    def search(self, params: dict, window_end: int, url: str = config.ARCTIC_SHIFT_URL,
+               retries: int | None = None) -> tuple[list, int]:
         """Return ``(comments, page_size_used)``.
 
         The page size may be smaller than requested if the server timed out;
         a page shorter than ``page_size_used`` means the window is exhausted.
         ``url`` selects another search endpoint (e.g. posts) with the same
-        paging semantics; it is part of the cache key.
+        paging semantics; it is part of the cache key. ``retries`` overrides
+        ``MAX_RETRIES``.
         """
         key = _cache_key(params, url)
         cached = self._read_cache(key, window_end)
@@ -163,7 +166,7 @@ class ArcticShiftClient:
                 return cached, limit
         if self.cache_only():
             return [], int(params["limit"])
-        data, limit = self._get(params, url)
+        data, limit = self._get(params, url, retries)
         self._write_cache({**key, "limit": limit}, data)
         return data, limit
 

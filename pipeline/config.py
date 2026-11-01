@@ -90,6 +90,9 @@ WIKI_BOOST = 30.0
 POST_QUERY = "youtube"
 POST_FIELDS = "id,author,title,selftext,url,score,num_comments,created_utc,subreddit"
 MAX_POSTS_PER_SUB = int(os.environ.get("FITTUBE_MAX_POSTS", "300"))
+# Post search on very active subreddits can hit the server-side timeout over
+# and over; give up on a subreddit's posts sooner than on comment pages.
+POST_MAX_RETRIES = 3
 # "Recommend me videos" posts: their replies are fetched (cheap link_id lookups)
 # and processed like normal comments.
 REQUEST_POST_MIN_COMMENTS = 2
