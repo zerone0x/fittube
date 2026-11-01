@@ -52,3 +52,39 @@ GitHub Action (which persists `pipeline/.cache` with `actions/cache`) mostly
 refetches the current window. If a query keeps timing out server-side the page
 size is halved (down to 25) for that subreddit; a window that still fails is
 skipped and the run continues.
+
+## Hacker News and T-Nation sources
+
+`pipeline/sources/` adds two non-Reddit sources. Each yields `Mention`s (one
+post linking one video); `sources/merge.py` folds them into the Reddit build.
+
+| Module | What it does |
+| --- | --- |
+| `sources/hn.py` | Algolia `search_by_date` for `youtube.com <kw>` / `youtu.be <kw>` comments (`HN_KEYWORDS`), paged with `created_at_i<cursor`, up to `HN_MAX_PAGES` x 1000 hits per query. Strict relevance: a fitness term (`sources.FITNESS_TERMS`) must appear within `HN_NEAR_CHARS` of the link. |
+| `sources/tnation.py` | Discourse `search.json?q=youtube.com order:latest` (max 10 pages per query, so deeper pages re-query with `before:<date>`; `TNATION_MAX_PAGES` total), then `/t/<topic>/<post>.json` for the full post. Drops training-log / politics / physique-rating categories, log/challenge/journal topics, posts that read like the user's own clip ("my set", "form check", "here's me"...), quoted links, and -- outside the training categories -- posts with no fitness term. |
+| `sources/merge.py` | Namespaced recommenders (`hn:<user>`, `tnation:<user>`), self-promotion filter (author name == channel, or T-Nation linking its own channel), thresholds for new videos, `sources` / `source_stats` / `needs_llm_check` fields (see the top-level README). Idempotent: a previous merge is stripped first. |
+
+Videos already on the site take any relevant mention as corroboration; videos
+found only on HN/T-Nation must pass the usual thresholds on their own
+(at least 2 distinct recommenders; T-Nation likes only affect ranking) and are flagged
+`needs_llm_check`. All mentions are flagged `needs_llm_check` in `sources`.
+
+Both sources use a cached JSON client (`pipeline/.cache/hn`, `pipeline/.cache/tnation`;
+search pages refresh after 6 days, posts after 30) with a descriptive
+User-Agent and >= 1 s between T-Nation requests. A failing source is logged
+and skipped; the run continues.
+
+```bash
+python -m pipeline.run --no-hn --no-tnation            # Reddit only
+python -m pipeline.run --tnation-max-pages 10          # smaller forum crawl
+python -m pipeline.run --merge-into site/data/videos.json
+    # skip Reddit entirely: merge HN/T-Nation into an existing videos.json
+    # (no Arctic Shift requests; Reddit data is taken as-is from the file)
+```
+
+`--merge-into` works from the committed file alone: a video's Reddit
+recommenders are its `recommenders` count (namespaced external authors can
+never coincide with them, so the union is a sum) and its Reddit karma is
+recovered by inverting the ranking formula from `score`. It is how the
+committed `site/data/videos.json` gained its HN/T-Nation data without
+re-crawling Arctic Shift.

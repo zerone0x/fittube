@@ -103,3 +103,44 @@ MAX_TIMESTAMPS = 10
 
 OEMBED_URL = "https://www.youtube.com/oembed"
 OEMBED_WORKERS = 4
+
+# --- Non-Reddit sources (pipeline/sources/) ------------------------------------
+# Their mentions are merged into the Reddit build (see sources/merge.py).
+# Recommenders are namespaced per source ("hn:pg", "tnation:alice") so they
+# never collide with Reddit usernames.
+
+# Hacker News via the Algolia API (no key). One query per keyword and link form.
+HN_SEARCH_URL = "https://hn.algolia.com/api/v1/search_by_date"
+HN_ITEM_URL = "https://news.ycombinator.com/item?id={id}"
+HN_KEYWORDS = [
+    "exercise", "workout", "mobility", "stretching", "deadlift", "squat",
+    "kettlebell", "physical therapy", "back pain", "posture", "zone 2",
+    "running form", "strength training", "calisthenics", "yoga", "rehab",
+]
+HN_LINK_QUERIES = ["youtube.com", "youtu.be"]
+HN_HITS_PER_PAGE = 1000  # API maximum
+HN_MAX_PAGES = int(os.environ.get("FITTUBE_HN_MAX_PAGES", "3"))  # per keyword x link form
+HN_MIN_REQUEST_INTERVAL = 0.5
+# Strict relevance: a fitness term must appear within this many characters of
+# the YouTube link in the comment text (HN threads are mostly off-topic).
+HN_NEAR_CHARS = 250
+
+# T-Nation forum (Discourse).
+TNATION_BASE_URL = "https://t-nation.com"
+TNATION_QUERY = "youtube.com order:latest"
+TNATION_MAX_PAGES = int(os.environ.get("FITTUBE_TNATION_MAX_PAGES", "30"))
+TNATION_MIN_REQUEST_INTERVAL = 1.0
+# Category slugs whose posts are dropped: training logs are mostly users' own
+# lift clips; politics/physique-rating threads are off-topic.
+TNATION_DROP_CATEGORIES = {"training-logs", "politics-and-world-issues", "rate-my-physique-photos"}
+# Posts in these categories count as-is; elsewhere (Main Forum lounge, Pharma,
+# ...) the post or its topic title must mention a fitness term.
+TNATION_TRUSTED_CATEGORIES = {"training", "over-35-lifter", "bodybuilding", "supplements-and-nutrition"}
+# Topics that are personal logs/challenges outside the log category.
+TNATION_DROP_TOPIC_PATTERN = r"\b(?:challenge|log|journal|journey|diary|progress)\b"
+# A site's own channel linked from its own articles is promotion, not a recommendation.
+EXTERNAL_SITE_CHANNELS = {"t-nation.com": ["Testosterone Nation", "T Nation", "T-Nation"]}
+
+# Cache freshness for the forum/HN sources (offline runs ignore it).
+EXTERNAL_SEARCH_TTL_DAYS = 6
+EXTERNAL_POST_TTL_DAYS = 30

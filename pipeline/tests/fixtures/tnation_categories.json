@@ -1,0 +1,90 @@
+{
+ "category_list": {
+  "categories": [
+   {
+    "id": 1,
+    "name": "Uncategorized",
+    "slug": "uncategorized",
+    "subcategory_list": []
+   },
+   {
+    "id": 22,
+    "name": "Main Forum",
+    "slug": "main-forum",
+    "subcategory_list": [
+     {
+      "id": 23,
+      "name": "Politics & World Issues",
+      "slug": "politics-and-world-issues"
+     }
+    ]
+   },
+   {
+    "id": 65,
+    "name": "Vital Whole Human",
+    "slug": "vital-whole-human",
+    "subcategory_list": [
+     {
+      "id": 33,
+      "name": "Supplement Advice",
+      "slug": "supplement-advice"
+     }
+    ]
+   },
+   {
+    "id": 26,
+    "name": "Pharma",
+    "slug": "pharma",
+    "subcategory_list": [
+     {
+      "id": 25,
+      "name": "TRT",
+      "slug": "trt"
+     }
+    ]
+   },
+   {
+    "id": 11,
+    "name": "Bodybuilding",
+    "slug": "bodybuilding",
+    "subcategory_list": [
+     {
+      "id": 24,
+      "name": "Rate My Physique Photos",
+      "slug": "rate-my-physique-photos"
+     }
+    ]
+   },
+   {
+    "id": 10,
+    "name": "Training",
+    "slug": "training",
+    "subcategory_list": []
+   },
+   {
+    "id": 15,
+    "name": "Over 35 Lifter",
+    "slug": "over-35-lifter",
+    "subcategory_list": []
+   },
+   {
+    "id": 5,
+    "name": "Training Logs",
+    "slug": "training-logs",
+    "subcategory_list": []
+   },
+   {
+    "id": 7,
+    "name": "Nutrition",
+    "slug": "supplements-and-nutrition",
+    "subcategory_list": []
+   },
+   {
+    "id": 27,
+    "name": "Forum Feedback",
+    "slug": "feedback",
+    "subcategory_list": []
+   }
+  ]
+ }
+}

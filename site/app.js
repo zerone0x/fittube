@@ -1,7 +1,7 @@
 // FitTube frontend entry point. Vanilla ES modules, no build step.
 
 import { $, $$, h, icon, fmtTime, fmtNum, plural, clampInt, isTyping } from './js/util.js';
-import { FACETS, tagLabel, loadData } from './js/data.js';
+import { FACETS, tagLabel, loadData, siteName } from './js/data.js';
 import { Player } from './js/player.js';
 import { Session } from './js/session.js';
 import { IntervalTimer } from './js/timer.js';
@@ -213,7 +213,7 @@ function thumbImg(v, cls) {
 }
 
 function recsEl(n) {
-  return h('span', { class: 'recs', title: `${n} distinct Reddit users recommended this` }, icon('people'), plural(n, 'recommender'));
+  return h('span', { class: 'recs', title: `${n} distinct people (Reddit, Hacker News, T-Nation) recommended this` }, icon('people'), plural(n, 'recommender'));
 }
 
 function renderCard(v, index) {
@@ -222,6 +222,9 @@ function renderCard(v, index) {
   if (v.subreddits[0]) {
     meta.push(h('span', { class: 'dot', 'aria-hidden': 'true' }, '·'));
     meta.push(h('span', { class: 'card-subs', title: v.subreddits.map((s) => 'r/' + s).join(', ') }, `r/${v.subreddits[0]}${v.subreddits.length > 1 ? ` +${v.subreddits.length - 1}` : ''}`));
+  } else if (v.sites[0]) {
+    meta.push(h('span', { class: 'dot', 'aria-hidden': 'true' }, '·'));
+    meta.push(h('span', { class: 'card-subs' }, v.sites.join(', ')));
   }
   const thumb = h('div', { class: 'thumb' },
     h('div', { class: 'thumb-placeholder', 'aria-hidden': 'true' }, icon('video')),
@@ -395,7 +398,8 @@ function fillModal(v) {
   const meta = [];
   if (v.channel) meta.push(h('span', {}, v.channel));
   meta.push(recsEl(v.recommenders));
-  if (v.subreddits.length) meta.push(h('span', {}, v.subreddits.map((s) => `r/${s}`).join(', ')));
+  const via = [...v.subreddits.map((s) => `r/${s}`), ...v.sites];
+  if (via.length) meta.push(h('span', {}, via.join(', ')));
   if (v.first_seen) meta.push(h('span', {}, `First recommended ${v.first_seen.slice(0, 4)}`));
   $('#m-meta').replaceChildren(...meta);
 
@@ -416,8 +420,8 @@ function fillModal(v) {
     list.replaceChildren(...v.comments.map((c) => h('li', { class: 'comment' },
       h('p', {}, c.text),
       h('div', { class: 'comment-foot' },
-        c.score != null ? h('span', { class: 'comment-score', title: 'Reddit score' }, icon('arrowUp'), fmtNum(c.score)) : null,
-        c.permalink ? h('a', { href: c.permalink, target: '_blank', rel: 'noopener nofollow' }, 'View on Reddit') : null,
+        c.score != null ? h('span', { class: 'comment-score', title: `${siteName(c.permalink) || 'Reddit'} score` }, icon('arrowUp'), fmtNum(c.score)) : null,
+        c.permalink ? h('a', { href: c.permalink, target: '_blank', rel: 'noopener nofollow' }, `View on ${siteName(c.permalink)}`) : null,
       ))));
   } else {
     list.replaceChildren(h('li', { class: 'comment-empty' }, `Linked by ${plural(v.recommenders, 'Redditor')}; no comment excerpts saved.`));
@@ -818,7 +822,7 @@ document.addEventListener('keydown', (e) => {
 
 function renderFooter() {
   const parts = [`${plural(data.videos.length, 'video')}`];
-  if (data.sources.length) parts.push(`from ${data.sources.map((s) => 'r/' + s).join(', ')}`);
+  if (data.sources.length) parts.push(`from ${data.sources.map((s) => (s.includes('.') ? s : 'r/' + s)).join(', ')}`);
   let text = parts.join(' ');
   const d = data.generatedAt ? new Date(data.generatedAt) : null;
   if (d && !Number.isNaN(d.getTime())) text += ` · updated ${d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;

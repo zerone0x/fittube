@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-01T22:54:34Z",
+ "generated_at": "2026-11-01T23:41:08Z",
  "sources": [
   "bodyweightfitness",
   "Fitness",
@@ -10,9 +10,92 @@
   "overcominggravity",
   "physicaltherapy",
   "kettlebell",
-  "StrongerByScience"
+  "StrongerByScience",
+  "news.ycombinator.com",
+  "t-nation.com"
  ],
  "videos": [
+  {
+   "id": "wYREQkVtvEc",
+   "title": "How To Deadlift: Starting Strength 5 Step Deadlift",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/wYREQkVtvEc/hqdefault.jpg",
+   "recommenders": 13,
+   "score": 148.6,
+   "first_seen": "2017-12-01",
+   "subreddits": [
+    "Fitness",
+    "xxfitness"
+   ],
+   "comments": [
+    {
+     "text": "I watch the Alan thrall dead lift set up video a few times through before dead lift day, it is super helpful having visuals with instruction. \"Don't move the barbell\" is permanently in my brain now https://youtu.be/wYREQkVtvEc",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/7gw1qv/_/dqme8bc/"
+    },
+    {
+     "text": "Kettlebell swings but you have to get these right too or you will get injured. I stopped deadlifting for awhile because I just couldn’t get form down and my lower back always felt way too strained. I watched one of Alan Thrall’s videos and it fixed my dL issues. I can now dl…",
+     "score": 10,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/7jfyg8/_/dr62lef/"
+    },
+    {
+     "text": "What the other guy said. I'll add this: 1) Are you bracing? 2) You should know the difference between soreness and pain. If it feels like soreness, then youre probably fine. 3) watch this: https://youtu.be/wYREQkVtvEc?si=lwFvSwB0X7BFDJp",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/1swvmvg/_/oijhgbb/"
+    },
+    {
+     "text": "The good thing about 5x5 is that you start with minimal weights - like an empty bar - and spend your first couple of weeks training with \"easy\" weight. This time is really for you to learn the movements. There's a wealth of information out there on how to do these movements…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=23856027",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 1,
+     "label": "5-Step Deadlift"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength",
+     "rehab",
+     "endurance"
+    ],
+    "body": [
+     "full",
+     "back",
+     "lower",
+     "hips"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23856027",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 12,
+     "sum_score": 40.3,
+     "first_seen": "2017-12-01"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
   {
    "id": "yeMXdkZ18EA",
    "title": "Simple & Sinister: A Tip for a Better Kettlebell Swing",
@@ -57,60 +140,6 @@
     ],
     "equipment": [
      "kettlebell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "wYREQkVtvEc",
-   "title": "How To Deadlift: Starting Strength 5 Step Deadlift",
-   "channel": "Alan Thrall (Untamed Strength)",
-   "thumbnail": "https://i.ytimg.com/vi/wYREQkVtvEc/hqdefault.jpg",
-   "recommenders": 12,
-   "score": 138.6,
-   "first_seen": "2017-12-01",
-   "subreddits": [
-    "Fitness",
-    "xxfitness"
-   ],
-   "comments": [
-    {
-     "text": "I watch the Alan thrall dead lift set up video a few times through before dead lift day, it is super helpful having visuals with instruction. \"Don't move the barbell\" is permanently in my brain now https://youtu.be/wYREQkVtvEc",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/7gw1qv/_/dqme8bc/"
-    },
-    {
-     "text": "Kettlebell swings but you have to get these right too or you will get injured. I stopped deadlifting for awhile because I just couldn’t get form down and my lower back always felt way too strained. I watched one of Alan Thrall’s videos and it fixed my dL issues. I can now dl…",
-     "score": 10,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/7jfyg8/_/dr62lef/"
-    },
-    {
-     "text": "What the other guy said. I'll add this: 1) Are you bracing? 2) You should know the difference between soreness and pain. If it feels like soreness, then youre probably fine. 3) watch this: https://youtu.be/wYREQkVtvEc?si=lwFvSwB0X7BFDJp",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/1swvmvg/_/oijhgbb/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 1,
-     "label": "5-Step Deadlift"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength",
-     "rehab",
-     "endurance"
-    ],
-    "body": [
-     "full",
-     "back",
-     "lower",
-     "hips"
-    ],
-    "equipment": [
-     "barbell"
     ],
     "level": "any",
     "type": "tutorial"
@@ -167,6 +196,90 @@
    }
   },
   {
+   "id": "jEy_czb3RKA",
+   "title": "STOP deadlifting until you learn how to do THIS/How To:Romanian DL",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/jEy_czb3RKA/hqdefault.jpg",
+   "recommenders": 8,
+   "score": 96.4,
+   "first_seen": "2017-08-15",
+   "subreddits": [
+    "Fitness",
+    "flexibility",
+    "StrongerByScience",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Here's a great video by Alan Thrall: https://www.youtube.com/watch?v=jEyczb3RKA It talks about \"loading the hamstrings\" - this fixed my DL",
+     "score": 7,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drsl1ex/"
+    },
+    {
+     "text": "Not much to go off of without a video. As a guess, are you bending your knees too much on the RDL? Either in general or right at the end of the movement when your hamstrings start stretching. Alan Thrall RDL video that may help for self study: https://youtu.be/jEyczb3RKA",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1i2i52s/_/m7eqq8i/"
+    },
+    {
+     "text": "Maybe the weight is a tad bit heavy considering you are already squatting before RDLs which makes it taxing on the lower back. So drop down the weight a bit. Like you noticed, RDLs work/feel better with a slow tempo/descent, so keep that pace. And if you need a substitute, I…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/qn2tb0/_/hje4mf5/"
+    },
+    {
+     "text": "Reverse hyper extensions off a table. However, if they’re experiencing back pain from deadlifting, I feel like this speaks more to an issue of not knowing how to hinge at the hips, instead relying on the back to lift. I’d consider reviewing this Also google “Hips don’t lie…",
+     "score": 4,
+     "permalink": "https://t-nation.com/t/body-weight-lower-back-exercises/290994/2",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength",
+     "mobility"
+    ],
+    "body": [
+     "full",
+     "lower",
+     "back",
+     "legs"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/body-weight-lower-back-exercises/290994/2",
+     "score": 4,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/should-rdl-s-give-you-a-lower-back-pump/294151/4",
+     "score": 1,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 7,
+     "sum_score": 23.0,
+     "first_seen": "2017-08-15"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 2.3
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "34XRmd3a8_0",
    "title": "Bench Press 101",
    "channel": "132poundsofpower",
@@ -219,54 +332,243 @@
    }
   },
   {
-   "id": "jEy_czb3RKA",
-   "title": "STOP deadlifting until you learn how to do THIS/How To:Romanian DL",
-   "channel": "Alan Thrall (Untamed Strength)",
-   "thumbnail": "https://i.ytimg.com/vi/jEy_czb3RKA/hqdefault.jpg",
+   "id": "PLHY2-nt-y4",
+   "title": "Breathing and Bracing...You're Doing it Wrong",
+   "channel": "Brian Alsruhe",
+   "thumbnail": "https://i.ytimg.com/vi/PLHY2-nt-y4/hqdefault.jpg",
    "recommenders": 7,
-   "score": 85.9,
-   "first_seen": "2017-08-15",
+   "score": 84.3,
+   "first_seen": "2021-11-20",
    "subreddits": [
-    "Fitness",
-    "flexibility",
-    "StrongerByScience",
-    "weightroom"
+    "weightroom",
+    "Fitness"
    ],
    "comments": [
     {
-     "text": "Here's a great video by Alan Thrall: https://www.youtube.com/watch?v=jEyczb3RKA It talks about \"loading the hamstrings\" - this fixed my DL",
-     "score": 7,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drsl1ex/"
+     "text": "I'm in a food coma, but here is a smattering: https://youtu.be/ta7IaiY0yH0 https://youtu.be/PLHY2-nt-y4 https://www.reddit.com/r/weightroom/comments/h7yncz/braceyourselvesorlifeistooshorttobeloose/",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/qxya7z/_/hlf6ujp/"
     },
     {
-     "text": "Not much to go off of without a video. As a guess, are you bending your knees too much on the RDL? Either in general or right at the end of the movement when your hamstrings start stretching. Alan Thrall RDL video that may help for self study: https://youtu.be/jEyczb3RKA",
-     "score": 6,
-     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1i2i52s/_/m7eqq8i/"
+     "text": "Um are you even bracing? Particularly on the descent? https://youtu.be/PLHY2-nt-y4",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1nzc68l/_/ni2bnp4/"
     },
     {
-     "text": "Maybe the weight is a tad bit heavy considering you are already squatting before RDLs which makes it taxing on the lower back. So drop down the weight a bit. Like you noticed, RDLs work/feel better with a slow tempo/descent, so keep that pace. And if you need a substitute, I…",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/qn2tb0/_/hje4mf5/"
+     "text": "Find your favorite YouTube influencer and watch. Allan thrall, Brian alsruhe, elitefts, juggernaut training systems and kabuki are the ones I frequently use. Honorable mentions for joe Sullivan and Steph Cohen, who put out great info but inconsistently. Alan Thrall how to…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/rkijjo/_/hpb86a6/"
+    },
+    {
+     "text": "Don’t overthink it for starters. Starting Strength by Mark Rippetoe has a perfectly passable explanation of the movement, although I don’t think he’s the end-all, be-all authority. The most important concept in both squatting and deadlifting is probably bracing. Here’s my…",
+     "score": 5,
+     "permalink": "https://t-nation.com/t/deadlift-power/281897/2",
+     "site": "t-nation.com"
     }
    ],
    "timestamps": [],
    "tags": {
-    "goal": [
-     "strength",
-     "mobility"
-    ],
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/deadlift-power/281897/2",
+     "score": 5,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/body-weight-lower-back-exercises/290994/2",
+     "score": 4,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/when-to-use-lifting-belts/280419/6",
+     "score": 3,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 4,
+     "sum_score": 9.6,
+     "first_seen": "2021-11-20"
+    },
+    "forum": {
+     "recommenders": 3,
+     "sum_score": 6.8
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "ZQEFc6rSKvA",
+   "title": "StrongFirst: SFG Level I Kettlebell Technique Testing Standards",
+   "channel": "StrongFirst",
+   "thumbnail": "https://i.ytimg.com/vi/ZQEFc6rSKvA/hqdefault.jpg",
+   "recommenders": 7,
+   "score": 83.9,
+   "first_seen": "2017-04-09",
+   "subreddits": [
+    "kettlebell"
+   ],
+   "comments": [
+    {
+     "text": "Snatches are not in the book, but the hinge movement is key to doing snatches. Watch this video for examples of the key exercises you should learn to do with your kettlebells. https://youtu.be/ZQEFc6rSKvA",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/7mpk79/_/drwohrx/"
+    },
+    {
+     "text": "Hardstyle certification standards from StrongFirst: https://youtu.be/ZQEFc6rSKvA",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/7cubxr/_/dptus8s/"
+    },
+    {
+     "text": "And the new version.",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/647pfx/_/dg1l954/"
+    },
+    {
+     "text": "Daily mobility work (even just 5 minutes in the evening makes a difference when done daily) combined with a hip hinge exercise a couple of times a week does indeed work wonders (it did for me). As an alternative to the deadlift, I'd like to suggest the two-arm kettlebell swing.…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=15078259",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
     "body": [
      "full",
      "lower",
-     "back",
-     "legs"
+     "shoulders",
+     "arms"
+    ],
+    "equipment": [
+     "kettlebell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=15078259",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 6,
+     "sum_score": 15.1,
+     "first_seen": "2017-04-09"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "FSSDLDhbacc",
+   "title": "Joe DeFranco's \"Limber 11\" (flexibility routine)",
+   "channel": "joedefranco",
+   "thumbnail": "https://i.ytimg.com/vi/FSSDLDhbacc/hqdefault.jpg",
+   "recommenders": 6,
+   "score": 80.0,
+   "first_seen": "2013-11-03",
+   "subreddits": [
+    "Fitness",
+    "flexibility",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "The routine you posted looks pretty good. I'm a big fan of 5/3/1 personally. Here and here are articles that explain how you can adapt 5/3/1 into a two-day template. The latest book, 5/3/1 Forever, also has some great templates, like 1000% Awesome. For the past four years I've…",
+     "score": 42,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7mdjg6/_/drt7j06/"
+    },
+    {
+     "text": "Use a lacrosse ball to roll out your bum. Will hurt like hell but will greatly relieve those tight areas. Watch Joe D’s Limber 11 video (focused on hip mobility) if you want his input on how it’s performed. limber 11",
+     "score": 8,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/71risk/_/dnd0foh/"
+    },
+    {
+     "text": "Lots of good advice here but I'd like to add 2 things for lower back relief that may help you. First is decompression from hanging. I used to have a sore lower back and as soon as I grabbed the chin up bar and just hung there for 30 seconds or so, my lower back felt right as…",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/1u43d7/_/ceedfwe/"
+    },
+    {
+     "text": "Learn and adopt a flexibility routine, perform all or some of it before doing a workout or just at night before bed... I suggest the Limbar 11 as a starting point https://youtu.be/FSSDLDhbacc",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=22238463",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 234,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility",
+     "strength",
+     "rehab"
+    ],
+    "body": [
+     "full",
+     "upper",
+     "lower",
+     "back"
     ],
     "equipment": [
      "barbell"
     ],
     "level": "any",
-    "type": "tutorial"
-   }
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=22238463",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=13435840",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 4,
+     "sum_score": 53.6,
+     "first_seen": "2013-11-03"
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "ntko7CPHD5A",
@@ -306,6 +608,83 @@
     "level": "any",
     "type": "follow-along"
    }
+  },
+  {
+   "id": "cKx8xE8jJZs",
+   "title": "Enter the Kettlebell - Pavel Tsatsouline",
+   "channel": "CassiusK",
+   "thumbnail": "https://i.ytimg.com/vi/cKx8xE8jJZs/hqdefault.jpg",
+   "recommenders": 6,
+   "score": 76.3,
+   "first_seen": "2017-07-28",
+   "subreddits": [
+    "kettlebell"
+   ],
+   "comments": [
+    {
+     "text": "The momentum of the bell should come from the hips snapping forward, there should be no lifting with the arms and shoulders. Keep your arms loose. check out Pavel Tsatsouline's video @12:40",
+     "score": 13,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/1pff2vh/_/nsjfi94/"
+    },
+    {
+     "text": "Here you go comrade - Pavel's Enter the Kettlebell: https://www.youtube.com/watch?v=cKx8xE8jJZs",
+     "score": 7,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/7cubxr/_/dpt6v1x/"
+    },
+    {
+     "text": "https://youtu.be/cKx8xE8jJZs Classic video from pavel. Check about 12 mins in.",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/r8dgdc/_/hn6suxc/"
+    },
+    {
+     "text": "Kettle bells swings are the single most efficient way to get a full body workout. Pavel's kettlebell workout https://www.youtube.com/watch?v=cKx8xE8jJZs JRE - Pavel's talking about kettle bells https://www.youtube.com/watch?v=PWESVqOwMHw Other things to consider: Saunas are…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=34701244",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 760,
+     "label": "The momentum of the bell should come from the hips snapping forward, there…"
+    },
+    {
+     "t": 1604,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [
+     "kettlebell"
+    ],
+    "level": "any",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=34701244",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 5,
+     "sum_score": 25.0,
+     "first_seen": "2017-07-28"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "gwd-wLdIHjs",
@@ -348,48 +727,154 @@
    }
   },
   {
-   "id": "ZQEFc6rSKvA",
-   "title": "StrongFirst: SFG Level I Kettlebell Technique Testing Standards",
-   "channel": "StrongFirst",
-   "thumbnail": "https://i.ytimg.com/vi/ZQEFc6rSKvA/hqdefault.jpg",
+   "id": "sqKhLR1zRaU",
+   "title": "3 Press Fixes",
+   "channel": "Justin Lascek",
+   "thumbnail": "https://i.ytimg.com/vi/sqKhLR1zRaU/hqdefault.jpg",
    "recommenders": 6,
-   "score": 73.9,
-   "first_seen": "2017-04-09",
+   "score": 75.0,
+   "first_seen": "2013-11-01",
    "subreddits": [
-    "kettlebell"
+    "Fitness",
+    "weightroom"
    ],
    "comments": [
     {
-     "text": "Snatches are not in the book, but the hinge movement is key to doing snatches. Watch this video for examples of the key exercises you should learn to do with your kettlebells. https://youtu.be/ZQEFc6rSKvA",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/7mpk79/_/drwohrx/"
+     "text": "Nice progress man! Two things though. 1. Was that squat to parallel? I couldn't tell from the video. 2. You need to work on OHP form because that was a standing incline bench essentially. This is a very good video on OHP form, and this video as well helps with smaller fixes.",
+     "score": 18,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/1trsez/_/ceau2uz/"
     },
     {
-     "text": "Hardstyle certification standards from StrongFirst: https://youtu.be/ZQEFc6rSKvA",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/7cubxr/_/dptus8s/"
+     "text": "Looks good but it seems like you keep the bar pretty far back in your hand vs right over the wrist. This guy does a pretty good job of explaining it (should start at 1:13 but the whole video is pretty informative).",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1pp78x/_/cd4ktvl/"
     },
     {
-     "text": "And the new version.",
+     "text": "I'm not too sure from this camera angle, but it looks like your elbows are behind the bar when you start the press. If your elbows are behind the bar when you initiate the press, you're going to \"Superman\" the barbell - the barbell is going to be pressed forward and away from…",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1q6urh/_/cdaudhg/"
+    },
+    {
+     "text": "I’ve also found this to be a useful video. With respect to warm up sets (or ramp up sets, which is probably both more accurate AND less “optional”), I agree with what /u/trainforpain said, especially if you’re training the press less than 3 times a week. That’s kind of an…",
+     "score": 2,
+     "permalink": "https://t-nation.com/t/ohp-form-check/287288/14",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 73,
+     "label": "This guy does a pretty good job of explaining it"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "shoulders",
+     "upper",
+     "chest",
+     "arms"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/ohp-form-check/287288/14",
+     "score": 2,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 5,
+     "sum_score": 17.2,
+     "first_seen": "2013-11-01"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 2.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "5K9QhkPww44",
+   "title": "What Every Body Fat % Actually Looks Like (50% to 5%)",
+   "channel": "Jeff Nippard",
+   "thumbnail": "https://i.ytimg.com/vi/5K9QhkPww44/hqdefault.jpg",
+   "recommenders": 6,
+   "score": 74.3,
+   "first_seen": "2025-11-10",
+   "subreddits": [
+    "xxfitness",
+    "bodyweightfitness",
+    "naturalbodybuilding"
+   ],
+   "comments": [
+    {
+     "text": "Unfortunately, I don’t exactly fit your criteria. Apologies for that. I’m 5’1” 110-115lb and 21-23% bodyfat. I wanted to comment that sub 20 is veryyyy lean for a woman. This is an awesome video showing lots of examples. Anyhow- best of luck in your journey! Don’t skimp on the…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/1py5otw/_/nwg7ngx/"
+    },
+    {
+     "text": "Bf percent visual reference. Personally I wouldn't bother with all the cut and bulk cycle stuff and just stay around maintenance and recomp. Thats just my preference. If you are actually 18-20% you could just focus on recomp now or keep a deficit for a bit longer. Either way I…",
      "score": 3,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/647pfx/_/dg1l954/"
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xb53jo/_/19retb0v8f2xt/"
+    },
+    {
+     "text": "Period loss has a variety of possible causes. Definitely warrants seeing a doctor. Just for context, 20% bf is pretty low for a woman. Here's a video showing a range of real people using DEXA and another method: https://youtu.be/5K9QhkPww44?si=qD3Xev1jWbIzhLj",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/1p2hvlc/_/npxeuz7/"
+    },
+    {
+     "text": "Don’t sugarcoat it. Submit your guess below. My feelings won’t be hurt if you think I’m 99% body fat. But the more accurate your guess, the more likely you’ll be to win the prize.…",
+     "score": 7,
+     "permalink": "https://t-nation.com/t/contest-guess-my-body-fat/292457/1",
+     "site": "t-nation.com"
     }
    ],
    "timestamps": [],
    "tags": {
-    "goal": [],
-    "body": [
-     "full",
-     "lower",
-     "shoulders",
-     "arms"
+    "goal": [
+     "fat-loss",
+     "hypertrophy"
     ],
+    "body": [],
     "equipment": [
-     "kettlebell"
+     "none"
     ],
     "level": "any",
-    "type": "tutorial"
-   }
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/contest-guess-my-body-fat/292457/1",
+     "score": 7,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 5,
+     "sum_score": 9.6,
+     "first_seen": "2025-11-10"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 7.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "uGGdhwJ0Y-4",
@@ -488,56 +973,6 @@
     "equipment": [],
     "level": "any",
     "type": "tutorial"
-   }
-  },
-  {
-   "id": "cKx8xE8jJZs",
-   "title": "Enter the Kettlebell - Pavel Tsatsouline",
-   "channel": "CassiusK",
-   "thumbnail": "https://i.ytimg.com/vi/cKx8xE8jJZs/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 66.3,
-   "first_seen": "2017-07-28",
-   "subreddits": [
-    "kettlebell"
-   ],
-   "comments": [
-    {
-     "text": "The momentum of the bell should come from the hips snapping forward, there should be no lifting with the arms and shoulders. Keep your arms loose. check out Pavel Tsatsouline's video @12:40",
-     "score": 13,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/1pff2vh/_/nsjfi94/"
-    },
-    {
-     "text": "Here you go comrade - Pavel's Enter the Kettlebell: https://www.youtube.com/watch?v=cKx8xE8jJZs",
-     "score": 7,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/7cubxr/_/dpt6v1x/"
-    },
-    {
-     "text": "https://youtu.be/cKx8xE8jJZs Classic video from pavel. Check about 12 mins in.",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/r8dgdc/_/hn6suxc/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 760,
-     "label": "The momentum of the bell should come from the hips snapping forward, there…"
-    },
-    {
-     "t": 1604,
-     "label": ""
-    }
-   ],
-   "tags": {
-    "goal": [],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [
-     "kettlebell"
-    ],
-    "level": "any",
-    "type": "follow-along"
    }
   },
   {
@@ -642,58 +1077,6 @@
    }
   },
   {
-   "id": "sqKhLR1zRaU",
-   "title": "3 Press Fixes",
-   "channel": "Justin Lascek",
-   "thumbnail": "https://i.ytimg.com/vi/sqKhLR1zRaU/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 64.5,
-   "first_seen": "2013-11-01",
-   "subreddits": [
-    "Fitness",
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Nice progress man! Two things though. 1. Was that squat to parallel? I couldn't tell from the video. 2. You need to work on OHP form because that was a standing incline bench essentially. This is a very good video on OHP form, and this video as well helps with smaller fixes.",
-     "score": 18,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/1trsez/_/ceau2uz/"
-    },
-    {
-     "text": "Looks good but it seems like you keep the bar pretty far back in your hand vs right over the wrist. This guy does a pretty good job of explaining it (should start at 1:13 but the whole video is pretty informative).",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1pp78x/_/cd4ktvl/"
-    },
-    {
-     "text": "I'm not too sure from this camera angle, but it looks like your elbows are behind the bar when you start the press. If your elbows are behind the bar when you initiate the press, you're going to \"Superman\" the barbell - the barbell is going to be pressed forward and away from…",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1q6urh/_/cdaudhg/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 73,
-     "label": "This guy does a pretty good job of explaining it"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "shoulders",
-     "upper",
-     "chest",
-     "arms"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
    "id": "CrF2iMnn09w",
    "title": "Bent-Leg Hamstring Stretch | Best Hamstring Exercise  | Kit Laughlin from Stretch Therapy",
    "channel": "Kit Laughlin (Stretch Therapy)",
@@ -738,94 +1121,122 @@
    }
   },
   {
-   "id": "5K9QhkPww44",
-   "title": "What Every Body Fat % Actually Looks Like (50% to 5%)",
-   "channel": "Jeff Nippard",
-   "thumbnail": "https://i.ytimg.com/vi/5K9QhkPww44/hqdefault.jpg",
+   "id": "BnFzjcPTSsc",
+   "title": "Simple Exercises That Can Repair Tendons — Dr. Keith Baar",
+   "channel": "Tim Ferriss",
+   "thumbnail": "https://i.ytimg.com/vi/BnFzjcPTSsc/hqdefault.jpg",
    "recommenders": 5,
-   "score": 61.8,
-   "first_seen": "2025-11-10",
+   "score": 57.2,
+   "first_seen": "2025-05-09",
    "subreddits": [
-    "xxfitness",
     "bodyweightfitness",
-    "naturalbodybuilding"
+    "kettlebell",
+    "naturalbodybuilding",
+    "overcominggravity"
    ],
    "comments": [
     {
-     "text": "Unfortunately, I don’t exactly fit your criteria. Apologies for that. I’m 5’1” 110-115lb and 21-23% bodyfat. I wanted to comment that sub 20 is veryyyy lean for a woman. This is an awesome video showing lots of examples. Anyhow- best of luck in your journey! Don’t skimp on the…",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/1py5otw/_/nwg7ngx/"
+     "text": "Isometrics are highly effective for increasing tendon strength and stiffness. Please be careful with increasing load and intensity too quickly. Please search and view content by Dr. Keith Baar. He is a researcher who specializes in tendon strengthening and repair. His main tool…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/e5mu1c/_/p7h7u5a/"
     },
     {
-     "text": "Bf percent visual reference. Personally I wouldn't bother with all the cut and bulk cycle stuff and just stay around maintenance and recomp. Thats just my preference. If you are actually 18-20% you could just focus on recomp now or keep a deficit for a bit longer. Either way I…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xb53jo/_/19retb0v8f2xt/"
+     "text": "Copying my response from a past question. Look up Dr. Barr and overcoming isometrics for tendinitis. He has an interview where he specifically talks about golfers elbow. Essentially it's 10 seconds on emom for 10 minutes or 30 seconds on 2 minutes rest for 10 minutes. For…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1ukx02i/_/ouzq3iz/"
     },
     {
-     "text": "Period loss has a variety of possible causes. Definitely warrants seeing a doctor. Just for context, 20% bf is pretty low for a woman. Here's a video showing a range of real people using DEXA and another method: https://youtu.be/5K9QhkPww44?si=qD3Xev1jWbIzhLj",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/1p2hvlc/_/npxeuz7/"
+     "text": "I fixed mine with heavy static holds. Especially in the stretched position. 3-5 times a week, 30 seconds on 1 minute rest, repeat 4x. I used a bicep curl machine. The weight should be enough that you feel like you have to work hard (but not no life and death) to complete the…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/1onpb2i/_/nn3dtfs/"
+    },
+    {
+     "text": "Dr. Keith Baar may revolutionize injuries and treatment of tendons",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/frozen-shoulder-train-my-good-side/289285/28",
+     "site": "t-nation.com"
     }
    ],
    "timestamps": [],
    "tags": {
     "goal": [
-     "fat-loss",
-     "hypertrophy"
+     "rehab",
+     "strength"
     ],
-    "body": [],
+    "body": [
+     "arms",
+     "back"
+    ],
     "equipment": [
-     "none"
+     "none",
+     "kettlebell",
+     "machine"
     ],
     "level": "any",
     "type": "explainer"
-   }
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/frozen-shoulder-train-my-good-side/289285/28",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 4,
+     "sum_score": 3.2,
+     "first_seen": "2025-11-04"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
-   "id": "FSSDLDhbacc",
-   "title": "Joe DeFranco's \"Limber 11\" (flexibility routine)",
-   "channel": "joedefranco",
-   "thumbnail": "https://i.ytimg.com/vi/FSSDLDhbacc/hqdefault.jpg",
+   "id": "4AObAU-EcYE",
+   "title": "How to Deadlift With Mark Rippetoe | The Art of Manliness",
+   "channel": "Art of Manliness",
+   "thumbnail": "https://i.ytimg.com/vi/4AObAU-EcYE/hqdefault.jpg",
    "recommenders": 4,
-   "score": 60.0,
-   "first_seen": "2013-11-03",
+   "score": 55.9,
+   "first_seen": "2016-10-06",
    "subreddits": [
-    "Fitness",
-    "flexibility",
-    "weightroom"
+    "Fitness"
    ],
    "comments": [
     {
-     "text": "The routine you posted looks pretty good. I'm a big fan of 5/3/1 personally. Here and here are articles that explain how you can adapt 5/3/1 into a two-day template. The latest book, 5/3/1 Forever, also has some great templates, like 1000% Awesome. For the past four years I've…",
-     "score": 42,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7mdjg6/_/drt7j06/"
+     "text": "https://youtu.be/4AObAU-EcYE",
+     "score": 10,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drs8mf8/"
     },
     {
-     "text": "Use a lacrosse ball to roll out your bum. Will hurt like hell but will greatly relieve those tight areas. Watch Joe D’s Limber 11 video (focused on hip mobility) if you want his input on how it’s performed. limber 11",
-     "score": 8,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/71risk/_/dnd0foh/"
+     "text": "RIPPETOE DEADLIFT",
+     "score": 10,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drs8au8/"
     },
     {
-     "text": "Lots of good advice here but I'd like to add 2 things for lower back relief that may help you. First is decompression from hanging. I used to have a sore lower back and as soon as I grabbed the chin up bar and just hung there for 30 seconds or so, my lower back felt right as…",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/1u43d7/_/ceedfwe/"
-    }
-   ],
-   "timestamps": [
+     "text": "Deadlifts are amazing, you'll thank yourself after you start doing them! And don't pay attention to others at the gym... check out this video on proper form and etiquette.",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drmm1he/"
+    },
     {
-     "t": 234,
-     "label": ""
+     "text": "Doing these two things has worked extremely well for me: 1) Doing deadlifts. This is a strength-training exercise: https://www.youtube.com/watch?v=4AObAU-EcYE 2) Seeing a good chiropractor about twice a month. (You might need to shop around - I can elaborate on how to select a…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12652886",
+     "site": "news.ycombinator.com"
     }
    ],
+   "timestamps": [],
    "tags": {
     "goal": [
-     "mobility",
-     "strength",
-     "rehab"
+     "strength"
     ],
     "body": [
-     "full",
-     "upper",
      "lower",
      "back"
     ],
@@ -833,8 +1244,29 @@
      "barbell"
     ],
     "level": "any",
-    "type": "follow-along"
-   }
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12652886",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 23.0,
+     "first_seen": "2017-12-22"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "ubdIGnX2Hfs",
@@ -1101,42 +1533,153 @@
    }
   },
   {
-   "id": "PLHY2-nt-y4",
-   "title": "Breathing and Bracing...You're Doing it Wrong",
-   "channel": "Brian Alsruhe",
-   "thumbnail": "https://i.ytimg.com/vi/PLHY2-nt-y4/hqdefault.jpg",
+   "id": "bs_Ej32IYgo",
+   "title": "Untamed Strength: \"How To\" SQUAT - High bar/Low bar",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/bs_Ej32IYgo/hqdefault.jpg",
    "recommenders": 4,
-   "score": 51.8,
-   "first_seen": "2021-11-20",
+   "score": 52.8,
+   "first_seen": "2017-12-15",
    "subreddits": [
-    "weightroom",
+    "xxfitness",
     "Fitness"
    ],
    "comments": [
     {
-     "text": "I'm in a food coma, but here is a smattering: https://youtu.be/ta7IaiY0yH0 https://youtu.be/PLHY2-nt-y4 https://www.reddit.com/r/weightroom/comments/h7yncz/braceyourselvesorlifeistooshorttobeloose/",
+     "text": "Are you talking about squats? Then yes sounds like you need to learn how to squeeze shoulder blades to create a shelf, and not place the bar on your neck or spine. Here's a good video: https://youtu.be/bsEj32IYgo At about the 5 minute mark he talks about how to place the bar",
      "score": 5,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/qxya7z/_/hlf6ujp/"
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/r2jw1u/_/hm70rnx/"
     },
     {
-     "text": "Um are you even bracing? Particularly on the descent? https://youtu.be/PLHY2-nt-y4",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1nzc68l/_/ni2bnp4/"
+     "text": "I think there are a few things that need work before you increase weight. I don't think you're tightening your upper back or maybe I'm not seeing it. Hard to see bracing from this angle but hopefully you are bracing? Push your knees out so they don't cave in or wobble. If you…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/rjgcyh/_/hp39y2k/"
     },
     {
      "text": "Find your favorite YouTube influencer and watch. Allan thrall, Brian alsruhe, elitefts, juggernaut training systems and kabuki are the ones I frequently use. Honorable mentions for joe Sullivan and Steph Cohen, who put out great info but inconsistently. Alan Thrall how to…",
      "score": 3,
      "permalink": "https://www.reddit.com/r/Fitness/comments/rkijjo/_/hpb86a6/"
+    },
+    {
+     "text": "I'm 40, I've had two knee surgeries, and have genetically terrible knees. Squatting incorrectly made them hurt, but I went to see a sports PT and he taught me how to squat correctly (I was overloading my quads and not using my posterior chain like...at all - a proper low-bar…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=37206152",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 110,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "full",
+     "legs",
+     "lower",
+     "back"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=37206152",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23856027",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 11.9,
+     "first_seen": "2017-12-15"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "KTY4V5it-40",
+   "title": "Back Activation | How To Feel Your Lats",
+   "channel": "mountaindog1",
+   "thumbnail": "https://i.ytimg.com/vi/KTY4V5it-40/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 52.6,
+   "first_seen": "2022-09-06",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Oh yeah baby this is my wheelhouse, let’s ride. Creds: April 2022 -> October 2023 (18 months) Back was my second biggest weak point aesthetically besides arms (we’re working on it) for my entire lifting career. Structurally I have good insertions but my lats lacked a lot of…",
+     "score": 89,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/17ap1wa/_/k5mpic3/"
+    },
+    {
+     "text": "It sounds like an activation issue. Have you been active prior to this, like manual labor growing up or anything? Lat activation: All kinds of good back stuff: John Meadows is/was a goldmine of activation and mind muscle connection knowledge, so watch closely. There’s a lot…",
+     "score": 1,
+     "permalink": "https://t-nation.com/t/lower-back-rounding-deadlift/289900/7",
+     "site": "t-nation.com"
     }
    ],
    "timestamps": [],
    "tags": {
-    "goal": [],
-    "body": [],
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "back"
+    ],
     "equipment": [],
     "level": "any",
     "type": "tutorial"
-   }
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/lower-back-rounding-deadlift/289900/7",
+     "score": 1,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/exercises-to-get-lats-firing/279313/7",
+     "score": 1,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 1,
+     "sum_score": 89.0,
+     "first_seen": "2023-10-20"
+    },
+    "forum": {
+     "recommenders": 2,
+     "sum_score": 1.5
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "8lDC4Ri9zAQ",
@@ -1334,6 +1877,158 @@
    }
   },
   {
+   "id": "-ZX1QMTdAC4",
+   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
+   "channel": "The Ready State",
+   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 49.7,
+   "first_seen": "2013-08-28",
+   "subreddits": [
+    "flexibility",
+    "bodyweightfitness",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
+    },
+    {
+     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
+    },
+    {
+     "text": "Try the couch stretch, here's a video as well. It hurts...",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
+    },
+    {
+     "text": "If you sit all day the couch stretch [1] helps a lot to undo the shortening in your hip flexors. 2 min a day each side. Really painful if you sit a lot. Kelly Starrett has a lot of great information about mobility. [1]…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=6291682",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 126,
+     "label": ""
+    },
+    {
+     "t": 140,
+     "label": "Couch stretch"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility",
+     "rehab"
+    ],
+    "body": [
+     "legs"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=6291682",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 6.0,
+     "first_seen": "2013-12-10"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "AeB4znuGuSo",
+   "title": "Weighted Calisthenics Routine For Beginners (Simple and Brutally Effective)",
+   "channel": "Mathew Zlat",
+   "thumbnail": "https://i.ytimg.com/vi/AeB4znuGuSo/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 49.7,
+   "first_seen": "2020-11-15",
+   "subreddits": [
+    "overcominggravity",
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "You weigh 70kg and are doing 16kg chin-ups for six reps. You are pretty much wasting your time with this, what I recommend is to ditch the oac and focus on getting your weighted chin-up to at least 50% of your bodyweight (35kg or higher) before you start training your OAC. Also…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/p4p0xx/_/h90f2yn/"
+    },
+    {
+     "text": "I recommend you to take a look at this: https://youtu.be/AeB4znuGuSo",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1x2ufii/_/pf6cf1a/"
+    },
+    {
+     "text": "Should I stick to this routine instead and add in Pistols, Rows, and another Horizontal Pushing Movement?",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/jurq6d/_/gcf81mp/"
+    },
+    {
+     "text": "One more question what do you think of doeing Mathew Zlats program it for calisthenic workout but he do squats as well after Strong Lifts before Texas Method or Madcow. 3x5-8 if you do in last set: 8reps add 4 kg 7reps add 2 kg 6reps add 1 kg 5reps add 0.5 kg",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/lifting-tempo-rest-pause/282213/5",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "upper",
+     "back"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "beginner",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/lifting-tempo-rest-pause/282213/5",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 6.0,
+     "first_seen": "2020-11-15"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "lshRFK-7QOE",
    "title": "Tonal Smart Home Gym Review: The TRUTH After 6 Months",
    "channel": "Garage Gym Reviews",
@@ -1467,56 +2162,6 @@
    }
   },
   {
-   "id": "BnFzjcPTSsc",
-   "title": "Simple Exercises That Can Repair Tendons — Dr. Keith Baar",
-   "channel": "Tim Ferriss",
-   "thumbnail": "https://i.ytimg.com/vi/BnFzjcPTSsc/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 47.2,
-   "first_seen": "2025-11-04",
-   "subreddits": [
-    "bodyweightfitness",
-    "kettlebell",
-    "naturalbodybuilding",
-    "overcominggravity"
-   ],
-   "comments": [
-    {
-     "text": "Isometrics are highly effective for increasing tendon strength and stiffness. Please be careful with increasing load and intensity too quickly. Please search and view content by Dr. Keith Baar. He is a researcher who specializes in tendon strengthening and repair. His main tool…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/e5mu1c/_/p7h7u5a/"
-    },
-    {
-     "text": "Copying my response from a past question. Look up Dr. Barr and overcoming isometrics for tendinitis. He has an interview where he specifically talks about golfers elbow. Essentially it's 10 seconds on emom for 10 minutes or 30 seconds on 2 minutes rest for 10 minutes. For…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1ukx02i/_/ouzq3iz/"
-    },
-    {
-     "text": "I fixed mine with heavy static holds. Especially in the stretched position. 3-5 times a week, 30 seconds on 1 minute rest, repeat 4x. I used a bicep curl machine. The weight should be enough that you feel like you have to work hard (but not no life and death) to complete the…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/1onpb2i/_/nn3dtfs/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "rehab",
-     "strength"
-    ],
-    "body": [
-     "arms",
-     "back"
-    ],
-    "equipment": [
-     "none",
-     "kettlebell",
-     "machine"
-    ],
-    "level": "any",
-    "type": "explainer"
-   }
-  },
-  {
    "id": "sQx_ChXs2BY",
    "title": "How to Use a Kettlebell  | Kettlebell Manual Part 1",
    "channel": "Mark Wildman",
@@ -1559,50 +2204,6 @@
      "kettlebell"
     ],
     "level": "beginner",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "4AObAU-EcYE",
-   "title": "How to Deadlift With Mark Rippetoe | The Art of Manliness",
-   "channel": "Art of Manliness",
-   "thumbnail": "https://i.ytimg.com/vi/4AObAU-EcYE/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 45.9,
-   "first_seen": "2017-12-22",
-   "subreddits": [
-    "Fitness"
-   ],
-   "comments": [
-    {
-     "text": "https://youtu.be/4AObAU-EcYE",
-     "score": 10,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drs8mf8/"
-    },
-    {
-     "text": "RIPPETOE DEADLIFT",
-     "score": 10,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drs8au8/"
-    },
-    {
-     "text": "Deadlifts are amazing, you'll thank yourself after you start doing them! And don't pay attention to others at the gym... check out this video on proper form and etiquette.",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drmm1he/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "lower",
-     "back"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "level": "any",
     "type": "tutorial"
    }
   },
@@ -1897,56 +2498,6 @@
    }
   },
   {
-   "id": "bs_Ej32IYgo",
-   "title": "Untamed Strength: \"How To\" SQUAT - High bar/Low bar",
-   "channel": "Alan Thrall (Untamed Strength)",
-   "thumbnail": "https://i.ytimg.com/vi/bs_Ej32IYgo/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 42.8,
-   "first_seen": "2017-12-15",
-   "subreddits": [
-    "xxfitness",
-    "Fitness"
-   ],
-   "comments": [
-    {
-     "text": "Are you talking about squats? Then yes sounds like you need to learn how to squeeze shoulder blades to create a shelf, and not place the bar on your neck or spine. Here's a good video: https://youtu.be/bsEj32IYgo At about the 5 minute mark he talks about how to place the bar",
-     "score": 5,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/r2jw1u/_/hm70rnx/"
-    },
-    {
-     "text": "I think there are a few things that need work before you increase weight. I don't think you're tightening your upper back or maybe I'm not seeing it. Hard to see bracing from this angle but hopefully you are bracing? Push your knees out so they don't cave in or wobble. If you…",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/rjgcyh/_/hp39y2k/"
-    },
-    {
-     "text": "Find your favorite YouTube influencer and watch. Allan thrall, Brian alsruhe, elitefts, juggernaut training systems and kabuki are the ones I frequently use. Honorable mentions for joe Sullivan and Steph Cohen, who put out great info but inconsistently. Alan Thrall how to…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/rkijjo/_/hpb86a6/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 110,
-     "label": ""
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "full",
-     "legs",
-     "lower",
-     "back"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
    "id": "HNOk-q8qxck",
    "title": "What happened to Kettlebell Kings?",
    "channel": "ericdoeskettlebell",
@@ -2203,6 +2754,77 @@
    }
   },
   {
+   "id": "L_xrDAtykMI",
+   "title": "15 Minute Beginner Stretch Flexibility Routine! (FOLLOW ALONG)",
+   "channel": "Tom Merrick",
+   "thumbnail": "https://i.ytimg.com/vi/L_xrDAtykMI/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 41.6,
+   "first_seen": "2019-10-04",
+   "subreddits": [
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "You can check the pinned thread for a beginner routine. There is no one set protocol to follow that gives best results. A lot depends on your individual factors. I personally suggest following Tom Merrick's beginner routine such as this one -…",
+     "score": 8,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1wwiely/_/pdl2irw/"
+    },
+    {
+     "text": "https://youtu.be/LxrDAtykMI?is=hHnX5ARb6Fk2HK6P go to the 6:50 mark",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1vnos2w/_/p3j84mk/"
+    },
+    {
+     "text": "Some recs based on my experience: Tom Merrick's videos - this 15 min one or this 20 min one are good places to start. He offers several versions with varying intensities, so you can explore what fits best. Mady Morrison's basic flexibility videos eg this 15 min one or this 30…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1ophoem/_/nndr8bc/"
+    },
+    {
+     "text": "1.) SLEEP!! I hope this doesn’t sound like an ad, but I learned how sleep was last year, and I bought a Fitbit to track my sleep (but any hardware sleep tracker will do). I never realized how little sleep I was getting until I started tracking it and reading the stats. 60% of…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=21157168",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 410,
+     "label": "mark"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "beginner",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=21157168",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 9.2,
+     "first_seen": "2025-11-06"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "LGIS9vs65Sk",
    "title": "How To Sumo Deadlift: The Definitive Guide",
    "channel": "Calgary Barbell",
@@ -2246,6 +2868,95 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "WwjLM5BEpnQ",
+   "title": "Bulking On A Budget | Full Day Of Eating 4,000+ Calories",
+   "channel": "mountaindog1",
+   "thumbnail": "https://i.ytimg.com/vi/WwjLM5BEpnQ/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 41.5,
+   "first_seen": "2023-05-03",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "It’s no fun when the weights stop going up! 2 guys who post here had great results adding weight following advice from John Meadows. Maybe /u/davemccright or /u/kd13 have some tips.",
+     "score": 4,
+     "permalink": "https://t-nation.com/t/is-my-bulk-going-in-the-right-direction/284906/4",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "Ive had good results from following closely as possible to this diet plan… You probably dont need the 4000 so would scale it down but the food choices are quality. Ive been alternating between pushing the scale up and when i feel im getting a little softer just backing off…",
+     "score": 3,
+     "permalink": "https://t-nation.com/t/cutting-for-4-months-what-would-you-recommend/282321/28",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "Here is a great starting resource Prices have adjusted since then, but the lesson remains. If you got a Costco membership, that would really help. $5 rotisserie chickens, sold at a loss. That could make up a LOT of food. In the absence of that, I’d buy the cheapest ground beef…",
+     "score": 2,
+     "permalink": "https://t-nation.com/t/diet-is-a-problem/291405/6",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "hypertrophy",
+     "fat-loss"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/is-my-bulk-going-in-the-right-direction/284906/4",
+     "score": 4,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/cutting-for-4-months-what-would-you-recommend/282321/28",
+     "score": 3,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/diet-is-a-problem/291405/6",
+     "score": 2,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/bf-stuck-at-20/286377/20",
+     "score": 2,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/135-to-160-pounds-in-a-year-nutrition-plan/283041/4",
+     "score": 2,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 3,
+     "sum_score": 9.0
+    }
+   },
+   "needs_llm_check": true
   },
   {
    "id": "pAplQXk3dkU",
@@ -2454,6 +3165,66 @@
    }
   },
   {
+   "id": "elLI9PRn1gQ",
+   "title": "Mike Israetel's PhD: The Biggest Academic Sham in Fitness?",
+   "channel": "Solomon Nelson",
+   "thumbnail": "https://i.ytimg.com/vi/elLI9PRn1gQ/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 40.4,
+   "first_seen": "2025-09-30",
+   "subreddits": [
+    "bodyweightfitness",
+    "StrongerByScience"
+   ],
+   "comments": [
+    {
+     "text": "About \"Dr\" Mike Israetel... not saying everything the guys says is wrong, but the problem is, he cannot be trusted. https://youtu.be/elLI9PRn1gQ?si=gA-xha9dBY5ysA3x",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p9sew7/_/ns1kvdm/"
+    },
+    {
+     "text": "From the pictures you've shared I'd say the main issue between her body vs. yours is butt and legs. Looking at your schedule it's seemingly evident where that might be coming from: there are no squats. Squats reps will help that leg and butt grow immensely. But that's just my…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1qbiep4/_/nzdongb/"
+    },
+    {
+     "text": "I spend a lot of time in traffic these days, as such, I listen to plenty of crap to entertain myself. This video was recommended on my feed, and I found it to be particularly interesting. S",
+     "score": 5,
+     "permalink": "https://t-nation.com/t/phd-analysis/292105/1",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/phd-analysis/292105/1",
+     "score": 5,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 2.0,
+     "first_seen": "2025-12-03"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 5.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "BHsMW1jQqEE",
    "title": "Transformative Power of Lizard Crawl - This Move Trains EVERYTHING (Almost)",
    "channel": "The Bioneer",
@@ -2570,6 +3341,94 @@
    }
   },
   {
+   "id": "vSSkDos2hzo",
+   "title": "We Need to Rethink Exercise (Updated Version)",
+   "channel": "Kurzgesagt – In a Nutshell",
+   "thumbnail": "https://i.ytimg.com/vi/vSSkDos2hzo/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 40.0,
+   "first_seen": "2024-09-13",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Perhaps not disputed, but exercise’s effect is probably overestimated, and thus, damage was done. https://youtu.be/vSSkDos2hzo?si=3U2UxQOaZgdmT37",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=42188690",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Kurzgesagt – In a Nutshell : We Need to Rethink Exercise (Updated Version) - https://www.youtube.com/watch?v=vSSkDos2hzo Their videos have a section where they link the sources. In this case https://sites.google.com/view/sources-workoutparadox",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=41898227",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Just doing more exercise doesn't actually help much with losing weight, as it turns out. The human body will optimize around even intense exercise to reduce calorie burn to a homeostatically stable level. The exercise will still make you healthier (and have some marginal extra…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=41812653",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "fat-loss"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=42188690",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=41898227",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=41812653",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=41778405",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=41534369",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 4,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
    "id": "mIyvPvsvnl8",
    "title": "585x20 Deadlift",
    "channel": "Deadliestlift",
@@ -2604,59 +3463,6 @@
     "equipment": [
      "barbell"
     ],
-    "level": "any",
-    "type": "follow-along"
-   }
-  },
-  {
-   "id": "-ZX1QMTdAC4",
-   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
-   "channel": "The Ready State",
-   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 39.7,
-   "first_seen": "2013-12-10",
-   "subreddits": [
-    "flexibility",
-    "bodyweightfitness",
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
-    },
-    {
-     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
-    },
-    {
-     "text": "Try the couch stretch, here's a video as well. It hurts...",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 126,
-     "label": ""
-    },
-    {
-     "t": 140,
-     "label": "Couch stretch"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "mobility",
-     "rehab"
-    ],
-    "body": [
-     "legs"
-    ],
-    "equipment": [],
     "level": "any",
     "type": "follow-along"
    }
@@ -2706,51 +3512,6 @@
     "equipment": [],
     "level": "any",
     "type": "tutorial"
-   }
-  },
-  {
-   "id": "AeB4znuGuSo",
-   "title": "Weighted Calisthenics Routine For Beginners (Simple and Brutally Effective)",
-   "channel": "Mathew Zlat",
-   "thumbnail": "https://i.ytimg.com/vi/AeB4znuGuSo/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 39.7,
-   "first_seen": "2020-11-15",
-   "subreddits": [
-    "overcominggravity",
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "You weigh 70kg and are doing 16kg chin-ups for six reps. You are pretty much wasting your time with this, what I recommend is to ditch the oac and focus on getting your weighted chin-up to at least 50% of your bodyweight (35kg or higher) before you start training your OAC. Also…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/p4p0xx/_/h90f2yn/"
-    },
-    {
-     "text": "I recommend you to take a look at this: https://youtu.be/AeB4znuGuSo",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1x2ufii/_/pf6cf1a/"
-    },
-    {
-     "text": "Should I stick to this routine instead and add in Pistols, Rows, and another Horizontal Pushing Movement?",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/jurq6d/_/gcf81mp/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "upper",
-     "back"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "level": "beginner",
-    "type": "follow-along"
    }
   },
   {
@@ -2850,6 +3611,65 @@
    }
   },
   {
+   "id": "C89EKtI8a3o",
+   "title": "The McGill Big 3 (HOW TO DO IT CORRECTLY)",
+   "channel": "Squat University",
+   "thumbnail": "https://i.ytimg.com/vi/C89EKtI8a3o/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 39.4,
+   "first_seen": "2024-08-05",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "I do the MacGill big three, basically fixed every kind of neck/back pain for me permanently: https://www.youtube.com/shorts/C89EKtI8a3o But it's not challenging anymore so idk about your question",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1wikcz5/_/paclt1s/"
+    },
+    {
+     "text": "https://youtube.com/shorts/C89EKtI8a3o?si=5rCVJDE1U-R5Pzij https://youtu.be/0XVbn86Btj0",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xhuucj/_/19rui1slibw4j/"
+    },
+    {
+     "text": "Here’s some good stuff to start with. You could begin just doing junk like this at home to get moving and symmetrical. The McGill Big 3 for posture/hips Longer video, more cues/tips Get the neck loose. Locke 3 for shoulder stability. Then, at some point when you return to the…",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/off-season-from-531-for-athletes/288332/12",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/off-season-from-531-for-athletes/288332/12",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 5.6,
+     "first_seen": "2026-09-17"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "Qp8Sx9dX9LM",
    "title": "Elitefts.com - Teaching the Deadlift",
    "channel": "Elitefts Archives",
@@ -2901,6 +3721,67 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "sdfHcrHIv8k",
+   "title": "Easy Strength Workshop | Dan John Workshop",
+   "channel": "Dan John",
+   "thumbnail": "https://i.ytimg.com/vi/sdfHcrHIv8k/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 39.0,
+   "first_seen": "2024-01-16",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "No problem dude! I wouldn't trust an app for it: get it from the actual source. https://www.youtube.com/watch?v=sdfHcrHIv8k https://danjohnuniversity.com/essays/even-easier-strength https://danjohnuniversity.com/bookstore",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1cl9ypj/_/l2vi1vd/"
+    },
+    {
+     "text": "Dan John's Easy Strength Omnibook is probably the best source, and just thoroughly good writing all around. Here's Dan's full Easy Strength video, it's pretty detailed Even Easier Strength , an article on Dan John's own website I suppose I should ask what you're looking for in…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1967ww9/_/ki78p7w/"
+    },
+    {
+     "text": "No problem dude! 10 minutes per exercise would probably be on the long side: often the whole workout can get done in 15-20 minutes, but you can definitely stretch it out. Dan talked about how the origins of the workout was from being a busy father/husband/teacher and just…",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/micro-workout/288669/6",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/micro-workout/288669/6",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 5.0,
+     "first_seen": "2024-01-16"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "u1sfPfsESDQ",
@@ -3086,6 +3967,68 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "D6xk1RmjdsQ",
+   "title": "Can't Activate Back Muscles | How 2 Solve That Problem",
+   "channel": "mountaindog1",
+   "thumbnail": "https://i.ytimg.com/vi/D6xk1RmjdsQ/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 38.5,
+   "first_seen": "2021-12-22",
+   "subreddits": [
+    "StrongerByScience",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Maybe this helps? It's Meadows https://youtu.be/D6xk1RmjdsQ",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/rlxifn/_/hpkrwtd/"
+    },
+    {
+     "text": "It's mostly genetics. Everyone's lats insert differently, like biceps. Some people have arms with big peaks and it looks like an apple. Other have full meaty arms but no peak. With lats, if you have a low insertion, it looks like full lower lats. With high insertions, it looks…",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1hbnwbq/_/m1wolaz/"
+    },
+    {
+     "text": "It sounds like an activation issue. Have you been active prior to this, like manual labor growing up or anything? Lat activation: All kinds of good back stuff: John Meadows is/was a goldmine of activation and mind muscle connection knowledge, so watch closely. There’s a lot…",
+     "score": 1,
+     "permalink": "https://t-nation.com/t/lower-back-rounding-deadlift/289900/7",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "back"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/lower-back-rounding-deadlift/289900/7",
+     "score": 1,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 4.0,
+     "first_seen": "2021-12-22"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.5
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "_1W9aAdogFA",
@@ -3424,6 +4367,71 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "BYKScL2sgCs",
+   "title": "How to Bench Press",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/BYKScL2sgCs/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 36.9,
+   "first_seen": "2017-12-23",
+   "subreddits": [
+    "Fitness"
+   ],
+   "comments": [
+    {
+     "text": "Watch this, especially the setup at around the 2 min mark, to ensure you're setting up correctly and remaining tight throughout the set https://youtu.be/BYKScL2sgCs",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/rg49sx/_/hom4ipf/"
+    },
+    {
+     "text": "You need to learn to set up properly for the bench. A retracted scapula will help you protect your shoulders, as well as give you a more stable base to bench from. Additionally, you're ridiculously loose on your setup. Like... getting tight could easily add 30-40lbs onto your…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drnbmyg/"
+    },
+    {
+     "text": "The good thing about 5x5 is that you start with minimal weights - like an empty bar - and spend your first couple of weeks training with \"easy\" weight. This time is really for you to learn the movements. There's a wealth of information out there on how to do these movements…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=23856027",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "chest"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23856027",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 3.0,
+     "first_seen": "2017-12-23"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "mjdxWPr615w",
@@ -3967,6 +4975,68 @@
    }
   },
   {
+   "id": "-hlWgH3_0NU",
+   "title": "Novel Movements for the Hand, Wrist, and Elbow",
+   "channel": "ForwardMotionPT",
+   "thumbnail": "https://i.ytimg.com/vi/-hlWgH3_0NU/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 35.5,
+   "first_seen": "2011-08-17",
+   "subreddits": [
+    "flexibility",
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "Shoot! Hope you feel better soon @SveetPickle. I use these--I wonder if they could be helpful for you? http://youtu.be/-hlWgH30NU",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1mrh3q/_/cd4ia34/"
+    },
+    {
+     "text": "I looked up on YouTube on hand novel movements. Can you skim it to see if it looks legit to you? https://m.youtube.com/watch?v=-hlWgH30NU&pp=ygUWSGFuZHMgbm92ZWwgbW92bWVuZW50cw%3D%3D",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/1fnxo1i/_/lpgpg7w/"
+    },
+    {
+     "text": "I am not a physical therapist, but I did find a video of some interesting hand/wrist/elbow exercises which can be done at a desk or while riding in a car. [1] [1] http://www.youtube.com/watch?v=-hlWgH30NU",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=2895498",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "arms"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=2895498",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 2.0,
+     "first_seen": "2013-11-01"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "GJuzyy2YRRk",
    "title": "3 Isometric Exercises for Strengthening Tendons and Ligaments with Dr. Keith Baar | UC Davis Health",
    "channel": "UC Davis Health",
@@ -4092,6 +5162,73 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "VGZrATR1O4E",
+   "title": "The Deadlift in 5 Steps | On the Platform",
+   "channel": "Starting Strength",
+   "thumbnail": "https://i.ytimg.com/vi/VGZrATR1O4E/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 34.6,
+   "first_seen": "2017-08-23",
+   "subreddits": [
+    "Fitness",
+    "physicaltherapy"
+   ],
+   "comments": [
+    {
+     "text": "https://youtu.be/VGZrATR1O4E Here’s a relatively simple deadlift tutorial for ya.",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/physicaltherapy/comments/qbqbcz/_/hhbwdo3/"
+    },
+    {
+     "text": "Form, form, form. Chalk and hook grip. https://www.youtube.com/watch?v=wYREQkVtvEc&t= https://www.youtube.com/watch?v=VGZrATR1O4E",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7luh9l/_/drq7bya/"
+    },
+    {
+     "text": "Just deadlift. 3x per week. Start with an empty bar, then add 5lbs to the bar each time you deadlift. Once it gets so heavy that you can't add anymore, just back off to 1-2x per week and maintain the weight on the bar. It'll take you about 20 minutes each time and the bar and…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=15078332",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "lower",
+     "back"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=15078332",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 1.5,
+     "first_seen": "2017-12-25"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "LJ0zC1BUkOA",
@@ -4251,6 +5388,68 @@
    }
   },
   {
+   "id": "GcV1Qdt686E",
+   "title": "1 Exercise To Improve Rounded Shoulders",
+   "channel": "Tom Merrick",
+   "thumbnail": "https://i.ytimg.com/vi/GcV1Qdt686E/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 33.7,
+   "first_seen": "2017-12-28",
+   "subreddits": [
+    "flexibility",
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
+    },
+    {
+     "text": "This was posted on reddit by the op, can't find the post but have the video saved: https://youtu.be/sXLRVXFBxzM https://youtu.be/GcV1Qdt686E",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/7me6vf/_/drusviz/"
+    },
+    {
+     "text": "10000000000% I could talk all day about my back pain (so I'll just go on ahead and do that a bit here) and the journey I've been on to fix it. It's awful. I've been dealing with 2-4 bulging discs and all the back pain symptoms you could dream of. The back issues that I have had…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=22069155",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=22069155",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 2,
+     "sum_score": 1.1,
+     "first_seen": "2017-12-28"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "ignPaNiL7G8",
    "title": "Hitchhikers",
    "channel": "Dani Winks Flexibility",
@@ -4285,6 +5484,84 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "Y6U728AZnV0",
+   "title": "Run for your life! At a comfortable pace, and not too far: James O'Keefe at TEDxUMKC",
+   "channel": "TEDx Talks",
+   "thumbnail": "https://i.ytimg.com/vi/Y6U728AZnV0/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 33.5,
+   "first_seen": "2023-01-22",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "I also wouldn’t do it 7 days a week either…based on the reasons outlined in this video…",
+     "score": 1,
+     "permalink": "https://t-nation.com/t/30-minutes-of-medium-intensity-cardio-7-days-a-week/280909/12",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "Extreme exercise such as distance running damages the heart. https://youtu.be/Y6U728AZnV0",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=42513507",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Big issue of doing running. ——- read the old HN below and if not at least these “andrewstuart on Oct 24, 2020 | prev | next [–] On the topic of how overexercise can damage the heart by James OKeefe, a cardiologist and lifetime obsessive runner: Notably he points out that they…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=40747085",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "endurance"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/30-minutes-of-medium-intensity-cardio-7-days-a-week/280909/12",
+     "score": 1,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=42513507",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=40747085",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 1.0
+    }
+   },
+   "needs_llm_check": true
   },
   {
    "id": "C0B1SrcGAIA",
@@ -4502,6 +5779,180 @@
    }
   },
   {
+   "id": "lHv6lWnA0h8",
+   "title": "650lb deadlift @ 200lb bodyweight",
+   "channel": "Emevas",
+   "thumbnail": "https://i.ytimg.com/vi/lHv6lWnA0h8/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 33.4,
+   "first_seen": "2017-12-19",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Don't be so sure, haha. u/cazzah123 , you say there isn't much of a middleground, but I am inclined to disagree. There absolutely is one; that's how periodization works. There are times when you need to throw everything you have into training, and other times where you need to…",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/7kmq2a/_/drhearb/"
+    },
+    {
+     "text": "It honestly might be helpful with the back pain issues you’ve dealt with in the past. Also helpful to stack it full of bumper plates, so you REALLY push the weight out to the edges. It’s what I’m doing here. EDIT: Actually, this is a pretty good case study. That’s with 405 on…",
+     "score": 5,
+     "permalink": "https://t-nation.com/t/dedicated-deadlift-bar/294363/10",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "lower",
+     "back"
+    ],
+    "equipment": [
+     "none",
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/dedicated-deadlift-bar/294363/10",
+     "score": 5,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 1,
+     "sum_score": 11.9,
+     "first_seen": "2017-12-19"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 1.7
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "nvEE4u3qfJY",
+   "title": "Exercise Index - 6 Ways for Shoulders",
+   "channel": "mountaindog1",
+   "thumbnail": "https://i.ytimg.com/vi/nvEE4u3qfJY/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 33.3,
+   "first_seen": "2021-12-19",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "I use 15s or 12.5s for 6 ways",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/rjpd7r/_/hp6gotz/"
+    },
+    {
+     "text": "Blowing up rear delts has helped my shoulders a ton (I very rarely OHP, even though /u/anon6371718 says it means I suck). I’d try something like this (for context, I’m incredibly biased toward John Meadows’ stuff): First shoulder day of the week: 4 sets on the rear delt machine…",
+     "score": 3,
+     "permalink": "https://t-nation.com/t/shoulder-training-without-overhead-press/281298/4",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/shoulder-training-without-overhead-press/281298/4",
+     "score": 3,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 1,
+     "sum_score": 11.9,
+     "first_seen": "2021-12-19"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 1.5
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
+   "id": "MqHtT4YowqU",
+   "title": "DIY HOME GYM UPGRADE! Axle Bar & Dumbbell Handles for $50! $550 VALUE!",
+   "channel": "Brian Alsruhe",
+   "thumbnail": "https://i.ytimg.com/vi/MqHtT4YowqU/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 33.2,
+   "first_seen": "2021-12-29",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "You got this dude! You can always DIY an axle with some pipe https://www.youtube.com/watch?v=MqHtT4YowqU",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/rqzqt8/_/hqf34dz/"
+    },
+    {
+     "text": "/u/sdewitt10 FYI, you can literally make an axle bar (and dumbells) for about 50 bucks using some galvanized pipe from home depot. https://www.youtube.com/watch?v=MqHtT4YowqU",
+     "score": 1,
+     "permalink": "https://t-nation.com/t/axle-bar-comparison-question/280164/6",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [
+     "dumbbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/axle-bar-comparison-question/280164/6",
+     "score": 1,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 1,
+     "sum_score": 11.9,
+     "first_seen": "2021-12-29"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 1.0
+    }
+   },
+   "needs_llm_check": false
+  },
+  {
    "id": "k75xq7P46-A",
    "title": "Preparation Exercise 8 - Prone Row",
    "channel": "U.S. Army Holistic Health and Fitness",
@@ -4694,37 +6145,6 @@
     "equipment": [
      "barbell"
     ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "KTY4V5it-40",
-   "title": "Back Activation | How To Feel Your Lats",
-   "channel": "mountaindog1",
-   "thumbnail": "https://i.ytimg.com/vi/KTY4V5it-40/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 32.5,
-   "first_seen": "2023-10-20",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Oh yeah baby this is my wheelhouse, let’s ride. Creds: April 2022 -> October 2023 (18 months) Back was my second biggest weak point aesthetically besides arms (we’re working on it) for my entire lifting career. Structurally I have good insertions but my lats lacked a lot of…",
-     "score": 89,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/17ap1wa/_/k5mpic3/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "back"
-    ],
-    "equipment": [],
     "level": "any",
     "type": "tutorial"
    }
@@ -5068,50 +6488,6 @@
     "equipment": [],
     "level": "advanced",
     "type": "program"
-   }
-  },
-  {
-   "id": "L_xrDAtykMI",
-   "title": "15 Minute Beginner Stretch Flexibility Routine! (FOLLOW ALONG)",
-   "channel": "Tom Merrick",
-   "thumbnail": "https://i.ytimg.com/vi/L_xrDAtykMI/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 31.6,
-   "first_seen": "2025-11-06",
-   "subreddits": [
-    "flexibility"
-   ],
-   "comments": [
-    {
-     "text": "You can check the pinned thread for a beginner routine. There is no one set protocol to follow that gives best results. A lot depends on your individual factors. I personally suggest following Tom Merrick's beginner routine such as this one -…",
-     "score": 8,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1wwiely/_/pdl2irw/"
-    },
-    {
-     "text": "https://youtu.be/LxrDAtykMI?is=hHnX5ARb6Fk2HK6P go to the 6:50 mark",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1vnos2w/_/p3j84mk/"
-    },
-    {
-     "text": "Some recs based on my experience: Tom Merrick's videos - this 15 min one or this 20 min one are good places to start. He offers several versions with varying intensities, so you can explore what fits best. Mady Morrison's basic flexibility videos eg this 15 min one or this 30…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1ophoem/_/nndr8bc/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 410,
-     "label": "mark"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [],
-    "equipment": [],
-    "level": "beginner",
-    "type": "follow-along"
    }
   },
   {
@@ -5858,6 +7234,71 @@
    }
   },
   {
+   "id": "Rt_FzEchmQQ",
+   "title": "Dave Tate's Simple & Effective Conjugate Training Guide | elitefts.com",
+   "channel": "elitefts",
+   "thumbnail": "https://i.ytimg.com/vi/Rt_FzEchmQQ/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 30.4,
+   "first_seen": "2023-01-25",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Or alternatively, the guide I use with my athletes: ME Lower Warm up however you like Jump or power clean: 2-5 x 2-5 ME Variation: Change every week, cycling between 5RM, 3RM and 1-2RM Bilateral hinge: 3-5 x 6-12 Lunge, split squat or step-up: 2-4 x 5-10 1-3 Core, carry or…",
+     "score": 6,
+     "permalink": "https://t-nation.com/t/restructuring-my-powerbuilding-program/280961/12",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "I know very little and haven’t tried it to be honest. For power lifting some of the strongest people out there have followed some form of it though. This would be a good video to check out.…",
+     "score": 1,
+     "permalink": "https://t-nation.com/t/powerlifters-cancer-recovery/278667/689",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 2074,
+     "label": "",
+     "site": "t-nation.com"
+    }
+   ],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/restructuring-my-powerbuilding-program/280961/12",
+     "score": 6,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/powerlifters-cancer-recovery/278667/689",
+     "score": 1,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 2,
+     "sum_score": 7.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
    "id": "e1dsz1LaEDk",
    "title": "Karen Smith Master - Turkish Get Up tutorial",
    "channel": "Karen Smith",
@@ -6118,6 +7559,86 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "k1luKAS_Xcg",
+   "title": "Find your primal posture and sit without back pain: Esther Gokhale at TEDxStanford",
+   "channel": "TEDx Talks",
+   "thumbnail": "https://i.ytimg.com/vi/k1luKAS_Xcg/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 30.0,
+   "first_seen": "2016-07-26",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "https://www.youtube.com/watch?v=k1luKASXcg I found this Ted talk helped me with some lower back and leg issues. I don't do exactly what she demonstrates in the video, but I find focusing on the 'tail out' posture helps a lot. Also regular breaks and going for walks.",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=18336159",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I haven't read all the other comments so not sure if this has been mentioned already. The modern concepts of posture may be wrong. I have a curved butt to shoulder area. It makes me look somewhat duck like. However, I never have any back aches etc. I know of people who are…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12167648",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKASXcg (I only started paying attention after my emergency back surgery)",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=49838343",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 224,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "rehab"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=49838343",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=18336159",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12167648",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 3,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
   },
   {
    "id": "R9L1J5ZfvaU",
@@ -6499,38 +8020,6 @@
     "equipment": [
      "kettlebell"
     ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "C89EKtI8a3o",
-   "title": "The McGill Big 3 (HOW TO DO IT CORRECTLY)",
-   "channel": "Squat University",
-   "thumbnail": "https://i.ytimg.com/vi/C89EKtI8a3o/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 29.4,
-   "first_seen": "2026-09-17",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "I do the MacGill big three, basically fixed every kind of neck/back pain for me permanently: https://www.youtube.com/shorts/C89EKtI8a3o But it's not challenging anymore so idk about your question",
-     "score": 5,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1wikcz5/_/paclt1s/"
-    },
-    {
-     "text": "https://youtube.com/shorts/C89EKtI8a3o?si=5rCVJDE1U-R5Pzij https://youtu.be/0XVbn86Btj0",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xhuucj/_/19rui1slibw4j/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [],
-    "equipment": [],
     "level": "any",
     "type": "tutorial"
    }
@@ -7098,40 +8587,6 @@
     "equipment": [],
     "level": "any",
     "type": "follow-along"
-   }
-  },
-  {
-   "id": "sdfHcrHIv8k",
-   "title": "Easy Strength Workshop | Dan John Workshop",
-   "channel": "Dan John",
-   "thumbnail": "https://i.ytimg.com/vi/sdfHcrHIv8k/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 29.0,
-   "first_seen": "2024-01-16",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "No problem dude! I wouldn't trust an app for it: get it from the actual source. https://www.youtube.com/watch?v=sdfHcrHIv8k https://danjohnuniversity.com/essays/even-easier-strength https://danjohnuniversity.com/bookstore",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1cl9ypj/_/l2vi1vd/"
-    },
-    {
-     "text": "Dan John's Easy Strength Omnibook is probably the best source, and just thoroughly good writing all around. Here's Dan's full Easy Strength video, it's pretty detailed Even Easier Strength , an article on Dan John's own website I suppose I should ask what you're looking for in…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1967ww9/_/ki78p7w/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
    }
   },
   {
@@ -7763,6 +9218,76 @@
    }
   },
   {
+   "id": "ABArM5wqlLQ",
+   "title": "TBJP EDUCATION SERIES - EPISODE.03 - THE BEST TRAINING SPLIT EVER? - FULL BODY TRAINING",
+   "channel": "TBJP Jordan Peters",
+   "thumbnail": "https://i.ytimg.com/vi/ABArM5wqlLQ/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 28.0,
+   "first_seen": "2022-10-08",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "JP’s Full Body Split https://www.youtube.com/watch?v=ABArM5wqlLQ&t=761s",
+     "score": 2,
+     "permalink": "https://t-nation.com/t/help-to-design-a-routine-or-find-one/288622/6",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "I’m thinking of running this bad boy once my wee boy gets over chickenpox",
+     "score": 2,
+     "permalink": "https://t-nation.com/t/what-s-everyone-doing-in-the-gym-lately/279727/66",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 761,
+     "label": "",
+     "site": "t-nation.com"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "full",
+     "hips"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/help-to-design-a-routine-or-find-one/288622/6",
+     "score": 2,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/what-s-everyone-doing-in-the-gym-lately/279727/66",
+     "score": 2,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 2,
+     "sum_score": 4.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
    "id": "AWp_Ixh8IJE",
    "title": "Standing shoulder extensions with kettlebells",
    "channel": "Joe Daniels Kettlebell Muscle Gain ",
@@ -7794,41 +9319,6 @@
     "equipment": [
      "kettlebell"
     ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "D6xk1RmjdsQ",
-   "title": "Can't Activate Back Muscles | How 2 Solve That Problem",
-   "channel": "mountaindog1",
-   "thumbnail": "https://i.ytimg.com/vi/D6xk1RmjdsQ/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 28.0,
-   "first_seen": "2021-12-22",
-   "subreddits": [
-    "StrongerByScience",
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Maybe this helps? It's Meadows https://youtu.be/D6xk1RmjdsQ",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/rlxifn/_/hpkrwtd/"
-    },
-    {
-     "text": "It's mostly genetics. Everyone's lats insert differently, like biceps. Some people have arms with big peaks and it looks like an apple. Other have full meaty arms but no peak. With lats, if you have a low insertion, it looks like full lower lats. With high insertions, it looks…",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1hbnwbq/_/m1wolaz/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [
-     "back"
-    ],
-    "equipment": [],
     "level": "any",
     "type": "tutorial"
    }
@@ -9354,44 +10844,6 @@
     ],
     "equipment": [
      "machine"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "BYKScL2sgCs",
-   "title": "How to Bench Press",
-   "channel": "Alan Thrall (Untamed Strength)",
-   "thumbnail": "https://i.ytimg.com/vi/BYKScL2sgCs/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 26.9,
-   "first_seen": "2017-12-23",
-   "subreddits": [
-    "Fitness"
-   ],
-   "comments": [
-    {
-     "text": "Watch this, especially the setup at around the 2 min mark, to ensure you're setting up correctly and remaining tight throughout the set https://youtu.be/BYKScL2sgCs",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/rg49sx/_/hom4ipf/"
-    },
-    {
-     "text": "You need to learn to set up properly for the bench. A retracted scapula will help you protect your shoulders, as well as give you a more stable base to bench from. Additionally, you're ridiculously loose on your setup. Like... getting tight could easily add 30-40lbs onto your…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drnbmyg/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "chest"
-    ],
-    "equipment": [
-     "barbell"
     ],
     "level": "any",
     "type": "tutorial"
@@ -11592,41 +13044,6 @@
    }
   },
   {
-   "id": "-hlWgH3_0NU",
-   "title": "Novel Movements for the Hand, Wrist, and Elbow",
-   "channel": "ForwardMotionPT",
-   "thumbnail": "https://i.ytimg.com/vi/-hlWgH3_0NU/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 25.5,
-   "first_seen": "2013-11-01",
-   "subreddits": [
-    "flexibility",
-    "overcominggravity"
-   ],
-   "comments": [
-    {
-     "text": "Shoot! Hope you feel better soon @SveetPickle. I use these--I wonder if they could be helpful for you? http://youtu.be/-hlWgH30NU",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1mrh3q/_/cd4ia34/"
-    },
-    {
-     "text": "I looked up on YouTube on hand novel movements. Can you skim it to see if it looks legit to you? https://m.youtube.com/watch?v=-hlWgH30NU&pp=ygUWSGFuZHMgbm92ZWwgbW92bWVuZW50cw%3D%3D",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/1fnxo1i/_/lpgpg7w/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [
-     "arms"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
    "id": "37Dw9RQgh3U",
    "title": "Kettlebell 2 hand start stop swing",
    "channel": "Mark Wildman",
@@ -12338,39 +13755,6 @@
     "equipment": [],
     "level": "any",
     "type": "tutorial"
-   }
-  },
-  {
-   "id": "elLI9PRn1gQ",
-   "title": "Mike Israetel's PhD: The Biggest Academic Sham in Fitness?",
-   "channel": "Solomon Nelson",
-   "thumbnail": "https://i.ytimg.com/vi/elLI9PRn1gQ/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 25.5,
-   "first_seen": "2025-12-03",
-   "subreddits": [
-    "bodyweightfitness",
-    "StrongerByScience"
-   ],
-   "comments": [
-    {
-     "text": "About \"Dr\" Mike Israetel... not saying everything the guys says is wrong, but the problem is, he cannot be trusted. https://youtu.be/elLI9PRn1gQ?si=gA-xha9dBY5ysA3x",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p9sew7/_/ns1kvdm/"
-    },
-    {
-     "text": "From the pictures you've shared I'd say the main issue between her body vs. yours is butt and legs. Looking at your schedule it's seemingly evident where that might be coming from: there are no squats. Squats reps will help that leg and butt grow immensely. But that's just my…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1qbiep4/_/nzdongb/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [],
-    "equipment": [],
-    "level": "any",
-    "type": "explainer"
    }
   },
   {
@@ -13940,46 +15324,6 @@
      "legs"
     ],
     "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "VGZrATR1O4E",
-   "title": "The Deadlift in 5 Steps | On the Platform",
-   "channel": "Starting Strength",
-   "thumbnail": "https://i.ytimg.com/vi/VGZrATR1O4E/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 24.6,
-   "first_seen": "2017-12-25",
-   "subreddits": [
-    "Fitness",
-    "physicaltherapy"
-   ],
-   "comments": [
-    {
-     "text": "https://youtu.be/VGZrATR1O4E Here’s a relatively simple deadlift tutorial for ya.",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/physicaltherapy/comments/qbqbcz/_/hhbwdo3/"
-    },
-    {
-     "text": "Form, form, form. Chalk and hook grip. https://www.youtube.com/watch?v=wYREQkVtvEc&t= https://www.youtube.com/watch?v=VGZrATR1O4E",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7luh9l/_/drq7bya/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "lower",
-     "back"
-    ],
-    "equipment": [
-     "barbell"
-    ],
     "level": "any",
     "type": "tutorial"
    }
@@ -15784,41 +17128,6 @@
    }
   },
   {
-   "id": "GcV1Qdt686E",
-   "title": "1 Exercise To Improve Rounded Shoulders",
-   "channel": "Tom Merrick",
-   "thumbnail": "https://i.ytimg.com/vi/GcV1Qdt686E/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 23.7,
-   "first_seen": "2017-12-28",
-   "subreddits": [
-    "flexibility",
-    "overcominggravity"
-   ],
-   "comments": [
-    {
-     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
-     "score": 6,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
-    },
-    {
-     "text": "This was posted on reddit by the op, can't find the post but have the video saved: https://youtu.be/sXLRVXFBxzM https://youtu.be/GcV1Qdt686E",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/7me6vf/_/drusviz/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
    "id": "TRxB-VQGKig",
    "title": "How to Build Lower Lats",
    "channel": "Hypertrophy Coach",
@@ -15859,6 +17168,80 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "ekJOT0kn5vs",
+   "title": "Starting Strength at 86 Years Old with Corki",
+   "channel": "Starting Strength",
+   "thumbnail": "https://i.ytimg.com/vi/ekJOT0kn5vs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 23.5,
+   "first_seen": "2023-01-25",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "You can see one of his coaches helping an 86 year old woman deadlift in this video: https://www.youtube.com/watch?v=ekJOT0kn5vs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=43104269",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "You can titrate down the strength training so even quite old people can make a start and improve their strength: https://www.youtube.com/watch?v=ekJOT0kn5vs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=38476805",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/just-how-heavy-do-we-need-to-lift/280930/144",
+     "score": 1,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=43104269",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=38476805",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 1.0
+    }
+   },
+   "needs_llm_check": true
   },
   {
    "id": "fv5u6v_s-L4",
@@ -17019,35 +18402,6 @@
    }
   },
   {
-   "id": "MqHtT4YowqU",
-   "title": "DIY HOME GYM UPGRADE! Axle Bar & Dumbbell Handles for $50! $550 VALUE!",
-   "channel": "Brian Alsruhe",
-   "thumbnail": "https://i.ytimg.com/vi/MqHtT4YowqU/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 22.8,
-   "first_seen": "2021-12-29",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "You got this dude! You can always DIY an axle with some pipe https://www.youtube.com/watch?v=MqHtT4YowqU",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/rqzqt8/_/hqf34dz/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [],
-    "equipment": [
-     "dumbbell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
    "id": "OZAEjHBMhrE",
    "title": "3x One-Arm Pullups",
    "channel": "GamingDischarge",
@@ -17435,70 +18789,6 @@
     "equipment": [
      "barbell"
     ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "lHv6lWnA0h8",
-   "title": "650lb deadlift @ 200lb bodyweight",
-   "channel": "Emevas",
-   "thumbnail": "https://i.ytimg.com/vi/lHv6lWnA0h8/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 22.8,
-   "first_seen": "2017-12-19",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Don't be so sure, haha. u/cazzah123 , you say there isn't much of a middleground, but I am inclined to disagree. There absolutely is one; that's how periodization works. There are times when you need to throw everything you have into training, and other times where you need to…",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/7kmq2a/_/drhearb/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "lower",
-     "back"
-    ],
-    "equipment": [
-     "none",
-     "barbell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   }
-  },
-  {
-   "id": "nvEE4u3qfJY",
-   "title": "Exercise Index - 6 Ways for Shoulders",
-   "channel": "mountaindog1",
-   "thumbnail": "https://i.ytimg.com/vi/nvEE4u3qfJY/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 22.8,
-   "first_seen": "2021-12-19",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "I use 15s or 12.5s for 6 ways",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/rjpd7r/_/hp6gotz/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [],
     "level": "any",
     "type": "tutorial"
    }
@@ -19938,6 +21228,740 @@
     "level": "any",
     "type": "tutorial"
    }
+  },
+  {
+   "id": "boLl8rGhJvE",
+   "title": "55 pullups",
+   "channel": "Konstantinovs",
+   "thumbnail": "https://i.ytimg.com/vi/boLl8rGhJvE/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 21.7,
+   "first_seen": "2021-01-24",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Some of my favorite footage on this I remember the drama that video started when it was originally posted here. Some other classics",
+     "score": 2,
+     "permalink": "https://t-nation.com/t/chin-ups-for-big-guys/279277/3",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "These weightlifters below all-inclusive weight category are pretty much not too fat. Look at deadlift records: https://www.youtube.com/watch?v=3zxXQhSvGKY Upwards 140 kg, there are fat people, but even Konstantinov (below 140kg)is not fat. Take look at him doing 55 pullups…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=25888233",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "upper",
+     "back"
+    ],
+    "equipment": [
+     "bar"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/chin-ups-for-big-guys/279277/3",
+     "score": 2,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=25888233",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.4
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "DWmGArQBtFI",
+   "title": "How to Fix “Low Back” Pain (INSTANTLY!)",
+   "channel": "ATHLEAN-X™",
+   "thumbnail": "https://i.ytimg.com/vi/DWmGArQBtFI/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2019-05-27",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Basically is a combination of bad posture + overcompensating the lack of strength/flexibility of some muscles. For checking specific exercises, Athlean-X usually gives good explanations while proposing specific exercises https://www.youtube.com/watch?v=DWmGArQBtFI",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=32328977",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "This solved all my back pain problems https://youtu.be/DWmGArQBtFI",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=20021049",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "rehab"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=32328977",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=20021049",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "FTV6UCh-yhs",
+   "title": "Exercises to correct Hunchback Posture, Kyphosis and forward head carriage",
+   "channel": "Mike Brett",
+   "thumbnail": "https://i.ytimg.com/vi/FTV6UCh-yhs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2015-10-13",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Skateboarding, walking, stretching, daily push ups. Also these back stretches at least a few times a week. They help with preventing hunchback from sitting in a chair on a computer all day. https://www.youtube.com/watch?v=FTV6UCh-yhs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=15605396",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I've got my monitors on 2 boxes adding about 6 inches each to their height. When I first started looking up to use them it was so uncomfortable and distracting that I could not work. I kept at it though and I find my posture has improved and the thought of going back is now…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=10380739",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "rehab"
+    ],
+    "body": [
+     "neck"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=15605396",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=10380739",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "FWizDhYjGsc",
+   "title": "Strongman Robert Oberst Says You Shouldn't Do Deadlifts | Joe Rogan",
+   "channel": "JRE Clips",
+   "thumbnail": "https://i.ytimg.com/vi/FWizDhYjGsc/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2023-01-01",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "I'd like to push back on this. Oberst's evidence for this claim is entirely anecdotal, and I don't think it's accurate. Here's a more evidence based opinion…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=34209572",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Related: If you're looking for a bodybuilding program for beginners, CoolCicada PPL has been great for me. https://forum.bodybuilding.com/showthread.php?t=149807833&page=1 - (don't do the deadlifts, not worth the risk https://www.youtube.com/watch?v=FWizDhYjGsc ) Benched 225 in…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=34209316",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "lower",
+     "back"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=34209572",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=34209316",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "K4dmZ5_n6uU",
+   "title": "A 3 Minute Neck Drill That Will Change Your Life",
+   "channel": "Mark Wildman",
+   "thumbnail": "https://i.ytimg.com/vi/K4dmZ5_n6uU/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2021-09-25",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "do a bit of neck mobility drill on a daily basis https://youtu.be/K4dmZ5n6uU",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=30405108",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I've been doing these neck mobility exercises, I think they seem to help https://www.youtube.com/watch?v=K4dmZ5n6uU&t=210s",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=28653026",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 210,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "neck"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=30405108",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=28653026",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "KPUlgSRn6e0",
+   "title": "The Gym of Life",
+   "channel": "Not Just Bikes",
+   "thumbnail": "https://i.ytimg.com/vi/KPUlgSRn6e0/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2024-02-07",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Exercise is good, everyone knows. The problem is advising people to exercise doesn't work and doesn't scale. Gyms are for people who have plenty of intrinsic motivation and money and time. To improve physical activity at the population scale and over a lifetime, it literally…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=47140688",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Advising people to exercise doesn't work and doesn't scale. Gyms are for people who have plenty of intrinsic motivation and money and time. To improve physical activity at the population scale and over a lifetime, it literally has to be built into the design of the cities, so…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=44996352",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "This can simply be walking a lot, especially if you're in a more urban area, where you don't have to drive everywhere (either figuratively or literally). See \"The Gym of Life\": https://www.youtube.com/watch?v=KPUlgSRn6e0",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=39294691",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=47140688",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=44996352",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=39294691",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "LT_dFRnmdGs",
+   "title": "Exercise to improve hunchback posture   forward head carriage correction",
+   "channel": "rekrain",
+   "thumbnail": "https://i.ytimg.com/vi/LT_dFRnmdGs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2015-05-01",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "I've been doing this and it's really helped with pain in my back/neck, while improving my posture: https://www.youtube.com/watch?v=LTdFRnmdGs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12832833",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "This video[1] shows some simple exercises that target posture. YMMV but it seemed to help me. [1] https://youtu.be/LTdFRnmdGs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=9472017",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "rehab"
+    ],
+    "body": [
+     "neck"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12832833",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=9472017",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "QhVC_AnZYYM",
+   "title": "How to Low Bar Squat With Mark Rippetoe | The Art of Manliness",
+   "channel": "Art of Manliness",
+   "thumbnail": "https://i.ytimg.com/vi/QhVC_AnZYYM/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2018-02-26",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Without knowing anything, I'd say check your back angle - it's probably too vertical. If you're falling backwards, point your nipples at the floor. https://youtu.be/QhVCAnZYYM?t=427 But really, just find a weightlifting coach and spend some money to get some coaching sessions.…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=16469890",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Yeah, although neutral to flexion is fine for a lower back for a squat or a deadlift. In fact, with a heavy weight, good luck NOT flexing your lower back on a deadlift or at the bottom of a squat. The 'upright' squat you described is an Olympic lift variation - called highbar…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=16465983",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 427,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "goal": [],
+    "body": [
+     "lower",
+     "legs"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=16469890",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=16465983",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "iUKjuni-6l8",
+   "title": "Classic Sivananda Yoga Class - 90 min",
+   "channel": "Sivananda Yoga Centre, Gurgaon",
+   "thumbnail": "https://i.ytimg.com/vi/iUKjuni-6l8/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2020-03-23",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "A while back someone on HN recommended Sivananda Yoga. The first part of it includes some breathing exercises. I was suffering from repeated flu-like symptoms, sinus, etc since the beginning of this year. I had some difficulty breathing and actually had to get tested for corona…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=23277157",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Lot of people tend to have respiratory failure before situation gets worrisome and breath exercises are a definite way to help your body do what a ventilator does In yoga asanas, there are few breathing exercises that existed in ancient India and I myself can attest to it that…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=22659990",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I'm a recovering thyroid cancer (good cancer) patient. My breathing and immunity had become bad due to my surgeries/treatment but also stress, occasional hookah smoking, etc. After suffering from severe bronchitis and cough for the first months of this year, I started doing the…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=23980358",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 527,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23980358",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23277157",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=22659990",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "l8c9BPtwXMs",
+   "title": "52 Sets Is BEST For Building Muscle (New Science)",
+   "channel": "Renaissance Periodization",
+   "thumbnail": "https://i.ytimg.com/vi/l8c9BPtwXMs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2023-11-21",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Watch. Listen. Learn.",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/rp-was-waynes-right-new-science-52-sets-is-best/285645/1",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "Longer discussion here. Including explanation that if you suck at going to failure and estimating RIR, you gotta do more sets. Quicker one. Mentions name of study.",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/lower-body-muscle-type-vs-upper-body-muscle-type/292098/6",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "hypertrophy"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/lower-body-muscle-type-vs-upper-body-muscle-type/292098/6",
+     "score": 0,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/rp-was-waynes-right-new-science-52-sets-is-best/285645/1",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
+  },
+  {
+   "id": "x_jdwyvrpaY",
+   "title": "Arthur Jones Trains Boyer Coe Full Body HIT",
+   "channel": "STG Strength and Power",
+   "thumbnail": "https://i.ytimg.com/vi/x_jdwyvrpaY/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2022-11-22",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Ask and ye shall receive. AJ training Boyer Coe in his week 16: My protocol and actual practice pertaining to muscular failure is a little bit beyond the Arthur Jones style: At the point of muscular failure, keep pushing or pulling for another 5 sec, even though the weight…",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/best-of-the-best-any-changes/269833/56",
+     "site": "t-nation.com"
+    },
+    {
+     "text": "hi Dr Darden, I hav got a query that there is a video Arthur Jones training Boyer Coe. It doesnt look HIT at all. Why so? Locking elbows, no continuous TUT, no slow reps at all, lot of momemtum etc…it makes confusions about whatever I learned till today about HIT. I thought you…",
+     "score": 0,
+     "permalink": "https://t-nation.com/t/arthur-mike-videos-look-different-from-hit/280248/1",
+     "site": "t-nation.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "full"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/best-of-the-best-any-changes/269833/56",
+     "score": 0,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "forum",
+     "site": "t-nation.com",
+     "url": "https://t-nation.com/t/arthur-mike-videos-look-different-from-hit/280248/1",
+     "score": 0,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "forum": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
   }
  ]
 }
