@@ -1,0 +1,7 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Pipeline API cache (raw Arctic Shift / oEmbed responses)
+pipeline/.cache/
