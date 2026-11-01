@@ -87,7 +87,9 @@ class BuildTest(unittest.TestCase):
         self.assertEqual([v["id"] for v in data["videos"]], [A])
         v = data["videos"][0]
         self.assertEqual(set(v), {"id", "title", "channel", "thumbnail", "recommenders", "score", "first_seen",
-                                  "subreddits", "comments", "timestamps", "tags"})
+                                  "subreddits", "comments", "timestamps", "tags", "sources"})
+        self.assertEqual(v["sources"], [{"kind": "comment", "subreddit": "bodyweightfitness", "count": 1},
+                                        {"kind": "comment", "subreddit": "Fitness", "count": 1}])
         self.assertEqual(v["thumbnail"], f"https://i.ytimg.com/vi/{A}/hqdefault.jpg")
         self.assertEqual(v["recommenders"], 2)
         self.assertEqual(v["first_seen"], "2014-05-13")

@@ -26,6 +26,7 @@ from .tagger import tag_video
 log = logging.getLogger(__name__)
 
 _NEGATIVE_RE = re.compile("|".join(config.NEGATIVE_PATTERNS), re.IGNORECASE)
+_BOT_BODY_RE = re.compile("|".join(config.BOT_BODY_PATTERNS), re.IGNORECASE | re.DOTALL)
 
 
 def is_bot(author: str) -> bool:
@@ -33,12 +34,21 @@ def is_bot(author: str) -> bool:
     return a in config.IGNORED_AUTHORS or a.endswith(config.BOT_SUFFIXES) or a.startswith("bot_")
 
 
+def is_bot_body(body: str) -> bool:
+    """Bot comments recognised by their text (e.g. "Videos in this thread: Watch Playlist")."""
+    return bool(_BOT_BODY_RE.search(clean_body(body)))
+
+
 def is_negative(text: str) -> bool:
     return bool(_NEGATIVE_RE.search(text or ""))
 
 
 def permalink(comment: dict) -> str:
+    if comment.get("url"):  # wiki pages carry their own URL
+        return comment["url"]
     link = (comment.get("link_id") or "").removeprefix("t3_")
+    if comment.get("kind") == "post":
+        return f"https://www.reddit.com/r/{comment['subreddit']}/comments/{link}/"
     return f"https://www.reddit.com/r/{comment['subreddit']}/comments/{link}/_/{comment['id']}/"
 
 
@@ -63,10 +73,18 @@ class VideoAgg:
     first_seen: int | None = None
     comments: list[dict] = field(default_factory=list)
     timestamps: list[tuple[int, str]] = field(default_factory=list)
+    wikis: dict[str, str] = field(default_factory=dict)  # subreddit -> wiki path
+    wiki_texts: dict[str, list[str]] = field(default_factory=dict)  # wiki path -> lines
+    posts: dict[str, dict] = field(default_factory=dict)  # permalink -> {subreddit, score}
+    comment_counts: dict[str, int] = field(default_factory=dict)  # subreddit -> linking comments
 
     @property
     def recommenders(self) -> int:
         return len(self.authors)
+
+    @property
+    def score(self) -> float:
+        return rank_score(self.recommenders, self.weighted_score) + wiki_boost(len(self.wikis))
 
 
 def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
@@ -77,14 +95,26 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
     comments contribute only ``NEGATIVE_WEIGHT`` of their score and do not
     count as recommenders. A comment linking several videos (e.g. a list of
     workouts) splits its score evenly between them.
+
+    Evidence of ``kind="post"`` (a submission) counts like a comment. Evidence
+    of ``kind="wiki"`` counts its subreddit's wiki as one recommender
+    (``wiki:<subreddit>``), adds no karma and earns ``WIKI_BOOST`` in
+    ``VideoAgg.score``; it is not shown as a comment excerpt.
     """
     videos: dict[str, VideoAgg] = {}
+    wiki_created: dict[str, int] = {}
     for c in comments:
+        kind = c.get("kind") or "comment"
+        if kind == "wiki":
+            for vid in _add_wiki(videos, c):
+                created = int(c.get("created_utc") or 0)
+                wiki_created[vid] = min(wiki_created.get(vid) or created, created)
+            continue
         author = c.get("author") or ""
         score = int(c.get("score") or 0)
-        if score < config.MIN_COMMENT_SCORE or is_bot(author):
-            continue
         body = c.get("body") or ""
+        if score < config.MIN_COMMENT_SCORE or is_bot(author) or is_bot_body(body):
+            continue
         refs = extract_videos(body)
         if not refs:
             continue
@@ -93,6 +123,10 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
         created = int(c.get("created_utc") or 0)
         for ref in refs:
             v = videos.setdefault(ref.id, VideoAgg(ref.id))
+            if kind == "post":
+                v.posts[permalink(c)] = {"subreddit": c["subreddit"], "score": score}
+            else:
+                v.comment_counts[c["subreddit"]] = v.comment_counts.get(c["subreddit"], 0) + 1
             if not negative:
                 v.authors.add(author.lower())
             v.weighted_score += score * weight / len(refs)
@@ -107,7 +141,37 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
                 "n_videos": len(refs),
             })
             v.timestamps = merge_timestamps(v.timestamps + ref.timestamps)
+    for vid, created in wiki_created.items():
+        v = videos[vid]
+        if v.first_seen is None and created:  # wiki-only: fall back to the revision date
+            v.first_seen = created
     return videos
+
+
+def _add_wiki(videos: dict[str, VideoAgg], c: dict) -> list[str]:
+    sub = c["subreddit"]
+    refs = extract_videos(c.get("body") or "")
+    for ref in refs:
+        v = videos.setdefault(ref.id, VideoAgg(ref.id))
+        v.authors.add(f"wiki:{sub.lower()}")
+        path = c.get("path") or "/wiki"
+        # Prefer the canonical page over translations/variants (shortest path).
+        if sub not in v.wikis or (len(path), path) < (len(v.wikis[sub]), v.wikis[sub]):
+            v.wikis[sub] = path
+        v.subreddits.setdefault(sub, 0)
+        v.wiki_texts.setdefault(path, []).append(c.get("body") or "")
+        v.timestamps = merge_timestamps(v.timestamps + ref.timestamps)
+    return [r.id for r in refs]
+
+
+def wiki_boost(n_wikis: int) -> float:
+    """Extra ranking score for being listed in ``n_wikis`` subreddit wikis."""
+    return config.WIKI_BOOST * n_wikis
+
+
+def sources_boost(sources: Iterable[dict]) -> float:
+    """``wiki_boost`` of a ``videos.json`` record's ``sources`` list (its non-community score)."""
+    return wiki_boost(len({s.get("subreddit", "").lower() for s in sources or () if s.get("kind") == "wiki"}))
 
 
 def rank_score(recommenders: int, sum_score: float) -> float:
@@ -123,7 +187,7 @@ def rank_score(recommenders: int, sum_score: float) -> float:
 
 
 def passes_threshold(v: VideoAgg) -> bool:
-    return v.recommenders >= config.MIN_RECOMMENDERS or v.weighted_score >= config.MIN_SUM_SCORE
+    return bool(v.wikis) or v.recommenders >= config.MIN_RECOMMENDERS or v.weighted_score >= config.MIN_SUM_SCORE
 
 
 # -- oEmbed -------------------------------------------------------------------
@@ -195,10 +259,27 @@ def _top_comments(v: VideoAgg) -> list[dict]:
     return out
 
 
+MAX_POST_SOURCES = 3
+
+
+def source_entries(v: VideoAgg) -> list[dict]:
+    """``sources`` of a record: wikis first, then top posts, then comment counts per subreddit."""
+    out: list[dict] = [
+        {"kind": "wiki", "subreddit": sub, "path": path, "url": f"https://www.reddit.com/r/{sub}{path}"}
+        for sub, path in sorted(v.wikis.items(), key=lambda kv: kv[0].lower())
+    ]
+    posts = sorted(v.posts.items(), key=lambda kv: (-kv[1]["score"], kv[0]))[:MAX_POST_SOURCES]
+    out += [{"kind": "post", "subreddit": p["subreddit"], "url": url, "score": p["score"]} for url, p in posts]
+    out += [{"kind": "comment", "subreddit": sub, "count": n}
+            for sub, n in sorted(v.comment_counts.items(), key=lambda kv: (-kv[1], kv[0].lower()))]
+    return out
+
+
 def to_record(v: VideoAgg, meta: dict) -> dict:
     subreddits = sorted(v.subreddits, key=lambda s: (-v.subreddits[s], s.lower()))
-    sum_score = v.weighted_score
     texts = [excerpt(c["text"], 2000) for c in v.comments if not c["negative"]]
+    # Lines of the canonical wiki pages only (translations would repeat them).
+    texts += [excerpt(t, 2000) for path in set(v.wikis.values()) for t in v.wiki_texts.get(path, [])]
     timestamps = [{"t": t, "label": label} for t, label in v.timestamps][: config.MAX_TIMESTAMPS]
     return {
         "id": v.id,
@@ -206,12 +287,13 @@ def to_record(v: VideoAgg, meta: dict) -> dict:
         "channel": meta["channel"],
         "thumbnail": f"https://i.ytimg.com/vi/{v.id}/hqdefault.jpg",
         "recommenders": v.recommenders,
-        "score": rank_score(v.recommenders, sum_score),
+        "score": round(v.score, 1),
         "first_seen": datetime.fromtimestamp(v.first_seen or 0, timezone.utc).strftime("%Y-%m-%d"),
         "subreddits": subreddits,
         "comments": _top_comments(v),
         "timestamps": timestamps,
-        "tags": tag_video(meta["title"], texts, subreddits),
+        "tags": tag_video(meta["title"], texts, subreddits, hints=list(v.wikis.values())),
+        "sources": source_entries(v),
     }
 
 
@@ -219,7 +301,7 @@ def build(comments: list[dict], sources: list[str], oembed: OEmbed | None = None
     videos = aggregate(comments)
     kept = [v for v in videos.values() if passes_threshold(v)]
     log.info("%d comments -> %d videos -> %d pass threshold", len(comments), len(videos), len(kept))
-    kept.sort(key=lambda v: -rank_score(v.recommenders, v.weighted_score))
+    kept.sort(key=lambda v: -v.score)
     if limit:
         kept = kept[:limit]
     oembed = oembed or OEmbed()

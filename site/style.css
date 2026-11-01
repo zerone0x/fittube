@@ -343,6 +343,10 @@ body.timer-open .modal-body { padding-bottom: 240px; }
 .m-title { margin: 0; font-size: clamp(18px, 2.6vw, 24px); line-height: 1.25; letter-spacing: -0.02em; }
 .m-meta { margin: 6px 0 0; color: var(--text-2); font-size: 14px; display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; }
 .m-meta .recs svg { width: 16px; height: 16px; }
+.m-sources { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+.source-badge { text-decoration: none; }
+a.source-badge:hover { background: var(--surface-3); color: var(--text); }
+.source-wiki { background: var(--accent-soft); color: var(--accent); }
 .m-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 14px; }
 .chips-static { gap: 6px; }
 

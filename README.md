@@ -4,7 +4,7 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
 
 ## How it works
 
-1. `pipeline/` pulls historical Reddit comments containing YouTube links from fitness subreddits (via the public Arctic Shift API), aggregates them per video, filters noise, fetches metadata via YouTube oEmbed (no API key), tags videos, and writes `site/data/videos.json`.
+1. `pipeline/` pulls historical Reddit comments and posts containing YouTube links, plus the moderator-curated wikis, from fitness subreddits (via the public Arctic Shift API), aggregates them per video, filters noise, fetches metadata via YouTube oEmbed (no API key), tags videos, and writes `site/data/videos.json`.
 2. `site/` is a static, build-free frontend (HTML/CSS/vanilla JS) deployed to GitHub Pages.
 
 ## Data contract: `site/data/videos.json`
@@ -31,13 +31,29 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
         "equipment": ["none|dumbbell|barbell|kettlebell|band|rings|bar|machine"],
         "level": "beginner|intermediate|advanced|any",
         "type": "tutorial|follow-along|explainer|program|motivation"
-      }
+      },
+      "sources": [
+        {"kind": "wiki", "subreddit": "bodyweightfitness", "path": "/wiki/exercises/handstand", "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/handstand"},
+        {"kind": "post", "subreddit": "flexibility", "url": "https://www.reddit.com/r/flexibility/comments/<id>/", "score": 28},
+        {"kind": "comment", "subreddit": "Fitness", "count": 4}
+      ]
     }
   ]
 }
 ```
 
-`recommenders` = number of distinct Reddit authors who linked the video. `score` = ranking score computed by the pipeline. `timestamps` come from `t=` params / `mm:ss` mentions in comments. Videos are sorted by `score` desc.
+`recommenders` = number of distinct Reddit authors who linked the video (in comments or posts); each subreddit wiki listing the video counts as one more. `score` = ranking score computed by the pipeline (a wiki listing adds a fixed boost, see `pipeline/README.md`). `timestamps` come from `t=` params / `mm:ss` mentions in comments. Videos are sorted by `score` desc.
+
+`sources` (optional) says where the recommendations come from. Entries share a `kind`:
+
+| `kind` | Fields | Meaning |
+| --- | --- | --- |
+| `wiki` | `subreddit`, `path`, `url` | Listed in a moderator-curated subreddit wiki page |
+| `post` | `subreddit`, `url`, `score` | A submission linking the video (top 3 by score) |
+| `comment` | `subreddit`, `count` (optional) | Comments linking the video in that subreddit |
+| `hn` / `forum` | `site`, `url`, `score` | Non-Reddit sources (Hacker News, forums) |
+
+Consumers must ignore unknown kinds and fields. Records built before `sources` existed may lack it.
 
 ### Non-Reddit sources (Hacker News, T-Nation)
 

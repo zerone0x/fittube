@@ -9,6 +9,10 @@ on:
         description: "Max comments fetched per subreddit"
         required: false
         default: ""
+      time_budget:
+        description: "Minutes of API fetching before building from the cache"
+        required: false
+        default: "90"
 
 permissions:
   contents: write
@@ -37,20 +41,35 @@ jobs:
         run: python -m unittest -v
 
       # Arctic Shift pages for closed time windows never change, so keep the
-      # API cache between runs; only recent pages are refetched.
+      # API cache between runs; only recent pages are refetched. Restore and
+      # save are separate steps so the cache is saved even when the run fails
+      # or times out: the next run resumes instead of starting cold.
       - name: Restore API cache
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: pipeline/.cache
           key: pipeline-cache-${{ github.run_id }}
           restore-keys: pipeline-cache-
 
+      # Time-boxed: after --time-budget minutes no new API requests are made and
+      # the data is built from what is cached. The previous videos.json is
+      # merged in (pipeline/carryover.py), so a rate-limited run never shrinks
+      # the dataset.
       - name: Run pipeline
+        timeout-minutes: 110
         env:
           FITTUBE_MAX_COMMENTS: ${{ inputs.max_comments }}
+          TIME_BUDGET: ${{ inputs.time_budget || '90' }}
         run: |
           if [ -z "$FITTUBE_MAX_COMMENTS" ]; then unset FITTUBE_MAX_COMMENTS; fi
-          python -m pipeline.run --min-videos 100
+          python -m pipeline.run --time-budget "$TIME_BUDGET" --min-videos 100
+
+      - name: Save API cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: pipeline/.cache
+          key: pipeline-cache-${{ github.run_id }}
 
       - name: Commit updated data
         run: |

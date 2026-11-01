@@ -15,6 +15,8 @@ sources can be added without re-crawling Arctic Shift.
   title (HN threads drift off-topic easily).
 * Per-source counts are kept in ``source_stats`` so a rerun first strips the
   previous merge (``strip_external``) and the result is idempotent.
+* The subreddit-wiki boost (``build.sources_boost``) is not karma: it is
+  subtracted before inverting the ranking formula and added back afterwards.
 """
 
 from __future__ import annotations
@@ -27,7 +29,7 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
 from .. import config
-from ..build import OEmbed, excerpt, rank_score
+from ..build import OEmbed, excerpt, rank_score, sources_boost
 from ..extract import merge_timestamps
 from ..tagger import tag_video
 from . import TITLE_FITNESS_RE, Mention
@@ -95,16 +97,17 @@ def strip_external(data: dict) -> dict:
             base = stats.get("reddit") or {"recommenders": 0, "sum_score": 0.0}
             if not base["recommenders"] and not base["sum_score"] and not v.get("subreddits"):
                 continue  # video came from external sources only
-            v["recommenders"] = base["recommenders"]
-            v["score"] = rank_score(base["recommenders"], base["sum_score"])
-            if "first_seen" in base:
-                v["first_seen"] = base["first_seen"]
         v["comments"] = [c for c in v.get("comments", []) if c.get("site") in (None, "reddit.com")]
         v["timestamps"] = [t for t in v.get("timestamps", []) if not t.get("site")]
         if "sources" in v:
             v["sources"] = [s for s in v["sources"] if s.get("kind") not in EXTERNAL_KINDS]
             if not v["sources"]:
                 del v["sources"]
+        if stats is not None:
+            v["recommenders"] = base["recommenders"]
+            v["score"] = round(rank_score(base["recommenders"], base["sum_score"]) + sources_boost(v.get("sources")), 1)
+            if "first_seen" in base:
+                v["first_seen"] = base["first_seen"]
         kept.append(v)
     kept.sort(key=lambda r: (-r["score"], -r["recommenders"], r["id"]))
     data["videos"] = kept
@@ -153,7 +156,8 @@ def _apply(v: dict, agg: ExtAgg, reddit: dict) -> dict:
         if any(m.kind == kind for m in agg.mentions):
             stats[kind] = {"recommenders": len(agg.authors(kind)), "sum_score": round(agg.sum_score(kind), 1)}
     v["recommenders"] = reddit["recommenders"] + len(ext_authors)
-    v["score"] = rank_score(v["recommenders"], reddit["sum_score"] + agg.sum_score())
+    boost = sources_boost(v.get("sources"))
+    v["score"] = round(rank_score(v["recommenders"], reddit["sum_score"] + agg.sum_score()) + boost, 1)
     dates = [d for d in [v.get("first_seen")] + [_day(m.created_utc) for m in agg.mentions if m.created_utc]
              if d and d > "1970-01-01"]
     if dates:
@@ -199,7 +203,8 @@ def merge_external(data: dict, mentions: list[Mention], oembed: OEmbed | None = 
             drop_self_promotion(agg, v.get("channel", ""))
             if not agg.mentions:
                 continue
-            reddit = {"recommenders": v["recommenders"], "sum_score": reddit_sum_score(v["score"], v["recommenders"])}
+            reddit = {"recommenders": v["recommenders"],
+                      "sum_score": reddit_sum_score(v["score"] - sources_boost(v.get("sources")), v["recommenders"])}
             if v.get("first_seen"):
                 reddit["first_seen"] = v["first_seen"]
             _apply(v, agg, reddit)

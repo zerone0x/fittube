@@ -42,8 +42,12 @@ class FetchError(RuntimeError):
 
 class ArcticShiftClient:
     def __init__(self, cache_dir: Path = config.CACHE_DIR / "arctic", session: requests.Session | None = None,
-                 offline: bool = False):
+                 offline: bool = False, deadline: float | None = None):
         self.offline = offline
+        # time.monotonic() after which no new requests are made (cache only),
+        # so a time-boxed run still builds from everything fetched so far.
+        self.deadline = deadline
+        self._deadline_logged = False
         self.cache_dir = Path(cache_dir)
         self.cache_dir.mkdir(parents=True, exist_ok=True)
         self.session = session or requests.Session()
@@ -64,7 +68,7 @@ class ArcticShiftClient:
             return None
         now = time.time()
         immutable = window_end < now - config.IMMUTABLE_AFTER_DAYS * 86400
-        if not immutable and not self.offline and path.stat().st_mtime < now - config.CACHE_TTL_DAYS * 86400:
+        if not immutable and not self.cache_only() and path.stat().st_mtime < now - config.CACHE_TTL_DAYS * 86400:
             return None
         try:
             return json.loads(path.read_text())["data"]
@@ -77,6 +81,17 @@ class ArcticShiftClient:
         tmp.write_text(json.dumps({"params": params, "data": data}))
         tmp.replace(path)
 
+    def cache_only(self) -> bool:
+        """True when uncached pages must not be fetched (offline or out of time)."""
+        if self.offline:
+            return True
+        if self.deadline is not None and time.monotonic() >= self.deadline:
+            if not self._deadline_logged:
+                log.warning("time budget exhausted: continuing from cached responses only")
+                self._deadline_logged = True
+            return True
+        return False
+
     # -- http ----------------------------------------------------------------
 
     def _throttle(self) -> None:
@@ -84,30 +99,35 @@ class ArcticShiftClient:
         if wait > 0:
             time.sleep(wait)
 
-    def _get(self, params: dict) -> list:
+    def _sleep(self, delay: float) -> None:
+        if self.deadline is not None and time.monotonic() + delay > self.deadline:
+            raise FetchError("time budget exhausted")
+        time.sleep(delay)
+
+    def _get(self, params: dict, url: str = config.ARCTIC_SHIFT_URL) -> tuple[list, int]:
         for attempt in range(1, config.MAX_RETRIES + 1):
             self._throttle()
             started = time.monotonic()
             try:
-                resp = self.session.get(config.ARCTIC_SHIFT_URL, params=params, timeout=config.REQUEST_TIMEOUT)
+                resp = self.session.get(url, params=params, timeout=config.REQUEST_TIMEOUT)
             except requests.RequestException as exc:
                 self._last_request = time.monotonic()
                 delay = min(60, 2**attempt) + random.random()
                 log.warning("request error (%s), retry %d in %.0fs", exc, attempt, delay)
-                time.sleep(delay)
+                self._sleep(delay)
                 continue
             elapsed = time.monotonic() - started
             self.requests_made += 1
             # Expensive queries eat into the per-minute budget; rest a multiple
             # of the time the server worked before sending the next request.
             self._last_request = time.monotonic() + max(0.0, elapsed * config.REST_FACTOR - config.MIN_REQUEST_INTERVAL)
-            log.debug("GET %s r/%s before=%s -> %s in %.1fs", "comments", params.get("subreddit"),
+            log.debug("GET %s r/%s before=%s -> %s in %.1fs", url.rsplit("/api/", 1)[-1], params.get("subreddit"),
                       params.get("before"), resp.status_code, elapsed)
             if resp.status_code == 200:
                 body = resp.json()
                 if body.get("error"):
                     raise FetchError(body["error"])
-                return body.get("data") or [], int(params["limit"])
+                return body.get("data") or [], int(params.get("limit") or 0)
             if resp.status_code in (422, 429) or resp.status_code >= 500:
                 if elapsed > config.SLOW_QUERY_SECONDS and int(params.get("limit", 0)) > config.MIN_PAGE_SIZE:
                     # The query itself hit the server-side timeout: scanning for
@@ -118,31 +138,52 @@ class ArcticShiftClient:
                 delay = min(config.MAX_BACKOFF_SECONDS, config.BASE_BACKOFF_SECONDS * 2 ** (attempt - 1))
                 delay += random.random() * 5
                 log.info("HTTP %s (%s), retry %d in %.0fs", resp.status_code, resp.text[:60].strip(), attempt, delay)
-                time.sleep(delay)
+                self._sleep(delay)
                 continue
             raise FetchError(f"HTTP {resp.status_code}: {resp.text[:200]}")
         raise FetchError(f"giving up after {config.MAX_RETRIES} attempts: {params}")
 
-    def search(self, params: dict, window_end: int) -> tuple[list, int]:
+    def search(self, params: dict, window_end: int, url: str = config.ARCTIC_SHIFT_URL) -> tuple[list, int]:
         """Return ``(comments, page_size_used)``.
 
         The page size may be smaller than requested if the server timed out;
         a page shorter than ``page_size_used`` means the window is exhausted.
+        ``url`` selects another search endpoint (e.g. posts) with the same
+        paging semantics; it is part of the cache key.
         """
-        cached = self._read_cache(params, window_end)
+        key = _cache_key(params, url)
+        cached = self._read_cache(key, window_end)
         if cached is not None:
             self.cache_hits += 1
             return cached, int(params["limit"])
         for limit in _smaller_limits(int(params["limit"])):
-            cached = self._read_cache({**params, "limit": limit}, window_end)
+            cached = self._read_cache({**key, "limit": limit}, window_end)
             if cached is not None:
                 self.cache_hits += 1
                 return cached, limit
-        if self.offline:
+        if self.cache_only():
             return [], int(params["limit"])
-        data, limit = self._get(params)
-        self._write_cache({**params, "limit": limit}, data)
+        data, limit = self._get(params, url)
+        self._write_cache({**key, "limit": limit}, data)
         return data, limit
+
+    def get_json(self, url: str, params: dict, window_end: int) -> list:
+        """Cached GET of a non-paged Arctic Shift endpoint (e.g. subreddit wikis)."""
+        key = _cache_key(params, url)
+        cached = self._read_cache(key, window_end)
+        if cached is not None:
+            self.cache_hits += 1
+            return cached
+        if self.cache_only():
+            return []
+        data, _ = self._get(params, url)
+        self._write_cache(key, data)
+        return data
+
+
+def _cache_key(params: dict, url: str) -> dict:
+    # Comment-search keys stay as they were so existing caches remain valid.
+    return params if url == config.ARCTIC_SHIFT_URL else {**params, "_url": url}
 
 
 def _smaller_limits(limit: int) -> list[int]:

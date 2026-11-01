@@ -5,7 +5,7 @@ from __future__ import annotations
 import html
 import re
 from dataclasses import dataclass, field
-from urllib.parse import parse_qs, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
 
 VIDEO_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 
@@ -56,6 +56,8 @@ def parse_duration(value: str) -> int | None:
 def parse_youtube_url(url: str) -> tuple[str, int | None] | None:
     """Return ``(video_id, start_seconds_or_None)`` for a YouTube URL."""
     url = url.strip().rstrip(".,;:!?*")
+    if re.search(r"\?v%3d", url, re.IGNORECASE):  # fully percent-encoded query (seen in post URLs)
+        url = unquote(url)
     if not re.match(r"^https?://", url, re.IGNORECASE):
         url = "https://" + url
     try:

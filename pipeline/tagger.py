@@ -10,6 +10,10 @@ without touching the rest of the pipeline.
 Scoring: each rule match in the title is worth ``TITLE_WEIGHT`` points; each
 comment that matches is worth 1 point; a subreddit prior adds ``PRIOR_WEIGHT``.
 Tags reaching ``THRESHOLD`` are kept (at most ``MAX_PER_CATEGORY``, best first).
+
+Hints (subreddit wiki paths such as ``/wiki/exercises/handstand``) are matched
+against the same rules plus ``PATH_HINTS`` and are worth ``HINT_WEIGHT`` each:
+a moderator filing a video under "handstand" is decisive on its own.
 """
 
 from __future__ import annotations
@@ -25,6 +29,7 @@ TYPES = ["tutorial", "follow-along", "explainer", "program", "motivation"]
 
 TITLE_WEIGHT = 3
 PRIOR_WEIGHT = 1
+HINT_WEIGHT = 2
 THRESHOLD = 2
 MAX_PER_CATEGORY = {"goal": 3, "body": 4, "equipment": 3}
 
@@ -124,12 +129,75 @@ SUBREDDIT_PRIORS: dict[str, dict[str, list[str]]] = {
     "weightroom": {"goal": ["strength"]},
     "naturalbodybuilding": {"goal": ["hypertrophy"]},
     "strongerbyscience": {"type": ["explainer"]},
+    "yoga": {"goal": ["mobility"]},
+    "climbing": {"goal": ["strength"]},
+    "climbingtrainer": {"goal": ["strength"]},
+    "powerlifting": {"goal": ["strength"], "equipment": ["barbell"]},
+    "stronglifts5x5": {"goal": ["strength"], "equipment": ["barbell"]},
+    "backpain": {"goal": ["rehab"]},
+    "posture": {"goal": ["rehab"]},
+    "running": {"goal": ["endurance"]},
+    "advancedrunning": {"goal": ["endurance"]},
+    "c25k": {"goal": ["endurance"], "level": ["beginner"]},
+    "swimming": {"goal": ["endurance"]},
+    "bjj": {"goal": ["skill"]},
+    "muaythai": {"goal": ["skill"]},
+    "kettleballs": {"equipment": ["kettlebell"]},
+    "calisthenics": {"equipment": ["none"]},
+    "homegym": {},
+    "crossfit": {},
+    "fitness30plus": {},
+    "over40fitness": {},
+}
+
+# Wiki path segment -> tags it implies (on top of the keyword RULES).
+PATH_HINTS: dict[str, dict[str, list[str]]] = {
+    "handstand": {"goal": ["skill"], "body": ["upper", "shoulders"]},
+    "planche": {"goal": ["skill"], "body": ["upper", "shoulders"]},
+    "lever": {"goal": ["skill"], "body": ["upper", "core"]},
+    "muscle-up": {"goal": ["skill"], "body": ["upper"]},
+    "l-sit": {"goal": ["skill"], "body": ["core"]},
+    "manna": {"goal": ["skill"], "body": ["core"]},
+    "stretching": {"goal": ["mobility"]},
+    "flexibility": {"goal": ["mobility"]},
+    "mobility": {"goal": ["mobility"]},
+    "yoga": {"goal": ["mobility"]},
+    "wrist": {"goal": ["mobility"], "body": ["arms"]},
+    "injur": {"goal": ["rehab"]},
+    "pain": {"goal": ["rehab"]},
+    "posture": {"goal": ["rehab"]},
+    "running": {"goal": ["endurance"]},
+    "cardio": {"goal": ["endurance"]},
+    "pushup": {"body": ["upper", "chest"]},
+    "pullup": {"body": ["upper", "back"], "equipment": ["bar"]},
+    "dip": {"body": ["upper", "chest"]},
+    "row": {"body": ["upper", "back"]},
+    "squat": {"body": ["lower", "legs"]},
+    "hinge": {"body": ["lower", "glutes"]},
+    "legs": {"body": ["lower", "legs"]},
+    "core": {"body": ["core"]},
+    "rings": {"equipment": ["rings"]},
+    "routine": {"type": ["program"]},
+    "program": {"type": ["program"]},
+    "beginner": {"level": ["beginner"]},
+    "getting_started": {"level": ["beginner"]},
 }
 
 
-def _score(category: str, title: str, comments: Iterable[str], subreddits: Iterable[str]) -> dict[str, float]:
+# A PATH_HINTS key must start a path word ("core" matches /core-work, not /score).
+_HINT_KEY_RE = {k: re.compile(r"(?<![a-z])" + re.escape(k), re.IGNORECASE) for k in PATH_HINTS}
+
+
+def _hint_text(path: str) -> str:
+    """``/wiki/exercises/one-arm-pullup`` -> ``"exercises one arm pullup"``."""
+    return re.sub(r"[/_\-]+", " ", path.lower().removeprefix("/wiki")).strip()
+
+
+def _score(category: str, title: str, comments: Iterable[str], subreddits: Iterable[str],
+           hints: Iterable[str] = ()) -> dict[str, float]:
     scores: dict[str, float] = {}
     rules = RULES[category]
+    hint_texts = [_hint_text(h) for h in hints]
     for tag, rx in rules.items():
         s = 0.0
         if rx.search(title):
@@ -137,11 +205,17 @@ def _score(category: str, title: str, comments: Iterable[str], subreddits: Itera
         for text in comments:
             if rx.search(text):
                 s += 1
+        if any(rx.search(h) for h in hint_texts):
+            s += HINT_WEIGHT
         if s:
             scores[tag] = s
     for sub in subreddits:
         for tag in SUBREDDIT_PRIORS.get(sub.lower(), {}).get(category, []):
             scores[tag] = scores.get(tag, 0) + PRIOR_WEIGHT
+    hinted = {tag for h in hints for key, cats in PATH_HINTS.items() if _HINT_KEY_RE[key].search(h)
+              for tag in cats.get(category, [])}
+    for tag in hinted:
+        scores[tag] = scores.get(tag, 0) + HINT_WEIGHT
     return scores
 
 
@@ -151,22 +225,27 @@ def _pick(scores: dict[str, float], order: list[str], limit: int) -> list[str]:
     return kept[:limit]
 
 
-def tag_video(title: str, comments: Iterable[str] = (), subreddits: Iterable[str] = ()) -> dict:
-    """Return ``{"goal": [...], "body": [...], "equipment": [...], "level": str, "type": str}``."""
+def tag_video(title: str, comments: Iterable[str] = (), subreddits: Iterable[str] = (),
+              hints: Iterable[str] = ()) -> dict:
+    """Return ``{"goal": [...], "body": [...], "equipment": [...], "level": str, "type": str}``.
+
+    ``hints`` are subreddit wiki paths the video is listed under.
+    """
     title = title or ""
     comments = [c for c in comments if c]
     subreddits = list(subreddits)
+    hints = [h for h in hints if h]
 
-    goal = _pick(_score("goal", title, comments, subreddits), GOALS, MAX_PER_CATEGORY["goal"])
+    goal = _pick(_score("goal", title, comments, subreddits, hints), GOALS, MAX_PER_CATEGORY["goal"])
 
-    body_scores = _score("body", title, comments, subreddits)
+    body_scores = _score("body", title, comments, subreddits, hints)
     body = _pick(body_scores, BODY, MAX_PER_CATEGORY["body"])
     has_upper = "upper" in body or bool({"chest", "shoulders", "arms", "back"} & set(body))
     has_lower = "lower" in body or bool({"legs", "glutes", "hips"} & set(body))
     if "full" not in body and has_upper and has_lower and len(body) >= 3:
         body = ["full"] + body[: MAX_PER_CATEGORY["body"] - 1]
 
-    equipment = _pick(_score("equipment", title, comments, subreddits), EQUIPMENT, MAX_PER_CATEGORY["equipment"])
+    equipment = _pick(_score("equipment", title, comments, subreddits, hints), EQUIPMENT, MAX_PER_CATEGORY["equipment"])
     if "none" in equipment and len(equipment) > 1:
         # "none" contradicts a specific piece of kit; keep it only if it outranks
         # all of them (bodyweight videos often mention a bar or rings).
@@ -174,11 +253,11 @@ def tag_video(title: str, comments: Iterable[str] = (), subreddits: Iterable[str
         if equipment[0] != "none":
             equipment = others
 
-    level_scores = _score("level", title, comments, subreddits)
+    level_scores = _score("level", title, comments, subreddits, hints)
     level_pick = _pick(level_scores, LEVELS, 1)
     level = level_pick[0] if level_pick else "any"
 
-    type_scores = _score("type", title, comments, subreddits)
+    type_scores = _score("type", title, comments, subreddits, hints)
     type_pick = _pick(type_scores, TYPES, 1)
     if type_pick:
         vtype = type_pick[0]
