@@ -27,6 +27,23 @@ export function tagLabel(value) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+// Hosts whose comment permalinks may be linked from the video modal.
+export const COMMENT_HOSTS = ['reddit.com', 'news.ycombinator.com', 't-nation.com'];
+
+const SITE_NAMES = { 'reddit.com': 'Reddit', 'news.ycombinator.com': 'Hacker News', 't-nation.com': 'T-Nation' };
+
+// Display name for a permalink or hostname on one of COMMENT_HOSTS ('' if unknown).
+export function siteName(u) {
+  let host = str(u).toLowerCase();
+  try {
+    host = new URL(host).hostname;
+  } catch {
+    /* already a hostname */
+  }
+  const key = COMMENT_HOSTS.find((d) => host === d || host.endsWith('.' + d));
+  return key ? SITE_NAMES[key] : '';
+}
+
 const ID_RE = /^[A-Za-z0-9_-]{11}$/;
 
 function str(v, fallback = '') {
@@ -66,7 +83,7 @@ function normalizeVideo(raw, index) {
     .map((c) => ({
       text: str(c.text).slice(0, 600),
       score: Number.isFinite(Number(c.score)) ? Number(c.score) : null,
-      permalink: safeUrl(c.permalink, ['reddit.com']),
+      permalink: safeUrl(c.permalink, COMMENT_HOSTS),
     }))
     .filter((c) => c.text);
   const timestamps = arr(raw.timestamps)
@@ -91,6 +108,9 @@ function normalizeVideo(raw, index) {
     first_seen: /^\d{4}-\d{2}-\d{2}/.test(str(raw.first_seen)) ? str(raw.first_seen).slice(0, 10) : '',
     subreddits: arr(raw.subreddits).map((s) => str(s).replace(/^\/?r\//i, '')).filter(Boolean),
     comments,
+    // Non-Reddit sites (Hacker News, T-Nation) that recommended the video.
+    sites: [...new Set([...arr(raw.sources).map((x) => x && siteName(x.site || x.url)), ...comments.map((c) => siteName(c.permalink))])]
+      .filter((n) => n && n !== 'Reddit'),
     timestamps: uniqTs,
     tags: {
       goal: strList(tags.goal),

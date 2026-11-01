@@ -5,11 +5,14 @@
     python -m pipeline.run --subreddits kettlebell flexibility --max-comments 300
     python -m pipeline.run --offline            # rebuild only from cached API responses
     python -m pipeline.run --offline-search     # cached search pages, but expand threads online
+    python -m pipeline.run --merge-into site/data/videos.json
+                                                # skip Reddit: merge HN/T-Nation into an existing file
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
 import time
@@ -18,6 +21,26 @@ from pathlib import Path
 from . import config
 from .build import build, write
 from .fetch import ArcticShiftClient, fetch_all, fetch_threads, merge, pick_threads
+from .sources import Mention
+from .sources import hn, tnation
+from .sources.merge import merge_external
+
+
+def collect_external(args, log: logging.Logger) -> list[Mention]:
+    """Mentions from the non-Reddit sources; a failing source is logged and skipped."""
+    offline = args.offline
+    jobs = []
+    if not args.no_hn:
+        jobs.append(("hn", lambda: hn.collect(max_pages=args.hn_max_pages, offline=offline)))
+    if not args.no_tnation:
+        jobs.append(("tnation", lambda: tnation.collect(max_pages=args.tnation_max_pages, offline=offline)))
+    mentions: list[Mention] = []
+    for name, job in jobs:
+        try:
+            mentions.extend(job())
+        except Exception:  # noqa: BLE001 - one broken source must not fail the run
+            log.exception("source %s failed; continuing without it", name)
+    return mentions
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -37,6 +60,15 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--output", type=Path, default=config.OUTPUT_PATH)
     p.add_argument("--min-videos", type=int, default=0,
                    help="exit non-zero without writing if fewer videos than this were produced")
+    p.add_argument("--no-hn", action="store_true", help="skip the Hacker News source")
+    p.add_argument("--no-tnation", action="store_true", help="skip the T-Nation forum source")
+    p.add_argument("--hn-max-pages", type=int, default=config.HN_MAX_PAGES,
+                   help="max Algolia pages per HN query (default: %(default)s)")
+    p.add_argument("--tnation-max-pages", type=int, default=config.TNATION_MAX_PAGES,
+                   help="max T-Nation search pages (default: %(default)s)")
+    p.add_argument("--merge-into", type=Path, default=None, metavar="VIDEOS_JSON",
+                   help="skip Reddit: merge the non-Reddit sources into this existing videos.json "
+                        "(a previous merge is stripped first) and write the result to --output")
     p.add_argument("-v", "--verbose", action="store_true")
     args = p.parse_args(argv)
 
@@ -44,6 +76,15 @@ def main(argv: list[str] | None = None) -> int:
                         format="%(asctime)s %(levelname)s %(message)s", datefmt="%H:%M:%S")
     log = logging.getLogger("pipeline")
     t0 = time.monotonic()
+
+    if args.merge_into:
+        data = json.loads(args.merge_into.read_text())
+        data = merge_external(data, collect_external(args, log))
+        data["generated_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        write(data, args.output)
+        log.info("merged into %s: %d videos -> %s in %.0fs", args.merge_into, len(data["videos"]),
+                 args.output, time.monotonic() - t0)
+        return 0
 
     max_comments = config.PAGE_SIZE if args.limit else args.max_comments
     search_client = ArcticShiftClient(offline=args.offline or args.offline_search)
@@ -60,6 +101,8 @@ def main(argv: list[str] | None = None) -> int:
     log.info("total: %d comments in %.0fs", len(comments), time.monotonic() - t0)
 
     data = build(comments, sources=args.subreddits, limit=args.limit)
+    if not args.limit:
+        data = merge_external(data, collect_external(args, log))
     n = len(data["videos"])
     if n < args.min_videos:
         log.error("only %d videos (< --min-videos %d); not writing %s", n, args.min_videos, args.output)
