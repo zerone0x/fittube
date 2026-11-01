@@ -23,6 +23,7 @@ import json
 import logging
 import math
 import random
+import re
 import time
 from datetime import datetime, timezone
 from pathlib import Path
@@ -97,9 +98,9 @@ class ArcticShiftClient:
                 continue
             elapsed = time.monotonic() - started
             self.requests_made += 1
-            # Expensive queries eat into the per-minute budget; rest roughly as
-            # long as the server worked before sending the next request.
-            self._last_request = time.monotonic() + max(0.0, elapsed - config.MIN_REQUEST_INTERVAL)
+            # Expensive queries eat into the per-minute budget; rest a multiple
+            # of the time the server worked before sending the next request.
+            self._last_request = time.monotonic() + max(0.0, elapsed * config.REST_FACTOR - config.MIN_REQUEST_INTERVAL)
             log.debug("GET %s r/%s before=%s -> %s in %.1fs", "comments", params.get("subreddit"),
                       params.get("before"), resp.status_code, elapsed)
             if resp.status_code == 200:
@@ -112,13 +113,10 @@ class ArcticShiftClient:
                     # The query itself hit the server-side timeout: scanning for
                     # fewer matches is cheaper, so retry with a smaller page.
                     params = {**params, "limit": max(config.MIN_PAGE_SIZE, int(params["limit"]) // 2)}
-                try:
-                    reset = float(resp.headers.get("x-ratelimit-reset", ""))
-                except ValueError:
-                    reset = 0
-                # The budget refills at the advertised reset, but requests sent
-                # right at the boundary are still often rejected: add a margin.
-                delay = min(70.0, max(reset + config.RESET_MARGIN_SECONDS, 5.0 * attempt)) + random.random()
+                # Retrying every minute keeps the client in the penalty box;
+                # back off exponentially (30s, 60s, 120s, ... capped).
+                delay = min(config.MAX_BACKOFF_SECONDS, config.BASE_BACKOFF_SECONDS * 2 ** (attempt - 1))
+                delay += random.random() * 5
                 log.info("HTTP %s (%s), retry %d in %.0fs", resp.status_code, resp.text[:60].strip(), attempt, delay)
                 time.sleep(delay)
                 continue
@@ -235,4 +233,74 @@ def fetch_all(subreddits: Iterable[str] = config.SUBREDDITS, max_comments: int =
             log.error("r/%s: %s (keeping %d comments fetched so far)", sub, exc, n)
         log.info("r/%s: %d comments in %.0fs (requests=%d, cache hits=%d)",
                  sub, n, time.monotonic() - t0, client.requests_made, client.cache_hits)
+    return out
+
+
+_YT_LINK_RE = re.compile(r"youtu\.be/|youtube(?:-nocookie)?\.com/", re.IGNORECASE)
+
+
+def _links_youtube(body: str) -> bool:
+    return bool(_YT_LINK_RE.search(body or ""))
+
+
+def pick_threads(comments: Iterable[dict], min_links: int = config.THREAD_MIN_LINKS,
+                 max_threads: int = config.MAX_THREADS) -> list[tuple[str, int]]:
+    """Threads worth expanding: those where several comments already link YouTube.
+
+    Returns ``[(link_id, newest_seen_created_utc)]``, most linked threads first.
+    """
+    counts: dict[str, int] = {}
+    newest: dict[str, int] = {}
+    for c in comments:
+        link = c.get("link_id")
+        if not link or not _links_youtube(c.get("body", "")):
+            continue
+        counts[link] = counts.get(link, 0) + 1
+        newest[link] = max(newest.get(link, 0), int(c.get("created_utc") or 0))
+    ranked = sorted((l for l, n in counts.items() if n >= min_links), key=lambda l: (-counts[l], l))
+    return [(l, newest[l]) for l in ranked[:max_threads]]
+
+
+def fetch_threads(client: ArcticShiftClient, threads: list[tuple[str, int]],
+                  max_pages: int = config.THREAD_MAX_PAGES) -> list[dict]:
+    """Fetch the comments of whole threads (cheap ``link_id`` lookups).
+
+    Full-text search is the API's bottleneck, but threads where people swap
+    YouTube recommendations ("best mobility channels?") hold many more links
+    than a time-sampled search finds. Only comments that link YouTube are kept.
+    """
+    out: list[dict] = []
+    t0 = time.monotonic()
+    for n, (link_id, newest) in enumerate(threads, 1):
+        cursor = None
+        for _ in range(max_pages):
+            params = {"link_id": link_id, "fields": config.COMMENT_FIELDS, "limit": config.PAGE_SIZE}
+            if cursor:
+                params["before"] = cursor
+            try:
+                # Threads go quiet quickly: treat them as closed ~IMMUTABLE_AFTER_DAYS
+                # after the newest comment we know of.
+                data, limit = client.search(params, window_end=newest)
+            except FetchError as exc:
+                log.error("thread %s: %s", link_id, exc)
+                break
+            out.extend(c for c in data if _links_youtube(c.get("body", "")))
+            if len(data) < limit:
+                break
+            cursor = min(int(c["created_utc"]) for c in data)
+        if n % 50 == 0:
+            log.info("threads: %d/%d (%d linking comments, %.0fs)", n, len(threads), len(out), time.monotonic() - t0)
+    log.info("threads: %d expanded -> %d comments linking YouTube (requests=%d, cache hits=%d)",
+             len(threads), len(out), client.requests_made, client.cache_hits)
+    return out
+
+
+def merge(*batches: Iterable[dict]) -> list[dict]:
+    seen: set[str] = set()
+    out = []
+    for batch in batches:
+        for c in batch:
+            if c["id"] not in seen:
+                seen.add(c["id"])
+                out.append(c)
     return out

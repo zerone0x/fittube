@@ -92,6 +92,33 @@ class FetchTest(unittest.TestCase):
         self.assertEqual([c["limit"] for c in session.calls], [100, 50, 50, 50])
         self.assertEqual(len(got), 120)
 
+    def test_pick_and_fetch_threads(self):
+        yt = "https://youtu.be/AAAAAAAAAAA"
+        sampled = [
+            {"id": "1", "link_id": "t3_hot", "body": yt, "created_utc": ts(2015)},
+            {"id": "2", "link_id": "t3_hot", "body": yt, "created_utc": ts(2015, 1)},
+            {"id": "3", "link_id": "t3_cold", "body": yt, "created_utc": ts(2015)},
+            {"id": "4", "link_id": "t3_cold", "body": "no link", "created_utc": ts(2015)},
+        ]
+        threads = fetch.pick_threads(sampled, min_links=2)
+        self.assertEqual(threads, [("t3_hot", ts(2015))])
+
+        class ThreadSession(FakeSession):
+            def get(self, url, params, timeout):
+                self.calls.append(dict(params))
+                rows = [c for c in self.comments if c["link_id"] == params["link_id"]
+                        and c["created_utc"] < params.get("before", 1 << 40)]
+                return FakeResponse(200, rows[: params["limit"]])
+
+        thread = [{"id": f"t{i}", "link_id": "t3_hot", "created_utc": ts(2015, i),
+                   "body": yt if i % 2 else "agreed"} for i in range(150)]
+        session = ThreadSession(thread)
+        got = fetch.fetch_threads(self.client(session), threads)
+        self.assertEqual(len(session.calls), 2)
+        self.assertEqual(len(got), 75)
+        merged = fetch.merge(sampled, got, got)
+        self.assertEqual(len(merged), len(sampled) + 75)
+
     def test_offline_never_hits_network(self):
         session = FakeSession([{"id": "a", "created_utc": ts(2012)}])
         client = fetch.ArcticShiftClient(cache_dir=self.tmp.name, session=session, offline=True)

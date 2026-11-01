@@ -38,13 +38,27 @@ SLOW_QUERY_SECONDS = 5.0
 # Max comments fetched per subreddit. The budget is spread across time windows
 # (see WINDOW_YEARS) so we sample every era, not only the newest comments.
 MAX_COMMENTS_PER_SUB = int(os.environ.get("FITTUBE_MAX_COMMENTS", "1000"))
+
+# Thread expansion: after the search pass, fetch whole threads in which at
+# least THREAD_MIN_LINKS sampled comments link YouTube. These are cheap
+# (indexed link_id lookups) compared to full-text search.
+THREAD_MIN_LINKS = 2
+MAX_THREADS = int(os.environ.get("FITTUBE_MAX_THREADS", "600"))
+THREAD_MAX_PAGES = 5
 START_YEAR = 2010
 WINDOW_YEARS = 4
 
 # Politeness: minimum seconds between requests, retries and backoff.
 MIN_REQUEST_INTERVAL = 1.0
-RESET_MARGIN_SECONDS = 6
-MAX_RETRIES = 8
+# After a successful search, wait REST_FACTOR x its duration (searches cost
+# ~1-10 s of server time and the API budgets server time per client).
+REST_FACTOR = 3.0
+# On 422 "Timeout. Maybe slow down a bit" / 429 / 5xx: exponential backoff.
+# Hammering at the advertised per-minute reset keeps the client throttled; a
+# few minutes of silence clears it.
+BASE_BACKOFF_SECONDS = 30
+MAX_BACKOFF_SECONDS = 300
+MAX_RETRIES = 7
 REQUEST_TIMEOUT = 60
 # Cached pages whose window ended more than this many days ago never expire;
 # newer pages are refetched after CACHE_TTL_DAYS.
