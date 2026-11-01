@@ -1,0 +1,73 @@
+name: Refresh data
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # weekly, Monday 06:17 UTC
+  workflow_dispatch:
+    inputs:
+      max_comments:
+        description: "Max comments fetched per subreddit"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r pipeline/requirements.txt
+
+      - name: Unit tests
+        run: python -m unittest -v
+
+      # Arctic Shift pages for closed time windows never change, so keep the
+      # API cache between runs; only recent pages are refetched.
+      - name: Restore API cache
+        uses: actions/cache@v4
+        with:
+          path: pipeline/.cache
+          key: pipeline-cache-${{ github.run_id }}
+          restore-keys: pipeline-cache-
+
+      - name: Run pipeline
+        env:
+          FITTUBE_MAX_COMMENTS: ${{ inputs.max_comments }}
+        run: |
+          if [ -z "$FITTUBE_MAX_COMMENTS" ]; then unset FITTUBE_MAX_COMMENTS; fi
+          python -m pipeline.run --min-videos 100
+
+      - name: Commit updated data
+        run: |
+          # Ignore generated_at when deciding whether anything changed.
+          if git cat-file -e HEAD:site/data/videos.json 2>/dev/null && python - <<'PY'
+          import json, subprocess, sys
+          old = json.loads(subprocess.check_output(["git", "show", "HEAD:site/data/videos.json"]))
+          new = json.load(open("site/data/videos.json"))
+          old.pop("generated_at", None); new.pop("generated_at", None)
+          sys.exit(0 if old == new else 1)
+          PY
+          then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add site/data/videos.json
+          git commit -m "chore(data): refresh videos.json"
+          git push
