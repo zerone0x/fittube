@@ -54,7 +54,10 @@ one per subreddit wiki listing the video (author `wiki:<subreddit>`),
 count at 25%) and `wikis` is the number of distinct subreddit wikis listing the
 video. `WIKI_BOOST = 30`, so a wiki listing is worth as much as four
 independent recommenders: moderators curate these lists. A video is kept if it
-is listed in a wiki, `recommenders >= 2` or `sum_score >= 10`.
+is listed in a wiki, `recommenders >= 2` or its *comment* karma is `>= 10`
+(post karma ranks but cannot qualify a video alone: posts linking a video are
+mostly media shares such as meet footage or films, so a lone post needs
+corroboration).
 
 ## Sampling and the API budget
 

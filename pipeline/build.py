@@ -69,6 +69,7 @@ class VideoAgg:
     id: str
     authors: set[str] = field(default_factory=set)
     weighted_score: float = 0.0
+    post_score: float = 0.0  # part of weighted_score that is post karma
     subreddits: dict[str, int] = field(default_factory=dict)
     first_seen: int | None = None
     comments: list[dict] = field(default_factory=list)
@@ -125,6 +126,7 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
             v = videos.setdefault(ref.id, VideoAgg(ref.id))
             if kind == "post":
                 v.posts[permalink(c)] = {"subreddit": c["subreddit"], "score": score}
+                v.post_score += score * weight / len(refs)
             else:
                 v.comment_counts[c["subreddit"]] = v.comment_counts.get(c["subreddit"], 0) + 1
             if not negative:
@@ -187,7 +189,14 @@ def rank_score(recommenders: int, sum_score: float) -> float:
 
 
 def passes_threshold(v: VideoAgg) -> bool:
-    return bool(v.wikis) or v.recommenders >= config.MIN_RECOMMENDERS or v.weighted_score >= config.MIN_SUM_SCORE
+    """Wiki-listed, or ``MIN_RECOMMENDERS`` people, or ``MIN_SUM_SCORE`` comment karma.
+
+    Post karma ranks but does not qualify a video on its own: posts linking a
+    video are mostly media shares (meet footage, films, news), not
+    recommendations, so a lone post only counts as one recommender.
+    """
+    return (bool(v.wikis) or v.recommenders >= config.MIN_RECOMMENDERS
+            or v.weighted_score - v.post_score >= config.MIN_SUM_SCORE)
 
 
 # -- oEmbed -------------------------------------------------------------------

@@ -190,9 +190,12 @@ class PostsTest(SourceTestCase):
                                     "num_comments": 3, "created_utc": 1_500_000_000, "subreddit": "yoga"})
         reply = {"id": "c1", "author": "bob", "body": f"+1 https://youtu.be/{A}", "score": 5,
                  "created_utc": 1_500_000_100, "subreddit": "yoga", "link_id": "t3_p1"}
+        alone = build.aggregate([post])[A]
+        self.assertFalse(build.passes_threshold(alone))  # a lone post (even with karma) is not enough
         v = build.aggregate([post, reply])[A]
         self.assertEqual(v.recommenders, 2)
         self.assertEqual(v.weighted_score, 45)
+        self.assertTrue(build.passes_threshold(v))
         self.assertEqual(build.source_entries(v), [
             {"kind": "post", "subreddit": "yoga", "url": "https://www.reddit.com/r/yoga/comments/p1/", "score": 40},
             {"kind": "comment", "subreddit": "yoga", "count": 1},
