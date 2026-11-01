@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FitTube · Fitness videos Reddit actually recommends</title>
+  <meta name="description" content="Workout tutorials and follow-alongs that fitness communities on Reddit actually recommend. No engagement feed, just videos people vouch for.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f6f6f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0e0e10" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#grid">Skip to videos</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./" aria-label="FitTube home">
+        <img src="favicon.svg" alt="" width="28" height="28">
+        <span>Fit<b>Tube</b></span>
+      </a>
+
+      <div class="search" role="search">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search" type="search" placeholder="Search titles, channels, comments" aria-label="Search videos" autocomplete="off" spellcheck="false">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+      </div>
+
+      <nav class="actions" aria-label="Tools">
+        <button id="shuffle-btn" aria-label="Random good video" class="btn btn-ghost" type="button" title="Random good video (r)">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 3h5v5"/><path d="M4 20 21 3"/><path d="M21 16v5h-5"/><path d="m15 15 6 6"/><path d="M4 4l5 5"/></svg>
+          <span class="btn-label">Surprise me</span>
+        </button>
+        <button id="timer-btn" aria-label="Workout timer" class="btn btn-ghost" type="button" title="Workout timer (t)" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>
+          <span class="btn-label">Timer</span>
+        </button>
+        <button id="session-btn" aria-label="My session" class="btn btn-ghost" type="button" title="My session (m)" aria-expanded="false" aria-controls="drawer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h11"/><path d="M4 12h11"/><path d="M4 18h7"/><path d="m16 15 5 3-5 3z"/></svg>
+          <span class="btn-label">My session</span>
+          <span id="session-count" class="badge" hidden>0</span>
+        </button>
+        <button id="help-btn" class="btn btn-ghost btn-icon" type="button" title="Keyboard shortcuts (?)" aria-label="Keyboard shortcuts">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <h1 id="hero-title">Fitness videos the internet actually vouches for.</h1>
+    <p>No algorithmic feed. Every video here was recommended by real people in Reddit's fitness communities, ranked by how many of them did.</p>
+  </section>
+
+  <section class="toolbar" aria-label="Filters and sorting">
+    <div class="toolbar-row">
+      <button id="filters-toggle" class="btn btn-soft" type="button" aria-expanded="true" aria-controls="filters">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18"/><path d="M6 12h12"/><path d="M10 19h4"/></svg>
+        <span>Filters</span>
+        <span id="filter-count" class="badge" hidden>0</span>
+      </button>
+      <p id="summary" class="summary" aria-live="polite"></p>
+      <label class="sort">
+        <span class="sort-label">Sort</span>
+        <select id="sort" aria-label="Sort videos">
+          <option value="score">Top ranked</option>
+          <option value="recommenders">Most recommenders</option>
+          <option value="newest">Newest</option>
+        </select>
+      </label>
+    </div>
+    <div id="filters" class="filters"></div>
+  </section>
+
+  <main class="main">
+    <div id="status" class="status" role="status"></div>
+    <div id="grid" class="grid" tabindex="-1"></div>
+    <div id="empty" class="empty" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/><path d="M8 11h6"/></svg>
+      <h2>No videos match</h2>
+      <p>Try removing a filter or searching for something broader.</p>
+      <button id="empty-clear" class="btn btn-primary" type="button">Clear all filters</button>
+    </div>
+    <div id="sentinel" class="sentinel" aria-hidden="true"></div>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-meta"></p>
+    <p>Rankings come from public Reddit comments. Videos belong to their creators and are embedded from YouTube.
+      <a href="https://github.com/zerone0x/fittube">Source on GitHub</a></p>
+  </footer>
+
+  <!-- Video modal -->
+  <div id="modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <button class="icon-btn modal-close" type="button" data-close aria-label="Close (Esc)">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="m-title" tabindex="-1">
+      <header class="modal-bar">
+        <button class="btn btn-ghost btn-sm" type="button" data-close>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          All videos
+        </button>
+        <span class="modal-bar-brand">Fit<b>Tube</b></span>
+      </header>
+      <div class="player-frame">
+        <div id="player"></div>
+        <div id="player-fallback" class="player-fallback" hidden></div>
+      </div>
+      <div class="modal-body">
+        <div id="session-nav" class="session-nav" hidden>
+          <button id="sn-prev" class="btn btn-soft btn-sm" type="button">Previous</button>
+          <span id="sn-label"></span>
+          <button id="sn-next" class="btn btn-soft btn-sm" type="button">Next</button>
+        </div>
+
+        <h2 id="m-title" class="m-title"></h2>
+        <p id="m-meta" class="m-meta"></p>
+
+        <div class="m-actions">
+          <button id="m-add" class="btn btn-primary" type="button"></button>
+          <button id="m-timer" class="btn btn-soft" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2.5"/><path d="M9 2h6"/></svg>
+            Interval timer
+          </button>
+          <a id="m-yt" class="btn btn-soft" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></svg>
+            YouTube
+          </a>
+        </div>
+
+        <div id="m-tags" class="chips chips-static"></div>
+
+        <div class="m-columns">
+          <div class="m-col">
+            <section id="m-ts-section" class="m-section">
+              <h3>Timestamps</h3>
+              <p class="m-hint">Jump to a moment, or loop it to drill the movement.</p>
+              <ol id="m-timestamps" class="ts-list"></ol>
+            </section>
+
+            <section class="m-section">
+              <h3>Loop a segment</h3>
+              <p class="m-hint">Mark a start and end while watching, then loop it for form practice.</p>
+              <div class="loop-controls">
+                <button id="loop-a" class="btn btn-soft btn-sm" type="button">Set A <span id="loop-a-val" class="mono">--:--</span></button>
+                <button id="loop-b" class="btn btn-soft btn-sm" type="button">Set B <span id="loop-b-val" class="mono">--:--</span></button>
+                <button id="loop-toggle" class="btn btn-soft btn-sm" type="button" aria-pressed="false">Loop off</button>
+                <label class="loop-len">Loop length
+                  <input id="loop-len" type="number" min="2" max="600" step="1" value="10" inputmode="numeric"> s
+                </label>
+              </div>
+              <p id="loop-status" class="loop-status" aria-live="polite"></p>
+            </section>
+          </div>
+
+          <section class="m-col m-section">
+            <h3>Why it's recommended</h3>
+            <ul id="m-comments" class="comment-list"></ul>
+          </section>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- Session drawer -->
+  <aside id="drawer" class="drawer" hidden aria-labelledby="drawer-title">
+    <div class="drawer-backdrop" data-close-drawer></div>
+    <div class="drawer-panel" role="dialog" aria-modal="false" aria-labelledby="drawer-title" tabindex="-1">
+      <header class="drawer-head">
+        <div>
+          <h2 id="drawer-title">My session</h2>
+          <p id="drawer-sub" class="drawer-sub"></p>
+        </div>
+        <button class="icon-btn" type="button" data-close-drawer aria-label="Close session">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <ol id="session-list" class="session-list"></ol>
+      <div id="session-empty" class="session-empty">
+        <p>Your session is empty.</p>
+        <p class="muted">Add videos with the <b>+</b> button on any card to build a workout you can play back to back.</p>
+      </div>
+      <footer class="drawer-foot">
+        <button id="session-clear" class="btn btn-ghost" type="button">Clear</button>
+        <button id="session-play" class="btn btn-primary" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 4 13 8-13 8z"/></svg>
+          Play session
+        </button>
+      </footer>
+    </div>
+  </aside>
+
+  <!-- Interval timer dock -->
+  <section id="timer" class="timer" hidden aria-label="Interval timer">
+    <header class="timer-head">
+      <span class="timer-title">Interval timer</span>
+      <div class="timer-head-actions">
+        <button id="timer-settings-btn" class="icon-btn icon-btn-sm" type="button" aria-label="Timer settings" aria-expanded="false" aria-controls="timer-settings">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>
+        </button>
+        <button id="timer-close" class="icon-btn icon-btn-sm" type="button" aria-label="Close timer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </div>
+    </header>
+    <div class="timer-display" data-phase="idle">
+      <span id="timer-phase" class="timer-phase">Ready</span>
+      <span id="timer-clock" class="timer-clock mono" aria-live="off">0:40</span>
+      <span id="timer-round" class="timer-round">8 rounds</span>
+      <div class="timer-progress"><span id="timer-bar"></span></div>
+    </div>
+    <form id="timer-settings" class="timer-settings" hidden>
+      <label>Work <span><input id="t-work" type="number" min="1" max="3600" value="40" inputmode="numeric"> s</span></label>
+      <label>Rest <span><input id="t-rest" type="number" min="0" max="3600" value="20" inputmode="numeric"> s</span></label>
+      <label>Rounds <span><input id="t-rounds" type="number" min="1" max="99" value="8" inputmode="numeric"></span></label>
+      <label class="check"><input id="t-sound" type="checkbox" checked> Beeps</label>
+    </form>
+    <div class="timer-controls">
+      <button id="timer-reset" class="btn btn-soft" type="button">Reset</button>
+      <button id="timer-start" class="btn btn-primary" type="button">Start</button>
+    </div>
+  </section>
+
+  <!-- Help overlay -->
+  <div id="help" class="modal help" hidden>
+    <div class="modal-backdrop" data-close-help></div>
+    <div class="help-panel" role="dialog" aria-modal="true" aria-labelledby="help-title" tabindex="-1">
+      <header class="drawer-head">
+        <h2 id="help-title">Keyboard shortcuts</h2>
+        <button class="icon-btn" type="button" data-close-help aria-label="Close">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+        </button>
+      </header>
+      <dl class="shortcuts">
+        <div><dt><kbd>/</kbd></dt><dd>Focus search</dd></div>
+        <div><dt><kbd>j</kbd> <kbd>k</kbd></dt><dd>Next / previous video</dd></div>
+        <div><dt><kbd>Enter</kbd></dt><dd>Open selected video</dd></div>
+        <div><dt><kbd>Esc</kbd></dt><dd>Close dialog</dd></div>
+        <div><dt><kbd>Space</kbd></dt><dd>Play / pause (in video)</dd></div>
+        <div><dt><kbd>a</kbd></dt><dd>Add selected / open video to session</dd></div>
+        <div><dt><kbd>r</kbd></dt><dd>Random good video</dd></div>
+        <div><dt><kbd>t</kbd></dt><dd>Toggle interval timer</dd></div>
+        <div><dt><kbd>m</kbd></dt><dd>Toggle my session</dd></div>
+        <div><dt><kbd>?</kbd></dt><dd>Show this help</dd></div>
+      </dl>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
