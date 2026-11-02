@@ -2590,6 +2590,20 @@
    "reason": "Author shares their own 588 Jefferson deadlift PR, not recommending the video for training.",
    "sentiment": "neutral"
   },
+  "a3:G1SYuO8XWRM:t3_1kgdui1": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Review of finished program, links video for free version.",
+   "sentiment": "neutral"
+  },
+  "a3:G1SYuO8XWRM:t3_jtni1i": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Program review pointing to Brian's video explaining the program; informative share.",
+   "sentiment": "neutral"
+  },
   "a3:GFxVeOZEP_U:t1_hhuge4u": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -3008,6 +3022,20 @@
    "quality_flags": [],
    "reason": "Gives advice on back pain and hamstrings, linking the video as a helpful resource.",
    "sentiment": "neutral"
+  },
+  "a3:Ic68bks6-Wc:t3_1v2rguf": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Shares the routine they use while asking for splits stretching recommendations.",
+   "sentiment": "neutral"
+  },
+  "a3:Ic68bks6-Wc:t3_l4nif1": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Lists it among favorite follow-along flexibility videos for front splits goals.",
+   "sentiment": "positive"
   },
   "a3:IeROCZR08y0:t1_hi8j0iz": {
    "is_recommendation": false,
@@ -4748,6 +4776,27 @@
    "reason": "Author shares their own deadlift PR log; the SpongeBob link is a meme, not training advice.",
    "sentiment": "neutral"
   },
+  "a3:UThJoQRRx8w:t3_1bmafyr": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Program review of a KB swing challenge; video linked as the program source.",
+   "sentiment": "neutral"
+  },
+  "a3:UThJoQRRx8w:t3_1dl588c": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Program review of Reps Per Minute, linking the video as the program source.",
+   "sentiment": "neutral"
+  },
+  "a3:UThJoQRRx8w:t3_vt3gd0": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Program review of the linked RPM program; author ran it and shares results.",
+   "sentiment": "positive"
+  },
   "a3:UWIYsL5ewug:t1_dryaqrf": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -4873,6 +4922,13 @@
    "quality_flags": [],
    "reason": "Offers the video as a simple deadlift tutorial.",
    "sentiment": "positive"
+  },
+  "a3:VVPyAU4l-sw:t3_1nkv7p7": {
+   "is_recommendation": false,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Author asks whether this video is still the best starter and seeks alternatives; not endorsing it.",
+   "sentiment": "neutral"
   },
   "a3:VVPyAU4l-sw:t3_1seucg0": {
    "is_recommendation": false,
@@ -5504,6 +5560,22 @@
    ],
    "reason": "Says 'Check this' and links video as a resource, though also plugs own site.",
    "sentiment": "positive"
+  },
+  "a3:Zq6_DzukdCU:t3_lv7u5a": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Author says they followed these guides to build their routine, implicitly endorsing them.",
+   "sentiment": "positive"
+  },
+  "a3:Zq6_DzukdCU:t3_p2k2gl": {
+   "is_recommendation": false,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [
+    "personal-clip"
+   ],
+   "reason": "Author shares own front splits progression and asks for advice, not recommending the video.",
+   "sentiment": "neutral"
   },
   "a3:Zwx0gBlrtpM:t1_h53kg2x": {
    "is_recommendation": true,
@@ -8290,6 +8362,15 @@
    "reason": "Gives advice on squat anatomy and internal rotation while linking the video as a resource.",
    "sentiment": "neutral"
   },
+  "a3:ubdIGnX2Hfs:t3_1q5lenm": {
+   "is_recommendation": false,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [
+    "off-topic"
+   ],
+   "reason": "Program review of the author's own training experience; excerpt shows no pointing to the video.",
+   "sentiment": "neutral"
+  },
   "a3:ufkdZDhcfQU:t1_pck4na5": {
    "is_recommendation": false,
    "model": "claude-sonnet-5-5",
@@ -8696,6 +8777,20 @@
    "quality_flags": [],
    "reason": "Links older video with timestamp as the one they referenced, pointing to its content.",
    "sentiment": "neutral"
+  },
+  "a3:xm_JW-8ZczQ:t3_12elhoc": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Detailed program review of the linked mass builder; shares experience for others to evaluate and use.",
+   "sentiment": "positive"
+  },
+  "a3:xm_JW-8ZczQ:t3_wvx01t": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Program review after 24 weeks running the program; informative, points others to it.",
+   "sentiment": "positive"
   },
   "a3:xwzXjry6s6g:t1_cechd8o": {
    "is_recommendation": false,
@@ -9242,6 +9337,29 @@
     "invalid": 0,
     "output_tokens": 230,
     "requests": 1
+   }
+  },
+  {
+   "at": "2026-11-02T17:57:49Z",
+   "models": {
+    "A": "claude-sonnet-5-5",
+    "B": "claude-sonnet-5-5"
+   },
+   "stage_A": {
+    "cost_usd": 0.0431,
+    "errors": 0,
+    "input_tokens": 9823,
+    "invalid": 0,
+    "output_tokens": 911,
+    "requests": 7
+   },
+   "stage_B": {
+    "cost_usd": 0.0322,
+    "errors": 0,
+    "input_tokens": 8460,
+    "invalid": 0,
+    "output_tokens": 454,
+    "requests": 4
    }
   }
  ],
@@ -23971,6 +24089,85 @@
     "goal": [],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b2:G1SYuO8XWRM": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Brian Alsruhe presents Darkhorse, a free conjugate-style strength program with rotating percentages built around the squat, bench press, deadlift and overhead press.",
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "strength"
+    ],
+    "level": "intermediate",
+    "type": "program"
+   }
+  },
+  "b2:Ic68bks6-Wc": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "A 30-minute follow-along stretching routine from blogilates aimed at improving flexibility and working toward the splits.",
+   "tags": {
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "mobility"
+    ],
+    "level": "any",
+    "type": "follow-along"
+   }
+  },
+  "b2:Zq6_DzukdCU": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Explains the science behind getting into the splits quickly for people who are not flexible, covering how to approach stretching to improve split flexibility.",
+   "tags": {
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "mobility"
+    ],
+    "level": "beginner",
+    "type": "explainer"
+   }
+  },
+  "b2:xm_JW-8ZczQ": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Brian Alsruhe presents a free mass building program, a structured training plan aimed at gaining muscle size.",
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "hypertrophy",
+     "strength"
+    ],
+    "level": "intermediate",
+    "type": "program"
    }
   }
  }

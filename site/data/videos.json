@@ -1,6 +1,16 @@
 {
- "generated_at": "2026-11-02T04:06:52Z",
+ "generated_at": "2026-11-02T17:31:12Z",
  "sources": [
+  "bodyweightfitness",
+  "Fitness",
+  "weightroom",
+  "naturalbodybuilding",
+  "flexibility",
+  "xxfitness",
+  "overcominggravity",
+  "physicaltherapy",
+  "kettlebell",
+  "StrongerByScience",
   "yoga",
   "climbing",
   "climbingtrainer",
@@ -20,16 +30,6 @@
   "swimming",
   "Kettleballs",
   "calisthenics",
-  "bodyweightfitness",
-  "Fitness",
-  "weightroom",
-  "naturalbodybuilding",
-  "flexibility",
-  "xxfitness",
-  "overcominggravity",
-  "physicaltherapy",
-  "kettlebell",
-  "StrongerByScience",
   "news.ycombinator.com",
   "t-nation.com"
  ],
@@ -43,8 +43,8 @@
    "score": 178.6,
    "first_seen": "2017-12-01",
    "subreddits": [
-    "Stronglifts5x5",
     "xxfitness",
+    "Stronglifts5x5",
     "Fitness"
    ],
    "comments": [
@@ -529,6 +529,77 @@
    "summary": "A bench press technique tutorial covering the basics of form."
   },
   {
+   "id": "UThJoQRRx8w",
+   "title": "FREE STRENGTH PROGRAM - R.P.M - Full Body",
+   "channel": "Brian Alsruhe",
+   "thumbnail": "https://i.ytimg.com/vi/UThJoQRRx8w/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 86.3,
+   "first_seen": "2022-07-06",
+   "subreddits": [
+    "weightroom",
+    "xxfitness"
+   ],
+   "comments": [
+    {
+     "text": "[Program Review] Brian Alsruhe’s Full Body Reps per Minute (RPM) Program — History 54 yo, 6’5”, 225 lbs Was never particularly active in school, or life, and by the time I was 49 years old, I had worked my way up to an unhealthy 400 lb., World of Warcraft addict. I decided to…",
+     "score": 151,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/vt3gd0/"
+    },
+    {
+     "text": "[Program Review] Brian Alsruhe - Reps Per Minute — Background Briefly - squash player who needed a gym program that didn't interfere too much with match and practice days but also had conditioning built in. So building strength wasn't my top priority but more to keep the base…",
+     "score": 44,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1dl588c/"
+    },
+    {
+     "text": "[Program Review] 10K KB Swings - Slow and Stupid Style — TLDR - was pretty fun. Might run again next year as a test. Challenge Intro Background to challenge can be found here but basically the goal is hit 10,000 KB swings in whatever pattern/style but just get it done.…",
+     "score": 35,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1bmafyr/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "strength"
+    ],
+    "level": "any",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting_programs",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting_programs"
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/vt3gd0/",
+     "score": 151
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/1dl588c/",
+     "score": 44
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/1bmafyr/",
+     "score": 35
+    }
+   ],
+   "summary": "A free full-body strength training program called R.P.M from Brian Alsruhe."
+  },
+  {
    "id": "4AObAU-EcYE",
    "title": "How to Deadlift With Mark Rippetoe | The Art of Manliness",
    "channel": "Art of Manliness",
@@ -537,8 +608,8 @@
    "score": 86.0,
    "first_seen": "2016-10-06",
    "subreddits": [
-    "Stronglifts5x5",
     "bodyweightfitness",
+    "Stronglifts5x5",
     "Fitness"
    ],
    "comments": [
@@ -618,67 +689,6 @@
    },
    "needs_llm_check": false,
    "summary": "Mark Rippetoe demonstrates and explains how to perform the barbell deadlift with proper technique, in an interview-style tutorial from Art of Manliness."
-  },
-  {
-   "id": "ubdIGnX2Hfs",
-   "title": "How To Squat For Your Anatomy (FIND THE RIGHT STANCE)",
-   "channel": "Squat University",
-   "thumbnail": "https://i.ytimg.com/vi/ubdIGnX2Hfs/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 85.6,
-   "first_seen": "2021-01-05",
-   "subreddits": [
-    "xxfitness",
-    "flexibility"
-   ],
-   "comments": [
-    {
-     "text": "I saw a Squat University video a few years ago that explained it's because of your anatomy. I found two of their videos that will explain. How to Squat for Your Anatomy (FIND THE RIGHT STANCE), 6:53 mins https://youtu.be/ubdIGnX2Hfs?si=9nzeZ-e8tjd0GW9z Squat Form for Your…",
-     "score": 15,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1pydi36/_/nwi7g3x/"
-    },
-    {
-     "text": "https://youtu.be/ubdIGnX2Hfs Watch this video and check out his other videos on squat form. At a glance, it looks like your groin muscles are tight and you also might not have ideal external hip rotation. For ankles, your knee should travel about 5ish inches in front of your…",
-     "score": 9,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/r23js7/_/hm3f2zb/"
-    },
-    {
-     "text": "It's not a traditional basic squat no, but if it serves your purpose and your anatomy don't worry. But still, internal rotation is one of the most overlooked important abilities. Affects your kicks, your splits how you walk etc and if you have problems with internal rotation…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1pydi36/_/nwjntpx/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "legs",
-     "hips",
-     "glutes"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "skill",
-     "strength",
-     "mobility"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "xxfitness",
-     "path": "/wiki/lifting/squat_guide_resources",
-     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    }
-   ],
-   "summary": "Squat University explains how to find a squat stance that suits your own anatomy, with guidance on hip, ankle and stance factors affecting squat form."
   },
   {
    "id": "PLHY2-nt-y4",
@@ -1586,10 +1596,10 @@
    "thumbnail": "https://i.ytimg.com/vi/IODxDxX7oi4/hqdefault.jpg",
    "recommenders": 3,
    "score": 73.5,
-   "first_seen": "2025-12-09",
+   "first_seen": "2020-02-23",
    "subreddits": [
-    "flexibility",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "flexibility"
    ],
    "comments": [
     {
@@ -1783,8 +1793,8 @@
    "score": 70.9,
    "first_seen": "2017-12-15",
    "subreddits": [
-    "fitness30plus",
     "bodyweightfitness",
+    "fitness30plus",
     "flexibility"
    ],
    "comments": [
@@ -1851,8 +1861,8 @@
    "score": 70.0,
    "first_seen": "2017-12-23",
    "subreddits": [
-    "fitness30plus",
     "weightroom",
+    "fitness30plus",
     "Fitness"
    ],
    "comments": [
@@ -1933,6 +1943,68 @@
    "summary": "Alan Thrall teaches how to bench press."
   },
   {
+   "id": "ubdIGnX2Hfs",
+   "title": "How To Squat For Your Anatomy (FIND THE RIGHT STANCE)",
+   "channel": "Squat University",
+   "thumbnail": "https://i.ytimg.com/vi/ubdIGnX2Hfs/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 70.0,
+   "first_seen": "2021-01-05",
+   "subreddits": [
+    "StrongerByScience",
+    "xxfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "I saw a Squat University video a few years ago that explained it's because of your anatomy. I found two of their videos that will explain. How to Squat for Your Anatomy (FIND THE RIGHT STANCE), 6:53 mins https://youtu.be/ubdIGnX2Hfs?si=9nzeZ-e8tjd0GW9z Squat Form for Your…",
+     "score": 15,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1pydi36/_/nwi7g3x/"
+    },
+    {
+     "text": "https://youtu.be/ubdIGnX2Hfs Watch this video and check out his other videos on squat form. At a glance, it looks like your groin muscles are tight and you also might not have ideal external hip rotation. For ankles, your knee should travel about 5ish inches in front of your…",
+     "score": 9,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/r23js7/_/hm3f2zb/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 284,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "body": [
+     "legs",
+     "hips",
+     "glutes"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "skill",
+     "strength",
+     "mobility"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting/squat_guide_resources",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ],
+   "summary": "Squat University explains how to find a squat stance that suits your own anatomy, with guidance on hip, ankle and stance factors affecting squat form."
+  },
+  {
    "id": "zoZWgTrZLd8",
    "title": "How To Squat With Perfect Form",
    "channel": "CanditoTrainingHQ",
@@ -2002,10 +2074,10 @@
    "thumbnail": "https://i.ytimg.com/vi/wol7Hko8RhY/hqdefault.jpg",
    "recommenders": 3,
    "score": 66.9,
-   "first_seen": "2025-09-30",
+   "first_seen": "2020-12-26",
    "subreddits": [
-    "Stronglifts5x5",
-    "weightroom"
+    "weightroom",
+    "Stronglifts5x5"
    ],
    "comments": [
     {
@@ -2445,10 +2517,10 @@
    "thumbnail": "https://i.ytimg.com/vi/Ji5ieq8JdnQ/hqdefault.jpg",
    "recommenders": 2,
    "score": 60.4,
-   "first_seen": "2021-12-27",
+   "first_seen": "2020-10-29",
    "subreddits": [
-    "Stronglifts5x5",
-    "xxfitness"
+    "xxfitness",
+    "Stronglifts5x5"
    ],
    "comments": [
     {
@@ -2497,7 +2569,7 @@
    "thumbnail": "https://i.ytimg.com/vi/OwKdXEnbSmU/hqdefault.jpg",
    "recommenders": 2,
    "score": 60.4,
-   "first_seen": "2025-09-08",
+   "first_seen": "2021-06-30",
    "subreddits": [
     "powerlifting"
    ],
@@ -3069,12 +3141,12 @@
    ],
    "comments": [
     {
-     "text": "Yes, Emmet Louis talks through it on this video: https://youtu.be/Ydaz_E4xZM0?si=3bv0gkONDS-zCPJ He gives a protocol for stretching you should follow after a warm up.",
+     "text": "Yes, Emmet Louis talks through it on this video: https://youtu.be/YdazE4xZM0?si=3bv0gkONDS-zCPJ He gives a protocol for stretching you should follow after a warm up.",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1pee6zs/_/nsebzm1/"
     },
     {
-     "text": "This program by Emmet Louis: https://youtu.be/Ydaz_E4xZM0 I have been doing it myself, though not consistently enough",
+     "text": "This program by Emmet Louis: https://youtu.be/YdazE4xZM0 I have been doing it myself, though not consistently enough",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1pcc5lv/_/nrxcb78/"
     }
@@ -3117,10 +3189,10 @@
    "thumbnail": "https://i.ytimg.com/vi/dE5d39sErBU/hqdefault.jpg",
    "recommenders": 2,
    "score": 55.5,
-   "first_seen": "2021-09-23",
+   "first_seen": "2020-06-13",
    "subreddits": [
-    "AdvancedRunning",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "AdvancedRunning"
    ],
    "comments": [
     {
@@ -3166,10 +3238,10 @@
    "thumbnail": "https://i.ytimg.com/vi/lbozu0DPcYI/hqdefault.jpg",
    "recommenders": 2,
    "score": 55.5,
-   "first_seen": "2021-11-29",
+   "first_seen": "2019-07-08",
    "subreddits": [
-    "Stronglifts5x5",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "Stronglifts5x5"
    ],
    "comments": [
     {
@@ -3351,10 +3423,10 @@
    "thumbnail": "https://i.ytimg.com/vi/rxD321l2svE/hqdefault.jpg",
    "recommenders": 2,
    "score": 53.5,
-   "first_seen": "2026-09-05",
+   "first_seen": "2020-10-29",
    "subreddits": [
-    "Stronglifts5x5",
-    "xxfitness"
+    "xxfitness",
+    "Stronglifts5x5"
    ],
    "comments": [
     {
@@ -3803,10 +3875,10 @@
    "thumbnail": "https://i.ytimg.com/vi/ZeRsNzFcQLQ/hqdefault.jpg",
    "recommenders": 2,
    "score": 51.0,
-   "first_seen": "2025-08-02",
+   "first_seen": "2023-05-31",
    "subreddits": [
-    "fitness30plus",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "fitness30plus"
    ],
    "comments": [
     {
@@ -3855,10 +3927,10 @@
    "thumbnail": "https://i.ytimg.com/vi/kL_NJAkCQBg/hqdefault.jpg",
    "recommenders": 2,
    "score": 51.0,
-   "first_seen": "2025-08-02",
+   "first_seen": "2023-05-31",
    "subreddits": [
-    "fitness30plus",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "fitness30plus"
    ],
    "comments": [
     {
@@ -4123,102 +4195,6 @@
    "summary": "Short tutorial on performing the standing pike stretch to get more out of it."
   },
   {
-   "id": "-ZX1QMTdAC4",
-   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
-   "channel": "The Ready State",
-   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 49.7,
-   "first_seen": "2013-08-28",
-   "subreddits": [
-    "flexibility",
-    "bodyweightfitness",
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
-    },
-    {
-     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
-    },
-    {
-     "text": "Try the couch stretch, here's a video as well. It hurts...",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
-    },
-    {
-     "text": "If you sit all day the couch stretch [1] helps a lot to undo the shortening in your hip flexors. 2 min a day each side. Really painful if you sit a lot. Kelly Starrett has a lot of great information about mobility. [1]…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=6291682",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 126,
-     "label": ""
-    },
-    {
-     "t": 140,
-     "label": "Couch stretch"
-    }
-   ],
-   "tags": {
-    "body": [
-     "hips",
-     "legs"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "mobility",
-     "rehab"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "weightroom"
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=6291682",
-     "score": null,
-     "needs_llm_check": false
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 3,
-     "sum_score": 6.0,
-     "first_seen": "2013-12-10"
-    },
-    "hn": {
-     "recommenders": 1,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work."
-  },
-  {
    "id": "lshRFK-7QOE",
    "title": "Tonal Smart Home Gym Review: The TRUTH After 6 Months",
    "channel": "Garage Gym Reviews",
@@ -4381,6 +4357,69 @@
     }
    ],
    "summary": "Introductory kettlebell tutorial by Mark Wildman covering the basics of how to use a kettlebell, recommended to beginners for learning swing form and fundamentals."
+  },
+  {
+   "id": "xm_JW-8ZczQ",
+   "title": "FREE MASS BUILDING PROGRAM!",
+   "channel": "Brian Alsruhe",
+   "thumbnail": "https://i.ytimg.com/vi/xm_JW-8ZczQ/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 46.5,
+   "first_seen": "2022-08-23",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Program Review: Brian Alsruhe's Mass Builder — My Background: I’m 28 years old, and have been lifting consistently for the past 8 years. Since I largely learned about programming from lurking on Reddit, I’ve tried just about every program that’s been popular here since 2015…",
+     "score": 204,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/12elhoc/"
+    },
+    {
+     "text": "[Program Review] 24 Weeks / 2 Cycles of Brian Alsruhe's Mass Builder — Hello everyone. Been a while since I've been training well enough to warrant one of these. Short version: 2020 and 2021 were not great. After I finished my long cut in February 2020, I was left pretty burnt…",
+     "score": 132,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/wvx01t/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 1244,
+     "label": ""
+    },
+    {
+     "t": 1299,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [
+     "hypertrophy",
+     "strength"
+    ],
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "intermediate",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/12elhoc/",
+     "score": 204
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/wvx01t/",
+     "score": 132
+    }
+   ],
+   "summary": "Brian Alsruhe presents a free mass building program, a structured training plan aimed at gaining muscle size."
   },
   {
    "id": "yHxcTn1UeAc",
@@ -4585,6 +4624,68 @@
    },
    "needs_llm_check": false,
    "summary": "Jeremy Ethier and Dr. Stuart McGill explain which stretches to avoid with low back pain and which exercises to do instead."
+  },
+  {
+   "id": "G1SYuO8XWRM",
+   "title": "FREE STRENGTH PROGRAM! DARKHORSE",
+   "channel": "Brian Alsruhe",
+   "thumbnail": "https://i.ytimg.com/vi/G1SYuO8XWRM/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 45.4,
+   "first_seen": "2020-11-13",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "[Program review] Darkhorse by Brian Alsruhe — Bear in mind this my first program review here, so if there's something you think should be included, be sure to let me know! If you don't like reading, why did you even click this? Brian has a video explaining the program as he…",
+     "score": 121,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/jtni1i/"
+    },
+    {
+     "text": "Darkhorse review by Brian Alsruhe — Just finished the program by brian, it is a conjugate and rotating percentage program on the big 4 (deadlift, overhead press, squat and bench). There is a video for the free version: https://www.youtube.com/watch?v=G1SYuO8XWRM&t=3s The…",
+     "score": 39,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1kgdui1/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 3,
+     "label": ""
+    },
+    {
+     "t": 70,
+     "label": "wich is great, for most part of the program i was running 2 times a week, one…"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "intermediate",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/jtni1i/",
+     "score": 121
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/1kgdui1/",
+     "score": 39
+    }
+   ],
+   "summary": "Brian Alsruhe presents Darkhorse, a free conjugate-style strength program with rotating percentages built around the squat, bench press, deadlift and overhead press."
   },
   {
    "id": "mRznU6pzez0",
@@ -5454,7 +5555,7 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "Perhaps not disputed, but exercise’s effect is probably overestimated, and thus, damage was done. https://youtu.be/vSSkDos2hzo?si=3U2UxQOaZgdmT37",
+     "text": "Perhaps not disputed, but exercise’s effect is probably overestimated, and thus, damage was done. https://youtu.be/vSSkDos2hzo?si=3U2UxQOa_ZgdmT37",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=42188690",
      "site": "news.ycombinator.com"
@@ -10376,42 +10477,6 @@
    "summary": "Tykato Fitness gives a full review of Gold Medal Bodies' Parallettes One (P1) program, a bodyweight parallette training routine."
   },
   {
-   "id": "UThJoQRRx8w",
-   "title": "FREE STRENGTH PROGRAM - R.P.M - Full Body",
-   "channel": "Brian Alsruhe",
-   "thumbnail": "https://i.ytimg.com/vi/UThJoQRRx8w/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2024-12-16",
-   "subreddits": [
-    "xxfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "full"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "goal": [
-     "strength"
-    ],
-    "level": "any",
-    "type": "program"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "xxfitness",
-     "path": "/wiki/lifting_programs",
-     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting_programs"
-    }
-   ],
-   "summary": "A free full-body strength training program called R.P.M from Brian Alsruhe."
-  },
-  {
    "id": "UYjABf_RAcM",
    "title": "Lat Stretch for Handstand in more detail",
    "channel": "Emmet Louis",
@@ -10495,7 +10560,7 @@
    "thumbnail": "https://i.ytimg.com/vi/VVPyAU4l-sw/hqdefault.jpg",
    "recommenders": 1,
    "score": 40.0,
-   "first_seen": "2026-04-07",
+   "first_seen": "2025-09-19",
    "subreddits": [
     "flexibility",
     "Posture"
@@ -14729,6 +14794,77 @@
    "summary": "Emmet Louis demonstrates using horse stance as a way to work on flexibility and strength for side splits."
   },
   {
+   "id": "-ZX1QMTdAC4",
+   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
+   "channel": "The Ready State",
+   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 39.7,
+   "first_seen": "2013-12-10",
+   "subreddits": [
+    "flexibility",
+    "bodyweightfitness",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
+    },
+    {
+     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
+    },
+    {
+     "text": "Try the couch stretch, here's a video as well. It hurts...",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 126,
+     "label": ""
+    },
+    {
+     "t": 140,
+     "label": "Couch stretch"
+    }
+   ],
+   "tags": {
+    "body": [
+     "hips",
+     "legs"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "mobility",
+     "rehab"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    }
+   ],
+   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work."
+  },
+  {
    "id": "C89EKtI8a3o",
    "title": "The McGill Big 3 (HOW TO DO IT CORRECTLY)",
    "channel": "Squat University",
@@ -18383,6 +18519,60 @@
     }
    ],
    "summary": "A short explainer on how pain works and what to do about it."
+  },
+  {
+   "id": "Ic68bks6-Wc",
+   "title": "30 Minute Stretches for Splits!",
+   "channel": "blogilates",
+   "thumbnail": "https://i.ytimg.com/vi/Ic68bks6-Wc/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 30.7,
+   "first_seen": "2021-01-25",
+   "subreddits": [
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "Favorite follow along and online classes — Hi I'm a beginner ( i'm 1 yoga block away from frontsplits, can pike and wheel pose) I've always wanted to be more flexible but haven't really worked out a routine for myself. My first goals are front splits and deeper backbends/ fall…",
+     "score": 7,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/l4nif1/"
+    },
+    {
+     "text": "Spilts — Hii Everyone, I am interested in getting more flexible and ultimately, to be able to do the splits!! Do you guys have any youtube video or stretching routine recs? The one i’ve been using is a bit hard for me, but if you guys think I should continue with it then I…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1v2rguf/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "any",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "flexibility",
+     "url": "https://www.reddit.com/r/flexibility/comments/l4nif1/",
+     "score": 7
+    },
+    {
+     "kind": "post",
+     "subreddit": "flexibility",
+     "url": "https://www.reddit.com/r/flexibility/comments/1v2rguf/",
+     "score": 4
+    }
+   ],
+   "summary": "A 30-minute follow-along stretching routine from blogilates aimed at improving flexibility and working toward the splits."
   },
   {
    "id": "JwancB1LTsQ",
@@ -31921,6 +32111,49 @@
     }
    ],
    "summary": "Demonstrates a bodyweight movement linking a candlestick roll into a pistol squat, covering the technique for transitioning from the rolling motion into single-leg standing."
+  },
+  {
+   "id": "Zq6_DzukdCU",
+   "title": "How to do the Split fast – NOT FLEXIBLE? No problem! – (Explained by science)",
+   "channel": "Yiannis Christoulas",
+   "thumbnail": "https://i.ytimg.com/vi/Zq6_DzukdCU/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 10.0,
+   "first_seen": "2021-03-01",
+   "subreddits": [
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "My front and middle split progress (1 month) — Hey guys! I wanted to share my progress with this two skills during one month. I followed this two guides to create my workout: Front split/overall stretching guide and middle split guide . As a martial artist, I had decent…",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/lv7u5a/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "beginner",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "flexibility",
+     "url": "https://www.reddit.com/r/flexibility/comments/lv7u5a/",
+     "score": 5
+    }
+   ],
+   "summary": "Explains the science behind getting into the splits quickly for people who are not flexible, covering how to approach stretching to improve split flexibility."
   },
   {
    "id": "hQvgvqMlE6k",
