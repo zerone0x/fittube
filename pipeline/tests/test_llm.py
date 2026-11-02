@@ -1,6 +1,8 @@
 """LLM pass (pipeline/llm.py) against a fake Anthropic client: no network, no key."""
 
+import contextlib
 import copy
+import io
 import json
 import re
 import tempfile
@@ -172,9 +174,9 @@ class ValidationTest(unittest.TestCase):
                 "A short routine for loosening the shoulders.",
             "Explains conventional deadlift technique, recommended by commenters as a good resource for learning the lift.":
                 "Explains conventional deadlift technique.",
-            # Without a clause boundary it may be the point of the sentence: kept unless provenance only.
+            # Inside the main clause the provenance phrase goes and the sentence goes on.
             "Shows form guidance recommended in strength communities for fixing technique issues.":
-                "Shows form guidance recommended in strength communities for fixing technique issues.",
+                "Shows form guidance for fixing technique issues.",
         }
         for raw, want in cases.items():
             self.assertEqual(llm.validate_b({**ok, "summary": raw})["summary"], want, raw)
@@ -300,10 +302,10 @@ class PassTest(LLMTestCase):
 
     def test_cached_summary_debris_is_cleaned_at_apply_time(self):
         cache = self.cache()
-        cache.set_video(A, {"keep": True, "reject_reason": "none", "summary": "Squat basics.}</parameter>Wait.",
+        cache.set_video(A, {"keep": True, "reject_reason": "none", "summary": "Squat basics for beginners.}</parameter>Wait.",
                             "tags": {"goal": [], "body": [], "equipment": [], "level": "any", "type": "tutorial"}})
         data = llm.apply_verdicts({"videos": [video(A, "How to squat", 2)]}, cache)
-        self.assertEqual(data["videos"][0]["summary"], "Squat basics.")
+        self.assertEqual(data["videos"][0]["summary"], "Squat basics for beginners.")
 
     def test_rejected_excerpt_removes_its_source(self):
         tn = "https://t-nation.com/t/contest-guess-my-body-fat/292457/1"
@@ -469,6 +471,229 @@ class PassTest(LLMTestCase):
         data, report = self.run_pass(dataset(), Flaky())
         self.assertEqual(len(data["videos"]), 5)
         self.assertEqual(report.usage["A"].errors, 3)
+
+
+# Summaries from the published data reviewed in #11 (raw stage-B answers).
+ISSUE_11 = {
+    # Provenance filler, also mid-sentence and in later clauses.
+    "Candito Training HQ tutorial on squat technique, recommended on r/Fitness and r/weightroom, with a comment "
+    "citing it for where to position the elbows relative to the torso.":
+        "Candito Training HQ tutorial on squat technique.",
+    "A Turkish get-up tutorial recommended on r/kettlebell for learning the movement and building form before "
+    "progressing to heavier loads.":
+        "A Turkish get-up tutorial for learning the movement and building form before progressing to heavier loads.",
+    "A bodyweight-only leg workout to do at home without weights, recommended on r/bodyweightfitness and listed in "
+    "its wiki, with a section on glute-ham raises.": "A bodyweight-only leg workout to do at home without weights.",
+    "TappBrothers show how to train grip strength using a towel, a technique recommended in r/bodyweightfitness for "
+    "pull-up and climbing-related grip work.":
+        "TappBrothers show how to train grip strength using a towel, a technique for pull-up and climbing-related "
+        "grip work.",
+    "Kettlebell outside circles demonstrated by Mark Wildman with a fight-specific focus, recommended on "
+    "r/kettlebell; a commenter notes lighter bells suit warm-ups and technique work.":
+        "Kettlebell outside circles demonstrated by Mark Wildman with a fight-specific focus.",
+    "Ben Bruno demonstrates a heavily loaded single-leg squat, which commenters compare to Bulgarian split squats "
+    "and pistols as a deep unilateral leg exercise.": "Ben Bruno demonstrates a heavily loaded single-leg squat.",
+    "Demonstrates the Roadkill Stretch, a hip internal rotation stretch that r/flexibility commenters recommend for "
+    "improving internal rotation mobility.": "Demonstrates the Roadkill Stretch, a hip internal rotation stretch.",
+    "Beginner tutorial on the kettlebell clean, showing how to avoid banging the wrists and forearms. Commenters "
+    "recommend it to people who get sore or bruised on the movement.":
+        "Beginner tutorial on the kettlebell clean, showing how to avoid banging the wrists and forearms.",
+    "Explains common mistakes in ab training, focusing on how to perform leg raises correctly, and is listed in the "
+    "r/bodyweightfitness core wiki.":
+        "Explains common mistakes in ab training, focusing on how to perform leg raises correctly.",
+    "Short demonstration of toe walks, an exercise listed on the r/running injuries wiki, likely for lower leg and "
+    "foot strengthening in injury prevention or recovery.": "Short demonstration of toe walks.",
+    "Antranik explains the structure and exercises of the r/bodyweightfitness Recommended Routine, a bodyweight "
+    "strength program.":
+        "Antranik explains the structure and exercises of the Bodyweight Fitness Recommended Routine, a bodyweight "
+        "strength program.",
+    # Broken endings: a dangling " ?", a truncated last clause.
+    "Tutorial on the frog stretch for the groin and hips, recommended in r/flexibility for improving frog pose, with "
+    "related PAILs/RAILs and half frog variations mentioned in comments. ?":
+        "Tutorial on the frog stretch for the groin and hips.",
+    "Calisthenicmovement video recommended on r/flexibility presenting an underrated bodyweight movement, with a "
+    "related mobility routine and bridge work mentioned by commenters; exact exercise not specified in the given "
+    "inf\u2026": "Calisthenicmovement video presenting an underrated bodyweight movement.",
+    # Meta talk about missing information.
+    "Demonstrates a bodyweight exercise presented as an alternative to the reverse hyper, listed on the "
+    "r/bodyweightfitness core wiki page; details beyond the title are not given.":
+        "Demonstrates a bodyweight exercise presented as an alternative to the reverse hyper.",
+    "A video from Justin Lascek on making mobility work easier, recommended in the r/Fitness wiki; details beyond "
+    "the title are not provided.": "A video from Justin Lascek on making mobility work easier.",
+    "Explains why stretching the ankles may not fix squat limitations, based on the title; recommended in "
+    "r/flexibility, with a commenter pointing to frogger drills as an alternative.":
+        "Explains why stretching the ankles may not fix squat limitations.",
+    "Jeff Nippard presents a muscle building technique, recommended on r/weightroom; the specific method is not "
+    "stated in the provided information.": "Jeff Nippard presents a muscle building technique.",
+    # Nothing describes the video: no summary (stage B is asked again).
+    "Exercise demo video listed on the r/bodyweightfitness wiki's miscellaneous demos page; the specific movement "
+    "is not stated in the available information.": "",
+    "Recommended on r/Fitness by several commenters.": "",
+    "The details beyond the title are not provided.": "",
+}
+
+LEGACY = llm.PROMPT_B_LEGACY[0]
+TAGS = {"goal": [], "body": [], "equipment": [], "level": "any", "type": "tutorial"}
+
+
+class SummaryPolishTest(LLMTestCase):
+    def test_issue_11_summaries(self):
+        for raw, want in ISSUE_11.items():
+            got = llm.clean_summary(raw)
+            self.assertEqual(got, want, raw)
+            self.assertEqual(llm.clean_summary(got), got)  # idempotent
+            self.assertEqual(llm.summary_problems(got), [] if got else ["empty"], got)
+            self.assertTrue(llm.summary_problems(raw), raw)  # every raw example is caught by the check
+
+    def test_summary_problems(self):
+        ok = "Demonstrates the hollow body hold for core strength."
+        self.assertEqual(llm.summary_problems(ok), [])
+        cases = {
+            "Demonstrates the hollow body hold {for core}.": "markup",
+            "Demonstrates the hollow body hold, cited by commenters.": "provenance",
+            "Demonstrates the hollow body hold, listed in the r/bodyweightfitness wiki.": "provenance",
+            "Demonstrates the hollow body hold; details are not provided.": "meta",
+            "Demonstrates the hollow body hold, likely for gymnasts.": "meta",
+            "Untitled personal recording of a hollow body hold.": "personal-clip",
+            "Demonstrates the hollow body hold for core str\u2026": "truncated",
+            "Demonstrates the hollow body hold for core strength. ?": "truncated",
+            "Demonstrates the hollow body hold for core strength": "truncated",
+            "Hollow hold.": "too-short",
+            "Demonstrates the hollow body hold " + "and more " * 30 + "today.": "too-long",
+        }
+        for text, problem in cases.items():
+            self.assertIn(problem, llm.summary_problems(text), text)
+
+    def test_long_summaries_are_cut_at_a_clause_boundary(self):
+        raw = ("Demonstrates the hollow body hold, a gymnastics core position, with regressions for beginners, "
+               "progressions toward the full hold, rocking variations, cues for keeping the lower back down, "
+               "and how to program it into a weekly core routine for strength")
+        out = llm.clean_summary(raw)
+        self.assertLessEqual(len(out), llm.SUMMARY_CHARS)
+        self.assertTrue(raw.startswith(out[:-1]) and out.endswith("."), out)
+        self.assertFalse(out.endswith("\u2026"))
+        self.assertEqual(llm.clean_summary("x" * 500), "")  # cannot be cut without breaking a word
+
+    def test_unrepairable_legacy_summary_is_asked_again(self):
+        bad = ("Exercise demo video listed on the r/bodyweightfitness wiki's miscellaneous demos page; the specific "
+               "movement is not stated in the available information.")
+        good = "Candito Training HQ tutorial on squat technique, recommended on r/Fitness."
+        cache = self.cache()
+        cache.data["videos"][f"{LEGACY}:{A}"] = {"keep": True, "reject_reason": "none", "summary": bad, "tags": TAGS}
+        cache.data["videos"][f"{LEGACY}:{B}"] = {"keep": True, "reject_reason": "none", "summary": good, "tags": TAGS}
+        cache.save()
+        self.assertIsNotNone(self.cache().video(A))  # legacy answers survive save()
+        data = {"sources": [], "videos": [video(A, "VIDEO0013", 2, [], sources=[WIKI], karma=0),
+                                          video(B, "How To Squat With Perfect Form", 2, [], sources=[WIKI], karma=0)]}
+        # Without a key: the legacy verdicts apply; the unrepairable summary is omitted.
+        out, _ = self.run_pass(copy.deepcopy(data))
+        by_id = {v["id"]: v for v in out["videos"]}
+        self.assertNotIn("summary", by_id[A])
+        self.assertEqual(by_id[B]["summary"], "Candito Training HQ tutorial on squat technique.")
+        self.assertTrue(llm.needs_reask(self.cache(), A))
+        self.assertFalse(llm.needs_reask(self.cache(), B))
+        # With a key: only A goes to stage B again, with the current prompt.
+        client = FakeClient()
+        out, _ = self.run_pass(copy.deepcopy(data), client)
+        b_users = [p["messages"][0]["content"] for p in client.calls if p["system"].startswith("You curate")]
+        self.assertEqual(len(set(b_users)), 1)  # (the style probe retries the same request)
+        self.assertIn("VIDEO0013", b_users[0])
+        self.assertIn("the summary must not mention them", llm.prompt_b(video(A, "t", 1, [comment("x", "hi")]),
+                                                                          [comment("x", "hi")]))
+        cache = self.cache()
+        self.assertTrue(cache.video_is_current(A))
+        self.assertNotIn(f"{LEGACY}:{A}", cache.data["videos"])
+        self.assertFalse(llm.needs_reask(cache, A))
+        self.assertEqual({v["id"]: v.get("summary") for v in out["videos"]}[A], "A short summary.")
+        # Asked once: a rerun sends nothing.
+        client = FakeClient()
+        self.run_pass(copy.deepcopy(data), client)
+        self.assertFalse([p for p in client.calls if p["system"].startswith("You curate")])
+
+    def test_personal_clips_are_dropped_even_from_wikis(self):
+        cache = self.cache()
+        clip = video(A, "Movie on 22 12 13 at 5 28 PM", 1, [], sources=[WIKI], karma=0)
+        cache.set_video(A, {"keep": False, "reject_reason": "personal-clip", "tags": TAGS,
+                            "summary": "Untitled personal recording; nothing shows it teaches anything."})
+        # Kept by stage B, but its summary says it is a personal recording.
+        kept_clip = video(B, "18 pull ups sept13", 2)
+        cache.set_video(B, {"keep": True, "reject_reason": "none", "tags": TAGS,
+                            "summary": "A personal recording of 18 pull-ups with no instruction given."})
+        # A wiki-listed video rejected for another reason stays (moderator-curated).
+        music = video(C, "PUMP IT wiki edition", 2, [], sources=[WIKI], karma=0)
+        cache.set_video(C, {"keep": False, "reject_reason": "non-fitness", "tags": TAGS, "summary": ""})
+        report = llm.Report()
+        data = llm.apply_verdicts({"videos": [clip, kept_clip, music]}, cache, report)
+        self.assertEqual([v["id"] for v in data["videos"]], [C])
+        self.assertEqual({d["id"]: d["reason"] for d in report.dropped}, {A: "personal-clip", B: "personal-clip"})
+
+    def test_climbing_knots_and_gear_are_off_topic(self):
+        cache = self.cache()
+        cases = {A: ("Is your figure 8 knot going to kill you?", "Video on figure 8 knot variations.", "off-topic"),
+                 B: ("Advanced Rappel Techniques", "Rappel technique tutorial on backups and rigging.", "off-topic"),
+                 C: ("OHMEGA: Basic Functions | EDELRID", "Product video of a belay device.", "off-topic"),
+                 D: ("Donny Shankle Nor Cal 2011 CJ3", "Competition footage of a clean and jerk.", "event-footage")}
+        videos = []
+        for vid, (title, summary, _) in cases.items():
+            videos.append(video(vid, title, 2))
+            cache.set_video(vid, {"keep": False, "reject_reason": "event-footage", "tags": TAGS, "summary": summary})
+        report = llm.Report()
+        llm.apply_verdicts({"videos": videos}, cache, report)
+        self.assertEqual({d["id"]: d["reason"] for d in report.dropped}, {k: x[2] for k, x in cases.items()})
+        self.assertIn("off-topic", llm.REJECT_REASONS)
+        self.assertIn("off-topic", llm.TOOL_B["input_schema"]["properties"]["reject_reason"]["enum"])
+
+    def test_publish_strips_internal_fields_and_recounts_source_stats(self):
+        tn = "https://t-nation.com/t/contest-guess-my-body-fat/292457/1"
+        hn = "https://news.ycombinator.com/item?id=7"
+        cache = self.cache()
+        v = video(A, "What body fat looks like", 7,
+                  [comment("g1", "great visual reference", 4),
+                   {"text": "Guess my body fat", "score": 7, "permalink": tn, "site": "t-nation.com"},
+                   {"text": "good chart", "score": None, "permalink": hn, "site": "news.ycombinator.com"}],
+                  sources=[{"kind": "comment", "subreddit": "Fitness"},
+                           {"kind": "forum", "site": "t-nation.com", "url": tn, "score": 7, "needs_llm_check": True},
+                           {"kind": "hn", "site": "news.ycombinator.com", "url": hn, "score": 0}],
+                  source_stats={"reddit": {"recommenders": 5, "sum_score": 9.6, "first_seen": "2025-11-10"},
+                                "forum": {"recommenders": 1, "sum_score": 7.0},
+                                "hn": {"recommenders": 1, "sum_score": 0.0}})
+        cache.set_comment(A, "t1_g1", {"is_recommendation": True, "sentiment": "neutral", "quality_flags": []})
+        cache.set_comment(A, "hn_7", {"is_recommendation": True, "sentiment": "neutral", "quality_flags": []})
+        cache.set_comment(A, "tn_292457_1", {"is_recommendation": False, "sentiment": "neutral",
+                                             "quality_flags": ["personal-clip"]})
+        data = llm.apply_verdicts({"sources": [], "videos": [v]}, cache)
+        self.assertIn("llm_rejected", data["videos"][0])  # needed by strip_llm while processing
+        data["videos"][0]["llm_note"] = "kept-by-content"
+        published = llm.publish(data)
+        out = published["videos"][0]
+        for key in llm.INTERNAL_FIELDS:
+            self.assertNotIn(key, out)
+        self.assertEqual(out["source_stats"], {"reddit": {"recommenders": 5, "sum_score": 9.6, "first_seen": "2025-11-10"},
+                                               "hn": {"recommenders": 1, "sum_score": 0.0}})
+        self.assertEqual(out["recommenders"], 6)
+        self.assertIn("llm_rejected", data["videos"][0])  # the input is left alone
+        self.assertEqual(llm.publish(published), published)  # idempotent
+
+    def test_published_file_has_no_internal_fields(self):
+        from pipeline import check_data, run
+        src = Path(self.tmp.name) / "base.json"
+        out = Path(self.tmp.name) / "out.json"
+        data = dataset()
+        data["videos"][0]["comments"].append(
+            {"text": "fix your setup http://www.youtube.com/watch?v=AAAAAAAAAAAt=268", "score": 1,
+             "permalink": "https://www.reddit.com/r/Fitness/comments/q1/_/q2/"})
+        src.write_text(json.dumps(data))
+        self.run_pass(copy.deepcopy(dataset()), FakeClient())  # fill the cache: A gets llm_rejected
+        with mock.patch.dict("os.environ", {"ANTHROPIC_API_KEY": ""}), \
+                mock.patch.object(llm.LLMCache.__init__, "__defaults__", (self.cache_path,)):
+            self.assertEqual(run.main(["--llm-only", "--base", str(src), "--output", str(out)]), 0)
+        written = json.loads(out.read_text())
+        self.assertFalse([v["id"] for v in written["videos"] if set(llm.INTERNAL_FIELDS) & set(v)])
+        a = next(v for v in written["videos"] if v["id"] == A)
+        self.assertEqual(a["recommenders"], 3)  # the rejected excerpt still does not count
+        self.assertIn("watch?v=AAAAAAAAAAA&t=268", " ".join(c["text"] for c in a["comments"]))
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(check_data.main([str(out)]), 0)
 
 
 class RunTest(LLMTestCase):

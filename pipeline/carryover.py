@@ -116,6 +116,9 @@ _POST_EXCERPT_RE = re.compile(r"^(.+?) (https?://\S+)(?: (.*))?$", re.DOTALL)
 # An id fragment ends at a non-id character, or directly at ``t=`` when the
 # ``&`` before a timestamp was lost too (``watch?v=QnwAoesJvQt=475``).
 _ID_FRAGMENT_RE = re.compile(r"(youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)([A-Za-z0-9-]{8,10}?)(?=(t=)|[^A-Za-z0-9_-]|$)")
+# A full 11-character id with the ``&`` before its timestamp lost
+# (``watch?v=bt4m4zLioRwt=268``), whatever characters the id has.
+_GLUED_TIMESTAMP_RE = re.compile(r"(youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)([A-Za-z0-9_-]{11})(?=t=\d)")
 
 
 def repair_excerpts(videos: list[dict]) -> int:
@@ -124,6 +127,8 @@ def repair_excerpts(videos: list[dict]) -> int:
     * Underscores were stripped from URLs (``youtu.be/K4dmZ5n6uU`` for
       ``K4dmZ5_n6uU``): restored for ids of videos in ``videos``, with the
       ``&`` before a timestamp when it was lost as well (``v=IDt=475``).
+    * The ``&`` / ``?`` before a timestamp was lost from any id
+      (``v=bt4m4zLioRwt=268``): restored.
     * Post excerpts began with the title and the post's raw URL: the URL is
       replaced by an em dash, as ``build.post_text`` now does.
 
@@ -149,6 +154,8 @@ def repair_excerpts(videos: list[dict]) -> int:
         for c in v.get("comments") or []:
             text = c.get("text") or ""
             new = _ID_FRAGMENT_RE.sub(fix_id, text) if by_stripped else text
+            new = _GLUED_TIMESTAMP_RE.sub(
+                lambda m: m.group(1) + m.group(2) + ("&" if m.group(1).endswith("v=") else "?"), new)
             post = _POST_PERMALINK_RE.match(c.get("permalink") or "")
             m = _POST_EXCERPT_RE.match(new) if post else None
             if m and "\u2014" not in m.group(1) and (f"/comments/{post.group(1)}" in m.group(2) or "youtu" in m.group(2)):

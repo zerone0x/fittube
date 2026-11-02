@@ -104,6 +104,15 @@ jobs:
             python -m pipeline.run --time-budget "$TIME_BUDGET" --llm-wait "${LLM_WAIT:-45}" --min-videos 100
           fi
 
+      # Gate: the published file must not carry broken summaries (markup,
+      # provenance, meta talk, truncation) or pipeline-internal fields. A
+      # failing check keeps videos.json and the snapshot uncommitted (the LLM
+      # cache is still committed below) and fails the job.
+      - name: Check data
+        id: check
+        if: ${{ steps.pipeline.outcome == 'success' }}
+        run: python -m pipeline.check_data site/data/videos.json
+
       - name: Save API cache
         if: ${{ always() && !inputs.llm_only }}
         uses: actions/cache/save@v4
@@ -113,12 +122,13 @@ jobs:
 
       # Also runs when the pipeline failed so LLM results already paid for
       # (and ids of batches still running) are not lost; videos.json and the
-      # pre-LLM snapshot are only committed from a successful run.
+      # pre-LLM snapshot are only committed from a successful run whose
+      # output passed the data check.
       - name: Commit updated data
         id: commit
         if: ${{ always() && steps.pipeline.outcome != 'skipped' }}
         env:
-          PIPELINE_OK: ${{ steps.pipeline.outcome == 'success' }}
+          PIPELINE_OK: ${{ steps.pipeline.outcome == 'success' && steps.check.outcome == 'success' }}
         run: |
           files=()
           # Ignore generated_at when deciding whether videos.json changed.

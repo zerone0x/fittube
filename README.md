@@ -56,7 +56,7 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
 
 Consumers must ignore unknown kinds and fields. Records built before `sources` existed may lack it.
 
-`summary` (optional) is a one-sentence, LLM-written description of the video; consumers must treat it as plain text and cope with its absence (videos not yet reviewed by the LLM pass have none). Records may also carry `llm_rejected` (`{"recommenders": n, "score": x, "comments": [...], "sources": [...]}`): the excerpts the LLM pass judged not to be recommendations (and the `sources` entries pointing at them), hidden from `comments`/`sources` and no longer counted. It lets the pipeline undo and re-apply the pass; consumers should ignore it. `llm_note: "kept-by-content"` marks a video kept although none of its saved excerpts was a recommendation (they were off-topic, e.g. misattributed thread replies) because the LLM judged the video itself a training tutorial/explainer/follow-along/program.
+`summary` (optional) is a one-sentence, LLM-written description of the video itself (not of where it was recommended); consumers must treat it as plain text and cope with its absence (videos not yet reviewed by the LLM pass, or whose summary did not pass the quality check, have none). The excerpts the LLM pass judged not to be recommendations (and the `sources` entries pointing at them) are hidden from `comments`/`sources` and no longer counted in `recommenders`, `score` and `source_stats`. The published file carries no pipeline-internal fields (`llm_rejected`, `llm_note`); `python -m pipeline.check_data` enforces this and the summary rules before CI commits regenerated data.
 
 ### Non-Reddit sources (Hacker News, T-Nation)
 
