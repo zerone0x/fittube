@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T03:55:40Z",
+ "generated_at": "2026-11-02T04:06:52Z",
  "sources": [
   "yoga",
   "climbing",
@@ -3393,7 +3393,7 @@
      "count": 1
     }
    ],
-   "summary": "Starting Strength tutorial on how to perform the barbell bench press using the Starting Strength method, recommended as a brief, to-the-point technique guide."
+   "summary": "Starting Strength tutorial on how to perform the barbell bench press using the Starting Strength method."
   },
   {
    "id": "Fob2wWEC72s",
@@ -7510,36 +7510,6 @@
    "summary": "Demonstrates how to perform pseudo planche push-ups, a bodyweight exercise."
   },
   {
-   "id": "D-UmfqFjpl0",
-   "title": "Dog of Wisdom",
-   "channel": "Joe",
-   "thumbnail": "https://i.ytimg.com/vi/D-UmfqFjpl0/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2016-09-11",
-   "subreddits": [
-    "Fitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [],
-    "equipment": [],
-    "goal": [],
-    "level": "any",
-    "type": "motivation"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "Fitness",
-     "path": "/wiki/moderation",
-     "url": "https://www.reddit.com/r/Fitness/wiki/moderation"
-    }
-   ],
-   "summary": "Video titled \"Dog of Wisdom\" from channel Joe."
-  },
-  {
    "id": "DjxQrgLsty4",
    "title": "Pistol Squats",
    "channel": "Al Kavadlo",
@@ -9399,41 +9369,6 @@
     }
    ],
    "summary": "Tutorial on how to train and perform a one arm chin-up, including assisted one arm pull-up progressions."
-  },
-  {
-   "id": "NmJWEMuNpVo",
-   "title": "Donny Shankle Nor Cal 2011 CJ3",
-   "channel": "HassleFreeBBC",
-   "thumbnail": "https://i.ytimg.com/vi/NmJWEMuNpVo/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2020-12-26",
-   "subreddits": [
-    "weightroom"
-   ],
-   "comments": [],
-   "timestamps": [
-    {
-     "t": 30,
-     "label": "example"
-    }
-   ],
-   "tags": {
-    "body": [],
-    "equipment": [],
-    "goal": [],
-    "level": "any",
-    "type": "motivation"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "weightroom",
-     "path": "/wiki/faq",
-     "url": "https://www.reddit.com/r/weightroom/wiki/faq"
-    }
-   ],
-   "summary": "Competition footage of Donny Shankle's third clean and jerk attempt at the 2011 Nor Cal meet."
   },
   {
    "id": "NnfAYkBRDPY",
@@ -14997,7 +14932,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Dan John's workshop on his Easy Strength approach, a low-volume training program with short workouts, recommended as the primary source for the method."
+   "summary": "Dan John's workshop on his Easy Strength approach, a low-volume training program with short workouts."
   },
   {
    "id": "u1sfPfsESDQ",
@@ -16367,7 +16302,7 @@
      "subreddit": "xxfitness"
     }
    ],
-   "summary": "A woman in her 50s documents her parents, both in their 80s, starting strength training and the changes they saw after one year, as recommended for showing the quality-of-life benefits of lifting."
+   "summary": "A woman in her 50s documents her parents, both in their 80s, starting strength training and the changes they saw after one year."
   },
   {
    "id": "VGZrATR1O4E",
@@ -23524,7 +23459,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Explains movement training approaches including Ido Portal's method, Animal Flow and primal-style workouts, as recommended for adding varied, full-range bodyweight movement alongside strength training."
+   "summary": "Explains movement training approaches including Ido Portal's method, Animal Flow and primal-style workouts."
   },
   {
    "id": "9-uz1us5SqQ",
@@ -25052,7 +24987,7 @@
      "count": 1
     }
    ],
-   "summary": "Documentary about marathoner and artist Joe Greer and his running and life story; recommended as a film rather than for detailed training instruction."
+   "summary": "Documentary about marathoner and artist Joe Greer and his running and life story."
   },
   {
    "id": "o5S6ayrhg04",
