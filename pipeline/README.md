@@ -29,7 +29,7 @@ python -m unittest                     # tests (run from the repo root)
 | `fetch.py` | Arctic Shift comment search (`body=youtube OR youtu.be`), one request at a time, backs off on the API's per-minute budget, caches every page under `pipeline/.cache/`. |
 | `fetch.py` (threads) | Thread expansion: whole threads in which sampled comments already link YouTube are fetched with cheap `link_id` lookups, keeping comments that link YouTube. |
 | `extract.py` | YouTube ids from every URL form (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `m.`/`music.`, markdown links, escaped `\_`) plus `t=`/`start=` and `mm:ss`/`h:mm:ss` timestamps. |
-| `build.py` | Drops bots (by name or body, e.g. the "Videos in this thread / Watch Playlist" bot)/deleted/score < 1, down-weights negative context, aggregates per video, thresholds, fetches oEmbed metadata (drops deleted/private videos), tags, scores, sorts, writes `sources`. |
+| `build.py` | Drops bots (by name or body, e.g. the "Videos in this thread / Watch Playlist" bot)/deleted/score < 1/rickrolls (`VIDEO_BLOCKLIST`), down-weights negative context, aggregates per video, thresholds, fetches oEmbed metadata (drops deleted/private videos), tags, scores, sorts, writes `sources`. |
 | `carryover.py` | Merges the fresh build with the previous `videos.json` (see below). |
 | `tagger.py` | Keyword rules mapping title + comments + subreddit priors + wiki page paths (e.g. `/wiki/exercises/handstand` -> skill, upper) onto the tag vocabularies. Self-contained so it can be swapped for an LLM tagger. |
 

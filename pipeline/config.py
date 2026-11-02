@@ -129,6 +129,8 @@ USER_AGENT = "fittube-pipeline/0.1 (+https://github.com/zerone0x/fittube)"
 # --- Filtering / ranking -----------------------------------------------------
 
 MIN_COMMENT_SCORE = 1
+# Videos linked as jokes, never as recommendations (rickrolls).
+VIDEO_BLOCKLIST = {"dQw4w9WgXcQ", "oHg5SJYRHA0"}
 IGNORED_AUTHORS = {"[deleted]", "automoderator", "[removed]"}
 # Authors whose name looks like a bot are dropped too (see build.is_bot).
 BOT_SUFFIXES = ("bot", "_bot", "-bot")

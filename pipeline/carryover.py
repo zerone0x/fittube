@@ -152,7 +152,7 @@ def merge_previous(fresh: dict, previous: dict | None, oembed: OEmbed | None = N
     prev_by_id: dict[str, dict] = {}
     dropped_bot = 0
     for v in previous.get("videos", []):
-        if not isinstance(v, dict) or not v.get("id"):
+        if not isinstance(v, dict) or not v.get("id") or v["id"] in config.VIDEO_BLOCKLIST:
             continue
         cleaned = clean_previous(v)
         if cleaned is None:

@@ -123,6 +123,8 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
         weight = config.NEGATIVE_WEIGHT if negative else 1.0
         created = int(c.get("created_utc") or 0)
         for ref in refs:
+            if ref.id in config.VIDEO_BLOCKLIST:
+                continue
             v = videos.setdefault(ref.id, VideoAgg(ref.id))
             if kind == "post":
                 v.posts[permalink(c)] = {"subreddit": c["subreddit"], "score": score}

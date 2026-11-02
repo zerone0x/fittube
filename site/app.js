@@ -435,7 +435,7 @@ function fillModal(v) {
 function sourceBadge(s) {
   let text;
   if (s.kind === 'wiki') text = `\u{1F4D6} r/${s.subreddit} wiki`;
-  else if (s.kind === 'post') text = `\u{1F4DD} r/${s.subreddit} post${s.score != null ? ` \u00B7 ${fmtNum(s.score)} points` : ''}`;
+  else if (s.kind === 'post') text = `\u{1F4DD} r/${s.subreddit} post${s.score != null ? ` \u00B7 ${plural(s.score, 'point')}` : ''}`;
   else return null; // comments: summarised by the subreddit list; other sites: shown in the meta line
   const title = s.kind === 'wiki' && s.path ? `Listed in r/${s.subreddit}${s.path}` : text;
   return s.url
