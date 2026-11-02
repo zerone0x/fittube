@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T03:19:07Z",
+ "generated_at": "2026-11-02T03:19:55Z",
  "sources": [
   "yoga",
   "climbing",
@@ -32858,6 +32858,212 @@
     ]
    },
    "summary": "Demonstrates eccentric shoulder abduction as a rotator cuff strengthening exercise, recommended in a discussion about shoulder pain affecting the supraspinatus, biceps tendon or labrum."
+  },
+  {
+   "id": "KZ_Fl2ajSxE",
+   "title": "3 Types of Hammer Curls to Build *HUGE* Biceps",
+   "channel": "mountaindog1",
+   "thumbnail": "https://i.ytimg.com/vi/KZ_Fl2ajSxE/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 10.0,
+   "first_seen": "2021-10-29",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [],
+   "timestamps": [
+    {
+     "t": 122,
+     "label": "Meadows variation on Hammer curls"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "hypertrophy"
+    ],
+    "body": [
+     "arms"
+    ],
+    "equipment": [
+     "dumbbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    }
+   ],
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Today is the end of Mythical Mass W6. That means BBB is over, and we head into BtM. This takes me one step closer to DW, and its getting harder to keep that out of my mind lol. I enjoyed BBB Beefcake and had great results strength wise, so part of me wants to just continue. I…",
+      "score": 20,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/qi47ow/_/hihi1ze/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
+   "summary": "Demonstrates three hammer curl variations for building biceps, including a Meadows-style variation, with guidance on how to perform each one."
+  },
+  {
+   "id": "LeftjeTkSts",
+   "title": "The Cossack Squat",
+   "channel": "Testosterone Nation",
+   "thumbnail": "https://i.ytimg.com/vi/LeftjeTkSts/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 10.0,
+   "first_seen": "2020-12-13",
+   "subreddits": [
+    "overcominggravity"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility",
+     "strength",
+     "skill"
+    ],
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "overcominggravity"
+    }
+   ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 14.9,
+    "comments": [
+     {
+      "text": "Cool. I had something similar in HS but more low-tech. The school didn't really have a track so we couldn't train the longer 400/800 too often, and we'd use chairs for hurdles and stairs or bleachers for uphill running. A few of us would walk 10km home using plantarflexion…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfpfk1z/"
+     },
+     {
+      "text": "Sprinting as in Track and Field in HS. Runners were grouped into either the distance group (1 and 2 miles who sometimes ran 400 or 800s to pad team results) or the guys who did 400 or less (since it was pretty much the same guys running 4x400 as 4x100 and they also ran 200s and…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfmrc4v/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
+   "summary": "A tutorial on how to perform the Cossack squat, a bodyweight lateral squat that builds leg strength and hip mobility."
+  },
+  {
+   "id": "Zbv6twzC4xg",
+   "title": "Monkey-Method: Candlestick Roll\n to Pistol",
+   "channel": "PowerMonkeyFitness",
+   "thumbnail": "https://i.ytimg.com/vi/Zbv6twzC4xg/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 10.0,
+   "first_seen": "2020-12-13",
+   "subreddits": [
+    "overcominggravity"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "skill",
+     "mobility",
+     "strength"
+    ],
+    "body": [
+     "legs",
+     "core",
+     "full"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "intermediate",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "overcominggravity"
+    }
+   ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 14.9,
+    "comments": [
+     {
+      "text": "Cool. I had something similar in HS but more low-tech. The school didn't really have a track so we couldn't train the longer 400/800 too often, and we'd use chairs for hurdles and stairs or bleachers for uphill running. A few of us would walk 10km home using plantarflexion…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfpfk1z/"
+     },
+     {
+      "text": "Sprinting as in Track and Field in HS. Runners were grouped into either the distance group (1 and 2 miles who sometimes ran 400 or 800s to pad team results) or the guys who did 400 or less (since it was pretty much the same guys running 4x400 as 4x100 and they also ran 200s and…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfmrc4v/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
+   "summary": "Demonstrates a bodyweight movement linking a candlestick roll into a pistol squat, covering the technique for transitioning from the rolling motion into single-leg standing."
+  },
+  {
+   "id": "hQvgvqMlE6k",
+   "title": "United States Strengthlifting Federation",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/hQvgvqMlE6k/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 10.0,
+   "first_seen": "2017-12-30",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    }
+   ],
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 14.7,
+    "comments": [
+     {
+      "text": "So Alan Thrall just posted a video about his new federation and I wanted to know what everybody's opinion of it is. In short, 3 attempts at 1rm for Squat, OHP and Conventional Deadlift (sumo is not allowed). No weigh ins, instead they're weigh outs, where after your last…",
+      "score": 18,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/7mzqoi/_/dry1d03/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
+   "summary": "Alan Thrall presents the United States Strengthlifting Federation, an organization built around strength training and lifting."
   },
   {
    "id": "ufkdZDhcfQU",

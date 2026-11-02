@@ -9213,6 +9213,21 @@
     "output_tokens": 125287,
     "requests": 675
    }
+  },
+  {
+   "at": "2026-11-02T03:19:55Z",
+   "models": {
+    "A": "claude-sonnet-5-5",
+    "B": "claude-sonnet-5-5"
+   },
+   "stage_B": {
+    "cost_usd": 0.1782,
+    "errors": 0,
+    "input_tokens": 34101,
+    "invalid": 0,
+    "output_tokens": 5059,
+    "requests": 19
+   }
   }
  ],
  "styles": {
@@ -11088,6 +11103,19 @@
     "type": "tutorial"
    }
   },
+  "b1:7HrnWC8zBcE": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Short motivational message from Arnold Schwarzenegger about discipline and staying committed to training and healthy habits.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:7XrjvPoCuWw": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -11101,6 +11129,36 @@
     ],
     "level": "any",
     "type": "explainer"
+   }
+  },
+  "b1:7hnPwR3QcCU": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Short clip from the bodybuilding documentary Pumping Iron showing Franco Columbu lifting a car, a display of strength.",
+   "tags": {
+    "body": [],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "strength"
+    ],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
+  "b1:85HT4Om6JT4": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "A comedy sketch from That Mitchell and Webb Look, not training instruction or fitness education.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:89gpYBOloUU": {
@@ -12914,6 +12972,19 @@
     "type": "explainer"
    }
   },
+  "b1:FOWf8uqGf8A": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "Official music video for a thrash metal song by Power Trip, with no training instruction or fitness content.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:FP2dyni-dgA": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -13038,6 +13109,21 @@
     ],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b1:FnfryZmTytI": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Marathoner Eliud Kipchoge goes through ten items he can't live without, offering a look at the everyday habits and essentials of an elite distance runner.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [
+     "endurance"
+    ],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:Fob2wWEC72s": {
@@ -13165,6 +13251,23 @@
     ],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b1:GL2fP6Lo13w": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Documentary following four women on an ocean rowing expedition across the Pacific, showing the endurance and determination such a feat demands.",
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [],
+    "goal": [
+     "endurance"
+    ],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:GLy2rYHwUqY": {
@@ -13870,6 +13973,19 @@
     "type": "tutorial"
    }
   },
+  "b1:IedLQgNUTyk": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "personal-clip",
+   "summary": "Short practice footage of Ivan Abadjiev, aged 80, performing snatches at a weightlifting club, with no instruction or explanation.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:IikP_teeLkI": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -14389,6 +14505,25 @@
     "type": "tutorial"
    }
   },
+  "b1:KZ_Fl2ajSxE": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Demonstrates three hammer curl variations for building biceps, including a Meadows-style variation, with guidance on how to perform each one.",
+   "tags": {
+    "body": [
+     "arms"
+    ],
+    "equipment": [
+     "dumbbell"
+    ],
+    "goal": [
+     "hypertrophy"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   }
+  },
   "b1:KvAto6yIGLY": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -14660,6 +14795,28 @@
     ],
     "level": "any",
     "type": "explainer"
+   }
+  },
+  "b1:LeftjeTkSts": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "A tutorial on how to perform the Cossack squat, a bodyweight lateral squat that builds leg strength and hip mobility.",
+   "tags": {
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "mobility",
+     "strength",
+     "skill"
+    ],
+    "level": "any",
+    "type": "tutorial"
    }
   },
   "b1:Lhrae87EpWM": {
@@ -15187,6 +15344,23 @@
     "type": "tutorial"
    }
   },
+  "b1:O6xr42Z5Sks": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Covers traveling farmer's walks, a loaded carry exercise that builds grip and full-body strength.",
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [],
+    "goal": [
+     "strength"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   }
+  },
   "b1:OPbkQPYaaR0": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -15566,6 +15740,19 @@
     ],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b1:PGBvxUABH3Y": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "personal-clip",
+   "summary": "Showcase clip of an extremely flexible performer, with a timestamp on his shoulders; it does not appear to teach or instruct anything.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:PGoW1i4K_o0": {
@@ -17658,6 +17845,29 @@
     "type": "tutorial"
    }
   },
+  "b1:Zbv6twzC4xg": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Demonstrates a bodyweight movement linking a candlestick roll into a pistol squat, covering the technique for transitioning from the rolling motion into single-leg standing.",
+   "tags": {
+    "body": [
+     "legs",
+     "core",
+     "full"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "skill",
+     "mobility",
+     "strength"
+    ],
+    "level": "intermediate",
+    "type": "tutorial"
+   }
+  },
   "b1:ZeRsNzFcQLQ": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -19104,6 +19314,19 @@
     "type": "tutorial"
    }
   },
+  "b1:fY1o9igy0a0": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "A music track by Miss Eaves with a gym-sounding title; it is not instructional or training content.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:fjdAaJAGCjs": {
    "keep": false,
    "model": "claude-sonnet-5-5",
@@ -19486,6 +19709,25 @@
     "type": "tutorial"
    }
   },
+  "b1:hQvgvqMlE6k": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "Alan Thrall presents the United States Strengthlifting Federation, an organization built around strength training and lifting.",
+   "tags": {
+    "body": [
+     "full"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "strength"
+    ],
+    "level": "any",
+    "type": "explainer"
+   }
+  },
   "b1:hkxVfwyDVm0": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -19520,6 +19762,19 @@
     ],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b1:i-vGogzOw00": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "A video about avalanche control blasting with the Fernie ski patrol, which is not training or fitness instruction.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:iDV8r5u6En0": {
@@ -20857,6 +21112,19 @@
     "type": "tutorial"
    }
   },
+  "b1:o8H9ahswldM": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "Full album stream of a technical death metal record by Archspire; it is music and contains no training instruction or fitness content.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:oDyeWtQUhb0": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -21042,6 +21310,19 @@
     ],
     "level": "intermediate",
     "type": "tutorial"
+   }
+  },
+  "b1:ogFAesVzjbY": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "A motivational video about giving maximum effort in training, with no specific exercises, equipment or program details available from the given information.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:ojzgBCH35oQ": {
@@ -22639,6 +22920,19 @@
     "type": "program"
    }
   },
+  "b1:wFS0bT9u0TM": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "A video of hikers on the cable section of the Half Dome hike in Yosemite, which is sightseeing footage and not training instruction.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   }
+  },
   "b1:wYREQkVtvEc": {
    "keep": true,
    "model": "claude-sonnet-5-5",
@@ -23423,6 +23717,19 @@
     ],
     "level": "any",
     "type": "tutorial"
+   }
+  },
+  "b1:zQucWXWXp3k": {
+   "keep": false,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "non-fitness",
+   "summary": "A spoken word poem about women taking up less space and body image within a family, with no training instruction or exercise content.",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
    }
   },
   "b1:zSIDRHUWlVo": {
