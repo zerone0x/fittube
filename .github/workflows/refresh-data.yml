@@ -22,6 +22,10 @@ on:
         description: "Minutes to wait for LLM batches (unfinished ones resume next run)"
         required: false
         default: ""
+      llm_max_items:
+        description: "Max LLM requests per stage (empty: pipeline default)"
+        required: false
+        default: ""
 
 permissions:
   contents: write # commit refreshed data
@@ -79,8 +83,10 @@ jobs:
           TIME_BUDGET: ${{ inputs.time_budget || '90' }}
           LLM_ONLY: ${{ inputs.llm_only && 'true' || '' }}
           LLM_WAIT: ${{ inputs.llm_wait }}
+          FITTUBE_LLM_MAX_ITEMS: ${{ inputs.llm_max_items }}
         run: |
           if [ -z "$FITTUBE_MAX_COMMENTS" ]; then unset FITTUBE_MAX_COMMENTS; fi
+          if [ -z "$FITTUBE_LLM_MAX_ITEMS" ]; then unset FITTUBE_LLM_MAX_ITEMS; fi
           if [ -n "$LLM_ONLY" ]; then
             python -m pipeline.run --llm-only --llm-wait "${LLM_WAIT:-120}" --min-videos 100
           else

@@ -48,7 +48,7 @@ from .tagger import BODY, EQUIPMENT, GOALS, LEVELS, TYPES
 log = logging.getLogger(__name__)
 
 # Bump when a prompt or schema changes in a way that invalidates cached answers.
-PROMPT_A_VERSION = "a1"
+PROMPT_A_VERSION = "a2"
 PROMPT_B_VERSION = "b1"
 
 SENTIMENTS = ["positive", "neutral", "negative"]
@@ -93,11 +93,18 @@ TOOL_A = {
 SYSTEM_A = """\
 You review evidence for FitTube, a site that lists YouTube videos fitness communities \
 (Reddit, Hacker News, the T-Nation forum) recommend. Every numbered comment or post below links \
-the given video. For each one decide whether its author recommends the video to others as a \
-worthwhile fitness resource: instruction, a follow-along routine, a program, an explainer or \
-lecture, rehab advice, or a credible training documentary/motivation.
+the given video. For each one decide whether its author points others to the video as worth \
+watching for training: instruction, a demo, a follow-along routine, a program, an explainer or \
+lecture, rehab advice, or a training documentary/motivation.
 
-It is NOT a recommendation (is_recommendation=false) when the author:
+Excerpts are cut to ~280 characters and links appear only as their anchor text (or not at all), so \
+the video may not be named: assume the link sits where the excerpt names an exercise, resource or \
+"this video". Linking a video in a helpful answer IS a recommendation, even without praise: a demo \
+link in a list of suggested exercises, "try this routine", "Google Jeff Martone [link]", a bare link \
+offered to someone asking for help, "I found this yesterday, helped me". Use neutral sentiment for \
+such matter-of-fact links.
+
+It is NOT a recommendation (is_recommendation=false) only when the author:
 - cites the video as wrong, bad, dangerous or something to avoid, or quotes it in order to disagree \
 (e.g. "Robert Oberst says you shouldn't do deadlifts" used as a bad example);
 - mocks it, or links it as a joke, meme, music, film clip or anything unrelated to training;
@@ -105,8 +112,7 @@ It is NOT a recommendation (is_recommendation=false) when the author:
 guess their body fat / rate their physique;
 - shares competition, meet, race or festival footage, highlights or news for entertainment;
 - only asks a question about it without endorsing it;
-- promotes their own channel or a product.
-A recommendation can be brief ("this video fixed my squat") or part of a list of resources.
+- promotes their own video/channel ("made a video on this") or a product.
 
 sentiment is the author's attitude toward the video. quality_flags lists concerns about the video \
 or the link (empty if none). reason: at most 15 words. Return exactly one entry per [n] via the tool.\
@@ -220,16 +226,37 @@ def prompt_b(v: dict, comments: list[dict]) -> str:
     return "\n".join(lines)
 
 
-def request_params(stage: str, model: str, user: str) -> dict:
-    tool, system, max_tokens = (TOOL_A, SYSTEM_A, 1500) if stage == "A" else (TOOL_B, SYSTEM_B, 600)
-    return {
-        "model": model,
-        "max_tokens": max_tokens,
-        "system": system,
-        "tools": [tool],
-        "tool_choice": {"type": "tool", "name": tool["name"]},
-        "messages": [{"role": "user", "content": user}],
-    }
+# How structured output is requested. Models differ: some reject a forced
+# tool_choice (e.g. when they always think), so ``Runner.probe`` tries these in
+# order on one request and remembers what works per model in the cache.
+# "tool": forced tool use; "tool-nothink": the same with thinking disabled;
+# "json": JSON-schema structured output; "auto-tool": the tool offered with
+# tool_choice auto and an instruction to call it.
+STYLES = ["tool", "tool-nothink", "json", "auto-tool"]
+THINKING_STYLES = {"json", "auto-tool"}  # may think first: more max_tokens, costlier estimate
+
+
+def request_params(stage: str, model: str, user: str, style: str = "tool") -> dict:
+    tool, system, max_tokens = (TOOL_A, SYSTEM_A, 1500) if stage == "A" else (TOOL_B, SYSTEM_B, 800)
+    params: dict[str, Any] = {"model": model, "max_tokens": max_tokens, "system": system,
+                              "messages": [{"role": "user", "content": user}]}
+    if style in ("tool", "tool-nothink"):
+        params["tools"] = [tool]
+        params["tool_choice"] = {"type": "tool", "name": tool["name"]}
+        if style == "tool-nothink":
+            params["thinking"] = {"type": "disabled"}
+    elif style == "json":
+        params["max_tokens"] = 8000
+        params["system"] = system + "\nRespond with the JSON object only."
+        params["output_config"] = {"format": {"type": "json_schema", "schema": tool["input_schema"]}}
+    elif style == "auto-tool":
+        params["max_tokens"] = 8000
+        params["system"] = system + f"\nAlways answer by calling the {tool['name']} tool."
+        params["tools"] = [tool]
+        params["tool_choice"] = {"type": "auto"}
+    else:
+        raise ValueError(f"unknown output style {style!r}")
+    return params
 
 
 # -- validation -----------------------------------------------------------------
@@ -307,7 +334,7 @@ class LLMCache:
 
     def __init__(self, path: Path = config.LLM_CACHE_PATH):
         self.path = Path(path)
-        self.data: dict[str, Any] = {"comments": {}, "videos": {}, "pending": [], "runs": []}
+        self.data: dict[str, Any] = {"comments": {}, "videos": {}, "pending": [], "runs": [], "styles": {}}
         if self.path.exists():
             try:
                 loaded = json.loads(self.path.read_text())
@@ -329,6 +356,9 @@ class LLMCache:
         self.data["videos"][f"{PROMPT_B_VERSION}:{vid}"] = verdict
 
     def save(self) -> None:
+        """Write the cache, dropping answers to older prompt versions."""
+        for section, version in (("comments", PROMPT_A_VERSION), ("videos", PROMPT_B_VERSION)):
+            self.data[section] = {k: x for k, x in self.data[section].items() if k.startswith(version + ":")}
         self.path.parent.mkdir(parents=True, exist_ok=True)
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(json.dumps(self.data, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
@@ -344,9 +374,21 @@ def _get(obj: Any, name: str, default: Any = None) -> Any:
 
 
 def tool_input(message: Any, tool_name: str) -> Any:
+    """The structured answer: the tool call's input, else JSON in the text blocks."""
+    texts = []
     for block in _get(message, "content") or []:
-        if _get(block, "type") == "tool_use" and _get(block, "name") == tool_name:
+        kind = _get(block, "type")
+        if kind == "tool_use" and _get(block, "name") == tool_name:
             return _get(block, "input")
+        if kind == "text":
+            texts.append(_get(block, "text") or "")
+    text = "".join(texts).strip()
+    text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
+    if text.startswith("{"):
+        try:
+            return json.loads(text)
+        except ValueError:
+            return None
     return None
 
 
@@ -363,10 +405,14 @@ def cost(model: str, input_tokens: float, output_tokens: float, batch: bool) -> 
 _OUT_TOKENS = {"A": lambda n: 40 + 45 * n, "B": lambda n: 160}
 
 
-def estimate(stage: str, model: str, requests: dict[str, dict], meta: dict[str, Any], batch: bool) -> float:
-    """Estimated USD for ``requests``: ~3.5 characters per input token, generous output."""
+def estimate(stage: str, model: str, requests: dict[str, dict], meta: dict[str, Any], batch: bool,
+             style: str = "tool") -> float:
+    """Estimated USD for ``requests``: ~3.5 characters per input token, generous output
+    (plus ~1000 thinking tokens per request for styles that let the model think)."""
     chars = sum(len(json.dumps(p, ensure_ascii=False)) for p in requests.values())
     out = sum(_OUT_TOKENS[stage](len(meta[c]) if isinstance(meta.get(c), list) else 1) for c in requests)
+    if style in THINKING_STYLES:
+        out += 1000 * len(requests)
     return cost(model, chars / 3.5, out, batch)
 
 
@@ -435,6 +481,33 @@ class Runner:
         self.cache.save()  # a killed run can still resume this batch
         log.info("LLM stage %s: submitted batch %s with %d requests (%s)", stage, entry["id"], len(reqs), model)
         self._collect(entry, ingest)
+
+    def probe(self, stage: str, model: str, cid: str, user: str, meta: Any, ingest: Ingest) -> str | None:
+        """Send one request, trying ``STYLES`` (the one remembered for ``model``
+        first) until the API accepts one; returns that style, ``None`` if none works.
+
+        Only a 400 (invalid request) moves on to the next style; other errors
+        propagate. The answer is ingested like any other.
+        """
+        known = self.cache.data.setdefault("styles", {}).get(model)
+        usage = self._usage(stage)
+        for style in ([known] if known in STYLES else []) + [s for s in STYLES if s != known]:
+            try:
+                message = self.client.messages.create(**request_params(stage, model, user, style))
+            except Exception as exc:  # noqa: BLE001
+                if getattr(exc, "status_code", None) != 400:
+                    raise
+                log.warning("LLM stage %s: %s rejects output style %r: %s", stage, model, style, exc)
+                continue
+            usage.add(model, message, batch=False)
+            if not ingest(cid, meta, message):
+                usage.invalid += 1
+            if known != style:
+                log.info("LLM stage %s: using output style %r for %s", stage, style, model)
+            self.cache.data["styles"][model] = style
+            self.cache.save()
+            return style
+        return None
 
     def _run_sync(self, stage: str, model: str, requests: dict[str, dict], meta: dict[str, Any],
                   ingest: Ingest) -> None:
@@ -716,7 +789,7 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
             todo = [c for c in v.get("comments") or [] if cache.comment(v["id"], comment_key(c)) is None]
             cid = f"a-{v['id']}"
             if todo and cid not in pending and len(req_a) < opts.max_items:
-                req_a[cid] = request_params("A", opts.classify_model, prompt_a(v, todo))
+                req_a[cid] = prompt_a(v, todo)
                 meta_a[cid] = [comment_key(c) for c in todo]
         budget = _submit(runner, "A", opts.classify_model, req_a, meta_a, ingest_a, opts, budget, report)
 
@@ -737,7 +810,7 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
             if len(req_b) >= opts.max_items:
                 break
             ok = [c for c in v.get("comments") or [] if comment_verdict(cache, v["id"], c) is not False]
-            req_b[cid] = request_params("B", opts.model, prompt_b(v, ok))
+            req_b[cid] = prompt_b(v, ok)
             meta_b[cid] = v["id"]
         _submit(runner, "B", opts.model, req_b, meta_b, ingest_b, opts, budget, report)
         report.usage = runner.usage
@@ -747,13 +820,16 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
     return data, report
 
 
-def _submit(runner: Runner, stage: str, model: str, requests: dict, meta: dict, ingest: Ingest, opts: Options,
-            budget: float, report: Report) -> float:
-    if not requests:
+def _submit(runner: Runner, stage: str, model: str, users: dict[str, str], meta: dict, ingest: Ingest,
+            opts: Options, budget: float, report: Report) -> float:
+    """Estimate, check the budget, probe the output style on one request, send the rest."""
+    if not users:
         log.info("LLM stage %s: nothing new to send", stage)
         return budget
-    batch = not opts.force_sync and len(requests) > runner.sync_max
-    est = estimate(stage, model, requests, meta, batch)
+    style = runner.cache.data.get("styles", {}).get(model, "tool")
+    batch = not opts.force_sync and len(users) > runner.sync_max
+    requests = {cid: request_params(stage, model, u, style) for cid, u in users.items()}
+    est = estimate(stage, model, requests, meta, batch, style)
     log.info("LLM stage %s: %d requests to %s via %s, estimated cost $%.2f (budget left $%.2f)", stage,
              len(requests), model, "Message Batches" if batch else "Messages", est, budget)
     if est > budget:
@@ -762,7 +838,19 @@ def _submit(runner: Runner, stage: str, model: str, requests: dict, meta: dict, 
         report.skipped.append(msg)
         return budget
     try:
-        runner.run(stage, model, requests, meta, ingest, batch=batch)
+        first = next(iter(users))
+        probed = runner.probe(stage, model, first, users[first], meta[first], ingest)
+        if probed is None:
+            raise RuntimeError(f"{model} accepted none of the output styles {STYLES}")
+        if probed != style:
+            requests = {cid: request_params(stage, model, u, probed) for cid, u in users.items()}
+            est2 = estimate(stage, model, requests, meta, batch, probed)
+            log.info("LLM stage %s: re-estimated for style %r: $%.2f", stage, probed, est2)
+            if est2 > budget:
+                raise RuntimeError(f"estimated ${est2:.2f} for style {probed!r} exceeds the remaining budget")
+            est = est2
+        del requests[first]
+        runner.run(stage, model, requests, meta, ingest, batch=batch and len(requests) > runner.sync_max)
     except Exception as exc:  # noqa: BLE001 - the pipeline must still produce data
         log.exception("LLM stage %s failed; continuing with cached verdicts", stage)
         report.skipped.append(f"stage {stage}: {type(exc).__name__}: {exc}")

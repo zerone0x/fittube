@@ -49,7 +49,7 @@ def dataset():
 def responder(params):
     """Plays the model: stage A rejects texts with 'avoid'/'song'/'banger'; stage B rejects 'PUMP IT'."""
     user = params["messages"][0]["content"]
-    tool = params["tools"][0]["name"]
+    tool = "classify_evidence" if params["system"].startswith("You review evidence") else "review_video"
     if tool == "classify_evidence":
         items = []
         for n, text in re.findall(r"^\[(\d+)\] [^:]+: (.*)$", user, re.M):
@@ -65,8 +65,15 @@ def responder(params):
         out = {"keep": not music, "reject_reason": "non-fitness" if music else "none",
                "goal": [] if music else ["mobility", "mobility"], "body": ["legs"], "equipment": ["none"],
                "level": "beginner", "type": "tutorial", "summary": "  A short   summary. "}
-    return {"model": params["model"], "content": [{"type": "tool_use", "name": tool, "input": out}],
-            "usage": {"input_tokens": 1000, "output_tokens": 100}}
+    if "output_config" in params:  # JSON-schema structured output: the answer is text
+        content = [{"type": "thinking", "thinking": "hmm"}, {"type": "text", "text": json.dumps(out)}]
+    else:
+        content = [{"type": "tool_use", "name": tool, "input": out}]
+    return {"model": params["model"], "content": content, "usage": {"input_tokens": 1000, "output_tokens": 100}}
+
+
+class BadRequest(Exception):
+    status_code = 400
 
 
 class FakeBatches:
@@ -100,6 +107,8 @@ class FakeClient:
 
     def create(self, **params):
         self.calls.append(params)
+        if "sonnet" in params["model"] and params.get("tool_choice", {}).get("type") == "tool":
+            raise BadRequest('tool_choice: type "tool" and "any" are not supported for this model.')
         return responder(params)
 
 
@@ -195,9 +204,10 @@ class PassTest(LLMTestCase):
         self.assertNotIn("summary", e)
         self.assertEqual(report.invalid_b, 1)
         # Stage A: one request per video with comments; stage B skips B (dropped by A).
-        stages = [p["tools"][0]["name"] for p in client.calls]
-        self.assertEqual(stages.count("classify_evidence"), 4)
-        self.assertEqual(stages.count("review_video"), 4)
+        stages = [p["system"][:10] for p in client.calls]
+        self.assertEqual(stages.count(llm.SYSTEM_A[:10]), 4)
+        # Stage B: 4 videos + 2 rejected style probes (the fake Sonnet refuses forced tool use).
+        self.assertEqual(stages.count(llm.SYSTEM_B[:10]), 6)
         self.assertEqual(report.usage["A"].requests, 4)
         self.assertGreater(report.usage["B"].cost, 0)
         cache = json.loads(self.cache_path.read_text())
@@ -264,21 +274,47 @@ class PassTest(LLMTestCase):
                             sleep=lambda s: t.__setitem__(0, t[0] + s), clock=lambda: t[0])
         data, report = llm.run_pass(dataset(), cache, client, llm.Options(), runner=runner)
         # The deadline passed while stage A was running: it stays pending, nothing dropped.
-        # Stage B was only sent for the video without excerpts (D) and is pending too.
+        # Each stage probes the output style with one direct request: A's first
+        # video, then (A answered by its probe) A again for stage B; D, the
+        # video without excerpts, goes into a stage-B batch that is pending too.
         self.assertEqual(len(data["videos"]), 5)
         saved = json.loads(self.cache_path.read_text())
-        self.assertEqual([(p["stage"], list(p["meta"])) for p in saved["pending"]], [("A", [f"a-{v}" for v in (A, B, C, E)]),
-                                                                                  ("B", [f"b-{D}"])])
-        self.assertEqual(client.calls, [])
+        self.assertEqual([(p["stage"], list(p["meta"])) for p in saved["pending"]],
+                         [("A", [f"a-{v}" for v in (B, C, E)]), ("B", [f"b-{D}"])])
+        self.assertEqual(len(client.calls), 1 + 3)  # B's probe: tool and tool-nothink rejected, json accepted
 
         # The next run (no deadline) collects that batch instead of resubmitting, then runs stage B.
         cache = self.cache()
         runner = llm.Runner(client, cache, deadline=None, sync_max=0, poll_seconds=10, sleep=lambda s: None)
         data, report = llm.run_pass(dataset(), cache, client, llm.Options(), runner=runner)
-        self.assertEqual(len(client.batches.submitted), 3)  # stage A once, stage B for D, stage B for the rest
+        self.assertEqual(len(client.batches.submitted), 3)  # stage A, stage B for D, stage B for the rest
         self.assertEqual(sorted(v["id"] for v in data["videos"]), sorted([A, D, E]))
         self.assertEqual(json.loads(self.cache_path.read_text())["pending"], [])
-        self.assertEqual(report.usage["A"].requests, 4)
+        self.assertEqual(report.usage["A"].requests, 3)
+
+    def test_output_style_fallback(self):
+        # The stage-B model rejects forced tool use (400): the probe falls back to
+        # JSON-schema output, remembers it and uses it for the batch.
+        client = FakeClient()
+        cache = self.cache()
+        runner = llm.Runner(client, cache, sync_max=0, poll_seconds=0, sleep=lambda s: None)
+        data, report = llm.run_pass(dataset(), cache, client, llm.Options(model="claude-sonnet-5-5"), runner=runner)
+        self.assertEqual(cache.data["styles"], {"claude-haiku-5-5": "tool", "claude-sonnet-5-5": "json"})
+        batch_b = client.batches.submitted["msgbatch_2"]
+        self.assertTrue(all("output_config" in r["params"] and "tools" not in r["params"] for r in batch_b))
+        self.assertEqual(sorted(v["id"] for v in data["videos"]), sorted([A, D, E]))
+        self.assertEqual(next(v for v in data["videos"] if v["id"] == A)["summary"], "A short summary.")
+        # Next run starts with the remembered style: no rejected attempts.
+        client2 = FakeClient()
+        cache.data["videos"].clear()
+        runner = llm.Runner(client2, cache, sync_max=0, poll_seconds=0, sleep=lambda s: None)
+        llm.run_pass(dataset(), cache, client2, llm.Options(model="claude-sonnet-5-5"), runner=runner)
+        self.assertTrue(all("output_config" in p for p in client2.calls))
+
+    def test_tool_input_parsing(self):
+        self.assertEqual(llm.tool_input({"content": [{"type": "text", "text": '```json\n{"a": 1}\n```'}]}, "x"), {"a": 1})
+        self.assertIsNone(llm.tool_input({"content": [{"type": "text", "text": "sorry"}]}, "x"))
+        self.assertIsNone(llm.tool_input({"content": [{"type": "text", "text": "{broken"}]}, "x"))
 
     def test_budget_guard(self):
         client = FakeClient()
@@ -287,7 +323,7 @@ class PassTest(LLMTestCase):
         self.assertEqual(len(data["videos"]), 5)
         self.assertEqual(len(report.skipped), 2)
         data, report = self.run_pass(dataset(), client, max_items=1)
-        self.assertEqual(len(client.calls), 2)  # one request per stage
+        self.assertEqual(len(client.calls), 2 + 2)  # one request per stage (+2 rejected style probes)
 
     def test_api_errors_fall_back(self):
         class Failing(FakeClient):
@@ -296,8 +332,18 @@ class PassTest(LLMTestCase):
 
         data, report = self.run_pass(dataset(), Failing())
         self.assertEqual(len(data["videos"]), 5)
-        self.assertEqual(report.usage["A"].errors, 4)
+        self.assertEqual(len(report.skipped), 2)  # the probe failed: both stages skipped
         self.assertEqual(data["videos"][0]["tags"]["goal"], ["strength"])
+
+        class Flaky(FakeClient):  # works for the probe, then fails per request
+            def create(self, **params):
+                if self.calls:
+                    raise RuntimeError("overloaded")
+                return super().create(**params)
+
+        data, report = self.run_pass(dataset(), Flaky())
+        self.assertEqual(len(data["videos"]), 5)
+        self.assertEqual(report.usage["A"].errors, 3)
 
 
 class RunTest(LLMTestCase):
