@@ -49,12 +49,17 @@ log = logging.getLogger(__name__)
 
 # Bump when a prompt or schema changes in a way that invalidates cached answers.
 PROMPT_A_VERSION = "a3"
-PROMPT_B_VERSION = "b1"
+PROMPT_B_VERSION = "b2"
+# Earlier stage-B versions whose answers are still used: their keep verdict and
+# tags stand, and only a video whose cached summary ``clean_summary`` cannot
+# repair (it would be published without one) is asked again with the current
+# prompt (``needs_reask``). Keeps a prompt fix from re-buying ~700 answers.
+PROMPT_B_LEGACY = ("b1",)
 
 SENTIMENTS = ["positive", "neutral", "negative"]
 QUALITY_FLAGS = ["bro-science", "sales/affiliate", "unsafe-form", "self-promotion", "off-topic",
                  "personal-clip", "event-footage", "joke"]
-REJECT_REASONS = ["none", "non-fitness", "personal-clip", "event-footage", "anti-recommendation", "spam"]
+REJECT_REASONS = ["none", "non-fitness", "personal-clip", "event-footage", "off-topic", "anti-recommendation", "spam"]
 MAX_TAGS = {"goal": 3, "body": 4, "equipment": 3}
 SUMMARY_CHARS = 220
 REASON_CHARS = 160
@@ -155,7 +160,9 @@ to training, general vlogs; a gym-sounding title is not enough (e.g. "Not Just B
 Life" is about cities, "Electric Callboy - PUMP IT" is music);
 - personal-clip: someone's own lift/attempt/PR/form check/physique (e.g. "405 x 20 Squat");
 - event-footage: competition, meet, race, festival or comp coverage and highlights (e.g. "The \
-North Face Climb Festival"), and climbing topics that are not training (comps, knots, gear);
+North Face Climb Festival");
+- off-topic: sport topics that are not training, e.g. climbing knots, rappelling, belaying, rope \
+and gear reviews or safety tests;
 - anti-recommendation: the comments cite the video as an example of what not to do;
 - spam: ads or sales pitches.
 Use reject_reason "none" when keep=true.
@@ -172,10 +179,14 @@ bar (pull-up/dip bar, parallettes), machine (machines, cables, cardio machines).
 explainer (science, concepts, lecture, podcast), program (a training plan or routine design), \
 motivation (story, documentary, speech).
 
-summary: one plain sentence (max 25 words, max {SUMMARY_CHARS} characters) saying what the video \
-teaches or offers, based only on the given information. No hype; do not invent details. Do not say \
-where or by whom it was recommended (no "recommended in r/...", wiki pages, communities or \
-commenters): the site shows that already. Plain text only: no quotes, braces, markup or JSON.\
+summary: one complete plain sentence (max 25 words, max {SUMMARY_CHARS} characters) describing \
+the video itself: what it teaches, shows or offers, based only on the given information. No hype; \
+do not invent details. Never mention where, how or by whom it was recommended or discussed: no \
+subreddits (r/...), Reddit, wiki pages, forums, threads, communities, comments or commenters -- the \
+site shows its sources already, and the comments are context for you, not content of the video. \
+Never talk about the information you were given ("details are not provided", "based on the \
+title") and do not guess ("likely shows ..."): if you cannot tell what the video covers, use an \
+empty string. Plain text only: no quotes, braces, markup or JSON.\
 """
 
 
@@ -222,7 +233,8 @@ def prompt_b(v: dict, comments: list[dict]) -> str:
     if labels:
         lines.append("Timestamp labels: " + "; ".join(_clip(x, 60) for x in labels[:6]))
     if comments:
-        lines += ["", "Comments:"] + [f"- {_clip(c.get('text', ''), COMMENT_CHARS)}" for c in comments[:4]]
+        lines += ["", "Comments (context only; the summary must not mention them):"] + \
+            [f"- {_clip(c.get('text', ''), COMMENT_CHARS)}" for c in comments[:4]]
     else:
         lines += ["", "No comment excerpts saved."]
     return "\n".join(lines)
@@ -267,22 +279,167 @@ def request_params(stage: str, model: str, user: str, style: str = "tool") -> di
 # ``}`` / ``"}`` closing the JSON, ``</parameter>``, ``<br>```json``, followed
 # by more junk ("Wait."). Everything from the first such character on is cut.
 _SUMMARY_JUNK_RE = re.compile(r"[{}<>]|```")
-# A trailing clause that only says where the video was recommended
-# ("..., recommended in r/flexibility.", "..., listed on the r/bodyweightfitness
-# push-up wiki page."): the site shows the sources already.
-_PROVENANCE_RE = re.compile(
-    r"(?:,|;|\s+-|\s+\u2014)?\s+(?:and\s+|as\s+|often\s+|widely\s+|frequently\s+|commonly\s+|also\s+)*"
-    r"(?:recommended|listed|cited|suggested|shared|linked|praised|featured|included|referenced|endorsed|"
-    r"mentioned)\s+(?:in|on|by|among|under|from)\s+"
-    r"(?P<where>[^,;.]*?(?:\br/\w+|wiki|communit(?:y|ies)|commenters?|redditors?|reddit|subreddits?|forums?|"
-    r"lifters|members|users|FAQ)[^,;.]*?)\s*\.?$", re.IGNORECASE)
-_PROVENANCE_EXTRA_RE = re.compile(r"\b(?:as|for|to|because|alongside|with|when|after|while|who|which|that)\b",
-                                  re.IGNORECASE)
+# Markup or structured-output characters a published summary must not contain.
+SUMMARY_MARKUP_RE = re.compile(r"[{}<>\[\]\\`|*_#]|```|https?://|&\w+;")
+# Provenance: where or by whom the video was recommended. The site shows its
+# sources already, so a summary describes the video only.
+SUMMARY_PROVENANCE_RE = re.compile(
+    r"\br/\w+|\bsubreddits?\b|\breddit(?:ors?)?\b|\bwikis?\b|\bFAQ\b|\bforums?\b|\bthreads?\b|"
+    r"\bcomment(?:er)?s?\b|\bposters?\b|"
+    r"\bcommunit(?:y|ies)\s+(?:members?|discussions?|recommend\w*|cite\w*|says?|suggest\w*|consider\w*|use\w*)\b|"
+    r"\b(?:by|in|among|from|per|across)\s+(?:the\s+|several\s+|various\s+|many\s+)?(?:[\w'-]+\s+){0,3}"
+    r"communit(?:y|ies)\b|"
+    r"\b(?:in|from)\s+(?:a|the)\s+(?:[\w'-]+\s+){0,2}discussions?\b|"
+    r"\b(?:recommended|listed|cited|featured|mentioned|linked|shared|praised|suggested|referenced|endorsed|"
+    r"credited|described|discussed|noted|used)\s+(?:on|in|by|among|under)\s+(?:the\s+|a\s+|several\s+|many\s+)?"
+    r"(?:[\w'-]+\s+){0,3}(?:lifters|users|members|people|runners|climbers|readers|viewers|redditors|"
+    r"physical therapists|coaches)\b|"
+    r"\brecommended\s+(?:on|in|by|among)\b|"
+    r"\b(?:listed|cited|featured|mentioned|linked|shared|referenced)\s+(?:on|in)\s+(?:the|a|its)\b",
+    re.IGNORECASE)
+# Meta talk about the information the model had ("details beyond the title are
+# not given") or guesses about what the video might show.
+SUMMARY_META_RE = re.compile(
+    r"\b(?:not|isn't|aren't|wasn't|never)\s+(?:(?:explicitly|clearly|further)\s+)?(?:stated|given|provided|described|"
+    r"specified|shown|clear|known|indicated|detailed|named|identified|available)\b|"
+    r"\bbeyond the title\b|\b(?:based on|from|going by|judging by|per)\s+(?:the|its)\s+title\b|\bthe title (?:suggests|"
+    r"implies|indicates)\b|\b(?:available|given|provided|limited|saved)\s+(?:information|info|details|description|"
+    r"context|excerpts?)\b|\binformation (?:given|provided|available)\b|\bunspecified\b|\bunclear\b|"
+    r"\bno (?:further |other |additional |specific )?(?:details|information|description|instruction)\b|"
+    r"\bnothing (?:in|shows|indicates|suggests)\b|\bappears to (?:be|show)\b|"
+    r"[,;(]\s*(?:likely|presumably|probably|possibly|apparently)\b|\blikely (?:a|an|the|showing|covering|about|"
+    r"demonstrating|for)\b", re.IGNORECASE)
+# A personal recording rather than something that teaches (stage B sometimes
+# keeps one and says so in the summary).
+SUMMARY_PERSONAL_RE = re.compile(
+    r"\bpersonal (?:recording|clip|video|footage)\b|\b(?:their|his|her|a lifter's|someone's) own (?:lift|attempt|set|"
+    r"pr|clip|recording)\b|\bnothing shows it teaches\b|\brather than instruction\b", re.IGNORECASE)
+_ENDS_OK_RE = re.compile(r"[\w)\"'”%][.!?]$")
+_SENTENCE_SPLIT_RE = re.compile(r"(?<![A-Z][a-z]\.)(?<!\b(?:vs|St|Mr|Ms)\.)(?<!\bProf\.)(?<=[.!?])\s+(?=[A-Z])")
+_CLAUSE_SPLIT_RE = re.compile(r"\s*(?:[,;:]|\s[-–—])\s+")
+# Where a clause can be cut before the provenance part ("a hip stretch that
+# r/flexibility commenters recommend").
+_CLAUSE_CUT_RE = re.compile(r"\s+(?:that|which|who|whom|where|with|per|as|and|or|after|while|when|alongside|"
+                            r"recommended|listed|cited|featured|mentioned|praised|suggested|referenced|endorsed|"
+                            r"described|discussed|credited|used|framed|shared|linked)\b", re.IGNORECASE)
+# Inline provenance in the main clause ("A Turkish get-up tutorial recommended
+# on r/kettlebell for learning ..."): the participle phrase goes.
+_INLINE_PROVENANCE_RE = re.compile(
+    r"(?:\s+(?:as|and|and\s+also|being|(?:(?:and|that|which)\s+)?(?:is|are|was|were)(?:\s+also)?))?"
+    r"\s+(?:(?:often|widely|frequently|commonly|also|highly)\s+)?"
+    r"(?:recommended|listed|cited|featured|suggested|referenced|endorsed|praised)\s+(?:on|in|among|under)\s+"
+    r"(?:the\s+|a\s+|its\s+)?(?:(?:r/\w+|[\w'-]+)(?:'s)?\s+){0,4}?(?:r/\w+(?:\s+and\s+r/\w+)*|communit(?:y|ies))"
+    r"(?:(?:'s)?\s+(?:[\w-]+\s+){0,3}?(?:wiki|FAQ|page|section|routine)"
+    r"(?:\s+(?:[\w-]+\s+){0,3}?(?:page|section))?)?"
+    r"(?:\s+and\s+(?:listed|cited|featured|mentioned)\s+(?:on|in)\s+(?:the\s+|its\s+)?(?:[\w/'-]+\s+){0,3}?"
+    r"(?:wiki|FAQ)(?:\s+page)?)?"
+    # ... and only where the sentence goes on grammatically without it.
+    r"(?=\s*(?:[,;.]|$)|\s+for\b|\s+\w+ing\b)", re.IGNORECASE)
+# A clause head must not end mid-phrase ("a shoulder exercise used").
+_DANGLING_END_RE = re.compile(r"\b(?:used|was|is|are|were|been|being|and|or|as|the|a|an|its|their|his|her|by|in|on|"
+                              r"of|to|from|for|with)$", re.IGNORECASE)
+# Proper names that contain a subreddit ("the r/bodyweightfitness Recommended Routine").
+_SUBREDDIT_NAMES = {"bodyweightfitness": "Bodyweight Fitness", "flexibility": "Flexibility", "Fitness": "Fitness"}
+_NAMED_ROUTINE_RE = re.compile(r"\br/(\w+)(?=\s+(?:Recommended Routine|Recommended Routines|RR)\b)")
+_MIN_SUMMARY_WORDS = 3
+
+
+def summary_problems(text: Any) -> list[str]:
+    """What makes ``text`` unfit to publish as a summary (``[]``: fine).
+
+    Shared with ``check_data``: markup, provenance, meta talk, a personal-clip
+    description, truncation, a missing or dangling ending, length.
+    """
+    if not isinstance(text, str) or not text.strip():
+        return ["empty"]
+    out = []
+    if SUMMARY_MARKUP_RE.search(text):
+        out.append("markup")
+    if SUMMARY_PROVENANCE_RE.search(text):
+        out.append("provenance")
+    if SUMMARY_META_RE.search(text):
+        out.append("meta")
+    if SUMMARY_PERSONAL_RE.search(text):
+        out.append("personal-clip")
+    if text.endswith(("…", "...")) or re.search(r"\s[^\w\s]+$", text) or not _ENDS_OK_RE.search(text):
+        out.append("truncated")
+    if len(text) > SUMMARY_CHARS:
+        out.append("too-long")
+    if len(text.split()) < _MIN_SUMMARY_WORDS:
+        out.append("too-short")
+    if text != text.strip() or "  " in text or "\n" in text:
+        out.append("whitespace")
+    return out
+
+
+def _bad_part(text: str) -> bool:
+    return bool(SUMMARY_PROVENANCE_RE.search(text) or SUMMARY_META_RE.search(text))
+
+
+def _cut_clause(clause: str) -> str:
+    """The longest clean head of ``clause`` before a cut point ('' if none).
+
+    A ``with ...`` clause goes whole: what it lists usually comes from the
+    comments ("with bridge work mentioned by commenters"), not the video.
+    """
+    if re.match(r"(?:with|including|and|plus)\b", clause, re.IGNORECASE):
+        return ""
+    for m in reversed(list(_CLAUSE_CUT_RE.finditer(clause))):
+        head = clause[: m.start()].rstrip()
+        if len(head.split()) >= 3 and not _bad_part(head) and not _CLAUSE_CUT_RE.match(" " + head) \
+                and not _DANGLING_END_RE.search(head):
+            return head
+    return ""
+
+
+def _strip_provenance(sentence: str) -> str:
+    """``sentence`` up to its first provenance/meta clause ('' if the main clause is affected)."""
+    # Only inside a clause: a clause that starts with the participle is dropped below.
+    sentence = _INLINE_PROVENANCE_RE.sub(
+        lambda m: m.group(0) if m.start() == 0 or sentence[m.start() - 1] in ",;:\u2013\u2014-" else "", sentence)
+    if not _bad_part(sentence):
+        return sentence
+    parts = _CLAUSE_SPLIT_RE.split(sentence)
+    seps = _CLAUSE_SPLIT_RE.findall(sentence)
+    kept = ""
+    for i, part in enumerate(parts):
+        if _bad_part(part):
+            head = _cut_clause(part)
+            if i == 0:
+                return head if len(head.split()) >= 4 else ""
+            if head:
+                return kept + seps[i - 1] + head
+            # A short appositive left over ("toe walks, an exercise") goes too.
+            if i >= 2 and len(parts[i - 1].split()) < 3 and re.match(r"(?:an?|the)\s", parts[i - 1], re.IGNORECASE):
+                kept = kept[: len(kept) - len(parts[i - 1]) - len(seps[i - 2])]
+            return kept
+        kept += (seps[i - 1] if i else "") + part
+    return kept
+
+
+def _fit_length(text: str) -> str:
+    """Shorten ``text`` to ``SUMMARY_CHARS`` at a sentence or clause boundary, never mid-word."""
+    while len(text) > SUMMARY_CHARS:
+        cuts = [m.start() for m in _CLAUSE_SPLIT_RE.finditer(text)] + \
+               [m.start() for m in _SENTENCE_SPLIT_RE.finditer(text)]
+        cuts = [c for c in cuts if c < len(text)]
+        if not cuts:
+            return ""
+        text = text[: max(cuts)].rstrip(" ,;:-–—")
+    return text
 
 
 def clean_summary(text: Any) -> str:
-    """A displayable summary: JSON/markup debris and provenance filler removed;
-    ``""`` when nothing usable is left."""
+    """A displayable summary, ``""`` when nothing usable is left (the video is
+    then shown without one, and stage B is asked again).
+
+    Removes structured-output debris (a stray ``}`` / ``</parameter>`` and
+    anything after it), provenance (where or by whom the video was
+    recommended: the site shows its sources), meta talk about missing
+    information and guesses, a truncated last clause and dangling punctuation.
+    A summary whose main clause is itself provenance or meta talk is dropped.
+    Long summaries are shortened at a clause boundary, never mid-word.
+    """
     if not isinstance(text, str):
         return ""
     text = re.sub(r"\s+", " ", text).strip()
@@ -290,21 +447,38 @@ def clean_summary(text: Any) -> str:
     if m:
         text = text[: m.start()]
     text = text.rstrip(" \t,;:")
-    # Quotes left unbalanced by the cut (``...in a car.\u201d}``).
-    while text and text[-1] in "\"\u201d'" and (text.count("\"") % 2 or text.count("\u201d") > text.count("\u201c")
+    # Quotes left unbalanced by the cut (``...in a car.”}``).
+    while text and text[-1] in "\"”'" and (text.count("\"") % 2 or text.count("”") > text.count("“")
                                                  or (text[-1] == "'" and text.count("'") % 2)):
         text = text[:-1].rstrip()
-    m = _PROVENANCE_RE.search(text)
-    # After a comma the clause is dropped even when it goes on ("..., recommended
-    # by commenters as a good resource for learning deadlift form"): it restates
-    # the sources. Without one it may carry the sentence's point and is kept
-    # unless it is provenance only.
-    if m and m.start() >= 20 and (m.group(0)[:1] in ",;" or not _PROVENANCE_EXTRA_RE.search(m.group("where"))):
-        text = text[: m.start()].rstrip(" ,;:-\u2014")
-    if text and text[-1] not in ".!?\u2026)":
+    # Dangling punctuation after the sentence ("... in comments. ?").
+    text = re.sub(r"(?:\s+[^\w\s\"'”)]+)+$", "", text).rstrip(" ,;:-–—")
+    # A truncated last clause ("... specified in the given inf…"): drop it.
+    if text.endswith(("…", "...")):
+        parts = _CLAUSE_SPLIT_RE.split(text.rstrip(".…"))
+        if len(parts) < 2:
+            return ""
+        text = text[: text.rstrip(".…").rfind(parts[-1])].rstrip(" ,;:-–—")
+    text = _NAMED_ROUTINE_RE.sub(lambda m: _SUBREDDIT_NAMES.get(m.group(1), m.group(1)), text)
+    sentences = _SENTENCE_SPLIT_RE.split(text)
+    kept = []
+    for i, sentence in enumerate(sentences):
+        clean = _strip_provenance(sentence.rstrip(".!?").rstrip())
+        if not clean:
+            break
+        end = sentence[-1] if sentence[-1:] in ".!?" else "."
+        kept.append(clean.rstrip(" ,;:-–—") + end)
+        if clean != sentence.rstrip(".!?").rstrip():
+            break  # what follows a provenance clause elaborates on it
+    text = " ".join(kept)
+    if text and text[-1] not in ".!?":
         text += "."
-    text = _clip(text, SUMMARY_CHARS)
-    return text if len(text) >= 10 and not _SUMMARY_JUNK_RE.search(text) else ""
+    text = _fit_length(text)
+    if text and text[-1] not in ".!?":
+        text += "."
+    if text[:1].islower():
+        text = text[0].upper() + text[1:]
+    return "" if summary_problems(text) else text
 
 
 def validate_a(out: Any, n: int) -> dict[int, dict] | None:
@@ -395,15 +569,25 @@ class LLMCache:
         self.data["comments"][f"{PROMPT_A_VERSION}:{vid}:{key}"] = verdict
 
     def video(self, vid: str) -> dict | None:
-        return self.data["videos"].get(f"{PROMPT_B_VERSION}:{vid}")
+        """The current-version verdict, else the newest legacy one (``PROMPT_B_LEGACY``)."""
+        for version in (PROMPT_B_VERSION, *PROMPT_B_LEGACY):
+            verdict = self.data["videos"].get(f"{version}:{vid}")
+            if verdict is not None:
+                return verdict
+        return None
+
+    def video_is_current(self, vid: str) -> bool:
+        return f"{PROMPT_B_VERSION}:{vid}" in self.data["videos"]
 
     def set_video(self, vid: str, verdict: dict) -> None:
         self.data["videos"][f"{PROMPT_B_VERSION}:{vid}"] = verdict
+        for version in PROMPT_B_LEGACY:
+            self.data["videos"].pop(f"{version}:{vid}", None)
 
     def save(self) -> None:
-        """Write the cache, dropping answers to older prompt versions."""
-        for section, version in (("comments", PROMPT_A_VERSION), ("videos", PROMPT_B_VERSION)):
-            self.data[section] = {k: x for k, x in self.data[section].items() if k.startswith(version + ":")}
+        """Write the cache, dropping answers to prompt versions no longer used."""
+        for section, versions in (("comments", (PROMPT_A_VERSION,)), ("videos", (PROMPT_B_VERSION, *PROMPT_B_LEGACY))):
+            self.data[section] = {k: x for k, x in self.data[section].items() if k.split(":", 1)[0] in versions}
         self.path.parent.mkdir(parents=True, exist_ok=True)
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(json.dumps(self.data, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
@@ -710,6 +894,41 @@ def rescuable(v: dict, cache: LLMCache) -> bool:
     return True
 
 
+def needs_reask(cache: LLMCache, vid: str) -> bool:
+    """A legacy stage-B answer that keeps the video but whose summary
+    ``clean_summary`` cannot repair: ask again with the current prompt."""
+    verdict = cache.video(vid)
+    return bool(verdict and verdict.get("keep") is True and not cache.video_is_current(vid)
+                and not clean_summary(verdict.get("summary")))
+
+
+# Stage B sometimes files climbing knots, rappelling or gear under
+# ``event-footage`` (prompt b1 told it to): such answers count as off-topic.
+_OFF_TOPIC_RE = re.compile(r"\b(?:knots?|rappel\w*|abseil\w*|belay\w*|ropes?|rigging|harness\w*|carabiners?|gear|"
+                           r"crampons?|anchors?)\b", re.IGNORECASE)
+# Grounds on which stage B drops even a wiki-listed video: wiki demo pages
+# also link people's own lift clips ("Movie on 22 12 13 at 5 28 PM").
+WIKI_DROP_REASONS = {"personal-clip"}
+
+
+def stage_b_drop(v: dict, verdict: dict | None) -> str | None:
+    """Why stage B's ``verdict`` drops ``v`` (``None``: keep).
+
+    Also a kept video whose summary describes a personal recording (stage B
+    kept it but said "nothing shows it teaches anything") is a personal clip.
+    """
+    if not verdict:
+        return None
+    if not verdict.get("keep"):
+        reason = verdict.get("reject_reason") or "non-fitness"
+        if reason == "event-footage" and _OFF_TOPIC_RE.search(f"{v.get('title') or ''} {verdict.get('summary') or ''}"):
+            reason = "off-topic"
+        return reason
+    if SUMMARY_PERSONAL_RE.search(verdict.get("summary") or ""):
+        return "personal-clip"
+    return None
+
+
 def fitness_channels(videos: list[dict], cache: LLMCache) -> set[str]:
     """Channels with a video that is wiki-listed or has an accepted excerpt."""
     out = set()
@@ -784,7 +1003,8 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
       account for all its community recommenders (e.g. a single-recommender
       video whose only comment is an anti-recommendation), or the video is
       contested (only bro-science-flagged support, plus criticism).
-      Wiki-listed videos are moderator-curated and never dropped.
+      Wiki-listed videos are moderator-curated and only dropped as a
+      personal clip (``stage_b_drop``, ``WIKI_DROP_REASONS``).
     * Exception: a ``no-recommendation`` video that is ``rescuable`` (only
       off-topic/misattributed excerpts) and that stage B keeps as a
       tutorial/explainer/follow-along/program stays when its title or channel
@@ -795,7 +1015,8 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
       excerpt) and their karma; ``sources`` entries pointing at them (forum /
       HN posts) are removed too. The change is stored in ``llm_rejected``.
     * Stage-B tags and ``summary`` (cleaned by ``clean_summary``, also for
-      cached answers) replace the keyword tags; invalid output keeps the
+      cached answers; omitted when nothing publishable is left) replace the
+      keyword tags; invalid output keeps the
       keyword tags. Accepted videos lose ``needs_llm_check``, as do
       external ``sources`` whose excerpt was accepted.
     * Videos without verdicts (no API key, budget cap, pending batch) are kept
@@ -811,8 +1032,9 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
         wikis = _n_wikis(v)
         b = cache.video(vid)
         valid_b = b if b and "keep" in b else None
-        if not wikis and valid_b and not valid_b["keep"]:
-            report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": valid_b["reject_reason"]})
+        b_reason = stage_b_drop(v, valid_b)
+        if b_reason and (not wikis or b_reason in WIKI_DROP_REASONS):
+            report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": b_reason})
             continue
         reason = stage_a_drop(v, cache)
         rescued = reason == "no-recommendation" and not wikis and kept_by_content(v, cache, valid_b, channels)
@@ -871,6 +1093,61 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
     report.after = len(kept)
     report.tags_after = tag_coverage(kept)
     return data
+
+
+# -- publishing ----------------------------------------------------------------------
+
+# Pipeline-internal fields: ``strip_llm`` needs them while the data is
+# processed, the published ``videos.json`` must not carry them.
+INTERNAL_FIELDS = ("llm_rejected", "llm_note")
+
+
+def _recount_source_stats(v: dict, adj: dict | None) -> dict:
+    """``source_stats`` after the LLM pass: rejected external excerpts no longer
+    count, and a site none of whose ``sources`` entries is left is removed."""
+    from .sources.merge import EXTERNAL_KINDS, SITES
+
+    stats = {k: dict(x) for k, x in (v.get("source_stats") or {}).items()}
+    rejected = (adj or {}).get("comments") or []
+    kinds_left = {s.get("kind") for s in v.get("sources") or []}
+    for kind in EXTERNAL_KINDS:
+        if kind not in stats:
+            continue
+        gone = [c for c in rejected if c.get("site") == SITES[kind]]
+        st = stats[kind]
+        st["recommenders"] = max(0, int(st.get("recommenders") or 0) - len(gone))
+        karma = sum(float(c.get("score") or 0) for c in gone)
+        st["sum_score"] = round(max(0.0, float(st.get("sum_score") or 0) - karma), 1)
+        if kind not in kinds_left or not st["recommenders"]:
+            del stats[kind]
+    if "reddit" in stats:
+        reddit = stats["reddit"]
+        external = sum(int(x.get("recommenders") or 0) for k, x in stats.items() if k != "reddit")
+        reddit["recommenders"] = max(0, int(v.get("recommenders") or 0) - external)
+        karma = sum(float(c.get("score") or 0) for c in rejected if c.get("site") in (None, "reddit.com"))
+        reddit["sum_score"] = round(max(0.0, float(reddit.get("sum_score") or 0) - karma), 1)
+    return stats
+
+
+def publish(data: dict) -> dict:
+    """The data as published in ``site/data/videos.json``: a copy without
+    ``INTERNAL_FIELDS`` and with ``source_stats`` recounted after the LLM pass.
+
+    Not reversible by ``strip_llm``: later runs start from the pre-LLM snapshot
+    (``pipeline/base_videos.json``) and the verdict cache instead.
+    """
+    out = {k: x for k, x in data.items() if k != "videos"}
+    videos = []
+    for v in data.get("videos", []):
+        v = dict(v)
+        adj = v.get("llm_rejected")
+        for key in INTERNAL_FIELDS:
+            v.pop(key, None)
+        if v.get("source_stats"):
+            v["source_stats"] = _recount_source_stats(v, adj)
+        videos.append(v)
+    out["videos"] = videos
+    return out
 
 
 # -- the pass ------------------------------------------------------------------------
@@ -947,7 +1224,7 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
         req_b, meta_b = {}, {}
         for v in videos:
             cid = f"b-{v['id']}"
-            if cache.video(v["id"]) is not None or cid in pending:
+            if (cache.video(v["id"]) is not None and not needs_reask(cache, v["id"])) or cid in pending:
                 continue
             if stage_a_drop(v, cache) and not rescuable(v, cache):
                 continue

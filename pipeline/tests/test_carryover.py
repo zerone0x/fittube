@@ -150,6 +150,20 @@ class CarryOverTest(unittest.TestCase):
             texts[2]])
         self.assertEqual(carryover.repair_excerpts(videos), 0)  # idempotent
 
+    def test_repair_excerpts_restores_lost_timestamp_separator_for_any_id(self):
+        # #11: only ids with "_" were repaired; "v=bt4m4zLioRwt=268" stayed broken.
+        texts = ["work on your setup http://www.youtube.com/watch?v=bt4m4zLioRwt=268",
+                 "see https://youtu.be/bt4m4zLioRwt=12 and https://www.youtube.com/watch?v=bt4m4zLioRw&t=5",
+                 "a 10-character fragment: watch?v=ZZZZZZZZZZt=5"]
+        videos = [record("bt4m4zLioRw", comments=[{"text": t, "score": 1, "permalink": f"p{i}"}
+                                                  for i, t in enumerate(texts)])]
+        self.assertEqual(carryover.repair_excerpts(videos), 2)
+        self.assertEqual([c["text"] for c in videos[0]["comments"]], [
+            "work on your setup http://www.youtube.com/watch?v=bt4m4zLioRw&t=268",
+            "see https://youtu.be/bt4m4zLioRw?t=12 and https://www.youtube.com/watch?v=bt4m4zLioRw&t=5",
+            texts[2]])
+        self.assertEqual(carryover.repair_excerpts(videos), 0)  # idempotent
+
     def test_no_previous(self):
         fresh = {"sources": [], "videos": [record(A)]}
         self.assertIs(carryover.merge_previous(fresh, None), fresh)

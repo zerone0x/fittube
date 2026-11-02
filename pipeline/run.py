@@ -143,7 +143,7 @@ def main(argv: list[str] | None = None) -> int:
         data = merge_external(data, collect_external(args, log))
         data = llm_pass(data, args, log)
         data["generated_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-        write(data, args.output)
+        write(llm.publish(data), args.output)
         log.info("merged into %s: %d videos -> %s in %.0fs", args.merge_into, len(data["videos"]),
                  args.output, time.monotonic() - t0)
         return 0
@@ -230,7 +230,8 @@ def write_checked(data: dict, args, log: logging.Logger, t0: float) -> int:
     if n < args.min_videos:
         log.error("only %d videos (< --min-videos %d); not writing %s", n, args.min_videos, args.output)
         return 1
-    write(data, args.output)
+    # Published without the LLM pass's internal fields (llm.publish).
+    write(llm.publish(data), args.output)
     log.info("wrote %d videos to %s in %.0fs", n, args.output, time.monotonic() - t0)
     return 0
 

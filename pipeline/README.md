@@ -19,6 +19,7 @@ python -m pipeline.run --no-carry-over # replace videos.json instead of merging 
 python -m pipeline.run --llm-only      # no crawling: LLM pass over the pre-LLM snapshot (base_videos.json)
 python -m pipeline.run --no-llm        # skip the LLM pass (keyword tags only)
 python -m unittest                     # tests (run from the repo root)
+python -m pipeline.check_data          # data-quality check of site/data/videos.json (CI gate)
 ```
 
 ## Stages
@@ -175,8 +176,11 @@ How verdicts change the data (`apply_verdicts`):
   fat", jokes, music...) are hidden and stop counting: one recommender each
   (at least one per accepted excerpt is kept) plus their karma.
 * A video without a wiki listing is dropped when stage B rejects it
-  (`non-fitness`, `personal-clip`, `event-footage`, `anti-recommendation`,
-  `spam`), or when all its excerpts were rejected and they account for all
+  (`non-fitness`, `personal-clip`, `event-footage`, `off-topic` -- e.g.
+  climbing knots, rappelling, gear -- `anti-recommendation`, `spam`; a cached
+  `event-footage` answer about knots/rappelling/belaying/ropes/gear counts as
+  `off-topic`), or when stage B keeps it but its summary describes a personal
+  recording, or when all its excerpts were rejected and they account for all
   its community recommenders -- which covers the single-recommender and
   `needs_llm_check` videos: their one piece of evidence must pass -- or when
   it is contested: all accepted excerpts flag it as bro-science/unsafe and
@@ -191,20 +195,39 @@ How verdicts change the data (`apply_verdicts`):
   channel name is about training (keyword tagger, training words) or its channel
   has other accepted videos, it stays with `llm_note: "kept-by-content"` and at
   least one recommender.
-* Wiki-listed videos are moderator-curated and never dropped (they still get
-  tags, a summary and excerpt filtering).
+* Wiki-listed videos are moderator-curated and only dropped when stage B
+  calls them a `personal-clip` (wiki demo pages also link people's own lift
+  clips, e.g. "Movie on 22 12 13 at 5 28 PM"); they still get tags, a summary
+  and excerpt filtering.
 * `sources` entries pointing at a rejected excerpt (a T-Nation post or HN
   comment) are removed with it.
-* Summaries are cleaned (`clean_summary`, also applied to cached answers):
-  structured-output debris (a stray `}` / `"}` / `</parameter>` / `<br>```json`
-  and anything after it) is cut, and a trailing clause that only says where the
-  video was recommended ("..., recommended in r/flexibility.") is dropped; the
-  prompt asks for neither.
+* Summaries are cleaned (`clean_summary`, also applied to cached answers) and
+  must describe the video only; the prompt asks for all of this:
+  * structured-output debris (a stray `}` / `"}` / `</parameter>` /
+    `<br>```json` and anything after it) is cut;
+  * provenance goes: inline participle phrases ("A Turkish get-up tutorial
+    recommended on r/kettlebell for learning ..." -> "A Turkish get-up
+    tutorial for learning ...") and, from the first clause or sentence
+    mentioning r/..., wikis, threads, communities, comments or commenters,
+    the rest of the sentence ("..., which commenters compare to ...");
+  * meta talk ("details beyond the title are not given", "based on the
+    title") and guesses (", likely ...") are cut the same way;
+  * a truncated last clause ("... in the given inf…") and dangling
+    punctuation (" ?") are dropped; long summaries are shortened at a clause
+    boundary, never mid-word.
+  If the main clause itself is provenance or meta talk, or anything
+  `summary_problems` objects to is left, the video is published without a
+  summary (the field is optional) and stage B is asked again (below).
 * Stage-B tags replace the keyword tags. Invalid output (fails validation)
   keeps the keyword tags; API errors and videos beyond the budget keep the
   record unchanged.
 * The count changes are stored in `llm_rejected` and undone by `strip_llm`
   before carry-over, so reruns are idempotent and never subtract twice.
+* `llm.publish` writes the result: without the internal fields `llm_rejected`
+  and `llm_note`, and with `source_stats` recounted (rejected HN/T-Nation
+  excerpts no longer count; a site without a remaining `sources` entry is
+  removed). The published file is final: reruns start from the pre-LLM
+  snapshot and the verdict cache, not from it.
 
 **Pre-LLM snapshot.** Full runs save the data as it was before the LLM pass
 (after carry-over and the HN/T-Nation merge) to `pipeline/base_videos.json`
@@ -222,7 +245,11 @@ more recommenders than rejected excerpts therefore keeps the rest.
 
 **Cache.** Verdicts are stored in `pipeline/llm_cache.json` (committed),
 keyed by prompt version + video id (+ comment id, e.g. `t1_abc`, for stage
-A). Bump `PROMPT_A_VERSION` / `PROMPT_B_VERSION` when a prompt changes. Runs
+A). Bump `PROMPT_A_VERSION` / `PROMPT_B_VERSION` when a prompt changes.
+Stage-B answers to the versions in `PROMPT_B_LEGACY` stay in use (their
+keep verdict and tags): only a video whose cached summary `clean_summary`
+cannot repair is asked again with the current prompt (`needs_reask`), so a
+prompt fix does not re-buy every answer. Runs
 without `ANTHROPIC_API_KEY` apply cached verdicts and leave the rest
 keyword-tagged, so local rebuilds reproduce CI's output. The file also logs
 token usage and cost per run (`runs`).
@@ -240,10 +267,13 @@ exceeds the remaining `--llm-max-cost` (default $15 per run) is not sent;
 `--llm-max-items` (default 3000) caps requests per stage. A full pass over
 ~930 videos is ~700 stage-A and ~900 stage-B requests, a few dollars.
 
-**CI.** `refresh-data.yml` passes the `ANTHROPIC_API_KEY` secret and commits
-`site/data/videos.json`, `pipeline/base_videos.json` and
-`pipeline/llm_cache.json` (the cache also after a
-failed run, so paid results and pending batch ids are kept). Run it with
+**CI.** `refresh-data.yml` passes the `ANTHROPIC_API_KEY` secret, runs
+`python -m pipeline.check_data` on the result (summaries with markup,
+provenance, meta talk or truncation, internal fields, stale `source_stats`,
+glued `t=` timestamps fail it) and commits `site/data/videos.json`,
+`pipeline/base_videos.json` (only when the check passed) and
+`pipeline/llm_cache.json` (the cache also after a failed run or check, so paid
+results and pending batch ids are kept). Run it with
 `llm_only: true` to skip crawling and only (re)run the LLM pass over the
 committed pre-LLM snapshot. Commits pushed with `GITHUB_TOKEN` do not trigger other
 workflows, so on `main` the job dispatches `pages.yml` itself (`actions:
