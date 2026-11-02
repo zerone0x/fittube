@@ -78,8 +78,11 @@ WIKI_SUBREDDITS = [
     "bodyweightfitness", "Fitness", "flexibility", "xxfitness", "running", "yoga",
     "powerlifting", "climbingtrainer", "weightroom", "naturalbodybuilding",
 ]
-# Paths with these segments are wiki plumbing, not content.
-WIKI_SKIP_PATH_RE = r"/wiki/(?:edit|revisions|settings|config|pages|discussions)(?:/|$)|automoderator|/wiki/config/"
+# Paths with these segments are wiki plumbing, not content. Moderation and
+# rules pages are not recommendation lists either: r/Fitness/wiki/moderation
+# links memes ("Dog of Wisdom") as examples of what gets removed.
+WIKI_SKIP_PATH_RE = (r"/wiki/(?:edit|revisions|settings|config|pages|discussions)(?:/|$)|automoderator|/wiki/config/|"
+                     r"moderat(?:ion|ors?)|(?:^|[/_-])(?:rules|config)(?:[/_-]|$)")
 WIKI_PATHS_PER_REQUEST = 50  # API maximum is 100; keep URLs short
 # A wiki listing is a strong, curated signal: each subreddit wiki that lists a
 # video counts as one recommender ("wiki:<subreddit>") plus WIKI_BOOST score

@@ -65,6 +65,21 @@ class CarryOverTest(unittest.TestCase):
         self.assertEqual(v["recommenders"], 2)
         self.assertEqual(v["score"], round(build.rank_score(3, 10) - 10, 1))
 
+    def test_moderation_wiki_listings_are_dropped(self):
+        mod = {"kind": "wiki", "subreddit": "Fitness", "path": "/wiki/moderation",
+               "url": "https://www.reddit.com/r/Fitness/wiki/moderation"}
+        faq = {"kind": "wiki", "subreddit": "weightroom", "path": "/wiki/faq",
+               "url": "https://www.reddit.com/r/weightroom/wiki/faq"}
+        meme = record(A, 1, score=build.rank_score(1, 0) + build.wiki_boost(1), sources=[mod])
+        both = record(B, 3, score=build.rank_score(3, 10) + build.wiki_boost(2),
+                      sources=[faq, mod, {"kind": "comment", "subreddit": "Fitness", "count": 1}])
+        out = carryover.merge_previous({"sources": [], "videos": []}, {"videos": [meme, both]}, oembed=FakeOEmbed())
+        self.assertEqual([v["id"] for v in out["videos"]], [B])  # A was only listed on the moderation page
+        v = out["videos"][0]
+        self.assertEqual([s.get("path") for s in v["sources"]], ["/wiki/faq", None])
+        self.assertEqual(v["recommenders"], 2)
+        self.assertEqual(v["score"], round(build.rank_score(2, 10) + build.wiki_boost(1), 1))
+
     def test_merge_overlapping_record(self):
         prev = record(A, 5, score=70.0, comments=[{"text": "old", "score": 50, "permalink": "https://www.reddit.com/1"}],
                       subreddits=["Fitness"], first_seen="2012-03-04",

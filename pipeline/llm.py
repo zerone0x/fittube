@@ -42,7 +42,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 from . import config
-from .build import rank_score, sources_boost
+from .build import is_content_wiki_source, rank_score, sources_boost
 from .tagger import BODY, EQUIPMENT, GOALS, LEVELS, TYPES, tag_video
 
 log = logging.getLogger(__name__)
@@ -308,7 +308,20 @@ SUMMARY_META_RE = re.compile(
     r"\bno (?:further |other |additional |specific )?(?:details|information|description|instruction)\b|"
     r"\bnothing (?:in|shows|indicates|suggests)\b|\bappears to (?:be|show)\b|"
     r"[,;(]\s*(?:likely|presumably|probably|possibly|apparently)\b|\blikely (?:a|an|the|showing|covering|about|"
-    r"demonstrating|for)\b", re.IGNORECASE)
+    r"demonstrating|for)\b|"
+    # Summaries that only restate the title and channel ("Video titled \"Dog of
+    # Wisdom\" from channel Joe.").
+    r"\b(?:video|clip)\s+(?:titled|called|named)\b|\bfrom\s+(?:the\s+)?channel\b", re.IGNORECASE)
+# Reception rather than content: how the video is regarded ("recommended as a
+# brief, to-the-point technique guide", "as recommended for showing ...",
+# "recommended as a film rather than ..."). Audience advice stays ("recommended
+# for people with limited equipment", "recommended as a warm-up for ...").
+SUMMARY_RECEPTION_RE = re.compile(
+    r"\bas\s+recommended\s+(?:as|for)\b|"
+    r"\brecommended\s+as\s+(?:[\w'-]+,?\s+){0,4}?(?:primary|definitive|best|go-to|classic|must-watch|brief|concise|"
+    r"to-the-point|film|documentary|reference|resource|source)\b|"
+    r"\brecommended\s+as\s+[^.;]*?\brather\s+than\b|"
+    r"\brecommended\s+for\s+(?:its|their|showing|how\s+(?:it|well))\b", re.IGNORECASE)
 # A personal recording rather than something that teaches (stage B sometimes
 # keeps one and says so in the summary).
 SUMMARY_PERSONAL_RE = re.compile(
@@ -359,6 +372,8 @@ def summary_problems(text: Any) -> list[str]:
         out.append("provenance")
     if SUMMARY_META_RE.search(text):
         out.append("meta")
+    if SUMMARY_RECEPTION_RE.search(text):
+        out.append("reception")
     if SUMMARY_PERSONAL_RE.search(text):
         out.append("personal-clip")
     if text.endswith(("…", "...")) or re.search(r"\s[^\w\s]+$", text) or not _ENDS_OK_RE.search(text):
@@ -373,7 +388,8 @@ def summary_problems(text: Any) -> list[str]:
 
 
 def _bad_part(text: str) -> bool:
-    return bool(SUMMARY_PROVENANCE_RE.search(text) or SUMMARY_META_RE.search(text))
+    return bool(SUMMARY_PROVENANCE_RE.search(text) or SUMMARY_META_RE.search(text)
+                or SUMMARY_RECEPTION_RE.search(text))
 
 
 def _cut_clause(clause: str) -> str:
@@ -800,7 +816,9 @@ class Runner:
 # -- applying verdicts -------------------------------------------------------------
 
 def _n_wikis(v: dict) -> int:
-    return len({(s.get("subreddit") or "").lower() for s in v.get("sources") or [] if s.get("kind") == "wiki"})
+    """Subreddit wikis listing ``v`` on a content page (moderation/rules pages do not count)."""
+    return len({(s.get("subreddit") or "").lower() for s in v.get("sources") or []
+                if s.get("kind") == "wiki" and is_content_wiki_source(s)})
 
 
 def _sum_score(v: dict) -> float:
@@ -907,8 +925,11 @@ def needs_reask(cache: LLMCache, vid: str) -> bool:
 _OFF_TOPIC_RE = re.compile(r"\b(?:knots?|rappel\w*|abseil\w*|belay\w*|ropes?|rigging|harness\w*|carabiners?|gear|"
                            r"crampons?|anchors?)\b", re.IGNORECASE)
 # Grounds on which stage B drops even a wiki-listed video: wiki demo pages
-# also link people's own lift clips ("Movie on 22 12 13 at 5 28 PM").
-WIKI_DROP_REASONS = {"personal-clip"}
+# also link people's own lift clips ("Movie on 22 12 13 at 5 28 PM"), FAQs
+# link meet footage as examples ("Donny Shankle Nor Cal 2011 CJ3") and some
+# pages link memes. A wiki listing only overrides the softer grounds
+# (anti-recommendation, spam: judged from excerpts, not the video).
+WIKI_DROP_REASONS = {"personal-clip", "non-fitness", "event-footage", "off-topic"}
 
 
 def stage_b_drop(v: dict, verdict: dict | None) -> str | None:
@@ -1004,7 +1025,8 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
       video whose only comment is an anti-recommendation), or the video is
       contested (only bro-science-flagged support, plus criticism).
       Wiki-listed videos are moderator-curated and only dropped as a
-      personal clip (``stage_b_drop``, ``WIKI_DROP_REASONS``).
+      personal clip, non-fitness, event footage or off-topic
+      (``stage_b_drop``, ``WIKI_DROP_REASONS``).
     * Exception: a ``no-recommendation`` video that is ``rescuable`` (only
       off-topic/misattributed excerpts) and that stage B keeps as a
       tutorial/explainer/follow-along/program stays when its title or channel

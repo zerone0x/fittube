@@ -36,6 +36,7 @@ class CheckDataTest(unittest.TestCase):
             "summary provenance": {"summary": "Shows how to squat, recommended on r/Fitness."},
             "summary meta": {"summary": "Shows how to squat; details beyond the title are not given."},
             "summary truncated": {"summary": "Shows how to squat with a neutral b…"},
+            "summary reception": {"summary": "Shows how to squat, recommended as a brief, to-the-point guide."},
             "internal field 'llm_rejected'": {"llm_rejected": {"recommenders": 1}},
             "internal field 'llm_note'": {"llm_note": "kept-by-content"},
             "source_stats.forum without a forum source": {
@@ -46,8 +47,11 @@ class CheckDataTest(unittest.TestCase):
             problems = self.problems(**kw)
             self.assertTrue(any(want in p for p in problems), (want, problems))
         for summary in ("Recommended by commenters as a squat tutorial.", "Squat tutorial, per community comments.",
-                        "Squat tutorial; the exact method is unclear from the title."):
+                        "Squat tutorial; the exact method is unclear from the title.",
+                        'Video titled "Dog of Wisdom" from channel Joe.'):
             self.assertTrue(self.problems(summary=summary), summary)
+        self.assertEqual(self.problems(summary="Shows squats at home, recommended for people with limited equipment."),
+                         [])
         self.assertEqual(check_data.check({"videos": []}), ["no videos"])
         self.assertIn("BBBBBBBBBBB: duplicate id",
                       check_data.check({"videos": [good_video("BBBBBBBBBBB"), good_video("BBBBBBBBBBB")]}))

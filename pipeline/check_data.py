@@ -6,7 +6,9 @@
 Exits non-zero (listing every problem) when the file is not fit to publish:
 
 * a ``summary`` with markup or braces, provenance ("recommended on r/...",
-  commenters, wiki pages), meta talk about missing information or guesses,
+  commenters, wiki pages), meta talk about missing information or guesses
+  (or only the title and channel: "Video titled ... from channel ..."),
+  reception instead of content ("recommended as a brief ... guide"),
   a personal-clip description, a truncated or dangling ending
   (``llm.summary_problems``, the rule the LLM pass applies before publishing);
 * pipeline-internal fields (``llm_rejected``, ``llm_note``);

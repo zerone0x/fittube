@@ -27,7 +27,7 @@ python -m pipeline.check_data          # data-quality check of site/data/videos.
 | Module | What it does |
 | --- | --- |
 | `config.py` | Subreddits, per-subreddit budget, thresholds, negative-context and bot patterns. |
-| `reddit/wiki.py` | Subreddit wikis (`WIKI_SUBREDDITS`): all archived pages (first 100 via `?subreddit=`, the rest from `/wikis/list` + `?paths=` batches); one evidence item per page line linking YouTube. |
+| `reddit/wiki.py` | Subreddit wikis (`WIKI_SUBREDDITS`): all archived pages (first 100 via `?subreddit=`, the rest from `/wikis/list` + `?paths=` batches); one evidence item per page line linking YouTube. Plumbing and moderation/rules/config pages (`WIKI_SKIP_PATH_RE`, e.g. `r/Fitness/wiki/moderation`, which links memes as removal examples) are not sources. |
 | `reddit/posts.py` | Submissions matching `query=youtube` (the `url=` filter times out), sampled over the same time windows as comments. Posts linking a video count like comments (post karma as score); questions and self-promotion do not. Replies of "recommend me videos" posts are fetched like threads. |
 | `fetch.py` | Arctic Shift comment search (`body=youtube OR youtu.be`), one request at a time, backs off on the API's per-minute budget, caches every page under `pipeline/.cache/`. |
 | `fetch.py` (threads) | Thread expansion: whole threads in which sampled comments already link YouTube are fetched with cheap `link_id` lookups, keeping comments that link YouTube. |
@@ -196,9 +196,13 @@ How verdicts change the data (`apply_verdicts`):
   has other accepted videos, it stays with `llm_note: "kept-by-content"` and at
   least one recommender.
 * Wiki-listed videos are moderator-curated and only dropped when stage B
-  calls them a `personal-clip` (wiki demo pages also link people's own lift
-  clips, e.g. "Movie on 22 12 13 at 5 28 PM"); they still get tags, a summary
-  and excerpt filtering.
+  rejects the video itself: `personal-clip` (wiki demo pages also link
+  people's own lift clips, e.g. "Movie on 22 12 13 at 5 28 PM"),
+  `non-fitness`, `event-footage` (FAQs link meet footage as examples) or
+  `off-topic`; a wiki listing still overrides `anti-recommendation` and
+  `spam`, and stage A's verdicts. They get tags, a summary and excerpt
+  filtering. Listings on moderation/rules pages do not count as wiki listings
+  (and carry-over removes them, with the recommender and boost they earned).
 * `sources` entries pointing at a rejected excerpt (a T-Nation post or HN
   comment) are removed with it.
 * Summaries are cleaned (`clean_summary`, also applied to cached answers) and
@@ -211,7 +215,13 @@ How verdicts change the data (`apply_verdicts`):
     mentioning r/..., wikis, threads, communities, comments or commenters,
     the rest of the sentence ("..., which commenters compare to ...");
   * meta talk ("details beyond the title are not given", "based on the
-    title") and guesses (", likely ...") are cut the same way;
+    title", a bare `Video titled "..." from channel ...`) and guesses
+    (", likely ...") are cut the same way;
+  * reception rather than content ("..., recommended as a brief,
+    to-the-point technique guide", "as recommended for showing ...",
+    "recommended as a film rather than ...") is cut the same way; audience
+    advice stays ("recommended for people with limited equipment",
+    "recommended as a warm-up for ...");
   * a truncated last clause ("... in the given inf…") and dangling
     punctuation (" ?") are dropped; long summaries are shortened at a clause
     boundary, never mid-word.
@@ -269,7 +279,7 @@ exceeds the remaining `--llm-max-cost` (default $15 per run) is not sent;
 
 **CI.** `refresh-data.yml` passes the `ANTHROPIC_API_KEY` secret, runs
 `python -m pipeline.check_data` on the result (summaries with markup,
-provenance, meta talk or truncation, internal fields, stale `source_stats`,
+provenance, meta talk, reception or truncation, internal fields, stale `source_stats`,
 glued `t=` timestamps fail it) and commits `site/data/videos.json`,
 `pipeline/base_videos.json` (only when the check passed) and
 `pipeline/llm_cache.json` (the cache also after a failed run or check, so paid
