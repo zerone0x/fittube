@@ -118,6 +118,7 @@ function normalizeVideo(raw, index) {
     id,
     title: str(raw.title) || 'Untitled video',
     channel: str(raw.channel),
+    summary: typeof raw.summary === 'string' ? str(raw.summary).slice(0, 300) : '',
     thumbnail: safeUrl(raw.thumbnail, ['ytimg.com', 'youtube.com', 'ggpht.com']) || `https://i.ytimg.com/vi/${id}/hqdefault.jpg`,
     recommenders: Math.max(0, Math.round(num(raw.recommenders))),
     score: num(raw.score),
@@ -138,7 +139,7 @@ function normalizeVideo(raw, index) {
     },
     order: index,
   };
-  v.haystack = [v.title, v.channel, v.subreddits.join(' '), ...v.comments.map((c) => c.text)]
+  v.haystack = [v.title, v.channel, v.summary, v.subreddits.join(' '), ...v.comments.map((c) => c.text)]
     .join(' \n ')
     .toLowerCase();
   return v;

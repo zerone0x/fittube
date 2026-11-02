@@ -4,7 +4,7 @@ Builds `site/data/videos.json` (see the data contract in the top-level README)
 from Reddit comments, posts and subreddit wikis that link YouTube videos in
 fitness subreddits.
 
-Python 3.10+, stdlib + `requests`.
+Python 3.10+, stdlib + `requests` (+ `anthropic` for the LLM pass).
 
 ```bash
 pip install -r pipeline/requirements.txt
@@ -16,6 +16,8 @@ python -m pipeline.run --offline-search --thread-min-links 1 --max-threads 2000
 python -m pipeline.run --time-budget 90
                                        # stop making API requests after 90 min, build from the cache
 python -m pipeline.run --no-carry-over # replace videos.json instead of merging with it
+python -m pipeline.run --llm-only      # no crawling: LLM pass over the existing videos.json
+python -m pipeline.run --no-llm        # skip the LLM pass (keyword tags only)
 python -m unittest                     # tests (run from the repo root)
 ```
 
@@ -31,6 +33,7 @@ python -m unittest                     # tests (run from the repo root)
 | `extract.py` | YouTube ids from every URL form (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `m.`/`music.`, markdown links, escaped `\_`) plus `t=`/`start=` and `mm:ss`/`h:mm:ss` timestamps. |
 | `build.py` | Drops bots (by name or body, e.g. the "Videos in this thread / Watch Playlist" bot)/deleted/score < 1/rickrolls (`VIDEO_BLOCKLIST`), down-weights negative context, aggregates per video, thresholds, fetches oEmbed metadata (drops deleted/private videos), tags, scores, sorts, writes `sources`. |
 | `carryover.py` | Merges the fresh build with the previous `videos.json` (see below). |
+| `llm.py` | LLM pass over the finished data (see below): vets excerpts and videos, writes tags and `summary`. |
 | `tagger.py` | Keyword rules mapping title + comments + subreddit priors + wiki page paths (e.g. `/wiki/exercises/handstand` -> skill, upper) onto the tag vocabularies. Self-contained so it can be swapped for an LLM tagger. |
 
 ### Adding a Reddit source
@@ -137,3 +140,77 @@ The weekly `refresh-data.yml` workflow restores `pipeline/.cache` with
 `actions/cache/save` under `if: always()`, so even a failed or timed-out run
 leaves a warmer cache for the next one. The defaults (`THREAD_MIN_LINKS = 1`,
 `MAX_THREADS = 3000`) match the settings the committed data was built with.
+
+## LLM pass
+
+`llm.py` runs last, over the finished `videos.json` data (after carry-over
+and the HN/T-Nation merge, because only there are all videos, including
+carried-over ones, available). It uses the `anthropic` SDK with structured
+output via forced tool use (`strict` tool schemas, validated again locally).
+
+| Stage | Model | Per request | Output |
+| --- | --- | --- | --- |
+| A: evidence | `FITTUBE_CLASSIFY_MODEL`, default `claude-haiku-5-5` | one video's saved comment/post excerpts | per excerpt: `is_recommendation`, `sentiment`, `quality_flags`, `reason` |
+| B: vetting + tags | `FITTUBE_MODEL`, default `claude-sonnet-5-5` | title, channel, subreddits, wiki pages, accepted excerpts | `keep` / `reject_reason`, tags in the README vocabularies, `summary` |
+
+Stage A is a narrow yes/no reading task on many short texts, so the cheaper
+model does it; stage B decides whether a video stays and writes the tags and
+summary users see, so it gets the stronger model. Set `FITTUBE_MODEL=claude-haiku-5-5`
+for a cheaper run (both can be set as repository variables for the workflow).
+
+How verdicts change the data (`apply_verdicts`):
+
+* An excerpt counts only if `is_recommendation` and `sentiment != negative`.
+  Rejected excerpts (anti-recommendations, own lift clips, "guess my body
+  fat", jokes, music...) are hidden and stop counting: one recommender each
+  (at least one per accepted excerpt is kept) plus their karma.
+* A video without a wiki listing is dropped when stage B rejects it
+  (`non-fitness`, `personal-clip`, `event-footage`, `anti-recommendation`,
+  `spam`), or when all its excerpts were rejected and they account for all
+  its community recommenders -- which covers the single-recommender and
+  `needs_llm_check` videos: their one piece of evidence must pass.
+* Wiki-listed videos are moderator-curated and never dropped (they still get
+  tags, a summary and excerpt filtering).
+* Stage-B tags replace the keyword tags. Invalid output (fails validation)
+  keeps the keyword tags; API errors and videos beyond the budget keep the
+  record unchanged.
+* The count changes are stored in `llm_rejected` and undone by `strip_llm`
+  before carry-over, so reruns are idempotent and never subtract twice.
+
+Only the saved excerpts (up to 3 Reddit + 1 per external site per video) are
+classified, not every raw comment: `videos.json` is the only store holding
+every video, and it keeps aggregates rather than all comments. A video with
+more recommenders than rejected excerpts therefore keeps the rest.
+
+**Cache.** Verdicts are stored in `pipeline/llm_cache.json` (committed),
+keyed by prompt version + video id (+ comment id, e.g. `t1_abc`, for stage
+A). Bump `PROMPT_A_VERSION` / `PROMPT_B_VERSION` when a prompt changes. Runs
+without `ANTHROPIC_API_KEY` apply cached verdicts and leave the rest
+keyword-tagged, so local rebuilds reproduce CI's output. The file also logs
+token usage and cost per run (`runs`).
+
+**Batches.** More than `LLM_SYNC_MAX` (25) requests go through the Message
+Batches API (half price); fewer (e.g. `--limit` runs, weekly increments) are
+sent directly. A submitted batch's id is saved in the cache (`pending`) right
+away; if it has not ended after `--llm-wait` minutes the run continues
+without it and the next run collects it instead of resubmitting.
+
+**Budget.** Before submitting, each stage logs its request count and
+estimated cost (prices in `config.LLM_PRICES`, batch discount applied; an
+unknown model is priced as the most expensive). A stage whose estimate
+exceeds the remaining `--llm-max-cost` (default $15 per run) is not sent;
+`--llm-max-items` (default 3000) caps requests per stage. A full pass over
+~930 videos is ~700 stage-A and ~900 stage-B requests, a few dollars.
+
+**CI.** `refresh-data.yml` passes the `ANTHROPIC_API_KEY` secret and commits
+`site/data/videos.json` and `pipeline/llm_cache.json` (the cache also after a
+failed run, so paid results and pending batch ids are kept). Run it with
+`llm_only: true` to skip crawling and only (re)run the LLM pass over the
+committed data. Commits pushed with `GITHUB_TOKEN` do not trigger other
+workflows, so on `main` the job dispatches `pages.yml` itself (`actions:
+write`) after committing new data.
+
+```bash
+gh workflow run refresh-data.yml -f llm_only=true            # LLM pass only
+FITTUBE_MODEL=claude-haiku-5-5 python -m pipeline.run --llm-only --llm-max-cost 5
+```

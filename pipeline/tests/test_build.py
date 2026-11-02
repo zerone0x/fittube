@@ -77,6 +77,21 @@ class BuildTest(unittest.TestCase):
         self.assertLessEqual(len(long), 280)
         self.assertTrue(long.endswith("…"))
 
+    def test_excerpt_keeps_underscores_in_urls(self):
+        # Review of #8: youtu.be/K4dmZ5_n6uU was shown as youtu.be/K4dmZ5n6uU.
+        self.assertEqual(build.excerpt("_Great_ one: **https://youtu.be/K4dmZ5_n6uU** and snake_case"),
+                         "Great one: https://youtu.be/K4dmZ5_n6uU and snake_case")
+        self.assertEqual(build.excerpt("see youtu.be/_K4dmZ5n6u_ ok"), "see youtu.be/_K4dmZ5n6u_ ok")
+
+    def test_post_excerpt_drops_the_url_line(self):
+        # Review of #9: post excerpts began with "title https://...".
+        body = "Great hamstring routine\nhttps://www.youtube.com/watch?v=AAAAAAAAAAA\nDoing this daily."
+        self.assertEqual(build.excerpt(build.post_text(body)), "Great hamstring routine \u2014 Doing this daily.")
+        self.assertEqual(build.post_text("Title\nhttps://youtu.be/AAAAAAAAAAA\n"), "Title")
+        videos = build.aggregate([{"id": "t3_p", "kind": "post", "author": "a", "score": 5, "subreddit": "yoga",
+                                   "created_utc": 1, "link_id": "t3_p", "body": body}])
+        self.assertEqual(videos["AAAAAAAAAAA"].comments[0]["text"], "Great hamstring routine \u2014 Doing this daily.")
+
     def test_build_contract(self):
         comments = [
             comment("1", "alice", f"Best tutorial: https://youtu.be/{A}\n\n2:15 - the hollow body cue", score=40),

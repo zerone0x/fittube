@@ -213,3 +213,35 @@ EXTERNAL_SITE_CHANNELS = {"t-nation.com": ["Testosterone Nation", "T Nation", "T
 # Cache freshness for the forum/HN sources (offline runs ignore it).
 EXTERNAL_SEARCH_TTL_DAYS = 6
 EXTERNAL_POST_TTL_DAYS = 30
+
+# --- LLM pass (pipeline/llm.py, issue #3) --------------------------------------
+# Runs only when ANTHROPIC_API_KEY is set; cached verdicts in LLM_CACHE_PATH
+# (committed) are applied on every run, with or without a key.
+
+LLM_CACHE_PATH = Path(os.environ.get("FITTUBE_LLM_CACHE", PIPELINE_DIR / "llm_cache.json"))
+# Stage B (vetting, tags, summary) needs judgement: Sonnet. Stage A (is this
+# comment a recommendation?) is a simpler, higher-volume call: Haiku.
+LLM_MODEL = os.environ.get("FITTUBE_MODEL") or "claude-sonnet-5-5"
+LLM_CLASSIFY_MODEL = os.environ.get("FITTUBE_CLASSIFY_MODEL") or "claude-haiku-5-5"
+# USD per million (input, output) tokens at list price, used for the cost
+# estimate and report. Unknown models are priced like the most expensive one.
+# The Message Batches API costs LLM_BATCH_DISCOUNT of that.
+LLM_PRICES = {
+    "claude-haiku-5-5": (1.0, 5.0),
+    "claude-sonnet-5-5": (3.0, 15.0),
+    "claude-opus-5-5": (5.0, 25.0),
+}
+LLM_BATCH_DISCOUNT = 0.5
+# Budget guard: at most this many requests per stage and this estimated cost
+# (USD) per run; a stage that would exceed the remaining budget is skipped.
+# A full run over ~900 videos is ~700 stage-A + ~900 stage-B requests.
+LLM_MAX_ITEMS = int(os.environ.get("FITTUBE_LLM_MAX_ITEMS", "3000"))
+LLM_MAX_COST = float(os.environ.get("FITTUBE_LLM_MAX_COST", "15"))
+# Up to this many requests run synchronously (e.g. --limit runs); more go
+# through the Message Batches API.
+LLM_SYNC_MAX = 25
+LLM_SYNC_WORKERS = 4
+# Minutes to wait for batches; unfinished batches stay in the cache
+# ("pending") and are collected by the next run.
+LLM_WAIT_MINUTES = 30.0
+LLM_POLL_SECONDS = 30

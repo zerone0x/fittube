@@ -5,6 +5,11 @@ on:
     - cron: "17 6 * * 1" # weekly, Monday 06:17 UTC
   workflow_dispatch:
     inputs:
+      llm_only:
+        description: "Skip crawling: only run the LLM pass over the committed videos.json"
+        type: boolean
+        required: false
+        default: false
       max_comments:
         description: "Max comments fetched per subreddit"
         required: false
@@ -13,9 +18,14 @@ on:
         description: "Minutes of API fetching before building from the cache"
         required: false
         default: "90"
+      llm_wait:
+        description: "Minutes to wait for LLM batches (unfinished ones resume next run)"
+        required: false
+        default: ""
 
 permissions:
-  contents: write
+  contents: write # commit refreshed data
+  actions: write # dispatch pages.yml (pushes made with GITHUB_TOKEN trigger no workflows)
 
 concurrency:
   group: refresh-data
@@ -24,7 +34,7 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 120
+    timeout-minutes: 170
     steps:
       - uses: actions/checkout@v4
 
@@ -45,6 +55,7 @@ jobs:
       # save are separate steps so the cache is saved even when the run fails
       # or times out: the next run resumes instead of starting cold.
       - name: Restore API cache
+        if: ${{ !inputs.llm_only }}
         uses: actions/cache/restore@v4
         with:
           path: pipeline/.cache
@@ -54,39 +65,77 @@ jobs:
       # Time-boxed: after --time-budget minutes no new API requests are made and
       # the data is built from what is cached. The previous videos.json is
       # merged in (pipeline/carryover.py), so a rate-limited run never shrinks
-      # the dataset.
+      # the dataset. The LLM pass then vets and tags the result; its verdicts
+      # are cached in pipeline/llm_cache.json (committed below), and batches
+      # still running after --llm-wait minutes are collected by the next run.
       - name: Run pipeline
-        timeout-minutes: 110
+        id: pipeline
+        timeout-minutes: 160
         env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FITTUBE_MODEL: ${{ vars.FITTUBE_MODEL }}
+          FITTUBE_CLASSIFY_MODEL: ${{ vars.FITTUBE_CLASSIFY_MODEL }}
           FITTUBE_MAX_COMMENTS: ${{ inputs.max_comments }}
           TIME_BUDGET: ${{ inputs.time_budget || '90' }}
+          LLM_ONLY: ${{ inputs.llm_only && 'true' || '' }}
+          LLM_WAIT: ${{ inputs.llm_wait }}
         run: |
           if [ -z "$FITTUBE_MAX_COMMENTS" ]; then unset FITTUBE_MAX_COMMENTS; fi
-          python -m pipeline.run --time-budget "$TIME_BUDGET" --min-videos 100
+          if [ -n "$LLM_ONLY" ]; then
+            python -m pipeline.run --llm-only --llm-wait "${LLM_WAIT:-120}" --min-videos 100
+          else
+            python -m pipeline.run --time-budget "$TIME_BUDGET" --llm-wait "${LLM_WAIT:-45}" --min-videos 100
+          fi
 
       - name: Save API cache
-        if: always()
+        if: ${{ always() && !inputs.llm_only }}
         uses: actions/cache/save@v4
         with:
           path: pipeline/.cache
           key: pipeline-cache-${{ github.run_id }}
 
+      # Also runs when the pipeline failed so LLM results already paid for
+      # (and ids of batches still running) are not lost; videos.json is only
+      # committed from a successful run.
       - name: Commit updated data
+        id: commit
+        if: ${{ always() && steps.pipeline.outcome != 'skipped' }}
+        env:
+          PIPELINE_OK: ${{ steps.pipeline.outcome == 'success' }}
         run: |
-          # Ignore generated_at when deciding whether anything changed.
-          if git cat-file -e HEAD:site/data/videos.json 2>/dev/null && python - <<'PY'
+          files=()
+          # Ignore generated_at when deciding whether videos.json changed.
+          if [ "$PIPELINE_OK" = "true" ] && ! { git cat-file -e HEAD:site/data/videos.json 2>/dev/null && python - <<'PY'
           import json, subprocess, sys
           old = json.loads(subprocess.check_output(["git", "show", "HEAD:site/data/videos.json"]))
           new = json.load(open("site/data/videos.json"))
           old.pop("generated_at", None); new.pop("generated_at", None)
           sys.exit(0 if old == new else 1)
           PY
-          then
+          }; then
+            files+=(site/data/videos.json)
+          fi
+          if [ -f pipeline/llm_cache.json ] && [ -n "$(git status --porcelain -- pipeline/llm_cache.json)" ]; then
+            files+=(pipeline/llm_cache.json)
+          fi
+          if [ ${#files[@]} -eq 0 ]; then
             echo "No data changes."
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/data/videos.json
-          git commit -m "chore(data): refresh videos.json"
-          git push
+          git add "${files[@]}"
+          git commit -m "chore(data): refresh ${files[*]}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+          if [[ " ${files[*]} " == *" site/data/videos.json "* ]]; then
+            echo "site_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      # Pushes made with GITHUB_TOKEN do not trigger workflows, so pages.yml's
+      # push trigger never sees the commit above; dispatch events are the
+      # documented exception. Only main may deploy to Pages (environment policy).
+      - name: Redeploy site
+        if: ${{ always() && steps.commit.outputs.site_changed == 'true' && github.ref_name == 'main' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --repo "$GITHUB_REPOSITORY" --ref "$GITHUB_REF_NAME"
