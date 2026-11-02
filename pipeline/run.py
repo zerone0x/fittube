@@ -7,6 +7,12 @@
     python -m pipeline.run --offline-search     # cached search pages, but expand threads online
     python -m pipeline.run --merge-into site/data/videos.json
                                                 # skip Reddit: merge HN/T-Nation into an existing file
+    python -m pipeline.run --time-budget 90     # stop fetching after 90 min, build from the cache
+
+Sources, in fetch order (so a time-boxed run gets the best signal first):
+subreddit wikis -> posts -> replies of "recommend me videos" posts -> comment
+search -> thread expansion. The result is merged with the previous output
+(see carryover.py) unless --no-carry-over is given.
 """
 
 from __future__ import annotations
@@ -18,12 +24,12 @@ import sys
 import time
 from pathlib import Path
 
-from . import config
+from . import carryover, config
 from .build import build, write
 from .fetch import ArcticShiftClient, fetch_all, fetch_threads, merge, pick_threads
 from .sources import Mention
 from .sources import hn, tnation
-from .sources.merge import merge_external
+from .sources.merge import merge_external, strip_external
 
 
 def collect_external(args, log: logging.Logger) -> list[Mention]:
@@ -41,6 +47,8 @@ def collect_external(args, log: logging.Logger) -> list[Mention]:
         except Exception:  # noqa: BLE001 - one broken source must not fail the run
             log.exception("source %s failed; continuing without it", name)
     return mentions
+from .reddit import posts as reddit_posts
+from .reddit import wiki as reddit_wiki
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -69,6 +77,20 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--merge-into", type=Path, default=None, metavar="VIDEOS_JSON",
                    help="skip Reddit: merge the non-Reddit sources into this existing videos.json "
                         "(a previous merge is stripped first) and write the result to --output")
+    p.add_argument("--wiki-subreddits", nargs="*", default=config.WIKI_SUBREDDITS,
+                   help="subreddits whose wikis are scanned (none to disable)")
+    p.add_argument("--post-subreddits", nargs="*", default=None,
+                   help="subreddits whose posts are scanned (default: --subreddits; none to disable)")
+    p.add_argument("--max-posts", type=int, default=config.MAX_POSTS_PER_SUB,
+                   help="max posts fetched per subreddit (default: %(default)s)")
+    p.add_argument("--max-request-threads", type=int, default=config.MAX_REQUEST_THREADS,
+                   help="max 'recommend me videos' posts whose replies are fetched (default: %(default)s)")
+    p.add_argument("--time-budget", type=float, default=None, metavar="MINUTES",
+                   help="stop making API requests after this many minutes and build from what is cached")
+    p.add_argument("--previous", type=Path, default=None,
+                   help="previous videos.json whose videos are carried over (default: --output)")
+    p.add_argument("--no-carry-over", action="store_true",
+                   help="replace the previous videos.json instead of merging with it")
     p.add_argument("-v", "--verbose", action="store_true")
     args = p.parse_args(argv)
 
@@ -86,22 +108,52 @@ def main(argv: list[str] | None = None) -> int:
                  args.output, time.monotonic() - t0)
         return 0
 
+    deadline = t0 + args.time_budget * 60 if args.time_budget else None
     max_comments = config.PAGE_SIZE if args.limit else args.max_comments
-    search_client = ArcticShiftClient(offline=args.offline or args.offline_search)
+    search_client = ArcticShiftClient(offline=args.offline or args.offline_search, deadline=deadline)
+    thread_client = ArcticShiftClient(offline=args.offline, deadline=deadline)
+    post_subs = args.subreddits if args.post_subreddits is None else args.post_subreddits
+
+    # Highest-signal sources first: a time-boxed run must not starve them.
+    wiki_ev: list[dict] = []
+    try:
+        wiki_ev = reddit_wiki.collect(thread_client, args.wiki_subreddits)
+    except Exception:  # noqa: BLE001 - one broken source must not fail the run
+        log.exception("wiki source failed; continuing without it")
+    post_ev: list[dict] = []
+    request_threads: list[tuple[str, int]] = []
+    try:
+        post_ev, request_threads = reddit_posts.collect(search_client, post_subs,
+                                                        config.PAGE_SIZE if args.limit else args.max_posts)
+    except Exception:  # noqa: BLE001
+        log.exception("post source failed; continuing without it")
+    log.info("wikis + posts: %d wiki lines, %d posts, %d request threads in %.0fs",
+             len(wiki_ev), len(post_ev), len(request_threads), time.monotonic() - t0)
+
+    request_threads = [] if args.limit else request_threads[: args.max_request_threads]
+    replies = fetch_threads(thread_client, request_threads)
+
     searched = fetch_all(args.subreddits, max_comments, client=search_client)
     log.info("search: %d comments (%d requests, %d cache hits) in %.0fs",
              len(searched), search_client.requests_made, search_client.cache_hits, time.monotonic() - t0)
 
-    threads = pick_threads(searched, min_links=args.thread_min_links,
-                           max_threads=0 if args.limit else args.max_threads)
-    thread_client = ArcticShiftClient(offline=args.offline)
-    comments = merge(searched, fetch_threads(thread_client, threads))
-    wanted = {s.lower() for s in args.subreddits}
-    comments = [c for c in comments if (c.get("subreddit") or "").lower() in wanted]
-    log.info("total: %d comments in %.0fs", len(comments), time.monotonic() - t0)
+    done = {link for link, _ in request_threads}
+    threads = [t for t in pick_threads(searched, min_links=args.thread_min_links,
+                                       max_threads=0 if args.limit else args.max_threads) if t[0] not in done]
+    comments = merge(post_ev, replies, searched, fetch_threads(thread_client, threads))
+    all_subs = list(dict.fromkeys([*args.subreddits, *post_subs, *args.wiki_subreddits]))
+    wanted = {s.lower() for s in all_subs}
+    comments = [c for c in comments if (c.get("subreddit") or "").lower() in wanted] + wiki_ev
+    log.info("total: %d comments/posts + %d wiki lines in %.0fs", len(comments) - len(wiki_ev), len(wiki_ev),
+             time.monotonic() - t0)
 
-    data = build(comments, sources=args.subreddits, limit=args.limit)
+    data = build(comments, sources=all_subs, limit=args.limit)
     if not args.limit:
+        if not args.no_carry_over:
+            # Carry over the previous Reddit data (its HN/T-Nation merge stripped
+            # first), then merge the external sources into the combined result.
+            previous = carryover.load(args.previous or args.output)
+            data = carryover.merge_previous(data, strip_external(previous) if previous else None)
         data = merge_external(data, collect_external(args, log))
     n = len(data["videos"])
     if n < args.min_videos:

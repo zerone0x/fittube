@@ -1,7 +1,8 @@
 # FitTube pipeline
 
 Builds `site/data/videos.json` (see the data contract in the top-level README)
-from Reddit comments that link YouTube videos in fitness subreddits.
+from Reddit comments, posts and subreddit wikis that link YouTube videos in
+fitness subreddits.
 
 Python 3.10+, stdlib + `requests`.
 
@@ -12,6 +13,9 @@ python -m pipeline.run --limit 50      # quick run: 1 page per subreddit, top 50
 python -m pipeline.run --offline       # rebuild from cached responses only
 python -m pipeline.run --offline-search --thread-min-links 1 --max-threads 2000
                                        # cached search pages + (cheap) expansion of every linked thread
+python -m pipeline.run --time-budget 90
+                                       # stop making API requests after 90 min, build from the cache
+python -m pipeline.run --no-carry-over # replace videos.json instead of merging with it
 python -m unittest                     # tests (run from the repo root)
 ```
 
@@ -19,19 +23,41 @@ python -m unittest                     # tests (run from the repo root)
 
 | Module | What it does |
 | --- | --- |
-| `config.py` | Subreddits, per-subreddit budget, thresholds, negative-context patterns. |
+| `config.py` | Subreddits, per-subreddit budget, thresholds, negative-context and bot patterns. |
+| `reddit/wiki.py` | Subreddit wikis (`WIKI_SUBREDDITS`): all archived pages (first 100 via `?subreddit=`, the rest from `/wikis/list` + `?paths=` batches); one evidence item per page line linking YouTube. |
+| `reddit/posts.py` | Submissions matching `query=youtube` (the `url=` filter times out), sampled over the same time windows as comments. Posts linking a video count like comments (post karma as score); questions and self-promotion do not. Replies of "recommend me videos" posts are fetched like threads. |
 | `fetch.py` | Arctic Shift comment search (`body=youtube OR youtu.be`), one request at a time, backs off on the API's per-minute budget, caches every page under `pipeline/.cache/`. |
 | `fetch.py` (threads) | Thread expansion: whole threads in which sampled comments already link YouTube are fetched with cheap `link_id` lookups, keeping comments that link YouTube. |
 | `extract.py` | YouTube ids from every URL form (`watch?v=`, `youtu.be/`, `shorts/`, `embed/`, `m.`/`music.`, markdown links, escaped `\_`) plus `t=`/`start=` and `mm:ss`/`h:mm:ss` timestamps. |
-| `build.py` | Drops bots/deleted/score < 1, down-weights negative context, aggregates per video, thresholds, fetches oEmbed metadata (drops deleted/private videos), tags, scores, sorts. |
-| `tagger.py` | Keyword rules mapping title + comments + subreddit priors onto the tag vocabularies. Self-contained so it can be swapped for an LLM tagger. |
+| `build.py` | Drops bots (by name or body, e.g. the "Videos in this thread / Watch Playlist" bot)/deleted/score < 1/rickrolls (`VIDEO_BLOCKLIST`), down-weights negative context, aggregates per video, thresholds, fetches oEmbed metadata (drops deleted/private videos), tags, scores, sorts, writes `sources`. |
+| `carryover.py` | Merges the fresh build with the previous `videos.json` (see below). |
+| `tagger.py` | Keyword rules mapping title + comments + subreddit priors + wiki page paths (e.g. `/wiki/exercises/handstand` -> skill, upper) onto the tag vocabularies. Self-contained so it can be swapped for an LLM tagger. |
+
+### Adding a Reddit source
+
+Modules in `pipeline/reddit/` expose `collect(client, subreddits, ...)` and
+return *evidence*: dicts shaped like Arctic Shift comments (`id`, `author`,
+`body`, `score`, `created_utc`, `subreddit`, `link_id`) plus a `kind`
+(`"post"`, `"wiki"`; plain comments have none). `build.aggregate` handles all
+kinds; a new kind needs a branch there and an entry in `build.source_entries`.
+A source must log and skip a failing subreddit rather than raise, and
+`run.py` additionally wraps each source so one broken source never fails the
+run. Fetch through `ArcticShiftClient` (`search` for paged endpoints,
+`get_json` otherwise) to get caching, backoff and the time budget for free.
 
 ## Ranking
 
-`score = recommenders * 10 + log1p(sum_score) * 5`, where `recommenders` is
-the number of distinct non-negative comment authors and `sum_score` is the
-summed comment karma (negative-context comments count at 25%). A video is kept
-if `recommenders >= 2` or `sum_score >= 10`.
+`score = recommenders * 10 + log1p(sum_score) * 5 + WIKI_BOOST * wikis`, where
+`recommenders` is the number of distinct non-negative comment/post authors plus
+one per subreddit wiki listing the video (author `wiki:<subreddit>`),
+`sum_score` is the summed comment and post karma (negative-context comments
+count at 25%) and `wikis` is the number of distinct subreddit wikis listing the
+video. `WIKI_BOOST = 30`, so a wiki listing is worth as much as four
+independent recommenders: moderators curate these lists. A video is kept if it
+is listed in a wiki, `recommenders >= 2` or its *comment* karma is `>= 10`
+(post karma ranks but cannot qualify a video alone: posts linking a video are
+mostly media shares such as meet footage or films, so a lone post needs
+corroboration).
 
 ## Sampling and the API budget
 
@@ -88,3 +114,26 @@ never coincide with them, so the union is a sum) and its Reddit karma is
 recovered by inverting the ranking formula from `score`. It is how the
 committed `site/data/videos.json` gained its HN/T-Nation data without
 re-crawling Arctic Shift.
+
+## Time budget, carry-over and CI
+
+Sources are fetched best-signal first: wikis, posts, replies of request posts,
+comment search, thread expansion. With `--time-budget MINUTES` the clients stop
+making requests once the budget is spent (a backoff that would overrun it gives
+up) and everything after that is served from the cache, including stale pages,
+so the run still builds from everything fetched so far.
+
+The result is then merged with the previous `videos.json` (`--previous`,
+default `--output`; `--no-carry-over` disables it): previous videos are never
+dropped just because a source was rate-limited or out of budget this run, only
+when YouTube oEmbed reports them deleted/private. For videos in both, the
+merge keeps the larger community recommender count and score (wiki boost
+re-applied over the merged `sources`), and unions comments, timestamps,
+subreddits, sources and list tags. Excerpts from body-detected bots are
+stripped from carried records together with the recommender they counted as.
+
+The weekly `refresh-data.yml` workflow restores `pipeline/.cache` with
+`actions/cache/restore`, runs with `--time-budget 90`, and saves the cache with
+`actions/cache/save` under `if: always()`, so even a failed or timed-out run
+leaves a warmer cache for the next one. The defaults (`THREAD_MIN_LINKS = 1`,
+`MAX_THREADS = 3000`) match the settings the committed data was built with.

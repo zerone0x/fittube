@@ -23,9 +23,32 @@ SUBREDDITS = [
     "physicaltherapy",
     "kettlebell",
     "StrongerByScience",
+    # Added in #5. Verified to have data: yoga, climbing, powerlifting,
+    # Stronglifts5x5, backpain; the rest may be sparse (empty is tolerated).
+    "yoga",
+    "climbing",
+    "climbingtrainer",
+    "powerlifting",
+    "Stronglifts5x5",
+    "backpain",
+    "running",
+    "advancedrunning",
+    "C25K",
+    "Posture",
+    "fitness30plus",
+    "over40fitness",
+    "homegym",
+    "crossfit",
+    "bjj",
+    "MuayThai",
+    "swimming",
+    "Kettleballs",
+    "calisthenics",
 ]
 
 ARCTIC_SHIFT_URL = "https://arctic-shift.photon-reddit.com/api/comments/search"
+ARCTIC_SHIFT_POSTS_URL = "https://arctic-shift.photon-reddit.com/api/posts/search"
+ARCTIC_SHIFT_WIKIS_URL = "https://arctic-shift.photon-reddit.com/api/subreddits/wikis"
 # Arctic Shift full-text search; one OR query covers both youtube.com and youtu.be links.
 BODY_QUERY = "youtube OR youtu.be"
 COMMENT_FIELDS = "id,author,body,score,created_utc,link_id,subreddit"
@@ -42,11 +65,47 @@ MAX_COMMENTS_PER_SUB = int(os.environ.get("FITTUBE_MAX_COMMENTS", "1000"))
 # Thread expansion: after the search pass, fetch whole threads in which at
 # least THREAD_MIN_LINKS sampled comments link YouTube. These are cheap
 # (indexed link_id lookups) compared to full-text search.
-THREAD_MIN_LINKS = 2
-MAX_THREADS = int(os.environ.get("FITTUBE_MAX_THREADS", "600"))
+THREAD_MIN_LINKS = 1  # the committed data was built with 1 / 3000
+MAX_THREADS = int(os.environ.get("FITTUBE_MAX_THREADS", "3000"))
 THREAD_MAX_PAGES = 5
 START_YEAR = 2010
 WINDOW_YEARS = 4
+
+# --- Reddit wikis and posts (pipeline/reddit/) ----------------------------------
+
+# Moderator-curated subreddit wikis. A subreddit without an archived wiki is skipped.
+WIKI_SUBREDDITS = [
+    "bodyweightfitness", "Fitness", "flexibility", "xxfitness", "running", "yoga",
+    "powerlifting", "climbingtrainer", "weightroom", "naturalbodybuilding",
+]
+# Paths with these segments are wiki plumbing, not content.
+WIKI_SKIP_PATH_RE = r"/wiki/(?:edit|revisions|settings|config|pages|discussions)(?:/|$)|automoderator|/wiki/config/"
+WIKI_PATHS_PER_REQUEST = 50  # API maximum is 100; keep URLs short
+# A wiki listing is a strong, curated signal: each subreddit wiki that lists a
+# video counts as one recommender ("wiki:<subreddit>") plus WIKI_BOOST score
+# (i.e. a wiki mention is worth 1 + WIKI_BOOST/10 = 4 recommenders in ranking).
+WIKI_BOOST = 30.0
+
+# Submissions: full-text search per subreddit, budget spread over WINDOW_YEARS windows.
+POST_QUERY = "youtube"
+POST_FIELDS = "id,author,title,selftext,url,score,num_comments,created_utc,subreddit"
+MAX_POSTS_PER_SUB = int(os.environ.get("FITTUBE_MAX_POSTS", "300"))
+# Post search on very active subreddits can hit the server-side timeout over
+# and over; give up on a subreddit's posts sooner than on comment pages.
+POST_MAX_RETRIES = 3
+# "Recommend me videos" posts: their replies are fetched (cheap link_id lookups)
+# and processed like normal comments.
+REQUEST_POST_MIN_COMMENTS = 2
+MAX_REQUEST_THREADS = int(os.environ.get("FITTUBE_MAX_REQUEST_THREADS", "400"))
+# Posts sharing the author's own content are not recommendations.
+SELF_PROMO_PATTERNS = [
+    r"\bmy (?:new |first |latest |own )?(?:youtube )?(?:video|channel|vlog|vid)s?\b",
+    r"\bi (?:made|created|filmed|uploaded|recorded|put together|started) (?:a|an|this|my)\b",
+    r"\bsubscribe\b",
+    r"\bcheck out my\b",
+    r"\bform check\b",
+    r"\bhere'?s me\b",
+]
 
 # Politeness: minimum seconds between requests, retries and backoff.
 MIN_REQUEST_INTERVAL = 1.0
@@ -70,9 +129,19 @@ USER_AGENT = "fittube-pipeline/0.1 (+https://github.com/zerone0x/fittube)"
 # --- Filtering / ranking -----------------------------------------------------
 
 MIN_COMMENT_SCORE = 1
+# Videos linked as jokes, never as recommendations (rickrolls).
+VIDEO_BLOCKLIST = {"dQw4w9WgXcQ", "oHg5SJYRHA0"}
 IGNORED_AUTHORS = {"[deleted]", "automoderator", "[removed]"}
 # Authors whose name looks like a bot are dropped too (see build.is_bot).
 BOT_SUFFIXES = ("bot", "_bot", "-bot")
+# Bots whose names look human are caught by their comment body instead, e.g.
+# the "Videos in this thread: Watch Playlist" bot.
+BOT_BODY_PATTERNS = [
+    r"^\W*videos in this thread\b",
+    r"\bwatch playlist\b.{0,40}\bvideo\s*\|\s*comment\b",
+    r"\bi(?:'| a)m a bot\b",
+    r"\bthis (?:comment|action) was (?:made|performed) (?:by a bot|automatically)\b",
+]
 
 # Comments matching any of these are treated as negative context and
 # down-weighted (they still count, but much less).

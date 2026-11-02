@@ -49,6 +49,10 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(v.first_seen, 1_500_000_000)
         self.assertEqual(v.timestamps, [(30, "")])
 
+    def test_blocklisted_video_is_ignored(self):
+        videos = build.aggregate([comment("1", "alice", f"lol https://youtu.be/dQw4w9WgXcQ https://youtu.be/{A}")])
+        self.assertEqual(list(videos), [A])
+
     def test_multi_video_comment_splits_score(self):
         videos = build.aggregate([comment("1", "alice", f"https://youtu.be/{A} https://youtu.be/{B}", score=10)])
         self.assertEqual(videos[A].weighted_score, 5)
@@ -87,7 +91,9 @@ class BuildTest(unittest.TestCase):
         self.assertEqual([v["id"] for v in data["videos"]], [A])
         v = data["videos"][0]
         self.assertEqual(set(v), {"id", "title", "channel", "thumbnail", "recommenders", "score", "first_seen",
-                                  "subreddits", "comments", "timestamps", "tags"})
+                                  "subreddits", "comments", "timestamps", "tags", "sources"})
+        self.assertEqual(v["sources"], [{"kind": "comment", "subreddit": "bodyweightfitness", "count": 1},
+                                        {"kind": "comment", "subreddit": "Fitness", "count": 1}])
         self.assertEqual(v["thumbnail"], f"https://i.ytimg.com/vi/{A}/hqdefault.jpg")
         self.assertEqual(v["recommenders"], 2)
         self.assertEqual(v["first_seen"], "2014-05-13")

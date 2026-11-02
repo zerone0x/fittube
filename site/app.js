@@ -402,6 +402,7 @@ function fillModal(v) {
   if (via.length) meta.push(h('span', {}, via.join(', ')));
   if (v.first_seen) meta.push(h('span', {}, `First recommended ${v.first_seen.slice(0, 4)}`));
   $('#m-meta').replaceChildren(...meta);
+  renderSources(v);
 
   $('#m-yt').href = `https://www.youtube.com/watch?v=${v.id}`;
   renderAddButton();
@@ -428,6 +429,32 @@ function fillModal(v) {
   }
 
   renderSessionNav();
+}
+
+// Source badges for Reddit wiki listings and posts (issue #5).
+function sourceBadge(s) {
+  let text;
+  if (s.kind === 'wiki') text = `\u{1F4D6} r/${s.subreddit} wiki`;
+  else if (s.kind === 'post') text = `\u{1F4DD} r/${s.subreddit} post${s.score != null ? ` \u00B7 ${plural(s.score, 'point')}` : ''}`;
+  else return null; // comments: summarised by the subreddit list; other sites: shown in the meta line
+  const title = s.kind === 'wiki' && s.path ? `Listed in r/${s.subreddit}${s.path}` : text;
+  return s.url
+    ? h('a', { class: `tag source-badge source-${s.kind}`, href: s.url, target: '_blank', rel: 'noopener nofollow', title }, text)
+    : h('span', { class: `tag source-badge source-${s.kind}`, title }, text);
+}
+
+function renderSources(v) {
+  const seen = new Set();
+  const badges = v.sources
+    .filter((s) => {
+      const key = s.kind === 'wiki' ? `wiki:${s.subreddit.toLowerCase()}` : s.kind === 'post' ? s.url : `${s.kind}:${s.site}`;
+      return seen.has(key) ? false : (seen.add(key), true);
+    })
+    .map(sourceBadge)
+    .filter(Boolean)
+    .slice(0, 8);
+  $('#m-sources').replaceChildren(...badges);
+  $('#m-sources').hidden = badges.length === 0;
 }
 
 function renderTimestamps(v) {

@@ -72,6 +72,22 @@ export function safeUrl(u, hosts) {
   }
 }
 
+// Where a recommendation came from (README "sources"); unknown kinds are kept for forward compatibility.
+const SOURCE_HOSTS = ['reddit.com', 'news.ycombinator.com', 't-nation.com'];
+function normalizeSources(v) {
+  return arr(v)
+    .filter((s) => s && typeof s === 'object' && typeof s.kind === 'string')
+    .map((s) => ({
+      kind: str(s.kind).toLowerCase(),
+      subreddit: str(s.subreddit).replace(/^\/?r\//i, ''),
+      site: str(s.site),
+      path: str(s.path),
+      url: safeUrl(s.url, SOURCE_HOSTS),
+      score: Number.isFinite(Number(s.score)) && s.score !== null ? Number(s.score) : null,
+      count: Number.isFinite(Number(s.count)) && s.count !== null ? Number(s.count) : null,
+    }));
+}
+
 function normalizeVideo(raw, index) {
   if (!raw || typeof raw !== 'object') return null;
   const id = str(raw.id);
@@ -111,6 +127,7 @@ function normalizeVideo(raw, index) {
     // Non-Reddit sites (Hacker News, T-Nation) that recommended the video.
     sites: [...new Set([...arr(raw.sources).map((x) => x && siteName(x.site || x.url)), ...comments.map((c) => siteName(c.permalink))])]
       .filter((n) => n && n !== 'Reddit'),
+    sources: normalizeSources(raw.sources),
     timestamps: uniqTs,
     tags: {
       goal: strList(tags.goal),
