@@ -269,8 +269,7 @@ def request_params(stage: str, model: str, user: str, style: str = "tool") -> di
 _SUMMARY_JUNK_RE = re.compile(r"[{}<>]|```")
 # A trailing clause that only says where the video was recommended
 # ("..., recommended in r/flexibility.", "..., listed on the r/bodyweightfitness
-# push-up wiki page."): the site shows the sources already. Clauses that add
-# something ("recommended in r/kettlebell as a fix for ...") are kept.
+# push-up wiki page."): the site shows the sources already.
 _PROVENANCE_RE = re.compile(
     r"(?:,|;|\s+-|\s+\u2014)?\s+(?:and\s+|as\s+|often\s+|widely\s+|frequently\s+|commonly\s+|also\s+)*"
     r"(?:recommended|listed|cited|suggested|shared|linked|praised|featured|included|referenced|endorsed|"
@@ -296,7 +295,11 @@ def clean_summary(text: Any) -> str:
                                                  or (text[-1] == "'" and text.count("'") % 2)):
         text = text[:-1].rstrip()
     m = _PROVENANCE_RE.search(text)
-    if m and not _PROVENANCE_EXTRA_RE.search(m.group("where")) and m.start() >= 40:
+    # After a comma the clause is dropped even when it goes on ("..., recommended
+    # by commenters as a good resource for learning deadlift form"): it restates
+    # the sources. Without one it may carry the sentence's point and is kept
+    # unless it is provenance only.
+    if m and m.start() >= 20 and (m.group(0)[:1] in ",;" or not _PROVENANCE_EXTRA_RE.search(m.group("where"))):
         text = text[: m.start()].rstrip(" ,;:-\u2014")
     if text and text[-1] not in ".!?\u2026)":
         text += "."

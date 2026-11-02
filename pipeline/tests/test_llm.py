@@ -170,8 +170,11 @@ class ValidationTest(unittest.TestCase):
                 "Demonstrates the wall scissor, a handstand drill.",
             "A short routine for loosening the shoulders, recommended in flexibility and kettlebell communities.":
                 "A short routine for loosening the shoulders.",
-            "Shows the get-up, recommended in r/kettlebell as a fix for a leg position issue.":
-                "Shows the get-up, recommended in r/kettlebell as a fix for a leg position issue.",
+            "Explains conventional deadlift technique, recommended by commenters as a good resource for learning the lift.":
+                "Explains conventional deadlift technique.",
+            # Without a clause boundary it may be the point of the sentence: kept unless provenance only.
+            "Shows form guidance recommended in strength communities for fixing technique issues.":
+                "Shows form guidance recommended in strength communities for fixing technique issues.",
         }
         for raw, want in cases.items():
             self.assertEqual(llm.validate_b({**ok, "summary": raw})["summary"], want, raw)
