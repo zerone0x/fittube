@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T03:46:35Z",
+ "generated_at": "2026-11-02T03:23:14Z",
  "sources": [
   "yoga",
   "climbing",
@@ -133,7 +133,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Alan Thrall teaches the Starting Strength five-step barbell deadlift setup and execution."
+   "summary": "Alan Thrall teaches the Starting Strength five-step barbell deadlift setup and execution, with visual instruction that commenters recommend for fixing form and lower back strain."
   },
   {
    "id": "mSZWSQSSEjE",
@@ -526,7 +526,7 @@
      "subreddit": "xxfitness"
     }
    ],
-   "summary": "A bench press technique tutorial covering the basics of form."
+   "summary": "A bench press technique tutorial covering the basics of form, recommended in fitness communities including by women lifters, though one commenter disputes the arm positioning shown."
   },
   {
    "id": "4AObAU-EcYE",
@@ -774,7 +774,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Brian Alsruhe explains how to breathe and brace properly for heavy lifts such as squats and deadlifts."
+   "summary": "Brian Alsruhe explains how to breathe and brace properly for heavy lifts such as squats and deadlifts, a technique the community cites as key for lifting."
   },
   {
    "id": "ZQEFc6rSKvA",
@@ -1165,7 +1165,18 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Kit Laughlin demonstrates the bent-leg hamstring stretch, hinging at the hip with the knee bent."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.2,
+    "comments": [
+     {
+      "text": "Compression work (it's a bit down the page) sounds like what you need. It's more fun that just stretching and very specific. For the stretching part of compression work, I like using a deep lunge as demonstrated in this video. I typically take the stretch of the hip flexors of…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tsmww/_/ceb3utq/"
+     }
+    ]
+   },
+   "summary": "Kit Laughlin demonstrates the bent-leg hamstring stretch, hinging at the hip with the knee bent, which commenters recommend for hamstring flexibility and sciatic nerve tension."
   },
   {
    "id": "ntko7CPHD5A",
@@ -1513,7 +1524,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Justin Lascek explains three fixes for overhead press technique, including bar position in the hand over the wrist."
+   "summary": "Justin Lascek explains three fixes for overhead press technique, including bar position in the hand over the wrist, recommended in comments as a form-correction resource."
   },
   {
    "id": "MBbyAqvTNkU",
@@ -1577,7 +1588,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Alan Thrall teaches a five-step method for performing the barbell deadlift."
+   "summary": "Alan Thrall teaches a five-step method for performing the barbell deadlift, which commenters find easier to remember than the Stronglifts guide."
   },
   {
    "id": "IODxDxX7oi4",
@@ -1840,7 +1851,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Explains common mistakes in ab training, focusing on how to perform leg raises correctly."
+   "summary": "Explains common mistakes in ab training, focusing on how to perform leg raises correctly, and is."
   },
   {
    "id": "BYKScL2sgCs",
@@ -1930,7 +1941,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Alan Thrall teaches how to bench press."
+   "summary": "Alan Thrall teaches how to bench press, with community comments highlighting the setup section for staying tight throughout the set."
   },
   {
    "id": "zoZWgTrZLd8",
@@ -1993,7 +2004,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Candito Training HQ tutorial on squat technique."
+   "summary": "Candito Training HQ tutorial on squat technique, recommended on r/Fitness and r/weightroom, with a comment citing it for where to position the elbows relative to the torso."
   },
   {
    "id": "wol7Hko8RhY",
@@ -2049,7 +2060,7 @@
      "count": 2
     }
    ],
-   "summary": "Alan Thrall explains how to perform the barbell overhead press, with form guidance for fixing technique issues."
+   "summary": "Alan Thrall explains how to perform the barbell overhead press, with form guidance recommended in strength communities for fixing technique issues."
   },
   {
    "id": "HhEqFa9lT80",
@@ -2178,7 +2189,7 @@
      "count": 3
     }
    ],
-   "summary": "Explains the mechanics and anatomical factors behind the side split (middle split)."
+   "summary": "Explains the mechanics and anatomical factors behind the side split (middle split)"
   },
   {
    "id": "9L2b2khySLE",
@@ -2369,10 +2380,35 @@
      "recommenders": 5,
      "sum_score": 9.6,
      "first_seen": "2025-11-10"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 7.0
     }
    },
    "needs_llm_check": false,
-   "summary": "Visual guide to what different body fat percentages look like, from 50% down to 5%."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.6,
+    "comments": [
+     {
+      "text": "Don’t sugarcoat it. Submit your guess below. My feelings won’t be hurt if you think I’m 99% body fat. But the more accurate your guess, the more likely you’ll be to win the prize.…",
+      "score": 7,
+      "permalink": "https://t-nation.com/t/contest-guess-my-body-fat/292457/1",
+      "site": "t-nation.com"
+     }
+    ],
+    "sources": [
+     {
+      "kind": "forum",
+      "site": "t-nation.com",
+      "url": "https://t-nation.com/t/contest-guess-my-body-fat/292457/1",
+      "score": 7,
+      "needs_llm_check": true
+     }
+    ]
+   },
+   "summary": "Visual guide to what different body fat percentages look like, from 50% down to 5%, used by communities as a reference for setting cut, bulk or recomp goals."
   },
   {
    "id": "zJBLDJMJiDE",
@@ -2603,6 +2639,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 9.7,
+    "comments": [
+     {
+      "text": "Video linked by /u/KamikazeHamster: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: MIddle/Straddle Splits Tutorial with Antranik (Gain Passive & ACTIVE flexibility using Horse Stance)|Antranik…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6wmvdp/_/dm9ovtk/"
+     }
+    ]
+   },
    "summary": "Antranik teaches a middle/straddle splits tutorial using horse stance and a dynamic frog pose sequence to build passive and active flexibility."
   },
   {
@@ -2732,7 +2779,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Kit Laughlin demonstrates a shoulder mobility sequence built around Yuri's band drill, including scapular circles."
+   "summary": "Kit Laughlin demonstrates a shoulder mobility sequence built around Yuri's band drill, including scapular circles, used by commenters as a shoulder warmup and for easing bicep-related shoulder pain."
   },
   {
    "id": "0SWilGwXEBM",
@@ -2986,8 +3033,8 @@
    ],
    "source_stats": {
     "reddit": {
-     "recommenders": 3,
-     "sum_score": 24.1,
+     "recommenders": 4,
+     "sum_score": 26.1,
      "first_seen": "2017-09-28"
     },
     "hn": {
@@ -2996,6 +3043,17 @@
     }
    },
    "needs_llm_check": false,
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.4,
+    "comments": [
+     {
+      "text": "When I watch videos of better runners, they all seem to have way more butt kick: https://youtu.be/zSIDRHUWlVo?t=79 https://www.instagram.com/p/hJgctlieJP/ https://youtu.be/h1e9J5n1Sys?t=225 I realize they are going faster than me, but I still figured I should have more.",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/AdvancedRunning/comments/72w5tn/_/dnnc5ru/"
+     }
+    ]
+   },
    "summary": "Dr. Mark Cucuzzella explains the principles of natural running and running form."
   },
   {
@@ -3053,7 +3111,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Yuri Marmerstein demonstrates a favorite shoulder exercise."
+   "summary": "Yuri Marmerstein demonstrates a favorite shoulder exercise, listed in the r/bodyweightfitness recommended routine wiki, likely a band-assisted shoulder stretch or mobility drill."
   },
   {
    "id": "Ydaz_E4xZM0",
@@ -3274,7 +3332,7 @@
      "subreddit": "physicaltherapy"
     }
    ],
-   "summary": "Alan Thrall explains what to do after a back injury."
+   "summary": "Alan Thrall explains what to do after a back injury, with commenters recommending staying active and mobile rather than resting in bed all day."
   },
   {
    "id": "Av3LO2GwpAk",
@@ -3846,7 +3904,7 @@
      "count": 1
     }
    ],
-   "summary": "Demonstrates a bodyweight exercise presented as an alternative to the reverse hyper."
+   "summary": "Demonstrates a bodyweight exercise presented as an alternative to the reverse hyper, listed on the r/bodyweightfitness core wiki page; details beyond the title are not given."
   },
   {
    "id": "kL_NJAkCQBg",
@@ -4068,7 +4126,23 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Step-by-step floor L-sit progression tutorial covering assisted variations such as supported legs, one leg, and tucked legs."
+   "llm_rejected": {
+    "recommenders": 2,
+    "score": 22.6,
+    "comments": [
+     {
+      "text": "here you go man, i made this video that shows a couple progressions before you tackle the tucked L-sit to help get you a more robust foundation. hope that helps.",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdrqmj0/"
+     },
+     {
+      "text": "here's my L-sit tutorial video that addresses this exact issue on how to bring the shoulders down. :)",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdsdnop/"
+     }
+    ]
+   },
+   "summary": "Step-by-step floor L-sit progression tutorial covering assisted variations such as supported legs, one leg, and tucked legs, with comments noting hamstring flexibility and core strength."
   },
   {
    "id": "ghuaqD8rHvY",
@@ -4120,6 +4194,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.4,
+    "comments": [
+     {
+      "text": "Video linked by /u/rumataxyz: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Get the most out of your Standing Pike|Mary Nightingale|2015-10-10|0:02:52|486+ (99%)|18,259 --- ^Info ^| ^/u/rumataxyz…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/77gh5n/_/dom6jua/"
+     }
+    ]
+   },
    "summary": "Short tutorial on performing the standing pike stretch to get more out of it."
   },
   {
@@ -4216,7 +4301,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work."
+   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work, with the couch stretch for tight hip flexors and quads."
   },
   {
    "id": "lshRFK-7QOE",
@@ -4324,7 +4409,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Brian Alsruhe revisits his top tip on breathing and bracing for lifting."
+   "summary": "Brian Alsruhe revisits his top tip on breathing and bracing for lifting, which commenters recommend for improving core bracing in lifts like the deadlift."
   },
   {
    "id": "sQx_ChXs2BY",
@@ -4434,7 +4519,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "StrongFirst tutorial on the basics of the hardstyle kettlebell swing."
+   "summary": "StrongFirst tutorial on the basics of the hardstyle kettlebell swing, with the community recommending it for hip hinge and swing form."
   },
   {
    "id": "2_e4I-brfqs",
@@ -4505,7 +4590,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Squat University demonstrates three core stability exercises, the McGill Big 3."
+   "summary": "Squat University demonstrates three core stability exercises, the McGill Big 3, described by commenters as simple, low-impact and suited to people with back pain."
   },
   {
    "id": "bcbuhePZZj0",
@@ -4717,7 +4802,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Calisthenicmovement presents three demanding core exercises."
+   "summary": "Calisthenicmovement presents three demanding core exercises; a commenter cites it for how to brace the whole body in rollout-style movements, with rings or a rollout wheel."
   },
   {
    "id": "1cVT3ee9mgU",
@@ -4766,7 +4851,18 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "StrongFirst demonstration of the kettlebell swing."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.6,
+    "comments": [
+     {
+      "text": "I followed this Youtube video on how to get the rust off",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/kettlebell/comments/1pn7zc6/_/nuasqsq/"
+     }
+    ]
+   },
+   "summary": "StrongFirst demonstration of the kettlebell swing, recommended by commenters for hinge depth, hike and swing technique, and breath control cues."
   },
   {
    "id": "ZlRrIsoDpKg",
@@ -4834,7 +4930,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Greg Pendlay's own demonstration of the Pendlay row."
+   "summary": "Greg Pendlay's own demonstration of the Pendlay row, cited by commenters for bar position over the feet, a back parallel to the floor, and no head bounce or shrugging."
   },
   {
    "id": "eveYJP1indI",
@@ -4892,7 +4988,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Kelly Starrett demonstrates five shoulder mobility stretches from MobilityWOD."
+   "summary": "Kelly Starrett demonstrates five shoulder mobility stretches from MobilityWOD; commenters suggest them for tight lats and traps, followed by rolling out with a roller or lacrosse ball."
   },
   {
    "id": "w9Mu-azxol8",
@@ -4950,7 +5046,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "A program from K boges for increasing max pull-ups."
+   "summary": "A program from K boges for increasing max pull-ups, which commenters say can also be applied to push-ups or dips, as an alternative to greasing the groove."
   },
   {
    "id": "L_xrDAtykMI",
@@ -5181,7 +5277,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "A full day of eating over 4,000 calories on a budget for bulking, showing food choices."
+   "summary": "A full day of eating over 4,000 calories on a budget for bulking, showing food choices that community members have used to gain weight and muscle."
   },
   {
    "id": "4bRmTmd9lmM",
@@ -5615,6 +5711,17 @@
      "subreddit": "bodyweightfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.5,
+    "comments": [
+     {
+      "text": "I managed to lift my feet and hold a full tuck planche on the floor! http://www.youtube.com/watch?v=-RroBmkdBws",
+      "score": 14,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1nddy5/_/cchodvw/"
+     }
+    ]
+   },
    "summary": "Demonstration of a full tuck planche performed on the floor."
   },
   {
@@ -5755,9 +5862,9 @@
    "comments": [],
    "timestamps": [],
    "tags": {
-    "goal": [],
     "body": [],
     "equipment": [],
+    "goal": [],
     "level": "any",
     "type": "tutorial"
    },
@@ -5768,7 +5875,8 @@
      "path": "/wiki/demos/misc",
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
     }
-   ]
+   ],
+   "summary": "Exercise demo video listed on the r/bodyweightfitness wiki's miscellaneous demos page; the specific movement is not stated in the available information."
   },
   {
    "id": "0g6tVBdfsUw",
@@ -6002,7 +6110,7 @@
      "url": "https://www.reddit.com/r/running/wiki/injuries"
     }
    ],
-   "summary": "Short demonstration of toe walks."
+   "summary": "Short demonstration of toe walks, an exercise listed on the r/running injuries wiki, likely for lower leg and foot strengthening in injury prevention or recovery."
   },
   {
    "id": "1YHIV4a81Os",
@@ -6410,7 +6518,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/squat"
     }
    ],
-   "summary": "Demonstrates how to perform a bodyweight single-leg step up."
+   "summary": "Demonstrates how to perform a bodyweight single-leg step up, listed as a squat-pattern exercise on the r/bodyweightfitness wiki."
   },
   {
    "id": "4aoUZEZFJF8",
@@ -6570,6 +6678,36 @@
     }
    ],
    "summary": "Demonstrates wall push-ups, an easy bodyweight push-up progression from Sunnybrook Hospital."
+  },
+  {
+   "id": "5Wp4rRFeX4o",
+   "title": "All sets leading up to 200lb Dip new PR",
+   "channel": "RMND",
+   "thumbnail": "https://i.ytimg.com/vi/5Wp4rRFeX4o/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-06-05",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pushing",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
+    }
+   ],
+   "summary": "Footage of one lifter's warm-up and working sets leading to a new 200lb weighted dip personal record, with no instruction given."
   },
   {
    "id": "67Lp_DeX3-c",
@@ -7076,7 +7214,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine_2017"
     }
    ],
-   "summary": "Antranik explains the structure and exercises of the Bodyweight Fitness Recommended Routine, a bodyweight strength program."
+   "summary": "Antranik explains the structure and exercises of the r/bodyweightfitness Recommended Routine, a bodyweight strength program."
   },
   {
    "id": "AH_QZLm_0-s",
@@ -7189,7 +7327,7 @@
      "url": "https://www.reddit.com/r/flexibility/wiki/beginner_stretching_routine"
     }
    ],
-   "summary": "Basic joint rotations from Emmet Louis."
+   "summary": "Basic joint rotations from Emmet Louis, listed in the r/flexibility beginner stretching routine, for warming up and mobilising the joints without equipment."
   },
   {
    "id": "BK5p4D8erQQ",
@@ -7537,7 +7675,7 @@
      "url": "https://www.reddit.com/r/Fitness/wiki/moderation"
     }
    ],
-   "summary": "Video titled \"Dog of Wisdom\" from channel Joe."
+   "summary": "Video titled \"Dog of Wisdom\" from channel Joe; nothing in the title, channel or listing indicates fitness or training content, and no comments were saved."
   },
   {
    "id": "DjxQrgLsty4",
@@ -7619,6 +7757,51 @@
     }
    ],
    "summary": "A tutorial from Dr. Beau Beard on a simple exercise approach for building stronger hamstrings."
+  },
+  {
+   "id": "Dp53D7Akox4",
+   "title": "Movie on 22 12 13 at 5 28 PM",
+   "channel": "astevo06",
+   "thumbnail": "https://i.ytimg.com/vi/Dp53D7Akox4/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2013-12-22",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/misc",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    }
+   ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.4,
+    "comments": [
+     {
+      "text": "I'm three and a half months post shoulder reconstruction (labrum, capsule and bicep tendon), have done nothing but my rehab exercises and a bit of running for the last 6 months. Recently got clearance to push myself a bit, today i did a few proper pull-ups and held a shaky…",
+      "score": 11,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7kxke/"
+     }
+    ]
+   },
+   "summary": "Untitled personal recording with a default filename-style title, listed on a subreddit wiki misc demos page; nothing shows it teaches anything."
   },
   {
    "id": "DvkGkFoDGR4",
@@ -8817,6 +9000,17 @@
      "subreddit": "bodyweightfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.4,
+    "comments": [
+     {
+      "text": "Getting closer to having a decent straddle planche. Still needs some work but I'm at least glad that I'm starting to get back to where I was when I competed.",
+      "score": 11,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7scl0/"
+     }
+    ]
+   },
    "summary": "Demonstrates planche progressions."
   },
   {
@@ -8860,6 +9054,36 @@
    "summary": "Demonstrates a foam roller lift-off drill to build active control of the overhead position and improve shoulder overhead mobility."
   },
   {
+   "id": "KVw5nEgmA28",
+   "title": "Weighted dip one rep max",
+   "channel": "jackson chen",
+   "thumbnail": "https://i.ytimg.com/vi/KVw5nEgmA28/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-06-05",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pushing",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
+    }
+   ],
+   "summary": "A lifter's own weighted dip one-rep-max attempt, with no instruction given, even though it is."
+  },
+  {
    "id": "KvAto6yIGLY",
    "title": "Foot Awakening Sequence | Over-pronation (\"flat\" feet), bunions, high arches, foot/ankle mobility",
    "channel": "Kit Laughlin (Stretch Therapy)",
@@ -8901,6 +9125,36 @@
     }
    ],
    "summary": "A foot and ankle mobility sequence from Stretch Therapy aimed at over-pronation, bunions and high arches, including work on the front of the ankles."
+  },
+  {
+   "id": "KwRntWSKPpE",
+   "title": "18 pull ups sept13",
+   "channel": "monkeychikung",
+   "thumbnail": "https://i.ytimg.com/vi/KwRntWSKPpE/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-06-03",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pulling",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pulling"
+    }
+   ],
+   "summary": "A dated clip of someone performing 18 pull-ups, with no instruction or explanation in the title, even though it is."
   },
   {
    "id": "L8fvypPrzzs",
@@ -9123,7 +9377,7 @@
      "url": "https://www.reddit.com/r/Fitness/wiki/u/theedoor"
     }
    ],
-   "summary": "A video from Justin Lascek on making mobility work easier."
+   "summary": "A video from Justin Lascek on making mobility work easier, recommended in the r/Fitness wiki; details beyond the title are not provided."
   },
   {
    "id": "Lj2KZwbr_jo",
@@ -9433,7 +9687,7 @@
      "url": "https://www.reddit.com/r/weightroom/wiki/faq"
     }
    ],
-   "summary": "Competition footage of Donny Shankle's third clean and jerk attempt at the 2011 Nor Cal meet."
+   "summary": "Competition footage of Donny Shankle's third clean and jerk attempt at the 2011 Nor Cal meet, listed as an example in the r/weightroom FAQ."
   },
   {
    "id": "NnfAYkBRDPY",
@@ -9509,7 +9763,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
     }
    ],
-   "summary": "A bodyweight backflip demo."
+   "summary": "A bodyweight backflip demo listed in the r/bodyweightfitness wiki's misc demos section, likely showing how the skill is performed."
   },
   {
    "id": "OY8Jci5KJdM",
@@ -10629,6 +10883,36 @@
      "url": "https://www.reddit.com/r/flexibility/wiki/starting_to_stretch"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 2,
+    "score": 31.5,
+    "comments": [
+     {
+      "text": "Questions about the \"Starting to Stretch\" routine — Hello, I've been following the Starting to Stretch video for a bit over a week, and I have some questions and concerns. I have a…",
+      "score": 8,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/1seucg0/"
+     },
+     {
+      "text": "Want to improve my posture — https://preview.redd.it/54bfpwxsocxg1.jpg?width=256&format=pjpg&auto=webp&s=f401a3d3afd84a5330ba5dc0a14eda96987aafc9…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/Posture/comments/1svf1qq/"
+     }
+    ],
+    "sources": [
+     {
+      "kind": "post",
+      "subreddit": "flexibility",
+      "url": "https://www.reddit.com/r/flexibility/comments/1seucg0/",
+      "score": 8
+     },
+     {
+      "kind": "post",
+      "subreddit": "Posture",
+      "url": "https://www.reddit.com/r/Posture/comments/1svf1qq/",
+      "score": 1
+     }
+    ]
+   },
    "summary": "A 30-minute follow-along full-body stretching routine aimed at beginners starting to work on flexibility."
   },
   {
@@ -10709,7 +10993,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit"
     }
    ],
-   "summary": "A walkthrough of the Bodyweight Fitness Recommended Routine covering dynamic warm-up, bodyline drills, support and handstand skill work, and pull-up and dip progressions."
+   "summary": "A walkthrough of the r/bodyweightfitness Recommended Routine covering dynamic warm-up, bodyline drills, support and handstand skill work, and pull-up and dip progressions."
   },
   {
    "id": "VrJGMigsDGw",
@@ -10747,7 +11031,7 @@
      "url": "https://www.reddit.com/r/yoga/wiki/faq"
     }
    ],
-   "summary": "Leslie Kaminoff discusses the challenges of lotus pose."
+   "summary": "Leslie Kaminoff discusses the challenges of lotus pose, likely covering the anatomy of the hips and knees and why the posture can be problematic for some practitioners."
   },
   {
    "id": "WGbtrkzIiOA",
@@ -10981,7 +11265,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/bodyline-work"
     }
    ],
-   "summary": "A handstand tutorial from GMB Fitness, part of a playlist."
+   "summary": "A handstand tutorial from GMB Fitness, part of a playlist linked in the description."
   },
   {
    "id": "Y7ndeehIOhU",
@@ -11176,6 +11460,36 @@
     }
    ],
    "summary": "Slow tutorial on performing a strict muscle-up on a bar without a false grip."
+  },
+  {
+   "id": "ZEpPvz79SRY",
+   "title": "TheSupersaiyan -  90 degree push up with 3 fingers - 24 years old birthday",
+   "channel": "Train For Epic Strength -",
+   "thumbnail": "https://i.ytimg.com/vi/ZEpPvz79SRY/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-10-24",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/kb/afaq",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/afaq"
+    }
+   ],
+   "summary": "A clip of an athlete performing a 90 degree push-up on three fingers as a birthday feat, with no instruction given."
   },
   {
    "id": "ZWxrvwRKR-s",
@@ -11501,7 +11815,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase5"
     }
    ],
-   "summary": "Antranik demonstrates how to perform scapular shrugs, a shoulder blade control exercise."
+   "summary": "Antranik demonstrates how to perform scapular shrugs, a shoulder blade control exercise used as a progression step in the r/bodyweightfitness routine."
   },
   {
    "id": "c9EXWHuXAAw",
@@ -11811,7 +12125,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
     }
    ],
-   "summary": "Bodyweight training video by Jurmuli."
+   "summary": "Bodyweight training video by Jurmuli, listed in the r/bodyweightfitness wiki demos section; specific exercises and content are not described in the available information."
   },
   {
    "id": "dvd5Fyl-Ves",
@@ -11938,7 +12252,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/front-lever"
     }
    ],
-   "summary": "Tutorial on three exercises for building toward the front lever."
+   "summary": "Tutorial on three exercises for building toward the front lever, recommended on the r/bodyweightfitness wiki, with a section on the front pull."
   },
   {
    "id": "eGo4IYlbE5g",
@@ -12058,6 +12372,36 @@
    "summary": "A Pilates-style bodyweight workout built around lunge pulses, aimed at burning calories and working the legs and glutes, to follow along with."
   },
   {
+   "id": "ek76IXnE9tE",
+   "title": "1 min L-sit",
+   "channel": "Daniel Tsinis",
+   "thumbnail": "https://i.ytimg.com/vi/ek76IXnE9tE/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2018-01-26",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/l-sit_polish",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit_polish"
+    }
+   ],
+   "summary": "A short clip titled '1 min L-sit' that appears to show a one-minute L-sit hold, with no instruction indicated in the title or listing."
+  },
+  {
    "id": "f3yfJ0RStQw",
    "title": "Bodyweight Row Wide Pronated Grip",
    "channel": "BSU Masters Degree - Strength & Conditioning",
@@ -12095,6 +12439,66 @@
     }
    ],
    "summary": "Demonstrates the bodyweight row performed with a wide pronated (overhand) grip."
+  },
+  {
+   "id": "fjdAaJAGCjs",
+   "title": "One armed pull-up (Left arm attempt)",
+   "channel": "William Jones",
+   "thumbnail": "https://i.ytimg.com/vi/fjdAaJAGCjs/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-06-03",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pulling",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pulling"
+    }
+   ],
+   "summary": "A personal clip of someone attempting a left-arm one-arm pull-up, with no instruction or explanation given."
+  },
+  {
+   "id": "fo22-aPG3vg",
+   "title": "Shannon Nash 380 bench at 185!",
+   "channel": "Powerlifting Watch",
+   "thumbnail": "https://i.ytimg.com/vi/fo22-aPG3vg/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2020-10-29",
+   "subreddits": [
+    "xxfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting/bench_press_guide_resources",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/bench_press_guide_resources"
+    }
+   ],
+   "summary": "Clip of an athlete's 380 lb bench press at 185 lb bodyweight, shown as a lift highlight rather than instruction."
   },
   {
    "id": "gE6mJ0VjK7Y",
@@ -12324,7 +12728,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase4"
     }
    ],
-   "summary": "Emmet Louis demonstrates the Cuban rotation, a shoulder exercise for shoulder prehab and strength."
+   "summary": "Emmet Louis demonstrates the Cuban rotation, a shoulder exercise listed on the r/bodyweightfitness wiki move page for shoulder prehab and strength."
   },
   {
    "id": "if_MbHiy87w",
@@ -12525,6 +12929,36 @@
     }
    ],
    "summary": "Part 3 of a bench press series on identifying weak points in the lift and choosing assistance exercises to fix them."
+  },
+  {
+   "id": "j5mkdlkfE1Q",
+   "title": "Crystal Tate squatting 700lbs raw! First female to squat 700 raw!",
+   "channel": "BradleyBenches",
+   "thumbnail": "https://i.ytimg.com/vi/j5mkdlkfE1Q/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2021-01-05",
+   "subreddits": [
+    "xxfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting/squat_guide_resources",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
+    }
+   ],
+   "summary": "Footage of Crystal Tate performing a 700lb raw squat, a personal lift clip rather than instruction."
   },
   {
    "id": "jNwx_LsGgrc",
@@ -13261,7 +13695,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase5/bwppl"
     }
    ],
-   "summary": "A bodyweight-only leg workout to do at home without weights."
+   "summary": "A bodyweight-only leg workout to do at home without weights, recommended on r/bodyweightfitness and listed in its wiki, with a section on glute-ham raises."
   },
   {
    "id": "pvz7k5gO-DE",
@@ -13379,6 +13813,17 @@
      "subreddit": "bodyweightfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 15.7,
+    "comments": [
+     {
+      "text": "I have nearly got two full one arm pull ups. Took a break from calisthenics and came back stronger, for me one arm pull ups have always been harder than the one arm chin ups so I felt great about this improvement. http://www.youtube.com/watch?v=qIndmpEwbqM",
+      "score": 22,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1sx8r6/_/ce269ib/"
+     }
+    ]
+   },
    "summary": "A demonstration of one arm pull-ups."
   },
   {
@@ -13853,7 +14298,7 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/row"
     }
    ],
-   "summary": "Tutorial on how to do a front lever, featuring Chris of The Barstarzz."
+   "summary": "Tutorial on how to do a front lever, featuring Chris of The Barstarzz, with a tuck front lever progression referenced in the timestamps."
   },
   {
    "id": "txtXtF2-4S0",
@@ -14487,6 +14932,36 @@
    "summary": "A 30-minute follow-along yoga class aimed at complete beginners, suitable for morning practice."
   },
   {
+   "id": "xQ_WA46mE44",
+   "title": "Amazing squat - 210kg @47kg Wei Ling",
+   "channel": "Powerlifting Motivation",
+   "thumbnail": "https://i.ytimg.com/vi/xQ_WA46mE44/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2021-01-05",
+   "subreddits": [
+    "xxfitness"
+   ],
+   "comments": [],
+   "timestamps": [],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting/squat_guide_resources",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
+    }
+   ],
+   "summary": "A clip of a single 210kg squat by a 47kg lifter, with no instruction or explanation given."
+  },
+  {
    "id": "xV9VwJXMAdA",
    "title": "Breathing Partterns - Post Rehab Essentials",
    "channel": "Somerset Fitness",
@@ -14717,6 +15192,41 @@
    "summary": "Olympic weightlifting instruction featuring coach Jim Schmitz."
   },
   {
+   "id": "zTwlGtQvKis",
+   "title": "Some Lucky Handstand Training (4 almost 5 HSPU)",
+   "channel": "Coach Paolo #1 Fitness Trainer",
+   "thumbnail": "https://i.ytimg.com/vi/zTwlGtQvKis/hqdefault.jpg",
+   "recommenders": 1,
+   "score": 40.0,
+   "first_seen": "2014-06-05",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [],
+   "timestamps": [
+    {
+     "t": 45,
+     "label": "Handstand Push Up"
+    }
+   ],
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "motivation"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/misc",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
+    }
+   ],
+   "summary": "A coach's own handstand push-up training clip, with a rep count of four almost five in the title and no instruction given."
+  },
+  {
    "id": "zqj1qjIA6E0",
    "title": "Bodyweight Squats Tutorial",
    "channel": "MCNewsletters",
@@ -14864,7 +15374,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Squat University demonstrates how to perform the McGill Big 3 core stability exercises correctly."
+   "summary": "Squat University demonstrates how to perform the McGill Big 3 core stability exercises correctly, which commenters recommend for back pain and posture."
   },
   {
    "id": "Qp8Sx9dX9LM",
@@ -15120,7 +15630,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Mark Rippetoe demonstrates how to perform the overhead press."
+   "summary": "Mark Rippetoe demonstrates how to perform the overhead press, with commenters pointing to proper grip and wrist position as a key technique detail."
   },
   {
    "id": "D6xk1RmjdsQ",
@@ -15241,6 +15751,17 @@
      "subreddit": "kettlebell"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Well....... https://youtu.be/dMePOH4yZlY",
+      "score": 18,
+      "permalink": "https://www.reddit.com/r/kettlebell/comments/rj8qh3/_/hp2v115/"
+     }
+    ]
+   },
    "summary": "Joe Daniels demonstrates 25 kettlebell exercises for training the chest and shoulders."
   },
   {
@@ -15289,7 +15810,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Antranik demonstrates three core exercises: rollouts, the Pallof press and reverse hyperextensions."
+   "summary": "Antranik demonstrates three core exercises: rollouts, the Pallof press and reverse hyperextensions, with a community comment suggesting ring rollouts as an adjustable alternative to the ab wheel."
   },
   {
    "id": "FP2dyni-dgA",
@@ -15350,7 +15871,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Renaissance Periodization explains how to address muscle asymmetries in training."
+   "summary": "Renaissance Periodization explains how to address muscle asymmetries in training, recommended by communities for left-right imbalances, with comments pointing to unilateral dumbbell work and technique."
   },
   {
    "id": "h0EPpod2xxo",
@@ -15472,7 +15993,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "A calisthenics tutorial on performing the back lever on rings."
+   "summary": "A calisthenics tutorial on performing the back lever on rings, with commenters citing it for understanding what the back and upper body should be doing."
   },
   {
    "id": "UBPAek16pl4",
@@ -15736,7 +16257,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Dan John breaks down how to perform double kettlebell cleans."
+   "summary": "Dan John breaks down how to perform double kettlebell cleans, with commenters citing it for hip hinge, glute and core engagement, and keeping the elbows close in the rack position."
   },
   {
    "id": "qqMi-hJjMBk",
@@ -15789,7 +16310,7 @@
      "count": 2
     }
    ],
-   "summary": "Explains how to use the elephant walk exercise to improve hamstring and forward-fold flexibility."
+   "summary": "Explains how to use the elephant walk exercise to improve hamstring and forward-fold flexibility, with commenters recommending daily sets to progress toward palming the floor."
   },
   {
    "id": "21DQb4i-AnQ",
@@ -15832,7 +16353,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Demonstrates decline deficit push-ups, a bodyweight push-up variation with feet elevated and hands raised."
+   "summary": "Demonstrates decline deficit push-ups, a bodyweight push-up variation with feet elevated and hands raised, which a commenter says biases the pecs."
   },
   {
    "id": "GHAKFKWQ-XM",
@@ -15969,7 +16490,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Starting Strength Radio clip on treating golfer's elbow."
+   "summary": "Starting Strength Radio clip on treating golfer's elbow, described by commenters as a chin-up based protocol from Mark Rippetoe that relieved their elbow pain."
   },
   {
    "id": "QTjXtFQO9qA",
@@ -16020,7 +16541,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Demonstrates an eccentric biceps exercise."
+   "summary": "Demonstrates an eccentric biceps exercise that a commenter used with low weight and slow lowering to recover from long head biceps tendonitis."
   },
   {
    "id": "YACmfwcBDnM",
@@ -16191,6 +16712,17 @@
      "subreddit": "weightroom"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.2,
+    "comments": [
+     {
+      "text": "Video linked by /u/iamanatta: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Lower Body Flexibility For Weightlifting|CaliforniaStrength|2012-12-28|0:02:58|1,666+ (98%)|242,719 --- ^Info ^|…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6vxjcc/_/dm42i21/"
+     }
+    ]
+   },
    "summary": "CaliforniaStrength video on lower body flexibility and mobility work to improve positions for weightlifting."
   },
   {
@@ -17138,7 +17670,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Exercise Index entry demonstrating the 6 Ways shoulder exercise, a dumbbell movement."
+   "summary": "Exercise Index entry demonstrating the 6 Ways shoulder exercise, a dumbbell movement that community members recommend for shoulder training and rear delt work."
   },
   {
    "id": "MqHtT4YowqU",
@@ -17301,7 +17833,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Short tutorial on how to perform the kettlebell clean."
+   "summary": "Short tutorial on how to perform the kettlebell clean, with a community comment advising a lighter bell, a mirror for form and a tight, straight path into the rack position."
   },
   {
    "id": "RQU8wZPbioA",
@@ -17402,7 +17934,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Dave Tate presents a six-week approach to fixing and improving the bench press."
+   "summary": "Dave Tate presents a six-week approach to fixing and improving the bench press, with form cues."
   },
   {
    "id": "WdGP120e4B0",
@@ -17502,7 +18034,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Exercise demonstration of the supine cable side lateral raise, a shoulder variation."
+   "summary": "Exercise demonstration of the supine cable side lateral raise, a shoulder variation recommended by lifters as an alternative setup for training lateral delts."
   },
   {
    "id": "2NZMaI-HeNU",
@@ -17612,7 +18144,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Ben Bruno demonstrates a heavily loaded single-leg squat."
+   "summary": "Ben Bruno demonstrates a heavily loaded single-leg squat, which commenters compare to Bulgarian split squats and pistols as a deep unilateral leg exercise."
   },
   {
    "id": "3HWbO3rhzSg",
@@ -17660,7 +18192,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Beginner tutorial on the kettlebell clean, showing how to avoid banging the wrists and forearms."
+   "summary": "Beginner tutorial on the kettlebell clean, showing how to avoid banging the wrists and forearms. Commenters recommend it to people who get sore or bruised on the movement."
   },
   {
    "id": "mTxOBkKDkzs",
@@ -17713,7 +18245,7 @@
      "subreddit": "StrongerByScience"
     }
    ],
-   "summary": "JM Blakley demonstrates how to perform the JM press, a triceps-focused pressing accessory."
+   "summary": "JM Blakley demonstrates how to perform the JM press, a triceps-focused pressing accessory that communities recommend for building bench and overhead press strength."
   },
   {
    "id": "zmuOZj_Xz0M",
@@ -17970,7 +18502,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Kelly Starrett leads a hip mobility sequence to do before squatting."
+   "summary": "Kelly Starrett leads a hip mobility sequence to do before squatting, which commenters recommend for hip stiffness and hip flexor tightness."
   },
   {
    "id": "P4Nbgdd0M88",
@@ -18070,7 +18602,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Explains how to add weight to the weighted pull-up."
+   "summary": "Explains how to add weight to the weighted pull-up, with commenters citing its advice on rep and weight blocks to break plateaus."
   },
   {
    "id": "hHp8EYw53DE",
@@ -18148,6 +18680,17 @@
      "subreddit": "Fitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.1,
+    "comments": [
+     {
+      "text": "I just started incorporating woodchoppers into my ab workouts. I feel the burn in my entire core but it's a bit unclear to me which side is being worked more when you go in a certain direction https://www.youtube.com/watch?v=pAplQXk3dkU Basically I'm curious if you only did…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/Fitness/comments/7n0uo0/_/dryp7oh/"
+     }
+    ]
+   },
    "summary": "Tutorial demonstrating how to perform the cable wood chopper oblique twist on a Life Fitness cable machine."
   },
   {
@@ -18447,7 +18990,7 @@
      "subreddit": "physicaltherapy"
     }
    ],
-   "summary": "A short explainer on how pain works and what to do about it."
+   "summary": "A short explainer on how pain works and what to do about it, recommended by physical therapists for patient education on chronic pain."
   },
   {
    "id": "JwancB1LTsQ",
@@ -18498,7 +19041,7 @@
      "count": 1
     }
    ],
-   "summary": "Demonstrates the Roadkill Stretch, a hip internal rotation stretch."
+   "summary": "Demonstrates the Roadkill Stretch, a hip internal rotation stretch that r/flexibility commenters recommend for improving internal rotation mobility."
   },
   {
    "id": "Z_BDiGs_x9M",
@@ -18551,7 +19094,7 @@
      "count": 1
     }
    ],
-   "summary": "Teaches proper timing for double unders in jump rope."
+   "summary": "Teaches proper timing for double unders in jump rope, a skill commenters say helped them fix mistimed first swings and finally learn the movement."
   },
   {
    "id": "7C53MfgyxDY",
@@ -18777,7 +19320,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "A Turkish get-up tutorial for learning the movement and building form before progressing to heavier loads."
+   "summary": "A Turkish get-up tutorial recommended on r/kettlebell for learning the movement and building form before progressing to heavier loads."
   },
   {
    "id": "yHksRj6285A",
@@ -18823,7 +19366,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Explains the science behind stretching for the splits and how beginners can approach flexibility training."
+   "summary": "Explains the science behind stretching for the splits and how beginners can approach flexibility training, with scientific papers linked in the description."
   },
   {
    "id": "0WxsdJJpUps",
@@ -19002,7 +19545,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain."
+   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain, with commenters crediting its 'tail out' posture advice for easing lower back issues."
   },
   {
    "id": "niKD6byONtM",
@@ -19198,7 +19741,7 @@
      "count": 2
     }
    ],
-   "summary": "A 45-minute full-body yoga practice focused on deep stretching, led in real time by Yoga With Adriene."
+   "summary": "A 45-minute full-body yoga practice focused on deep stretching, led in real time by Yoga With Adriene and recommended by r/yoga as gentle and beginner friendly."
   },
   {
    "id": "KCADorwJ6Ik",
@@ -19245,7 +19788,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Explains why stretching the hip flexors may not help and offers self tests to tell whether they are tight or weak."
+   "summary": "Explains why stretching the hip flexors may not help and offers self tests to tell whether they are tight or weak, per community comments."
   },
   {
    "id": "L1ir7JRMfuA",
@@ -19296,7 +19839,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Tutorial on the frog stretch for the groin and hips."
+   "summary": "Tutorial on the frog stretch for the groin and hips, recommended in r/flexibility for improving frog pose, with related PAILs/RAILs and half frog variations mentioned in comments. ?"
   },
   {
    "id": "LoHxOLGAv-A",
@@ -19479,7 +20022,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Short talk from strength coach K Boges encouraging daily movement and regular training for health and fitness."
+   "summary": "Short talk from strength coach K Boges encouraging daily movement and regular training for health and fitness, recommended in discussions about training every day."
   },
   {
    "id": "Dj4oYcRLxEo",
@@ -19516,7 +20059,7 @@
      "count": 1
     }
    ],
-   "summary": "Shows how to make cheaper homemade running energy gels."
+   "summary": "Shows how to make cheaper homemade running energy gels, with commenters pointing to maltodextrin, fructose and a little pectin as the ingredients."
   },
   {
    "id": "n5YvtYXSocw",
@@ -19598,7 +20141,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "A flexibility routine of seven exercises from FitnessFAQs."
+   "summary": "A flexibility routine of seven exercises from FitnessFAQs, recommended on r/bodyweightfitness, where one commenter does it twice a week alongside other training."
   },
   {
    "id": "bt4m4zLioRw",
@@ -19613,7 +20156,7 @@
    ],
    "comments": [
     {
-     "text": "Your arms are bent instead of straight Your back is rounded Your hips shoot up as soon as you start the lift You'd probably wanna work on your setup, and maybe your mobility. http://www.youtube.com/watch?v=bt4m4zLioRw&t=268",
+     "text": "Your arms are bent instead of straight Your back is rounded Your hips shoot up as soon as you start the lift You'd probably wanna work on your setup, and maybe your mobility. http://www.youtube.com/watch?v=bt4m4zLioRwt=268",
      "score": 2,
      "permalink": "https://www.reddit.com/r/weightroom/comments/1r88h4/_/cdkr8dw/"
     },
@@ -19764,7 +20307,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "TappBrothers show how to train grip strength using a towel, a technique for pull-up and climbing-related grip work."
+   "summary": "TappBrothers show how to train grip strength using a towel, a technique recommended in r/bodyweightfitness for pull-up and climbing-related grip work."
   },
   {
    "id": "m2zKjFjpiCk",
@@ -19869,7 +20412,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "ATHLEAN-X video on exercises and approaches for managing a bulging disc without surgery."
+   "summary": "ATHLEAN-X video on exercises and approaches for managing a bulging disc without surgery, recommended in a thread about back pain."
   },
   {
    "id": "DTp1T8G9sts",
@@ -19922,7 +20465,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Olympic weightlifter Sonny Webster demonstrates mobility work for Olympic weightlifting."
+   "summary": "Olympic weightlifter Sonny Webster demonstrates mobility work for Olympic weightlifting, with commenters citing it as relevant to deep squat and ankle mobility."
   },
   {
    "id": "K83RM7H9WrY",
@@ -20023,7 +20566,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Dan John demonstrates the Bulgarian Goat Bag swing variation with a kettlebell."
+   "summary": "Dan John demonstrates the Bulgarian Goat Bag swing variation with a kettlebell, which a commenter used as a back-friendly step before doing regular kettlebell swings."
   },
   {
    "id": "QSmTmY0Odwk",
@@ -20078,7 +20621,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "A creator documents a 30-day experiment training like a gymnast."
+   "summary": "A creator documents a 30-day experiment training like a gymnast, with community comments stressing full-range pull-ups and dips and shoulder mobility as prerequisites."
   },
   {
    "id": "QwXgpycbD1Q",
@@ -20343,6 +20886,17 @@
      "subreddit": "kettlebell"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.8,
+    "comments": [
+     {
+      "text": "Video linked by /u/linkdest: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Shoulder Dislocation Mobility Drill: Two Minute To-Do|Pat Flynn|2012-02-06|0:02:11|403+ (97%)|121,271 --- ^Info ^|…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6s1f4o/_/dl9onx4/"
+     }
+    ]
+   },
    "summary": "Pat Flynn demonstrates the shoulder dislocation mobility drill, a short routine for loosening up the shoulders."
   },
   {
@@ -20394,12 +20948,42 @@
    ],
    "source_stats": {
     "reddit": {
-     "recommenders": 2,
-     "sum_score": 5.0,
+     "recommenders": 3,
+     "sum_score": 6.0,
      "first_seen": "2020-11-15"
+    },
+    "forum": {
+     "recommenders": 1,
+     "sum_score": 0.0
     }
    },
    "needs_llm_check": false,
+   "llm_rejected": {
+    "recommenders": 2,
+    "score": 20.8,
+    "comments": [
+     {
+      "text": "Should I stick to this routine instead and add in Pistols, Rows, and another Horizontal Pushing Movement?",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/jurq6d/_/gcf81mp/"
+     },
+     {
+      "text": "One more question what do you think of doeing Mathew Zlats program it for calisthenic workout but he do squats as well after Strong Lifts before Texas Method or Madcow. 3x5-8 if you do in last set: 8reps add 4 kg 7reps add 2 kg 6reps add 1 kg 5reps add 0.5 kg",
+      "score": 0,
+      "permalink": "https://t-nation.com/t/lifting-tempo-rest-pause/282213/5",
+      "site": "t-nation.com"
+     }
+    ],
+    "sources": [
+     {
+      "kind": "forum",
+      "site": "t-nation.com",
+      "url": "https://t-nation.com/t/lifting-tempo-rest-pause/282213/5",
+      "score": 0,
+      "needs_llm_check": true
+     }
+    ]
+   },
    "summary": "A simple weighted calisthenics routine aimed at beginners, with weighted pull-up and chin-up style training as the basis for building strength."
   },
   {
@@ -20692,7 +21276,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Beginner follow-along tutorial on how to fake a split for performance, with leg flexibility work."
+   "summary": "Beginner follow-along tutorial on how to fake a split for performance, with leg flexibility work. A commenter says real flat splits typically take months to years."
   },
   {
    "id": "1tHtAox5Jtk",
@@ -20831,7 +21415,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Joe Daniels presents the kettlebell somersault squat as an exercise for building the quads."
+   "summary": "Joe Daniels presents the kettlebell somersault squat as an exercise for building the quads, with a commenter noting it works well when loaded heavy."
   },
   {
    "id": "XED9z5F0MrY",
@@ -20959,7 +21543,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Brian Alsruhe presents a free powerbuilding program combining strength and muscle-building work."
+   "summary": "Brian Alsruhe presents a free powerbuilding program combining strength and muscle-building work, which r/weightroom commenters recommend and have made a spreadsheet for."
   },
   {
    "id": "ABArM5wqlLQ",
@@ -21030,7 +21614,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Episode of an education series from TBJP Jordan Peters on full body training splits, presenting a full body split routine."
+   "summary": "Episode of an education series from TBJP Jordan Peters on full body training splits, presenting a full body split routine that commenters say they plan to run."
   },
   {
    "id": "AWp_Ixh8IJE",
@@ -21230,6 +21814,25 @@
      "subreddit": "weightroom"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.7,
+    "comments": [
+     {
+      "text": "Terrible Ankle Mobility Ruining Squat Mechanics — Hello, firstly I just wanted to say sorry for the lengthy post + kudos to anyone who can help me out based on this post lol. But…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/powerlifting/comments/1e5duxs/"
+     }
+    ],
+    "sources": [
+     {
+      "kind": "post",
+      "subreddit": "powerlifting",
+      "url": "https://www.reddit.com/r/powerlifting/comments/1e5duxs/",
+      "score": 2
+     }
+    ]
+   },
    "summary": "Squat University demonstrates three ankle mobility exercises for building stronger, more mobile ankles."
   },
   {
@@ -21317,7 +21920,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Dan John shares his favorite glute workout."
+   "summary": "Dan John shares his favorite glute workout; commenters mention glute loops, clam shells and bridges as helpful for the lower back."
   },
   {
    "id": "o21L7y085YY",
@@ -21370,7 +21973,7 @@
      "subreddit": "xxfitness"
     }
    ],
-   "summary": "Pull-up tutorial from Gymnastics Bodyweight Training."
+   "summary": "Pull-up tutorial from Gymnastics Bodyweight Training, recommended by bodyweight fitness communities; comments discuss grip width and leg position."
   },
   {
    "id": "4NvrzekCzfM",
@@ -21806,6 +22409,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.0,
+    "comments": [
+     {
+      "text": "Video linked by /u/sabetts: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: INTERVIEWING EMMET LOUIS | VLOG|Tom Merrick|2017-05-28|0:08:09|194+ (98%)|5,641 --- ^Info ^| ^/u/sabetts ^can ^delete ^|…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/74jvuh/_/do0n56y/"
+     }
+    ]
+   },
    "summary": "Vlog-format interview in which Tom Merrick talks with Emmet Louis."
   },
   {
@@ -22103,7 +22717,7 @@
      "count": 1
     }
    ],
-   "summary": "Renaissance Periodization tutorial on performing the barbell row to target and grow the whole back."
+   "summary": "Renaissance Periodization tutorial on performing the barbell row to target and grow the whole back; a commenter notes the demonstrated style resembles a deadlift-style cheat row."
   },
   {
    "id": "GlU_o5zWd8Q",
@@ -22145,7 +22759,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Dr. Steven Horwitz demonstrates several thoracic spine mobility exercise variations."
+   "summary": "Dr. Steven Horwitz demonstrates several thoracic spine mobility exercise variations, which a commenter suggests trying and practicing while breathing into restrictions."
   },
   {
    "id": "etB3-bwtm84",
@@ -22191,7 +22805,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Scott Sonnon demonstrates kettlebell technique."
+   "summary": "Scott Sonnon demonstrates kettlebell technique, with r/kettlebell commenters citing his swing and breathing approach as a fluid full-body alternative to a power swing."
   },
   {
    "id": "-eq8VObUFsk",
@@ -22228,7 +22842,7 @@
      "subreddit": "naturalbodybuilding"
     }
    ],
-   "summary": "Dr. Layne Norton explains low-carb myths and why insulin is not the main driver of fat gain."
+   "summary": "Dr. Layne Norton explains low-carb myths and why insulin is not the main driver of fat gain, with community discussion pointing to calories and protein intake."
   },
   {
    "id": "cOxMYrR6cek",
@@ -22318,7 +22932,7 @@
      "count": 2
     }
    ],
-   "summary": "Mark Rippetoe revisits how to perform the barbell row."
+   "summary": "Mark Rippetoe revisits how to perform the barbell row, with commenters pointing to it for bar position and form questions around the row versus the Pendlay row."
   },
   {
    "id": "8vk6rWMSxOk",
@@ -22564,7 +23178,7 @@
      "subreddit": "naturalbodybuilding"
     }
    ],
-   "summary": "Eric Helms demonstrates how to perform the hip thrust properly."
+   "summary": "Eric Helms demonstrates how to perform the hip thrust properly, as part of a how-to lift series."
   },
   {
    "id": "NYN3UGCYisk",
@@ -22623,7 +23237,7 @@
      "count": 2
     }
    ],
-   "summary": "Alan Thrall and Austin Baraki discuss common deadlift errors and technique faults."
+   "summary": "Alan Thrall and Austin Baraki discuss common deadlift errors and technique faults, recommended on r/powerlifting for deadlift form, including conventional and sumo setups."
   },
   {
    "id": "QqTlnhzku5c",
@@ -22676,7 +23290,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Demonstrates a push-up variation that works the upper back and gives a greater range of motion than a standard push-up."
+   "summary": "Demonstrates a push-up variation that works the upper back and gives a greater range of motion than a standard push-up, as cited in comments."
   },
   {
    "id": "SF0WyLOodqo",
@@ -22830,7 +23444,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Lattice Training demonstrates a stretch."
+   "summary": "Lattice Training demonstrates a stretch that community members say helped their golfer's elbow, aimed at climbers and others with forearm and elbow pain."
   },
   {
    "id": "bDCeXbMJVNs",
@@ -23033,7 +23647,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Alex Leonidas presents a routine for dealing with elbow pain."
+   "summary": "Alex Leonidas presents a routine for dealing with elbow pain, which commenters on r/overcominggravity say they do as a warm-up or after workouts."
   },
   {
    "id": "DPgPPMTtG8Y",
@@ -23075,7 +23689,7 @@
      "count": 1
     }
    ],
-   "summary": "Full-body power yoga flow from Yoga With Tim, combining strength and flexibility work."
+   "summary": "Full-body power yoga flow from Yoga With Tim, combining strength and flexibility work; a commenter recommends his channel for its focus on alignment and the physical side of yoga."
   },
   {
    "id": "YJ9MjdWC2aE",
@@ -23217,7 +23831,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "ATHLEAN-X shows how to stretch the pecs, including common mistakes to avoid."
+   "summary": "ATHLEAN-X shows how to stretch the pecs, including common mistakes to avoid, with a commenter also suggesting lacrosse ball release against a wall for tightness."
   },
   {
    "id": "_hd2oTEOA1U",
@@ -23415,7 +24029,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Short rehab video from Dr. Rob Jones on addressing golfer's elbow and tennis elbow pain."
+   "summary": "Short rehab video from Dr. Rob Jones on addressing golfer's elbow and tennis elbow pain, recommended in a thread on elbow tendonitis."
   },
   {
    "id": "sXLRVXFBxzM",
@@ -23473,7 +24087,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "A full routine from Tom Merrick aimed at fixing rounded shoulders and forward head posture (nerd neck)."
+   "summary": "A full routine from Tom Merrick aimed at fixing rounded shoulders and forward head posture (nerd neck), including a stretch that commenters point to at 5:05."
   },
   {
    "id": "vv2d1vcz9PA",
@@ -23744,7 +24358,7 @@
      "subreddit": "naturalbodybuilding"
     }
    ],
-   "summary": "Overview of what bodybuilding contest-prep training looks like, with a split of legs twice, upper twice and a higher-rep full-body day weekly."
+   "summary": "Overview of what bodybuilding contest-prep training looks like, with a split of legs twice, upper twice and a higher-rep full-body day weekly, per commenters."
   },
   {
    "id": "4oFw2WtBFiE",
@@ -23798,7 +24412,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Demonstrates how to perform feet-elevated pseudo planche push-ups, a bodyweight pushing progression."
+   "summary": "Demonstrates how to perform feet-elevated pseudo planche push-ups, a bodyweight pushing progression; commenters advise keeping a slightly hollow or straight body line throughout."
   },
   {
    "id": "UFs6E3Ti1jg",
@@ -24001,7 +24615,7 @@
      "count": 1
     }
    ],
-   "summary": "Chris Duffin demonstrates how to squat on Mark Bell's channel, covering technique."
+   "summary": "Chris Duffin demonstrates how to squat on Mark Bell's channel, covering technique, with commenters recommending it for stance, bracing and cues."
   },
   {
    "id": "kdKQh_2E0Yc",
@@ -24042,7 +24656,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Discusses why professional athletes take up ballet."
+   "summary": "Discusses why professional athletes take up ballet, framed in the r/flexibility recommendation as a route to flexibility and stretching benefits for sport."
   },
   {
    "id": "37Dw9RQgh3U",
@@ -24187,7 +24801,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "A bodyweight routine based on the Bodyweight Fitness Recommended Routine."
+   "summary": "A bodyweight routine based on the r/bodyweightfitness Recommended Routine, with commenters pointing to a complete follow-along version of the workout."
   },
   {
    "id": "DY9OQKqRDMA",
@@ -24232,7 +24846,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Physiotherapist demonstrates exercises and self-treatment such as trigger point massage for De Quervain's tenosynovitis, targeting wrist and thumb pain relief."
+   "summary": "Physiotherapist demonstrates exercises and self-treatment such as trigger point massage for De Quervain's tenosynovitis, targeting wrist and thumb pain relief, recommended by a climber who recovered from it."
   },
   {
    "id": "GNO4OtYoCYk",
@@ -24279,7 +24893,7 @@
      "subreddit": "StrongerByScience"
     }
    ],
-   "summary": "Jeff Nippard ranks biceps exercises from best to worst for muscle growth."
+   "summary": "Jeff Nippard ranks biceps exercises from best to worst for muscle growth, with a community comment praising the inverse Zottman curl as a variation."
   },
   {
    "id": "IHBLxCPmnVc",
@@ -24761,7 +25375,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "ATHLEAN-X demonstrates rotator cuff stretches for shoulder health."
+   "summary": "ATHLEAN-X demonstrates rotator cuff stretches for shoulder health, which commenters suggest using during a deload or for shoulder posture and mobility."
   },
   {
    "id": "pmt7uSU3mmU",
@@ -25483,7 +26097,7 @@
      "count": 2
     }
    ],
-   "summary": "Andrew Huberman reviews the science of how alcohol affects the body, brain and health."
+   "summary": "Andrew Huberman reviews the science of how alcohol affects the body, brain and health, which commenters recommend for its bearing on health and performance."
   },
   {
    "id": "Lji2W2b-bNs",
@@ -25526,7 +26140,7 @@
      "subreddit": "naturalbodybuilding"
     }
    ],
-   "summary": "Solomon Nelson walks through Lyle McDonald's approach to hypertrophy training."
+   "summary": "Solomon Nelson walks through Lyle McDonald's approach to hypertrophy training, recommended by natural bodybuilding commenters for its in-depth, no-nonsense training information."
   },
   {
    "id": "Ulnw1WRubX0",
@@ -25572,7 +26186,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "A stretching routine aimed at improving splits flexibility, including five hamstring stretches."
+   "summary": "A stretching routine aimed at improving splits flexibility, including five hamstring stretches; commenters report good results though the channel is controversial on r/flexibility."
   },
   {
    "id": "xxFpHWEi6UE",
@@ -25622,7 +26236,7 @@
      "count": 2
     }
    ],
-   "summary": "Powerlifter Ed Coan demonstrates how to perform the conventional deadlift."
+   "summary": "Powerlifter Ed Coan demonstrates how to perform the conventional deadlift, recommended in a form-check thread as a technique reference for using the legs more."
   },
   {
    "id": "dI6jy2t2PbA",
@@ -25714,7 +26328,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Demonstrates a PNF stretching method for the hamstrings."
+   "summary": "Demonstrates a PNF stretching method for the hamstrings; a commenter advises keeping the lower back on the ground and calls it their most effective hamstring stretch."
   },
   {
    "id": "DbAyBCdg0rA",
@@ -25800,7 +26414,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Kettlebell outside circles demonstrated by Mark Wildman with a fight-specific focus."
+   "summary": "Kettlebell outside circles demonstrated by Mark Wildman with a fight-specific focus, recommended on r/kettlebell; a commenter notes lighter bells suit warm-ups and technique work."
   },
   {
    "id": "R4q_G-qb6jM",
@@ -25842,7 +26456,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Explains why assisted squats are a useful squat variation."
+   "summary": "Explains why assisted squats are a useful squat variation, with a comment noting they can help people whose backs hurt when squatting."
   },
   {
    "id": "x7BUPjXCW6I",
@@ -26059,7 +26673,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "John Meadows presents at the elitefts UGSS event (part 4)."
+   "summary": "John Meadows presents at the elitefts UGSS event (part 4), with the commenter noting he explains how he overcame his weak calves as an IFBB pro."
   },
   {
    "id": "MPqezviyQdo",
@@ -26328,7 +26942,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Shows a myofascial release technique for tight calf muscles, aimed at relieving foot pain."
+   "summary": "Shows a myofascial release technique for tight calf muscles, aimed at relieving foot pain, and was recommended in r/flexibility alongside calf rolling and stretching tips."
   },
   {
    "id": "hkxVfwyDVm0",
@@ -26635,8 +27249,8 @@
    ],
    "source_stats": {
     "reddit": {
-     "recommenders": 1,
-     "sum_score": 1.0,
+     "recommenders": 2,
+     "sum_score": 2.0,
      "first_seen": "2013-11-01"
     },
     "hn": {
@@ -26645,7 +27259,18 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "A physical therapy channel demonstrates hand, wrist and elbow exercises."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "I looked up on YouTube on hand novel movements. Can you skim it to see if it looks legit to you? https://m.youtube.com/watch?v=-hlWgH3_0NU&pp=ygUWSGFuZHMgbm92ZWwgbW92bWVuZW50cw%3D%3D",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1fnxo1i/_/lpgpg7w/"
+     }
+    ]
+   },
+   "summary": "A physical therapy channel demonstrates hand, wrist and elbow exercises that community members say can be done at a desk or while riding in a car."
   },
   {
    "id": "ekJOT0kn5vs",
@@ -26879,7 +27504,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Short video of exercises for rhomboid and shoulder blade pain, aimed at viewers over 50."
+   "summary": "Short video of exercises for rhomboid and shoulder blade pain, aimed at viewers over 50; a commenter says exercise 2 relieved long-standing pain."
   },
   {
    "id": "k1zoggpm_lo",
@@ -27183,7 +27808,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "A physical therapist demonstrates Blackburn exercises for strengthening the shoulders."
+   "summary": "A physical therapist demonstrates Blackburn exercises for strengthening the shoulders, a progression a commenter recommends doing as short holds of about 10 seconds per position."
   },
   {
    "id": "VnV7vEi7Sz8",
@@ -27272,7 +27897,7 @@
      "count": 1
     }
    ],
-   "summary": "A dated daily class programming entry from Breaker Strength."
+   "summary": "A dated daily class programming entry from Breaker Strength, discussed in r/crossfit for how it structures class time and met-con warm-up, pacing and weighted sets."
   },
   {
    "id": "_QgcZn6kecA",
@@ -27316,7 +27941,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "A complete guide to performing the zercher deadlift."
+   "summary": "A complete guide to performing the zercher deadlift, with a community comment discussing round-back positions and load management."
   },
   {
    "id": "BXrXhyudA80",
@@ -27547,7 +28172,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Science-based explainer on why tendons lag behind muscle and how to build tendon strength."
+   "summary": "Science-based explainer on why tendons lag behind muscle and how to build tendon strength, recommended in the context of tendon injuries such as golfer's elbow."
   },
   {
    "id": "UyuBbYx28sg",
@@ -27588,6 +28213,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.7,
+    "comments": [
+     {
+      "text": "I watched your video. It looks helpful and I might follow it, but what do you think of replacing those 'bumping' movements (this is called ballistic stretching) with proprioceptive neuromuscular facilitation? Ballistic stretching has been studied by people like the American…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/7lj4x4/_/drndwkn/"
+     }
+    ]
+   },
    "summary": "A beginner-friendly follow-along stretching routine aimed at improving the middle splits."
   },
   {
@@ -27630,7 +28266,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Explains why stretching the ankles may not fix squat limitations."
+   "summary": "Explains why stretching the ankles may not fix squat limitations, based on the title; recommended in r/flexibility, with a commenter pointing to frogger drills as an alternative."
   },
   {
    "id": "Y9j2JNi00k0",
@@ -27803,7 +28439,7 @@
      "count": 1
     }
    ],
-   "summary": "A 6-week at-home strength and conditioning playlist for runners from Portland Pace."
+   "summary": "A 6-week at-home strength and conditioning playlist for runners from Portland Pace, recommended on r/AdvancedRunning, though one commenter says it was designed to be spread over months."
   },
   {
    "id": "dtB7z6l6U9s",
@@ -27901,7 +28537,7 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Demonstrates eccentric rotator cuff strengthening exercises."
+   "summary": "Demonstrates eccentric rotator cuff strengthening exercises, recommended in a thread about shoulder pain from calisthenics training, as part of shoulder rehab."
   },
   {
    "id": "CvPMbiND3Gw",
@@ -28020,7 +28656,7 @@
      "count": 3
     }
    ],
-   "summary": "Demonstrates the Bruegger's stretch, a posture exercise for hunched shoulders and the upper and lower trapezius."
+   "summary": "Demonstrates the Bruegger's stretch, a posture exercise recommended on r/Posture for hunched shoulders and the upper and lower trapezius."
   },
   {
    "id": "OTm05bjtL80",
@@ -28064,7 +28700,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "A yoga session aimed at anterior pelvic tilt and low back posture."
+   "summary": "A yoga session aimed at anterior pelvic tilt and low back posture, which a commenter says eased their back pain and restricted movement after about 2.5 weeks of near-daily use."
   },
   {
    "id": "PZqW_9Jv1rk",
@@ -28102,7 +28738,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Explains calf anatomy, focusing on the soleus muscle and how it relates to calf size and definition."
+   "summary": "Explains calf anatomy, focusing on the soleus muscle and how it relates to calf size and definition, with seated versus standing calf work noted in comments."
   },
   {
    "id": "QGl5GzX0QIk",
@@ -28408,7 +29044,7 @@
      "count": 1
     }
    ],
-   "summary": "Physiotutors demonstrates the Alfredson eccentric calf-raise protocol used to rehabilitate Achilles tendinopathy."
+   "summary": "Physiotutors demonstrates the Alfredson eccentric calf-raise protocol used to rehabilitate Achilles tendinopathy, as recommended by runners dealing with Achilles pain."
   },
   {
    "id": "iwOAZt2OdS8",
@@ -28653,7 +29289,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "A creator wears a weight vest for an entire week and reports the results."
+   "summary": "A creator wears a weight vest for an entire week and reports the results, cited in a discussion of the pros and cons of weighted vests."
   },
   {
    "id": "9cvC_7kBUs4",
@@ -28907,7 +29543,7 @@
      "subreddit": "bodyweightfitness"
     }
    ],
-   "summary": "Discusses whether the dead hang is the best hanging variation for posture."
+   "summary": "Discusses whether the dead hang is the best hanging variation for posture, with passive versus active hangs and grip choice mentioned in the comments."
   },
   {
    "id": "YUsGN-OOwzk",
@@ -28946,7 +29582,7 @@
      "count": 1
     }
    ],
-   "summary": "BJJ video on Adam Wardzinski's technique."
+   "summary": "BJJ video on Adam Wardzinski's technique, recommended on r/bjj; commenters praise his detailed butterfly guard instruction, including how it improved their Sumi Gaeshi."
   },
   {
    "id": "dByKRcIi160",
@@ -28990,7 +29626,7 @@
      "subreddit": "Fitness"
     }
    ],
-   "summary": "Explains how to address anterior pelvic tilt, a posture issue involving the hips and lower body."
+   "summary": "Explains how to address anterior pelvic tilt, a posture issue involving the hips and lower body; a commenter says it helped them somewhat."
   },
   {
    "id": "dn17UaevkP0",
@@ -29117,7 +29753,7 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Jeff Nippard presents a muscle building technique."
+   "summary": "Jeff Nippard presents a muscle building technique, recommended on r/weightroom; the specific method is not stated in the provided information."
   },
   {
    "id": "fvsrkc1vjAk",
@@ -29158,7 +29794,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Demonstrates the active puppy pose press, a shoulder flexibility exercise."
+   "summary": "Demonstrates the active puppy pose press, a shoulder flexibility exercise that commenters recommend for improving shoulder mobility."
   },
   {
    "id": "iM2oTXgnDRU",
@@ -29283,7 +29919,7 @@
      "count": 1
     }
    ],
-   "summary": "BJJ technique video on the Ruotolo back take."
+   "summary": "BJJ technique video on the Ruotolo back take, which a commenter says they commonly hit as a bolo entry from 50/50, from standing or sitting."
   },
   {
    "id": "oVv7tyZm_eQ",
@@ -29408,7 +30044,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Squat University demonstrates an exercise for knee resilience."
+   "summary": "Squat University demonstrates an exercise for knee resilience; a commenter describes it as standing on a raised platform and hinging at the hips to tap a heel to the floor."
   },
   {
    "id": "zJuAOIrRQlg",
@@ -29489,7 +30125,23 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Steven Low discusses how to structure a training routine for long-term health and longevity."
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 2.2,
+    "comments": [
+     {
+      "text": "You would probably be interested in this video I made a month or two ago. The best routine structure for health and longevity: https://youtu.be/vAFARM05fyU",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1cil893/_/l2bkuhj/"
+     },
+     {
+      "text": "Fairly relevant is my vid on Best Routine for Health and Longevity - https://youtu.be/vAFARM05fyU In general, those are good ones. I'd just move through all of the ranges of motion you want to keep for the most part. It doesn't have to be anything extensive like sit in an asian…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1d9zdab/_/l7iwue3/"
+     }
+    ]
+   },
+   "summary": "Steven Low discusses how to structure a training routine for long-term health and longevity, with community comments noting that regular training slows age-related decline."
   },
   {
    "id": "DWmGArQBtFI",
@@ -29558,7 +30210,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "ATHLEAN-X video on relieving low back pain."
+   "summary": "ATHLEAN-X video on relieving low back pain, with exercises aimed at posture and muscle strength and flexibility imbalances that commenters say contribute to it."
   },
   {
    "id": "FTV6UCh-yhs",
@@ -29769,7 +30421,7 @@
     }
    },
    "needs_llm_check": false,
-   "summary": "Simple exercises aimed at correcting hunchback posture and forward head carriage."
+   "summary": "Simple exercises aimed at correcting hunchback posture and forward head carriage, which commenters say helped with back and neck pain."
   },
   {
    "id": "QhVC_AnZYYM",
@@ -29897,7 +30549,18 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Second video in Juggernaut's squat pillar series, teaching how to breathe and brace for the squat."
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 6.9,
+    "comments": [
+     {
+      "text": "Purely looking at the title of the video I'm gonna go ahead and guess that the guy's taking something simple and making it sound complicated, probably with some quackery thrown in. I'll assume there's the option somewhere in there for you to give him money and he'll send you…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/rar8do/_/hnmnijb/"
+     }
+    ]
+   },
+   "summary": "Second video in Juggernaut's squat pillar series, teaching how to breathe and brace for the squat; commenters cite it for keeping a neutral back under load."
   },
   {
    "id": "hsug6uPR4y4",
@@ -29949,6 +30612,17 @@
      "subreddit": "Fitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 16.3,
+    "comments": [
+     {
+      "text": "Purely looking at the title of the video I'm gonna go ahead and guess that the guy's taking something simple and making it sound complicated, probably with some quackery thrown in. I'll assume there's the option somewhere in there for you to give him money and he'll send you…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/rar8do/_/hnmnijb/"
+     }
+    ]
+   },
    "summary": "Teaches the 90/90 breathing drill as a way to learn bracing and build abdominal strength and endurance."
   },
   {
@@ -30147,6 +30821,17 @@
      "subreddit": "xxfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Favorite part is at 1:18 where the wife swole shames the Grandpa by calling the daughter to come talk him down https://youtu.be/y_bYjLYXJo0?t=01m17s",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/r8pf6w/_/hn9axvz/"
+     }
+    ]
+   },
    "summary": "A short kettlebell commercial from a personal training studio that uses a family skit to promote finding a purpose for training."
   },
   {
@@ -30282,7 +30967,7 @@
      "subreddit": "kettlebell"
     }
    ],
-   "summary": "Kettlebell tutorial on the hardstyle swing."
+   "summary": "Kettlebell tutorial on the hardstyle swing, with a community comment stressing that the movement is driven by the hips rather than the legs."
   },
   {
    "id": "MplIp-dKKng",
@@ -30327,6 +31012,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.1,
+    "comments": [
+     {
+      "text": "Video linked by /u/GrowLikeOak: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Thoracic Spine Mobilization Techniques|TriggerPoint|2013-05-21|0:04:55|279+ (97%)|39,063 --- ^Info ^| ^/u/GrowLikeOak…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6zrqpz/_/dmy9hzu/"
+     }
+    ]
+   },
    "summary": "Demonstrates thoracic spine mobilization techniques to improve upper back mobility."
   },
   {
@@ -30373,7 +31069,18 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Dr. Abelson demonstrates ulnar nerve flossing."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.1,
+    "comments": [
+     {
+      "text": "The waiter drill, I do it all the time! I eventually started doing it with both hands, which I think actually looks pretty cool. Although my roomate thinks I look like an idiot lol! https://youtu.be/d85QKyWvrbI",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7lzyhj/_/ds2c98u/"
+     }
+    ]
+   },
+   "summary": "Dr. Abelson demonstrates ulnar nerve flossing, a nerve mobilization technique commenters use for forearm and ulnar nerve problems."
   },
   {
    "id": "jy7SSbxcQnw",
@@ -30420,6 +31127,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.1,
+    "comments": [
+     {
+      "text": "Video linked by /u/c00yt825: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Ankle Dorsiflexion Routine (Fix Tight Ankles)|Tom Merrick|2016-12-18|0:05:24|436+ (99%)|13,285 --- ^Info ^| ^/u/c00yt825…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6z4hdr/_/dmsqg90/"
+     }
+    ]
+   },
    "summary": "A routine of ankle dorsiflexion exercises from Tom Merrick aimed at loosening tight ankles."
   },
   {
@@ -30462,7 +31180,23 @@
      "count": 5
     }
    ],
-   "summary": "Discussion of climbing injuries and recovery, featuring a climber's rehab approach."
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 7.9,
+    "comments": [
+     {
+      "text": "I also documented the whole journey in a video. In case you're interested, you can find it here.",
+      "score": 13,
+      "permalink": "https://www.reddit.com/r/climbing/comments/1nrws0z/_/nghi2hj/"
+     },
+     {
+      "text": "That's awesome! Funny enough, when I interviewed Jason, he vehemently disagreed with my stopping climbing completely. There seem to be different schools of thought when it comes to dealing with severe synovitis. I'm happy the program seems to work for you!",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/climbing/comments/1nrws0z/_/ngnphyn/"
+     }
+    ]
+   },
+   "summary": "Discussion of climbing injuries and recovery, featuring a climber's rehab approach; a commenter credits the routine, including finger rolls, for helping them return to climbing."
   },
   {
    "id": "01YAZdjWfcM",
@@ -30505,6 +31239,17 @@
      "subreddit": "kettlebell"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.0,
+    "comments": [
+     {
+      "text": "So, I was recently inspired to try out the S&S program and I've been trying to work on my form. My problem is that there are 100s of videos on form and most of them do it differently from each other. So I found two videos for both TGU and swing form, can you guys comment on…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/kettlebell/comments/7hgfig/_/dqqy2pe/"
+     }
+    ]
+   },
    "summary": "StrongFirst tip for improving kettlebell get-up technique."
   },
   {
@@ -30681,7 +31426,18 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Upper body flexibility and mobility work aimed at helping Olympic weightlifters."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.4,
+    "comments": [
+     {
+      "text": "Video linked by /u/evilaidenn: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Upper Body Flexibility for Olympic Weightlifting|CaliforniaStrength|2012-12-28|0:03:13|1,376+ (99%)|182,891 --- ^Info…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/76n6t0/_/dofeeyp/"
+     }
+    ]
+   },
+   "summary": "Upper body flexibility and mobility work aimed at helping Olympic weightlifters, recommended in r/flexibility, with thoracic spine mobility suggested in the comments."
   },
   {
    "id": "XOUJLv120uY",
@@ -30729,6 +31485,17 @@
      "count": 2
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 11.4,
+    "comments": [
+     {
+      "text": "Video linked by /u/MagicWito: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: YOUR BEST RUNNING FORM: TIPS AND PROPER TECHNIQUE | Sage Running|Vo2maxProductions|2017-01-10|0:05:37|1,671+…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/AdvancedRunning/comments/6q75rd/_/dkv8srw/"
+     }
+    ]
+   },
    "summary": "Running form tips and proper technique from Sage Running on Vo2maxProductions."
   },
   {
@@ -30776,7 +31543,18 @@
      "subreddit": "xxfitness"
     }
    ],
-   "summary": "A bodyweight pistol squat video from zentrainer."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 16.1,
+    "comments": [
+     {
+      "text": "Didn't know what a pistol squat was so I youtubed it. Holy shit. I found a monster. What the hell. I don't even. This guy is crazy. OO",
+      "score": 7,
+      "permalink": "https://www.reddit.com/r/xxfitness/comments/1sqa8i/_/ce0gb9a/"
+     }
+    ]
+   },
+   "summary": "A bodyweight pistol squat video from zentrainer, recommended by bodyweight and women's fitness communities, showing the single-leg squat movement."
   },
   {
    "id": "5HwyHLr069Y",
@@ -30916,7 +31694,18 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "The Barbell Physio demonstrates the Jefferson curl exercise."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.0,
+    "comments": [
+     {
+      "text": "You should be skeptical, and I wouldn't do this unless you want to feel it more in your quads as well. The most obvious thing in the photo is the increased range of motion because the person in the photo on the right bent their knees more. This turned that movement into a…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/1wpy3c3/_/pc85a6k/"
+     }
+    ]
+   },
+   "summary": "The Barbell Physio demonstrates the Jefferson curl exercise, recommended in r/Fitness and r/flexibility, with a comment discussing how the movement should be performed."
   },
   {
    "id": "0O872IBsTwA",
@@ -30958,7 +31747,7 @@
      "subreddit": "physicaltherapy"
     }
    ],
-   "summary": "Demonstrates the band hip thrust, a glute-strengthening exercise for someone wanting a strength-focused glute move beyond isolation and balance work."
+   "summary": "Demonstrates the band hip thrust, a glute-strengthening exercise recommended in r/physicaltherapy for someone wanting a strength-focused glute move beyond isolation and balance work."
   },
   {
    "id": "I3Pgx8Cl9m0",
@@ -31089,7 +31878,7 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Yoga With Adriene explains how to do the cat-cow pose."
+   "summary": "Yoga With Adriene explains how to do the cat-cow pose, a simple spinal movement a commenter recommends as an easy, therapeutic option for back stiffness."
   },
   {
    "id": "AJZiHieFiXE",
@@ -31135,6 +31924,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Video linked by /u/ColbyAnthony: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Groin Stretch (pancake progression 1)|Ian Markow|2017-05-01|0:03:55|10+ (76%)|489 --- ^Info ^| ^/u/ColbyAnthony ^can…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6t92xo/_/dlmovn7/"
+     }
+    ]
+   },
    "summary": "Shows how to stretch the groin and inner thighs using the pancake stretch."
   },
   {
@@ -31182,6 +31982,17 @@
      "subreddit": "weightroom"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "I have a question if my breathing is not diaphram will it affect my squat like this video suggest https://www.youtube.com/watch?v=PJX1CyjbMic",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/Fitness/comments/7n7sox/_/ds19ebo/"
+     }
+    ]
+   },
    "summary": "Tutorial on breathing and bracing the core correctly during squats."
   },
   {
@@ -31228,6 +32039,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Video linked by /u/gidgetspinner: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Seated Psoas Stretch|Jonathan Boxall|2010-03-10|0:05:11|1,084+ (98%)|154,843 --- ^Info ^| ^/u/gidgetspinner ^can…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/76jk8u/_/dofdylf/"
+     }
+    ]
+   },
    "summary": "Demonstrates a seated psoas stretch for hip flexor flexibility."
   },
   {
@@ -31275,6 +32097,17 @@
      "subreddit": "bodyweightfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.5,
+    "comments": [
+     {
+      "text": "Hi, thank you for the detailed response! Even better because you're another fencer (seems there's a surprising number of us hiding around here)! I know what you mean about the putting on/taking off weight thing. Fencers seem to come in all shapes and sizes. I've seen some very…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1puhnu/_/cd6nb4w/"
+     }
+    ]
+   },
    "summary": "Excerpt of a fencing conditioning routine from Hannah Provenza, with timed rounds of 2 minutes of footwork followed by 30-second breaks."
   },
   {
@@ -31322,7 +32155,18 @@
      "subreddit": "physicaltherapy"
     }
    ],
-   "summary": "Kelly Starrett of MobilityWOD addresses elbow pain from bench dips and pull-ups."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 14.7,
+    "comments": [
+     {
+      "text": "I first heard of him through posts here on reddit like on subs like /r/fitness so my views are likely biased and this may sound very cocky but, As others have mentioned, he has certainly marketed himself very well in a niche market. He comes out as a muscular/athletic build…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/27w9bp/_/ci6647v/"
+     }
+    ]
+   },
+   "summary": "Kelly Starrett of MobilityWOD addresses elbow pain from bench dips and pull-ups, and commenters recommend its approach for elbow tendinitis, including wrapping the elbow with a band (voodoo floss)."
   },
   {
    "id": "WhYis4MMoak",
@@ -31372,7 +32216,18 @@
      "subreddit": "flexibility"
     }
    ],
-   "summary": "Calisthenicmovement video presenting an underrated bodyweight movement."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 17.6,
+    "comments": [
+     {
+      "text": "First of all, BIG FAN! Thanks for the detailed feedback. I'm going to try all of them! I was attempting to do an ambitious version of this movement. My short term end goal is to be able to do this move that I call \"falling off a handstand into a bridge\". Will share updates soon.",
+      "score": 6,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/ro5651/_/hpzl8wi/"
+     }
+    ]
+   },
+   "summary": "Calisthenicmovement video recommended on r/flexibility presenting an underrated bodyweight movement, with a related mobility routine and bridge work mentioned by commenters; exact exercise not specified in the given inf…"
   },
   {
    "id": "2OOJ9AQ1AEg",
@@ -31419,6 +32274,22 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 2,
+    "score": 24.2,
+    "comments": [
+     {
+      "text": "What about Dr. Andreo Spinas \" intrinsic foot strengthening\" ? ( ->http://youtu.be/2OOJ9AQ1AEg) I was very excited about it ( in a positive way), until i read this review: http://www.scribd.com/mobile/doc/219036301",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/2965ji/_/cjs5iyq/"
+     },
+     {
+      "text": "Videos linked by /u/jooner: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: FootSequenceSydney2012|Kit Laughlin|2012-08-30|0:23:57|0+ (0%)|39,955 Intrinsic Foot Strengthening by Dr. Spina|Dr.…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/6v6wm3/_/dly7orm/"
+     }
+    ]
+   },
    "summary": "Dr. Andreo Spina presents exercises for strengthening the intrinsic muscles of the foot."
   },
   {
@@ -31466,6 +32337,17 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.5,
+    "comments": [
+     {
+      "text": "side lying hip adduction https://youtu.be/lhwT35sshrI?si=v3T406e4sEDBGrs, I've tried this from all sorts of different angles moving my hips, pelvis and legs differently but still can't fully feel it in my adductors. I've also tried something like this…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/1pymk69/_/nwm7awa/"
+     }
+    ]
+   },
    "summary": "Demonstrates the side lying hip adduction exercise, recommended as an easier bodyweight option for strengthening the inner thigh and hip muscles."
   },
   {
@@ -31514,6 +32396,17 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.5,
+    "comments": [
+     {
+      "text": "I mostly do ringtraining and handbalancing and felt i should try it and I managed. I think it is the ring support that have straight arm strenght I need and handstands for balance. From now on I will incorperate planche training and will probably follow this…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1nddy5/_/cci6f3p/"
+     }
+    ]
+   },
    "summary": "Tutorial on training the planche, covering a tuck planche push-up progression and workout for building toward the skill."
   },
   {
@@ -31558,7 +32451,18 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "A 12-minute Foundation Training routine with Dr. Eric Goodman, a bodyweight session focused on the back chain."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.5,
+    "comments": [
+     {
+      "text": "I have a big favor to ask, if it's not too much hassle. Here's the old 12 minute video https://www.youtube.com/watch?v=4BOTvaRaDjI Here's the new 12 minute video (10 years later): https://www.youtube.com/watch?v=oVOnXIiPgM8 If it's not too much hassle and if you have the time…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/igqmgf/_/jk4dphz/"
+     }
+    ]
+   },
+   "summary": "A 12-minute Foundation Training routine with Dr. Eric Goodman, a bodyweight session focused on the back chain that a commenter recommends for back issues."
   },
   {
    "id": "w1iXMvTMvBo",
@@ -31598,6 +32502,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.8,
+    "comments": [
+     {
+      "text": "Hey, That is a problem of maintenance (just checked, and loads of the links to pics/videos are dead). Your guide to be is going to have the exact same problem in about a year. Also, come on dude you got the name of a stretch and a verbal description, and you are not capable of…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/76q9f1/_/doigzie/"
+     }
+    ]
+   },
    "summary": "A 15-minute everyday stretching routine for general flexibility."
   },
   {
@@ -31644,6 +32559,17 @@
      "subreddit": "Fitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 16.0,
+    "comments": [
+     {
+      "text": "Thanks! My diet is pretty simple and I stick to the same meals most of the time. Here is an example of a day in MyFitnessPal. Breakfast and lunch are always the same. My dinner sometimes can be rice with tuna or rice with ground beef. Also, I haven’t trained my abs religiously…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/Fitness/comments/rnj7a5/_/hpw0b76/"
+     }
+    ]
+   },
    "summary": "A tutorial on a simple ab routine with full form instruction for each exercise."
   },
   {
@@ -31684,6 +32610,17 @@
      "subreddit": "flexibility"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.9,
+    "comments": [
+     {
+      "text": "Does it matter which hamstring stretch i use. I'm currently doing this one But there are also a bunch of other ones. does it matter which one i use https://www.youtube.com/watch?v=ybL3uGLftOg&t=134s https://www.youtube.com/watch?v=sYu8jw2WnfE…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/flexibility/comments/7lzycq/_/drqguwg/"
+     }
+    ]
+   },
    "summary": "Explains how to stretch the hamstrings correctly so you feel the stretch in the intended muscles."
   },
   {
@@ -31737,7 +32674,18 @@
      "subreddit": "physicaltherapy"
     }
    ],
-   "summary": "Demonstrates muscle energy technique to address apparent leg length difference and SI joint misalignment."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 13.4,
+    "comments": [
+     {
+      "text": "whoa!!! I would love to hear more about this. I've seen a few different chiros and a PT for an evaluation. They all said the same thing. Most gave an examination similiar to this guy https://youtu.be/fv5u6v_s-L4?t=40s Actually for me, that's when the discrepancy becomes most…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/5w7pnx/_/dea3moo/"
+     }
+    ]
+   },
+   "summary": "Demonstrates muscle energy technique to address apparent leg length difference and SI joint misalignment, with community comments discussing pelvic upslip and anterior innominate rotation as possible causes."
   },
   {
    "id": "0bWRPC49-KI",
@@ -31785,6 +32733,22 @@
      "subreddit": "bodyweightfitness"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 2,
+    "score": 30.2,
+    "comments": [
+     {
+      "text": "Pretty good overall. I'm no expert but looks like there are a few minor points you could tidy up, all of which I had to address too :) 1. It appears when you are posting up on your elbow and hand that your arm is a little to close to and even behind your body. If you keep it…",
+      "score": 5,
+      "permalink": "https://www.reddit.com/r/kettlebell/comments/6y2bzr/_/dmkgukw/"
+     },
+     {
+      "text": "So, I was recently inspired to try out the S&S program and I've been trying to work on my form. My problem is that there are 100s of videos on form and most of them do it differently from each other. So I found two videos for both TGU and swing form, can you guys comment on…",
+      "score": 3,
+      "permalink": "https://www.reddit.com/r/kettlebell/comments/7hgfig/_/dqqy2pe/"
+     }
+    ]
+   },
    "summary": "StrongFirst tutorial covering the basics of the Turkish get-up, a full-body movement usually trained with a kettlebell."
   },
   {
@@ -31832,7 +32796,18 @@
      "subreddit": "weightroom"
     }
    ],
-   "summary": "Barbell Shrugged demonstrates banded cleans at Westside Barbell."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 19.0,
+    "comments": [
+     {
+      "text": "The start of this article definitely reiterated how I feel about Louie. He knows his stuff, absolutely. But whenever he talks about weightlifting I feel like he just talks in circles and throws numbers at you, and I walk away unsure of what his point was... but it sure sounded…",
+      "score": 6,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/1o7fqb/_/ccpll9c/"
+     }
+    ]
+   },
+   "summary": "Barbell Shrugged demonstrates banded cleans at Westside Barbell, with a commenter pointing to the full movement around the 18:00 mark."
   },
   {
    "id": "DNql3JVCON4",
@@ -31871,7 +32846,18 @@
      "subreddit": "overcominggravity"
     }
    ],
-   "summary": "Demonstrates eccentric shoulder abduction as a rotator cuff strengthening exercise."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.6,
+    "comments": [
+     {
+      "text": "Hey, thank you for the answer! I apologize my response took so long, I haven't had the chance to record anything. In the few weeks before the injury the most \"related\" exercises were one arm pull ups (unassisted + towel assisted), full front lever holds and raises, and adv…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1woxuzp/_/pck4na5/"
+     }
+    ]
+   },
+   "summary": "Demonstrates eccentric shoulder abduction as a rotator cuff strengthening exercise, recommended in a discussion about shoulder pain affecting the supraspinatus, biceps tendon or labrum."
   },
   {
    "id": "KZ_Fl2ajSxE",
@@ -31910,6 +32896,18 @@
      "subreddit": "weightroom"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 12.0,
+    "comments": [
+     {
+      "text": "Today is the end of Mythical Mass W6. That means BBB is over, and we head into BtM. This takes me one step closer to DW, and its getting harder to keep that out of my mind lol. I enjoyed BBB Beefcake and had great results strength wise, so part of me wants to just continue. I…",
+      "score": 20,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/qi47ow/_/hihi1ze/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
    "summary": "Demonstrates three hammer curl variations for building biceps, including a Meadows-style variation, with guidance on how to perform each one."
   },
   {
@@ -31947,6 +32945,23 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 14.9,
+    "comments": [
+     {
+      "text": "Cool. I had something similar in HS but more low-tech. The school didn't really have a track so we couldn't train the longer 400/800 too often, and we'd use chairs for hurdles and stairs or bleachers for uphill running. A few of us would walk 10km home using plantarflexion…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfpfk1z/"
+     },
+     {
+      "text": "Sprinting as in Track and Field in HS. Runners were grouped into either the distance group (1 and 2 miles who sometimes ran 400 or 800s to pad team results) or the guys who did 400 or less (since it was pretty much the same guys running 4x400 as 4x100 and they also ran 200s and…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfmrc4v/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
    "summary": "A tutorial on how to perform the Cossack squat, a bodyweight lateral squat that builds leg strength and hip mobility."
   },
   {
@@ -31985,6 +33000,23 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 14.9,
+    "comments": [
+     {
+      "text": "Cool. I had something similar in HS but more low-tech. The school didn't really have a track so we couldn't train the longer 400/800 too often, and we'd use chairs for hurdles and stairs or bleachers for uphill running. A few of us would walk 10km home using plantarflexion…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfpfk1z/"
+     },
+     {
+      "text": "Sprinting as in Track and Field in HS. Runners were grouped into either the distance group (1 and 2 miles who sometimes ran 400 or 800s to pad team results) or the guys who did 400 or less (since it was pretty much the same guys running 4x400 as 4x100 and they also ran 200s and…",
+      "score": 2,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/_/gfmrc4v/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
    "summary": "Demonstrates a bodyweight movement linking a candlestick roll into a pistol squat, covering the technique for transitioning from the rolling motion into single-leg standing."
   },
   {
@@ -32019,6 +33051,18 @@
      "subreddit": "weightroom"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 0,
+    "score": 14.7,
+    "comments": [
+     {
+      "text": "So Alan Thrall just posted a video about his new federation and I wanted to know what everybody's opinion of it is. In short, 3 attempts at 1rm for Squat, OHP and Conventional Deadlift (sumo is not allowed). No weigh ins, instead they're weigh outs, where after your last…",
+      "score": 18,
+      "permalink": "https://www.reddit.com/r/weightroom/comments/7mzqoi/_/dry1d03/"
+     }
+    ]
+   },
+   "llm_note": "kept-by-content",
    "summary": "Alan Thrall presents the United States Strengthlifting Federation, an organization built around strength training and lifting."
   },
   {
@@ -32059,6 +33103,17 @@
      "subreddit": "overcominggravity"
     }
    ],
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 12.6,
+    "comments": [
+     {
+      "text": "Hey, thank you for the answer! I apologize my response took so long, I haven't had the chance to record anything. In the few weeks before the injury the most \"related\" exercises were one arm pull ups (unassisted + towel assisted), full front lever holds and raises, and adv…",
+      "score": 1,
+      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1woxuzp/_/pck4na5/"
+     }
+    ]
+   },
    "summary": "Demonstrates eccentric rotator cuff exercises, including eccentric shoulder abduction, for shoulder rehab and strengthening."
   },
   {
@@ -32108,12 +33163,33 @@
      "sum_score": 0.0
     },
     "forum": {
-     "recommenders": 1,
+     "recommenders": 2,
      "sum_score": 0.0
     }
    },
    "needs_llm_check": false,
-   "summary": "Footage of Arthur Jones training bodybuilder Boyer Coe with a full-body high-intensity training (HIT) workout."
+   "llm_rejected": {
+    "recommenders": 1,
+    "score": 10.0,
+    "comments": [
+     {
+      "text": "hi Dr Darden, I hav got a query that there is a video Arthur Jones training Boyer Coe. It doesnt look HIT at all. Why so? Locking elbows, no continuous TUT, no slow reps at all, lot of momemtum etc…it makes confusions about whatever I learned till today about HIT. I thought you…",
+      "score": 0,
+      "permalink": "https://t-nation.com/t/arthur-mike-videos-look-different-from-hit/280248/1",
+      "site": "t-nation.com"
+     }
+    ],
+    "sources": [
+     {
+      "kind": "forum",
+      "site": "t-nation.com",
+      "url": "https://t-nation.com/t/arthur-mike-videos-look-different-from-hit/280248/1",
+      "score": 0,
+      "needs_llm_check": true
+     }
+    ]
+   },
+   "summary": "Footage of Arthur Jones training bodybuilder Boyer Coe with a full-body high-intensity training (HIT) workout, shared in a discussion of training to muscular failure."
   }
  ]
 }
