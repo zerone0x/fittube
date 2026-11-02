@@ -9228,6 +9228,21 @@
     "output_tokens": 5059,
     "requests": 19
    }
+  },
+  {
+   "at": "2026-11-02T03:46:35Z",
+   "models": {
+    "A": "claude-sonnet-5-5",
+    "B": "claude-sonnet-5-5"
+   },
+   "stage_B": {
+    "cost_usd": 0.0093,
+    "errors": 0,
+    "input_tokens": 1954,
+    "invalid": 0,
+    "output_tokens": 230,
+    "requests": 1
+   }
   }
  ],
  "styles": {
@@ -9629,19 +9644,6 @@
     ],
     "level": "any",
     "type": "program"
-   }
-  },
-  "b1:0UVg0gt9ib4": {
-   "keep": true,
-   "model": "claude-sonnet-5-5",
-   "reject_reason": "none",
-   "summary": "Exercise demo video listed on the r/bodyweightfitness wiki's miscellaneous demos page; the specific movement is not stated in the available information.",
-   "tags": {
-    "body": [],
-    "equipment": [],
-    "goal": [],
-    "level": "any",
-    "type": "tutorial"
    }
   },
   "b1:0WxsdJJpUps": {
@@ -23956,6 +23958,19 @@
     ],
     "level": "any",
     "type": "motivation"
+   }
+  },
+  "b2:0UVg0gt9ib4": {
+   "keep": true,
+   "model": "claude-sonnet-5-5",
+   "reject_reason": "none",
+   "summary": "",
+   "tags": {
+    "body": [],
+    "equipment": [],
+    "goal": [],
+    "level": "any",
+    "type": "tutorial"
    }
   }
  }
