@@ -150,13 +150,22 @@ output via forced tool use (`strict` tool schemas, validated again locally).
 
 | Stage | Model | Per request | Output |
 | --- | --- | --- | --- |
-| A: evidence | `FITTUBE_CLASSIFY_MODEL`, default `claude-haiku-5-5` | one video's saved comment/post excerpts | per excerpt: `is_recommendation`, `sentiment`, `quality_flags`, `reason` |
+| A: evidence | `FITTUBE_CLASSIFY_MODEL`, default: same as stage B | one video's saved comment/post excerpts | per excerpt: `is_recommendation`, `sentiment`, `quality_flags`, `reason` |
 | B: vetting + tags | `FITTUBE_MODEL`, default `claude-sonnet-5-5` | title, channel, subreddits, wiki pages, accepted excerpts | `keep` / `reject_reason`, tags in the README vocabularies, `summary` |
 
-Stage A is a narrow yes/no reading task on many short texts, so the cheaper
-model does it; stage B decides whether a video stays and writes the tags and
-summary users see, so it gets the stronger model. Set `FITTUBE_MODEL=claude-haiku-5-5`
-for a cheaper run (both can be set as repository variables for the workflow).
+Both stages default to Sonnet. Stage A looked like a job for the cheaper
+model, but in a 40-video sample `claude-haiku-5-5` rejected about 25 of 120
+excerpts that were plain helpful links: the excerpts are cut to 280
+characters, the link is usually not visible, and it wanted explicit praise.
+A full pass costs a few dollars either way. Set
+`FITTUBE_CLASSIFY_MODEL=claude-haiku-5-5` (and/or `FITTUBE_MODEL`) for a
+cheaper run; both can be repository variables or `refresh-data.yml` inputs.
+
+Models differ in how they accept structured output (Sonnet 5.5 rejects a
+forced `tool_choice`), so each stage first sends one request directly,
+trying forced tool use, the same without thinking, JSON-schema output
+(`output_config.format`) and an offered tool, in that order; the style that
+works is remembered per model in the cache and used for the batch.
 
 How verdicts change the data (`apply_verdicts`):
 

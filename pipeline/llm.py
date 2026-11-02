@@ -7,7 +7,7 @@ carried-over ones) is available. Two stages, both through the Anthropic
 Message Batches API (or plain requests for a handful of items), with
 structured output via forced tool use:
 
-* **Stage A -- evidence** (``LLM_CLASSIFY_MODEL``, default Haiku): one request
+* **Stage A -- evidence** (``LLM_CLASSIFY_MODEL``, default: the stage-B model): one request
   per video listing the comment/post excerpts saved for it. For each excerpt:
   ``is_recommendation``, ``sentiment``, ``quality_flags``, ``reason``.
 * **Stage B -- vetting and tags** (``LLM_MODEL`` / ``FITTUBE_MODEL``, default
@@ -48,7 +48,7 @@ from .tagger import BODY, EQUIPMENT, GOALS, LEVELS, TYPES
 log = logging.getLogger(__name__)
 
 # Bump when a prompt or schema changes in a way that invalidates cached answers.
-PROMPT_A_VERSION = "a2"
+PROMPT_A_VERSION = "a3"
 PROMPT_B_VERSION = "b1"
 
 SENTIMENTS = ["positive", "neutral", "negative"]
@@ -92,30 +92,30 @@ TOOL_A = {
 
 SYSTEM_A = """\
 You review evidence for FitTube, a site that lists YouTube videos fitness communities \
-(Reddit, Hacker News, the T-Nation forum) recommend. Every numbered comment or post below links \
-the given video. For each one decide whether its author points others to the video as worth \
-watching for training: instruction, a demo, a follow-along routine, a program, an explainer or \
-lecture, rehab advice, or a training documentary/motivation.
+(Reddit, Hacker News, the T-Nation forum) recommend. Every numbered excerpt below comes from a \
+comment or post that links the given video. The link itself is usually not visible: excerpts are \
+cut to ~280 characters and links appear only as their anchor text. For each excerpt decide whether \
+its author points people to the video as worth watching for training.
 
-Excerpts are cut to ~280 characters and links appear only as their anchor text (or not at all), so \
-the video may not be named: assume the link sits where the excerpt names an exercise, resource or \
-"this video". Linking a video in a helpful answer IS a recommendation, even without praise: a demo \
-link in a list of suggested exercises, "try this routine", "Google Jeff Martone [link]", a bare link \
-offered to someone asking for help, "I found this yesterday, helped me". Use neutral sentiment for \
-such matter-of-fact links.
+Default to is_recommendation=true. Linking a video while giving advice, answering a question, \
+listing exercises or resources, or saying "here's a tutorial" counts -- even without praise, and \
+even when the visible excerpt is general advice that never mentions the video. A video that \
+teaches common mistakes ("how NOT to swing") is a recommendation too.
 
-It is NOT a recommendation (is_recommendation=false) only when the author:
-- cites the video as wrong, bad, dangerous or something to avoid, or quotes it in order to disagree \
-(e.g. "Robert Oberst says you shouldn't do deadlifts" used as a bad example);
-- mocks it, or links it as a joke, meme, music, film clip or anything unrelated to training;
-- shares their own (or a friend's) lift, attempt, PR, form check or physique, or asks people to \
-guess their body fat / rate their physique;
-- shares competition, meet, race or festival footage, highlights or news for entertainment;
-- only asks a question about it without endorsing it;
-- promotes their own video/channel ("made a video on this") or a product.
+Set is_recommendation=false only when the excerpt itself shows that the author:
+- presents the video as wrong, bad or dangerous, or quotes it in order to disagree (e.g. \
+"Robert Oberst says you shouldn't do deadlifts" used as a bad example);
+- links it as a joke, meme, music, film clip or something unrelated to training;
+- shares their own or a friend's lift, attempt, PR, form check, physique or progress, or asks \
+people to guess their body fat / rate their physique;
+- shares competition, meet, race or festival footage or highlights for entertainment;
+- promotes their own video or channel ("I made a video on this") or a product;
+- is a bot (e.g. a "Video linked by /u/...: Title|Channel|Published" table).
 
-sentiment is the author's attitude toward the video. quality_flags lists concerns about the video \
-or the link (empty if none). reason: at most 15 words. Return exactly one entry per [n] via the tool.\
+sentiment is the author's attitude toward THIS video, not the tone of their advice: negative only \
+when they criticise the video itself; matter-of-fact links are neutral. quality_flags lists \
+concerns about the video or the link (empty if none). reason: at most 15 words. Return exactly one \
+entry per [n].\
 """
 
 TOOL_B = {
@@ -408,11 +408,11 @@ _OUT_TOKENS = {"A": lambda n: 40 + 45 * n, "B": lambda n: 160}
 def estimate(stage: str, model: str, requests: dict[str, dict], meta: dict[str, Any], batch: bool,
              style: str = "tool") -> float:
     """Estimated USD for ``requests``: ~3.5 characters per input token, generous output
-    (plus ~1000 thinking tokens per request for styles that let the model think)."""
+    (plus ~300 thinking tokens per request for styles that let the model think)."""
     chars = sum(len(json.dumps(p, ensure_ascii=False)) for p in requests.values())
     out = sum(_OUT_TOKENS[stage](len(meta[c]) if isinstance(meta.get(c), list) else 1) for c in requests)
     if style in THINKING_STYLES:
-        out += 1000 * len(requests)
+        out += 300 * len(requests)
     return cost(model, chars / 3.5, out, batch)
 
 

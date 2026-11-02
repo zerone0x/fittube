@@ -219,10 +219,13 @@ EXTERNAL_POST_TTL_DAYS = 30
 # (committed) are applied on every run, with or without a key.
 
 LLM_CACHE_PATH = Path(os.environ.get("FITTUBE_LLM_CACHE", PIPELINE_DIR / "llm_cache.json"))
-# Stage B (vetting, tags, summary) needs judgement: Sonnet. Stage A (is this
-# comment a recommendation?) is a simpler, higher-volume call: Haiku.
+# Stage B (vetting, tags, summary): FITTUBE_MODEL, default Sonnet. Stage A
+# (is this excerpt a recommendation?) defaults to the same model: in a sample
+# of the 40 top videos Haiku rejected ~25 of 120 excerpts that were plain
+# helpful links (it wanted explicit praise, and the link is cut from most
+# excerpts); set FITTUBE_CLASSIFY_MODEL=claude-haiku-5-5 for a cheaper run.
 LLM_MODEL = os.environ.get("FITTUBE_MODEL") or "claude-sonnet-5-5"
-LLM_CLASSIFY_MODEL = os.environ.get("FITTUBE_CLASSIFY_MODEL") or "claude-haiku-5-5"
+LLM_CLASSIFY_MODEL = os.environ.get("FITTUBE_CLASSIFY_MODEL") or LLM_MODEL
 # USD per million (input, output) tokens at list price, used for the cost
 # estimate and report. Unknown models are priced like the most expensive one.
 # The Message Batches API costs LLM_BATCH_DISCOUNT of that.

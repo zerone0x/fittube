@@ -22,6 +22,14 @@ on:
         description: "Minutes to wait for LLM batches (unfinished ones resume next run)"
         required: false
         default: ""
+      model:
+        description: "Stage-B model (empty: FITTUBE_MODEL variable or claude-sonnet-5-5)"
+        required: false
+        default: ""
+      classify_model:
+        description: "Stage-A model (empty: FITTUBE_CLASSIFY_MODEL variable or the pipeline default)"
+        required: false
+        default: ""
       llm_max_items:
         description: "Max LLM requests per stage (empty: pipeline default)"
         required: false
@@ -77,8 +85,8 @@ jobs:
         timeout-minutes: 160
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          FITTUBE_MODEL: ${{ vars.FITTUBE_MODEL }}
-          FITTUBE_CLASSIFY_MODEL: ${{ vars.FITTUBE_CLASSIFY_MODEL }}
+          FITTUBE_MODEL: ${{ inputs.model || vars.FITTUBE_MODEL }}
+          FITTUBE_CLASSIFY_MODEL: ${{ inputs.classify_model || vars.FITTUBE_CLASSIFY_MODEL }}
           FITTUBE_MAX_COMMENTS: ${{ inputs.max_comments }}
           TIME_BUDGET: ${{ inputs.time_budget || '90' }}
           LLM_ONLY: ${{ inputs.llm_only && 'true' || '' }}

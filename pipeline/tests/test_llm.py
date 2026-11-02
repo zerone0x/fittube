@@ -11,6 +11,8 @@ from unittest import mock
 from pipeline import build, carryover, config, llm
 
 A, B, C, D, E = "AAAAAAAAAAA", "BBBBBBBBBBB", "CCCCCCCCCCC", "DDDDDDDDDDD", "EEEEEEEEEEE"
+HAIKU, SONNET = "claude-haiku-5-5", "claude-sonnet-5-5"
+OPTS = {"classify_model": HAIKU, "model": SONNET}
 WIKI = {"kind": "wiki", "subreddit": "bodyweightfitness", "path": "/wiki/x",
         "url": "https://www.reddit.com/r/bodyweightfitness/wiki/x"}
 
@@ -122,6 +124,7 @@ class LLMTestCase(unittest.TestCase):
         return llm.LLMCache(self.cache_path)
 
     def run_pass(self, data, client=None, clock=None, **opts):
+        opts = {"classify_model": HAIKU, "model": SONNET, **opts}
         cache = self.cache()
         runner = None
         if client is not None:
@@ -272,7 +275,7 @@ class PassTest(LLMTestCase):
         t = [0.0]
         runner = llm.Runner(client, cache, deadline=15, sync_max=0, poll_seconds=10,
                             sleep=lambda s: t.__setitem__(0, t[0] + s), clock=lambda: t[0])
-        data, report = llm.run_pass(dataset(), cache, client, llm.Options(), runner=runner)
+        data, report = llm.run_pass(dataset(), cache, client, llm.Options(**OPTS), runner=runner)
         # The deadline passed while stage A was running: it stays pending, nothing dropped.
         # Each stage probes the output style with one direct request: A's first
         # video, then (A answered by its probe) A again for stage B; D, the
@@ -286,7 +289,7 @@ class PassTest(LLMTestCase):
         # The next run (no deadline) collects that batch instead of resubmitting, then runs stage B.
         cache = self.cache()
         runner = llm.Runner(client, cache, deadline=None, sync_max=0, poll_seconds=10, sleep=lambda s: None)
-        data, report = llm.run_pass(dataset(), cache, client, llm.Options(), runner=runner)
+        data, report = llm.run_pass(dataset(), cache, client, llm.Options(**OPTS), runner=runner)
         self.assertEqual(len(client.batches.submitted), 3)  # stage A, stage B for D, stage B for the rest
         self.assertEqual(sorted(v["id"] for v in data["videos"]), sorted([A, D, E]))
         self.assertEqual(json.loads(self.cache_path.read_text())["pending"], [])
@@ -298,7 +301,7 @@ class PassTest(LLMTestCase):
         client = FakeClient()
         cache = self.cache()
         runner = llm.Runner(client, cache, sync_max=0, poll_seconds=0, sleep=lambda s: None)
-        data, report = llm.run_pass(dataset(), cache, client, llm.Options(model="claude-sonnet-5-5"), runner=runner)
+        data, report = llm.run_pass(dataset(), cache, client, llm.Options(**OPTS), runner=runner)
         self.assertEqual(cache.data["styles"], {"claude-haiku-5-5": "tool", "claude-sonnet-5-5": "json"})
         batch_b = client.batches.submitted["msgbatch_2"]
         self.assertTrue(all("output_config" in r["params"] and "tools" not in r["params"] for r in batch_b))
@@ -308,7 +311,7 @@ class PassTest(LLMTestCase):
         client2 = FakeClient()
         cache.data["videos"].clear()
         runner = llm.Runner(client2, cache, sync_max=0, poll_seconds=0, sleep=lambda s: None)
-        llm.run_pass(dataset(), cache, client2, llm.Options(model="claude-sonnet-5-5"), runner=runner)
+        llm.run_pass(dataset(), cache, client2, llm.Options(**OPTS), runner=runner)
         self.assertTrue(all("output_config" in p for p in client2.calls))
 
     def test_tool_input_parsing(self):
