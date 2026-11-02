@@ -177,7 +177,9 @@ How verdicts change the data (`apply_verdicts`):
   (`non-fitness`, `personal-clip`, `event-footage`, `anti-recommendation`,
   `spam`), or when all its excerpts were rejected and they account for all
   its community recommenders -- which covers the single-recommender and
-  `needs_llm_check` videos: their one piece of evidence must pass.
+  `needs_llm_check` videos: their one piece of evidence must pass -- or when
+  it is contested: all accepted excerpts flag it as bro-science/unsafe and
+  another excerpt criticises it.
 * Wiki-listed videos are moderator-curated and never dropped (they still get
   tags, a summary and excerpt filtering).
 * Stage-B tags replace the keyword tags. Invalid output (fails validation)

@@ -252,6 +252,22 @@ class PassTest(LLMTestCase):
         for v in data["videos"]:
             self.assertEqual((by_id[v["id"]]["recommenders"], by_id[v["id"]]["score"]), (v["recommenders"], v["score"]))
 
+    def test_contested_video_is_dropped(self):
+        # Review of #8: "Robert Oberst says you shouldn't do deadlifts", linked once
+        # as (bro-science) advice and once to rebut it.
+        cache = self.cache()
+        v = video(A, "Oberst says you shouldn't deadlift", 2, [comment("o1", "skip deadlifts, see"),
+                                                               comment("o2", "I'd push back on this")])
+        cache.set_comment(A, "t1_o1", {"is_recommendation": True, "sentiment": "neutral",
+                                       "quality_flags": ["bro-science"], "reason": ""})
+        cache.set_comment(A, "t1_o2", {"is_recommendation": False, "sentiment": "negative",
+                                       "quality_flags": [], "reason": ""})
+        self.assertEqual(llm.stage_a_drop(v, cache), "anti-recommendation")
+        cache.set_comment(A, "t1_o1", {"is_recommendation": True, "sentiment": "neutral",
+                                       "quality_flags": [], "reason": ""})
+        self.assertIsNone(llm.stage_a_drop(v, cache))
+        self.assertIsNone(llm.stage_a_drop({**v, "sources": [WIKI]}, cache))
+
     def test_needs_llm_check_cleared_when_accepted(self):
         hn = "https://news.ycombinator.com/item?id=5"
         v = video(A, "Zone 2 explained", 2, [{"text": "great zone 2 explainer", "score": None, "permalink": hn,

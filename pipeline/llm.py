@@ -602,16 +602,32 @@ def comment_verdict(cache: LLMCache, vid: str, c: dict) -> bool | None:
     return bool(verdict["is_recommendation"]) and verdict.get("sentiment") != "negative"
 
 
-def stage_a_drop(v: dict, cache: LLMCache) -> bool:
-    """No wiki listing and every piece of community evidence we know of was rejected."""
+QUESTIONABLE_FLAGS = {"bro-science", "unsafe-form"}
+
+
+def stage_a_drop(v: dict, cache: LLMCache) -> str | None:
+    """Why stage A's verdicts drop ``v`` (``None``: keep). Wiki-listed videos are kept.
+
+    * ``no-recommendation``: every saved excerpt was rejected and they account
+      for all community recommenders.
+    * ``anti-recommendation``: contested -- every accepted excerpt flags the
+      video as bro-science/unsafe and another excerpt criticises it (e.g. a
+      clip linked once as advice and once to rebut it).
+    """
     if _n_wikis(v):
-        return False
-    verdicts = [comment_verdict(cache, v["id"], c) for c in v.get("comments") or []]
+        return None
+    vid = v["id"]
+    comments = v.get("comments") or []
+    verdicts = [comment_verdict(cache, vid, c) for c in comments]
     rejected = verdicts.count(False)
-    if not rejected or True in verdicts or None in verdicts:
-        return False
-    community = int(v.get("recommenders") or 0)
-    return community <= rejected
+    if rejected and True not in verdicts and None not in verdicts and int(v.get("recommenders") or 0) <= rejected:
+        return "no-recommendation"
+    raw = [cache.comment(vid, comment_key(c)) or {} for c in comments]
+    accepted = [r for r, ok in zip(raw, verdicts) if ok]
+    if accepted and all(QUESTIONABLE_FLAGS & set(r.get("quality_flags") or []) for r in accepted) \
+            and any(r.get("sentiment") == "negative" for r in raw):
+        return "anti-recommendation"
+    return None
 
 
 @dataclass
@@ -660,10 +676,11 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
     """Apply cached verdicts to ``data`` (call ``strip_llm`` first).
 
     * A video without a wiki listing is dropped when stage B rejects it, or
-      when every saved excerpt was rejected by stage A and they account for
-      all its community recommenders (e.g. a single-recommender video whose
-      only comment is an anti-recommendation). Wiki-listed videos are
-      moderator-curated and never dropped.
+      when ``stage_a_drop`` says so: every saved excerpt was rejected and they
+      account for all its community recommenders (e.g. a single-recommender
+      video whose only comment is an anti-recommendation), or the video is
+      contested (only bro-science-flagged support, plus criticism).
+      Wiki-listed videos are moderator-curated and never dropped.
     * Rejected excerpts (not a recommendation, or negative) are hidden and no
       longer count: one recommender each (keeping at least one per accepted
       excerpt) and their karma; the change is stored in ``llm_rejected``.
@@ -685,8 +702,9 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
         if not wikis and valid_b and not valid_b["keep"]:
             report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": valid_b["reject_reason"]})
             continue
-        if stage_a_drop(v, cache):
-            report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": "no-recommendation"})
+        reason = stage_a_drop(v, cache)
+        if reason:
+            report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": reason})
             continue
 
         comments = list(v.get("comments") or [])
