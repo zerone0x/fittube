@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T01:49:37Z",
+ "generated_at": "2026-11-02T02:16:17Z",
  "sources": [
   "yoga",
   "climbing",
@@ -40,7 +40,7 @@
    "channel": "Alan Thrall (Untamed Strength)",
    "thumbnail": "https://i.ytimg.com/vi/wYREQkVtvEc/hqdefault.jpg",
    "recommenders": 14,
-   "score": 178.6,
+   "score": 188.6,
    "first_seen": "2017-12-01",
    "subreddits": [
     "Stronglifts5x5",
@@ -125,7 +125,7 @@
    "source_stats": {
     "reddit": {
      "recommenders": 13,
-     "sum_score": 4.6,
+     "sum_score": 40.3,
      "first_seen": "2017-12-01"
     },
     "hn": {
@@ -141,7 +141,7 @@
    "channel": "GMB Fitness (Praxis)",
    "thumbnail": "https://i.ytimg.com/vi/mSZWSQSSEjE/hqdefault.jpg",
    "recommenders": 11,
-   "score": 148.3,
+   "score": 158.3,
    "first_seen": "2015-07-30",
    "subreddits": [
     "bodyweightfitness",
@@ -358,6 +358,72 @@
    "needs_llm_check": false
   },
   {
+   "id": "CrF2iMnn09w",
+   "title": "Bent-Leg Hamstring Stretch | Best Hamstring Exercise  | Kit Laughlin from Stretch Therapy",
+   "channel": "Kit Laughlin (Stretch Therapy)",
+   "thumbnail": "https://i.ytimg.com/vi/CrF2iMnn09w/hqdefault.jpg",
+   "recommenders": 6,
+   "score": 103.2,
+   "first_seen": "2013-12-27",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility",
+    "kettlebell"
+   ],
+   "comments": [
+    {
+     "text": "The biggest thing to help my hamstring flexibility was Kit Laughlin's tutorial, which I found through /u/antranik's toe touching guide. The whole thing is really helpful as I've had posterior chain issues for years. The Foundation training routine helped alleviate my back pain…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6x4nhx/_/dmf1rch/"
+    },
+    {
+     "text": "Compression work (it's a bit down the page) sounds like what you need. It's more fun that just stretching and very specific. For the stretching part of compression work, I like using a deep lunge as demonstrated in this video. I typically take the stretch of the hip flexors of…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tsmww/_/ceb3utq/"
+    },
+    {
+     "text": "I’ve been stretching around sciatic nerve tension for years and this is my go to stretch. https://m.youtube.com/watch?v=CrF2iMnn09w&ra=m It keeps the knee bent and produces all the hamstring stretch from hinging at the hip.",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1xdga1e/_/19rjfbtgl3flu/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "kettlebell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/kb/skillday",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/skillday"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "kettlebell"
+    }
+   ]
+  },
+  {
    "id": "jEy_czb3RKA",
    "title": "STOP deadlifting until you learn how to do THIS/How To:Romanian DL",
    "channel": "Alan Thrall (Untamed Strength)",
@@ -373,12 +439,12 @@
    ],
    "comments": [
     {
-     "text": "Here's a great video by Alan Thrall: https://www.youtube.com/watch?v=jEyczb3RKA It talks about \"loading the hamstrings\" - this fixed my DL",
+     "text": "Here's a great video by Alan Thrall: https://www.youtube.com/watch?v=jEy_czb3RKA It talks about \"loading the hamstrings\" - this fixed my DL",
      "score": 7,
      "permalink": "https://www.reddit.com/r/Fitness/comments/7m89d3/_/drsl1ex/"
     },
     {
-     "text": "Not much to go off of without a video. As a guess, are you bending your knees too much on the RDL? Either in general or right at the end of the movement when your hamstrings start stretching. Alan Thrall RDL video that may help for self study: https://youtu.be/jEyczb3RKA",
+     "text": "Not much to go off of without a video. As a guess, are you bending your knees too much on the RDL? Either in general or right at the end of the movement when your hamstrings start stretching. Alan Thrall RDL video that may help for self study: https://youtu.be/jEy_czb3RKA",
      "score": 6,
      "permalink": "https://www.reddit.com/r/StrongerByScience/comments/1i2i52s/_/m7eqq8i/"
     },
@@ -458,140 +524,12 @@
    "needs_llm_check": false
   },
   {
-   "id": "CrF2iMnn09w",
-   "title": "Bent-Leg Hamstring Stretch | Best Hamstring Exercise  | Kit Laughlin from Stretch Therapy",
-   "channel": "Kit Laughlin (Stretch Therapy)",
-   "thumbnail": "https://i.ytimg.com/vi/CrF2iMnn09w/hqdefault.jpg",
-   "recommenders": 6,
-   "score": 93.2,
-   "first_seen": "2013-12-27",
-   "subreddits": [
-    "bodyweightfitness",
-    "flexibility",
-    "kettlebell"
-   ],
-   "comments": [
-    {
-     "text": "The biggest thing to help my hamstring flexibility was Kit Laughlin's tutorial, which I found through /u/antranik's toe touching guide. The whole thing is really helpful as I've had posterior chain issues for years. The Foundation training routine helped alleviate my back pain…",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6x4nhx/_/dmf1rch/"
-    },
-    {
-     "text": "Compression work (it's a bit down the page) sounds like what you need. It's more fun that just stretching and very specific. For the stretching part of compression work, I like using a deep lunge as demonstrated in this video. I typically take the stretch of the hip flexors of…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tsmww/_/ceb3utq/"
-    },
-    {
-     "text": "I’ve been stretching around sciatic nerve tension for years and this is my go to stretch. https://m.youtube.com/watch?v=CrF2iMnn09w&ra=m It keeps the knee bent and produces all the hamstring stretch from hinging at the hip.",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1xdga1e/_/19rjfbtgl3flu/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [
-     "legs",
-     "hips"
-    ],
-    "equipment": [
-     "kettlebell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/kb/skillday",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/skillday"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "kettlebell"
-    }
-   ]
-  },
-  {
-   "id": "34XRmd3a8_0",
-   "title": "Bench Press 101",
-   "channel": "132poundsofpower",
-   "thumbnail": "https://i.ytimg.com/vi/34XRmd3a8_0/hqdefault.jpg",
-   "recommenders": 7,
-   "score": 91.0,
-   "first_seen": "2013-10-09",
-   "subreddits": [
-    "Fitness",
-    "xxfitness"
-   ],
-   "comments": [
-    {
-     "text": "Yes, the bar should touch your chest. Just touch, not rest on it. Your chest and arms remain under tension. Pause for a second, and then push up. This is a powerlifting competition standard. If bench pressing hurts your shoulders, you aren't set up right. Roll your shoulders…",
-     "score": 30,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/cecfrmv/"
-    },
-    {
-     "text": "Unfortunately for women in particular upper body takes a looooot longer to progress, but using Jen Thompson’s bench technique made a HUGE difference for me. I’m still figuring out how to keep my shoulders back and my arch needs work, but just learning the basics of her form had…",
-     "score": 25,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/1ozqkuf/_/npdnxyo/"
-    },
-    {
-     "text": "Your arms should not be THAT close to your sides. Keeping arms closer to your side will strain your shoulder more because you have to lower your elbows past your torso to let the bar hit your chest. Source: http://www.youtube.com/watch?v=QnwAoesJvQt=475 Good form…",
-     "score": 16,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/cecgete/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 218,
-     "label": ""
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "chest",
-     "upper",
-     "shoulders",
-     "arms"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "xxfitness"
-    }
-   ]
-  },
-  {
    "id": "4AObAU-EcYE",
    "title": "How to Deadlift With Mark Rippetoe | The Art of Manliness",
    "channel": "Art of Manliness",
    "thumbnail": "https://i.ytimg.com/vi/4AObAU-EcYE/hqdefault.jpg",
    "recommenders": 5,
-   "score": 86.0,
+   "score": 95.9,
    "first_seen": "2016-10-06",
    "subreddits": [
     "Stronglifts5x5",
@@ -663,7 +601,7 @@
    "source_stats": {
     "reddit": {
      "recommenders": 4,
-     "sum_score": 2.3,
+     "sum_score": 23.0,
      "first_seen": "2017-12-22"
     },
     "hn": {
@@ -679,7 +617,7 @@
    "channel": "Squat University",
    "thumbnail": "https://i.ytimg.com/vi/ubdIGnX2Hfs/hqdefault.jpg",
    "recommenders": 5,
-   "score": 85.6,
+   "score": 95.6,
    "first_seen": "2021-01-05",
    "subreddits": [
     "xxfitness",
@@ -726,6 +664,286 @@
     {
      "kind": "comment",
      "subreddit": "flexibility"
+    }
+   ]
+  },
+  {
+   "id": "34XRmd3a8_0",
+   "title": "Bench Press 101",
+   "channel": "132poundsofpower",
+   "thumbnail": "https://i.ytimg.com/vi/34XRmd3a8_0/hqdefault.jpg",
+   "recommenders": 7,
+   "score": 91.0,
+   "first_seen": "2013-10-09",
+   "subreddits": [
+    "Fitness",
+    "xxfitness"
+   ],
+   "comments": [
+    {
+     "text": "Yes, the bar should touch your chest. Just touch, not rest on it. Your chest and arms remain under tension. Pause for a second, and then push up. This is a powerlifting competition standard. If bench pressing hurts your shoulders, you aren't set up right. Roll your shoulders…",
+     "score": 30,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/cecfrmv/"
+    },
+    {
+     "text": "Unfortunately for women in particular upper body takes a looooot longer to progress, but using Jen Thompson’s bench technique made a HUGE difference for me. I’m still figuring out how to keep my shoulders back and my arch needs work, but just learning the basics of her form had…",
+     "score": 25,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/1ozqkuf/_/npdnxyo/"
+    },
+    {
+     "text": "Your arms should not be THAT close to your sides. Keeping arms closer to your side will strain your shoulder more because you have to lower your elbows past your torso to let the bar hit your chest. Source: http://www.youtube.com/watch?v=QnwAoesJvQt=475 Good form…",
+     "score": 16,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/cecgete/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 218,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "chest",
+     "upper",
+     "shoulders",
+     "arms"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "xxfitness"
+    }
+   ]
+  },
+  {
+   "id": "8lDC4Ri9zAQ",
+   "title": "Upper Body Warm Up with Antranik & Aaron (Mobility/Prehab for Shoulders and Wrists)",
+   "channel": "Antranik Kizirian",
+   "thumbnail": "https://i.ytimg.com/vi/8lDC4Ri9zAQ/hqdefault.jpg",
+   "recommenders": 5,
+   "score": 90.7,
+   "first_seen": "2017-09-13",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "Not the same person, but it sounds like the upper body warmup from r/bodyweightfitness Here's the video: Upper Body Warm Up with Antranik & Aaron (Mobility/Prehab for Shoulders and Wrists)",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6zrqpz/_/dmxxooh/"
+    },
+    {
+     "text": "For the warm up (https://youtu.be/8lDC4Ri9zAQ?t=4m22s), what bands do you recommend? I'm confused ... the red and black look the easiest, but elsewhere it is described as being the most difficult (perhaps because in those situations the band is supporting rather than…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7ln2ok/_/drnxssr/"
+    },
+    {
+     "text": "thanks ,you're refering to this just to be sure ?",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jaxqr/_/dr57hyc/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 75,
+     "label": "Shoulder shrug circles"
+    },
+    {
+     "t": 262,
+     "label": "band: straight arm overhead pull downs"
+    },
+    {
+     "t": 268,
+     "label": "this"
+    },
+    {
+     "t": 312,
+     "label": "band: straight arm chest flies"
+    },
+    {
+     "t": 383,
+     "label": "band: dislocates"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility",
+     "rehab"
+    ],
+    "body": [
+     "shoulders",
+     "upper",
+     "arms"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/move/phase2",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase2"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ]
+  },
+  {
+   "id": "rloXYB8M3vU",
+   "title": "How To Do Incline Rows With Minimal Equipment (Just a bed-sheet and a door) with Antranik",
+   "channel": "Antranik Kizirian",
+   "thumbnail": "https://i.ytimg.com/vi/rloXYB8M3vU/hqdefault.jpg",
+   "recommenders": 5,
+   "score": 90.1,
+   "first_seen": "2017-10-16",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility",
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "https://www.youtube.com/watch?v=rloXYB8M3vU /u/seacee",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/76n6t0/_/dofyfip/"
+    },
+    {
+     "text": "You can do rows in a door frame or with a knotted sheet and a closed door. https://youtu.be/rloXYB8M3vU The elastic band is for stretches - band dislocates, chest flies.",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jp461/_/dr88lt8/"
+    },
+    {
+     "text": "As others have mentioned, yes, it’s best to balance push and pull. If rings, a chin-up bar, and exercise bands are hard to come by, here are some options with household items: https://youtu.be/NQkVNCajrw https://youtu.be/rloXYB8M3vU https://youtu.be/lFeWyQbmh8 Stay safe, and…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/jbq11v/_/g8xrhi1/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility",
+     "strength"
+    ],
+    "body": [
+     "upper",
+     "back"
+    ],
+    "equipment": [
+     "none",
+     "band",
+     "bar"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/row",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/row"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "overcominggravity"
+    }
+   ]
+  },
+  {
+   "id": "2z8JmcrW-As",
+   "title": "The Perfect Dip  - Do it right",
+   "channel": "Calisthenicmovement",
+   "thumbnail": "https://i.ytimg.com/vi/2z8JmcrW-As/hqdefault.jpg",
+   "recommenders": 5,
+   "score": 89.0,
+   "first_seen": "2017-08-14",
+   "subreddits": [
+    "bodyweightfitness",
+    "Fitness",
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "Calimove’s tutorial Tips for dips(w/ focus on weighted dips) Shoulder depression/retraction with dips",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/kuv95q/_/giul7kg/"
+    },
+    {
+     "text": "Along with FitnessFAQ, CaliMove is good as well: https://m.youtube.com/watch?v=2z8JmcrW-As",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7l7kgs/_/drkw11a/"
+    },
+    {
+     "text": "Have you tried deficit push ups? Elevate your hands on push-up handles, low paralettes, hex-dumbbells, a pair of books, or any other object you have around. The increased range of motion puts your chest in a stretched position at the bottom, so it has to work harder as you push…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xelmrm/_/19rmkjbbbrlsy/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "body": [
+     "upper",
+     "chest"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/dip",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/dip"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "overcominggravity"
     }
    ]
   },
@@ -892,65 +1110,124 @@
    "needs_llm_check": false
   },
   {
-   "id": "8lDC4Ri9zAQ",
-   "title": "Upper Body Warm Up with Antranik & Aaron (Mobility/Prehab for Shoulders and Wrists)",
+   "id": "IODxDxX7oi4",
+   "title": "The Perfect Push Up | Do it right!",
+   "channel": "Calisthenicmovement",
+   "thumbnail": "https://i.ytimg.com/vi/IODxDxX7oi4/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 83.5,
+   "first_seen": "2025-12-09",
+   "subreddits": [
+    "flexibility",
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "It's pretty much impossible for your chest not to be involved in a push up, as long as your technique is on point. Look at this video. If your technique is good, and you still don't feel your chest, then it's not the end of the world. You don't have to always feel a muscle for…",
+     "score": 86,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt56ijx/"
+    },
+    {
+     "text": "Yes, just like your other post you have weakness in scapular protraction and should work at your level. If that's incline it's fine Take a look at 2:20 in this video for further explanation",
+     "score": 14,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1wpj7tk/_/pbvyv69/"
+    },
+    {
+     "text": "You don't have feel a muscle for it to be working. If your technique is good, and you still don't feel your chest, then it's not the end of the world. Focus on you technique, and you should be ok. This video explains things very well. Here's a tip though. During the concentric…",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1pood6c/_/nuh1okv/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 140,
+     "label": ""
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength",
+     "mobility"
+    ],
+    "body": [
+     "upper",
+     "chest",
+     "shoulders"
+    ],
+    "equipment": [
+     "dumbbell"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/pushup",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility",
+     "count": 2
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    }
+   ]
+  },
+  {
+   "id": "IUZJoSP66HI",
+   "title": "Floor L-sit Progression Tutorial by Antranik",
    "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/8lDC4Ri9zAQ/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 80.7,
-   "first_seen": "2017-09-13",
+   "thumbnail": "https://i.ytimg.com/vi/IUZJoSP66HI/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 82.6,
+   "first_seen": "2013-12-02",
    "subreddits": [
     "bodyweightfitness",
     "flexibility"
    ],
    "comments": [
     {
-     "text": "Not the same person, but it sounds like the upper body warmup from r/bodyweightfitness Here's the video: Upper Body Warm Up with Antranik & Aaron (Mobility/Prehab for Shoulders and Wrists)",
-     "score": 5,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6zrqpz/_/dmxxooh/"
+     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
+     "score": 11,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
     },
     {
-     "text": "For the warm up (https://youtu.be/8lDC4Ri9zAQ?t=4m22s), what bands do you recommend? I'm confused ... the red and black look the easiest, but elsewhere it is described as being the most difficult (perhaps because in those situations the band is supporting rather than…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7ln2ok/_/drnxssr/"
+     "text": "here you go man, i made this video that shows a couple progressions before you tackle the tucked L-sit to help get you a more robust foundation. hope that helps.",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdrqmj0/"
     },
     {
-     "text": "thanks ,you're refering to this just to be sure ?",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jaxqr/_/dr57hyc/"
+     "text": "here's my L-sit tutorial video that addresses this exact issue on how to bring the shoulders down. :)",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdsdnop/"
     }
    ],
    "timestamps": [
     {
-     "t": 75,
-     "label": "Shoulder shrug circles"
+     "t": 40,
+     "label": "Siad-L z podparciem nóg"
     },
     {
-     "t": 262,
-     "label": "band: straight arm overhead pull downs"
+     "t": 153,
+     "label": "Siad-L z podparciem jednej nogi"
     },
     {
-     "t": 268,
-     "label": "this"
-    },
-    {
-     "t": 312,
-     "label": "band: straight arm chest flies"
-    },
-    {
-     "t": 383,
-     "label": "band: dislocates"
+     "t": 179,
+     "label": "Siad-L z przykurczonymi nogami"
     }
    ],
    "tags": {
     "goal": [
-     "mobility",
-     "rehab"
+     "skill",
+     "mobility"
     ],
     "body": [
-     "shoulders",
-     "upper",
-     "arms"
+     "core"
     ],
     "equipment": [],
     "level": "any",
@@ -960,8 +1237,8 @@
     {
      "kind": "wiki",
      "subreddit": "bodyweightfitness",
-     "path": "/wiki/move/phase2",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase2"
+     "path": "/wiki/exercises/l-sit_polish",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit_polish"
     },
     {
      "kind": "comment",
@@ -974,49 +1251,109 @@
    ]
   },
   {
-   "id": "rloXYB8M3vU",
-   "title": "How To Do Incline Rows With Minimal Equipment (Just a bed-sheet and a door) with Antranik",
-   "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/rloXYB8M3vU/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 80.1,
-   "first_seen": "2017-10-16",
+   "id": "YQmpO9VT2X4",
+   "title": "Hip Flexor Stretch - Done Correctly",
+   "channel": "Sam Visnic",
+   "thumbnail": "https://i.ytimg.com/vi/YQmpO9VT2X4/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 81.8,
+   "first_seen": "2016-08-26",
    "subreddits": [
-    "bodyweightfitness",
     "flexibility",
-    "overcominggravity"
+    "kettlebell"
    ],
    "comments": [
     {
-     "text": "https://www.youtube.com/watch?v=rloXYB8M3vU /u/seacee",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/76n6t0/_/dofyfip/"
+     "text": "IME, hip flexor stretches are the most important to counter sitting. I've, with the help of something soft to cushion my knee, done this one at my desk while working: https://youtu.be/YQmpO9VT2X4",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6wkggt/_/dm8u8nq/"
     },
     {
-     "text": "You can do rows in a door frame or with a knotted sheet and a closed door. https://youtu.be/rloXYB8M3vU The elastic band is for stretches - band dislocates, chest flies.",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jp461/_/dr88lt8/"
+     "text": "Here is one that I have found extremely useful, hopefully it will help you as well. https://youtu.be/YQmpO9VT2X4",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/7dfy1l/_/dpyneth/"
     },
     {
-     "text": "As others have mentioned, yes, it’s best to balance push and pull. If rings, a chin-up bar, and exercise bands are hard to come by, here are some options with household items: https://youtu.be/NQkVNCajrw https://youtu.be/rloXYB8M3vU https://youtu.be/lFeWyQbmh8 Stay safe, and…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/jbq11v/_/g8xrhi1/"
+     "text": "Swings will help with APT by strengthening the back and hamstrings, it may help to stretch the hip flexors, which tend to shorten when you sit in a chair for 40+ hours per week. This is the most basic one But a yoga pose like Cobrais great because it also stretches the upper…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/kettlebell/comments/6hz9wr/_/dj2cs9a/"
     }
    ],
    "timestamps": [],
    "tags": {
     "goal": [
-     "mobility",
-     "strength"
+     "mobility"
     ],
     "body": [
-     "upper",
-     "back"
+     "hips",
+     "legs"
     ],
     "equipment": [
-     "none",
-     "band",
-     "bar"
+     "kettlebell"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "flexibility",
+     "path": "/wiki/beginner_stretching_routine",
+     "url": "https://www.reddit.com/r/flexibility/wiki/beginner_stretching_routine"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "kettlebell"
+    }
+   ]
+  },
+  {
+   "id": "QyVq5oUBpss",
+   "title": "The WORST Ab Training MISTAKES | Leg Raises",
+   "channel": "FitnessFAQs",
+   "thumbnail": "https://i.ytimg.com/vi/QyVq5oUBpss/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 80.9,
+   "first_seen": "2017-12-15",
+   "subreddits": [
+    "fitness30plus",
+    "bodyweightfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
+     "score": 11,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
+    },
+    {
+     "text": "Dynamic ab exercises aren't forbidden. It's just that the form can be trickier to nail or sometimes you end up training hip flexors instead of abs. Anyway, here are some exercises: Classic crunches. Notice that the lower back is stuck to the floor. That's way the model has her…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jwpvc/_/dr9t4d7/"
+    },
+    {
+     "text": "Mastering the Plank - In Just 2 Minutes The BEST HOLLOW BODY Progressions -Beginner to Advanced The best exercise for the Lower Ab (Reverse crunch) https://youtu.be/QyVq5oUBpss https://youtu.be/3p4b4jVfFU Choose one of the first two, they recruit your entire core. Add one of…",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/fitness30plus/comments/1mfz8nm/_/n6kwemy/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "full",
+     "legs",
+     "core",
+     "hips"
+    ],
+    "equipment": [
+     "none"
     ],
     "level": "any",
     "type": "tutorial"
@@ -1025,12 +1362,13 @@
     {
      "kind": "wiki",
      "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/row",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/row"
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
     },
     {
      "kind": "comment",
-     "subreddit": "flexibility"
+     "subreddit": "fitness30plus",
+     "count": 1
     },
     {
      "kind": "comment",
@@ -1038,7 +1376,7 @@
     },
     {
      "kind": "comment",
-     "subreddit": "overcominggravity"
+     "subreddit": "flexibility"
     }
    ]
   },
@@ -1144,6 +1482,68 @@
    "needs_llm_check": false
   },
   {
+   "id": "kXWtk3NLESk",
+   "title": "Middle/Straddle Splits Tutorial with Antranik (Gain Passive & Active Flexibility using Horse Stance)",
+   "channel": "Antranik Kizirian",
+   "thumbnail": "https://i.ytimg.com/vi/kXWtk3NLESk/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 79.7,
+   "first_seen": "2016-08-26",
+   "subreddits": [
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "Try typing active splits flexibility into the youtubes. Here is a video from our very own Antarik: https://www.youtube.com/watch?v=kXWtk3NLESk",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/74jvuh/_/dnywltu/"
+    },
+    {
+     "text": "Video linked by /u/KamikazeHamster: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: MIddle/Straddle Splits Tutorial with Antranik (Gain Passive & ACTIVE flexibility using Horse Stance)|Antranik…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6wmvdp/_/dm9ovtk/"
+    },
+    {
+     "text": "Check out this video. It might give you some extra help. Middle/Straddle Splits Tutorial with Antranik (Gain Passive & ACTIVE flexibility using Horse Stance).",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6wmvdp/_/dm9ov4w/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 160,
+     "label": "Dynamic Frog Pose Sequence"
+    },
+    {
+     "t": 661,
+     "label": "1,041+ (98%)|71,608"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "hips"
+    ],
+    "equipment": [],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "flexibility",
+     "path": "/wiki/beginner_stretching_routine",
+     "url": "https://www.reddit.com/r/flexibility/wiki/beginner_stretching_routine"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ]
+  },
+  {
    "id": "ntko7CPHD5A",
    "title": "NEW WORKOUT: Single Kettlebell Armor Building Complex | Dan John",
    "channel": "Dan John",
@@ -1189,47 +1589,51 @@
    ]
   },
   {
-   "id": "2z8JmcrW-As",
-   "title": "The Perfect Dip  - Do it right",
-   "channel": "Calisthenicmovement",
-   "thumbnail": "https://i.ytimg.com/vi/2z8JmcrW-As/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 79.0,
-   "first_seen": "2017-08-14",
+   "id": "BYKScL2sgCs",
+   "title": "How to Bench Press",
+   "channel": "Alan Thrall (Untamed Strength)",
+   "thumbnail": "https://i.ytimg.com/vi/BYKScL2sgCs/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 76.9,
+   "first_seen": "2017-12-23",
    "subreddits": [
-    "bodyweightfitness",
-    "Fitness",
-    "overcominggravity"
+    "fitness30plus",
+    "weightroom",
+    "Fitness"
    ],
    "comments": [
     {
-     "text": "Calimove’s tutorial Tips for dips(w/ focus on weighted dips) Shoulder depression/retraction with dips",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/kuv95q/_/giul7kg/"
-    },
-    {
-     "text": "Along with FitnessFAQ, CaliMove is good as well: https://m.youtube.com/watch?v=2z8JmcrW-As",
+     "text": "Watch this, especially the setup at around the 2 min mark, to ensure you're setting up correctly and remaining tight throughout the set https://youtu.be/BYKScL2sgCs",
      "score": 2,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7l7kgs/_/drkw11a/"
+     "permalink": "https://www.reddit.com/r/Fitness/comments/rg49sx/_/hom4ipf/"
     },
     {
-     "text": "Have you tried deficit push ups? Elevate your hands on push-up handles, low paralettes, hex-dumbbells, a pair of books, or any other object you have around. The increased range of motion puts your chest in a stretched position at the bottom, so it has to work harder as you push…",
+     "text": "https://www.youtube.com/watch?v=WaNb5HDniYE&list=PLibo-Z1-9Z6jPVfvHhy0vHSuKKb9LMjNZ&index=7 https://www.youtube.com/watch?v=UFs6E3Ti1jg https://www.youtube.com/watch?v=ezRP5-ick9Q&list=PLibo-Z1-9Z6jPVfvHhy0vHSuKKb9LMjNZ&index=3 https://www.youtube.com/watch?v=BYKScL2sgCs",
      "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1xelmrm/_/19rmkjbbbrlsy/"
+     "permalink": "https://www.reddit.com/r/fitness30plus/comments/1psfeg2/_/nv9tc2c/"
+    },
+    {
+     "text": "You need to learn to set up properly for the bench. A retracted scapula will help you protect your shoulders, as well as give you a more stable base to bench from. Additionally, you're ridiculously loose on your setup. Like... getting tight could easily add 30-40lbs onto your…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drnbmyg/"
+    },
+    {
+     "text": "The good thing about 5x5 is that you start with minimal weights - like an empty bar - and spend your first couple of weeks training with \"easy\" weight. This time is really for you to learn the movements. There's a wealth of information out there on how to do these movements…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=23856027",
+     "site": "news.ycombinator.com"
     }
    ],
    "timestamps": [],
    "tags": {
     "goal": [
-     "strength",
-     "skill"
+     "strength"
     ],
     "body": [
-     "upper",
      "chest"
     ],
     "equipment": [
-     "none"
+     "barbell"
     ],
     "level": "any",
     "type": "tutorial"
@@ -1237,23 +1641,39 @@
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/dip",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/dip"
+     "subreddit": "weightroom",
+     "path": "/wiki/faq",
+     "url": "https://www.reddit.com/r/weightroom/wiki/faq"
     },
     {
      "kind": "comment",
-     "subreddit": "bodyweightfitness"
+     "subreddit": "fitness30plus",
+     "count": 1
     },
     {
      "kind": "comment",
      "subreddit": "Fitness"
     },
     {
-     "kind": "comment",
-     "subreddit": "overcominggravity"
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=23856027",
+     "score": null,
+     "needs_llm_check": true
     }
-   ]
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 3.0,
+     "first_seen": "2017-12-23"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false
   },
   {
    "id": "cKx8xE8jJZs",
@@ -1617,147 +2037,6 @@
    "needs_llm_check": false
   },
   {
-   "id": "IODxDxX7oi4",
-   "title": "The Perfect Push Up | Do it right!",
-   "channel": "Calisthenicmovement",
-   "thumbnail": "https://i.ytimg.com/vi/IODxDxX7oi4/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 73.5,
-   "first_seen": "2025-12-09",
-   "subreddits": [
-    "flexibility",
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "It's pretty much impossible for your chest not to be involved in a push up, as long as your technique is on point. Look at this video. If your technique is good, and you still don't feel your chest, then it's not the end of the world. You don't have to always feel a muscle for…",
-     "score": 86,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt56ijx/"
-    },
-    {
-     "text": "Yes, just like your other post you have weakness in scapular protraction and should work at your level. If that's incline it's fine Take a look at 2:20 in this video for further explanation",
-     "score": 14,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1wpj7tk/_/pbvyv69/"
-    },
-    {
-     "text": "You don't have feel a muscle for it to be working. If your technique is good, and you still don't feel your chest, then it's not the end of the world. Focus on you technique, and you should be ok. This video explains things very well. Here's a tip though. During the concentric…",
-     "score": 6,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1pood6c/_/nuh1okv/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 140,
-     "label": ""
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength",
-     "mobility"
-    ],
-    "body": [
-     "upper",
-     "chest",
-     "shoulders"
-    ],
-    "equipment": [
-     "dumbbell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/pushup",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility",
-     "count": 2
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    }
-   ]
-  },
-  {
-   "id": "IUZJoSP66HI",
-   "title": "Floor L-sit Progression Tutorial by Antranik",
-   "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/IUZJoSP66HI/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 72.6,
-   "first_seen": "2013-12-02",
-   "subreddits": [
-    "bodyweightfitness",
-    "flexibility"
-   ],
-   "comments": [
-    {
-     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
-     "score": 11,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
-    },
-    {
-     "text": "here you go man, i made this video that shows a couple progressions before you tackle the tucked L-sit to help get you a more robust foundation. hope that helps.",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdrqmj0/"
-    },
-    {
-     "text": "here's my L-sit tutorial video that addresses this exact issue on how to bring the shoulders down. :)",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1rw1gv/_/cdsdnop/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 40,
-     "label": "Siad-L z podparciem nóg"
-    },
-    {
-     "t": 153,
-     "label": "Siad-L z podparciem jednej nogi"
-    },
-    {
-     "t": 179,
-     "label": "Siad-L z przykurczonymi nogami"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "skill",
-     "mobility"
-    ],
-    "body": [
-     "core"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/l-sit_polish",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit_polish"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    }
-   ]
-  },
-  {
    "id": "uGGdhwJ0Y-4",
    "title": "Your KETTLEBELL SWING FORM : Five Tips to Prevent Injury",
    "channel": "Joe Daniels Kettlebell Muscle Gain ",
@@ -1817,55 +2096,46 @@
    ]
   },
   {
-   "id": "YQmpO9VT2X4",
-   "title": "Hip Flexor Stretch - Done Correctly",
-   "channel": "Sam Visnic",
-   "thumbnail": "https://i.ytimg.com/vi/YQmpO9VT2X4/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 71.8,
-   "first_seen": "2016-08-26",
+   "id": "7FF6VLej_bY",
+   "title": "Squat Form For Your Anatomy [Perfect Depth Stance And Width]",
+   "channel": "Squat University",
+   "thumbnail": "https://i.ytimg.com/vi/7FF6VLej_bY/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 72.0,
+   "first_seen": "2021-01-05",
    "subreddits": [
-    "flexibility",
-    "kettlebell"
+    "xxfitness",
+    "flexibility"
    ],
    "comments": [
     {
-     "text": "IME, hip flexor stretches are the most important to counter sitting. I've, with the help of something soft to cushion my knee, done this one at my desk while working: https://youtu.be/YQmpO9VT2X4",
+     "text": "I saw a Squat University video a few years ago that explained it's because of your anatomy. I found two of their videos that will explain. How to Squat for Your Anatomy (FIND THE RIGHT STANCE), 6:53 mins https://youtu.be/ubdIGnX2Hfs?si=9nzeZ-e8tjd0GW9z Squat Form for Your…",
+     "score": 15,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1pydi36/_/nwi7g3x/"
+    },
+    {
+     "text": "You can take a look at this video for the different stances for squatting depending on your anatomy. He also has a different video on toes (pointed out vs forward). I personally have to take a wider stance with my toes pointed outward to squat. You might also check some videos…",
      "score": 5,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6wkggt/_/dm8u8nq/"
-    },
-    {
-     "text": "Here is one that I have found extremely useful, hopefully it will help you as well. https://youtu.be/YQmpO9VT2X4",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/7dfy1l/_/dpyneth/"
-    },
-    {
-     "text": "Swings will help with APT by strengthening the back and hamstrings, it may help to stretch the hip flexors, which tend to shorten when you sit in a chair for 40+ hours per week. This is the most basic one But a yoga pose like Cobrais great because it also stretches the upper…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/kettlebell/comments/6hz9wr/_/dj2cs9a/"
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/1wxoypo/_/pdvoy2l/"
     }
    ],
    "timestamps": [],
    "tags": {
-    "goal": [
-     "mobility"
-    ],
+    "goal": [],
     "body": [
-     "hips",
+     "lower",
      "legs"
     ],
-    "equipment": [
-     "kettlebell"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
    },
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "flexibility",
-     "path": "/wiki/beginner_stretching_routine",
-     "url": "https://www.reddit.com/r/flexibility/wiki/beginner_stretching_routine"
+     "subreddit": "xxfitness",
+     "path": "/wiki/lifting/squat_guide_resources",
+     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
     },
     {
      "kind": "comment",
@@ -1873,7 +2143,7 @@
     },
     {
      "kind": "comment",
-     "subreddit": "kettlebell"
+     "subreddit": "xxfitness"
     }
    ]
   },
@@ -1891,12 +2161,12 @@
    ],
    "comments": [
     {
-     "text": "Questions about the \"Starting to Stretch\" routine https://www.reddit.com/r/flexibility/comments/1seucg0/questionsaboutthestartingtostretchroutine/ Hello, I've been following the Starting to Stretch video for a bit over a week, and I have some questions and concerns. I have a…",
+     "text": "Questions about the \"Starting to Stretch\" routine — Hello, I've been following the Starting to Stretch video for a bit over a week, and I have some questions and concerns. I have a…",
      "score": 8,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1seucg0/"
     },
     {
-     "text": "Want to improve my posture https://www.reddit.com/r/Posture/comments/1svf1qq/wanttoimprovemyposture/ https://preview.redd.it/54bfpwxsocxg1.jpg?width=256&format=pjpg&auto=webp&s=f401a3d3afd84a5330ba5dc0a14eda96987aafc9…",
+     "text": "Want to improve my posture — https://preview.redd.it/54bfpwxsocxg1.jpg?width=256&format=pjpg&auto=webp&s=f401a3d3afd84a5330ba5dc0a14eda96987aafc9…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/Posture/comments/1svf1qq/"
     }
@@ -1980,49 +2250,44 @@
    ]
   },
   {
-   "id": "QyVq5oUBpss",
-   "title": "The WORST Ab Training MISTAKES | Leg Raises",
-   "channel": "FitnessFAQs",
-   "thumbnail": "https://i.ytimg.com/vi/QyVq5oUBpss/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 70.9,
-   "first_seen": "2017-12-15",
+   "id": "zJBLDJMJiDE",
+   "title": "Deep Squat - Mobility and Technique",
+   "channel": "GMB Fitness (Praxis)",
+   "thumbnail": "https://i.ytimg.com/vi/zJBLDJMJiDE/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 71.0,
+   "first_seen": "2017-08-07",
    "subreddits": [
-    "fitness30plus",
     "bodyweightfitness",
     "flexibility"
    ],
    "comments": [
     {
-     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
-     "score": 11,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
+     "text": "here you go",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rko9nz/_/hpb9wr8/"
     },
     {
-     "text": "Dynamic ab exercises aren't forbidden. It's just that the form can be trickier to nail or sometimes you end up training hip flexors instead of abs. Anyway, here are some exercises: Classic crunches. Notice that the lower back is stuck to the floor. That's way the model has her…",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7jwpvc/_/dr9t4d7/"
-    },
-    {
-     "text": "Mastering the Plank - In Just 2 Minutes The BEST HOLLOW BODY Progressions -Beginner to Advanced The best exercise for the Lower Ab (Reverse crunch) https://youtu.be/QyVq5oUBpss https://youtu.be/3p4b4jVfFU Choose one of the first two, they recruit your entire core. Add one of…",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/fitness30plus/comments/1mfz8nm/_/n6kwemy/"
+     "text": "My favorite https://youtu.be/zJBLDJMJiDE?t=1m2s I know it's a squat video, you can work on that at the same time. Look at his shoulders. Then do upward table top and upward plank as well. Here's the GMB webpage for shoulders https://gmb.io/tag/shoulders/",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/6s1f4o/_/dl9jhnv/"
     }
    ],
-   "timestamps": [],
+   "timestamps": [
+    {
+     "t": 62,
+     "label": ""
+    }
+   ],
    "tags": {
     "goal": [
      "mobility"
     ],
     "body": [
-     "full",
-     "legs",
-     "core",
-     "hips"
+     "lower",
+     "legs"
     ],
-    "equipment": [
-     "none"
-    ],
+    "equipment": [],
     "level": "any",
     "type": "tutorial"
    },
@@ -2030,13 +2295,8 @@
     {
      "kind": "wiki",
      "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "fitness30plus",
-     "count": 1
+     "path": "/wiki/exercises/squat",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/squat"
     },
     {
      "kind": "comment",
@@ -2049,91 +2309,57 @@
    ]
   },
   {
-   "id": "BYKScL2sgCs",
-   "title": "How to Bench Press",
-   "channel": "Alan Thrall (Untamed Strength)",
-   "thumbnail": "https://i.ytimg.com/vi/BYKScL2sgCs/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 70.0,
-   "first_seen": "2017-12-23",
+   "id": "ghuaqD8rHvY",
+   "title": "Get the most out of your Standing Pike",
+   "channel": "Mary Nightingale",
+   "thumbnail": "https://i.ytimg.com/vi/ghuaqD8rHvY/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 70.4,
+   "first_seen": "2016-10-10",
    "subreddits": [
-    "fitness30plus",
-    "weightroom",
-    "Fitness"
+    "flexibility"
    ],
    "comments": [
     {
-     "text": "Watch this, especially the setup at around the 2 min mark, to ensure you're setting up correctly and remaining tight throughout the set https://youtu.be/BYKScL2sgCs",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/rg49sx/_/hom4ipf/"
+     "text": "Hey, congrats on your progress! I will say though, progress pics should almost always be directly from the side (along with same camera, settings, camera-height/-distance, lighting, etc :-)), otherwise it's impossible to compare (did I really improve, or just take the last pic…",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/77gh5n/_/dom64f9/"
     },
     {
-     "text": "https://www.youtube.com/watch?v=WaNb5HDniYE&list=PLibo-Z1-9Z6jPVfvHhy0vHSuKKb9LMjNZ&index=7 https://www.youtube.com/watch?v=UFs6E3Ti1jg https://www.youtube.com/watch?v=ezRP5-ick9Q&list=PLibo-Z1-9Z6jPVfvHhy0vHSuKKb9LMjNZ&index=3 https://www.youtube.com/watch?v=BYKScL2sgCs",
+     "text": "Video linked by /u/rumataxyz: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Get the most out of your Standing Pike|Mary Nightingale|2015-10-10|0:02:52|486+ (99%)|18,259 --- ^Info ^| ^/u/rumataxyz…",
      "score": 1,
-     "permalink": "https://www.reddit.com/r/fitness30plus/comments/1psfeg2/_/nv9tc2c/"
-    },
-    {
-     "text": "You need to learn to set up properly for the bench. A retracted scapula will help you protect your shoulders, as well as give you a more stable base to bench from. Additionally, you're ridiculously loose on your setup. Like... getting tight could easily add 30-40lbs onto your…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drnbmyg/"
-    },
-    {
-     "text": "The good thing about 5x5 is that you start with minimal weights - like an empty bar - and spend your first couple of weeks training with \"easy\" weight. This time is really for you to learn the movements. There's a wealth of information out there on how to do these movements…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=23856027",
-     "site": "news.ycombinator.com"
+     "permalink": "https://www.reddit.com/r/flexibility/comments/77gh5n/_/dom6jua/"
     }
    ],
-   "timestamps": [],
+   "timestamps": [
+    {
+     "t": 172,
+     "label": "486+ (99%)|18,259"
+    }
+   ],
    "tags": {
     "goal": [
-     "strength"
+     "mobility"
     ],
     "body": [
-     "chest"
+     "legs"
     ],
-    "equipment": [
-     "barbell"
-    ],
+    "equipment": [],
     "level": "any",
     "type": "tutorial"
    },
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "weightroom",
-     "path": "/wiki/faq",
-     "url": "https://www.reddit.com/r/weightroom/wiki/faq"
+     "subreddit": "flexibility",
+     "path": "/wiki/faq_hamstrings",
+     "url": "https://www.reddit.com/r/flexibility/wiki/faq_hamstrings"
     },
     {
      "kind": "comment",
-     "subreddit": "fitness30plus",
-     "count": 1
-    },
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=23856027",
-     "score": null,
-     "needs_llm_check": true
+     "subreddit": "flexibility"
     }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 3,
-     "sum_score": 0.0,
-     "first_seen": "2017-12-23"
-    },
-    "hn": {
-     "recommenders": 1,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false
+   ]
   },
   {
    "id": "zoZWgTrZLd8",
@@ -2196,41 +2422,97 @@
    ]
   },
   {
-   "id": "kXWtk3NLESk",
-   "title": "Middle/Straddle Splits Tutorial with Antranik (Gain Passive & Active Flexibility using Horse Stance)",
+   "id": "4dF1DOWzf20",
+   "title": "How To Do Push Ups with Antranik",
    "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/kXWtk3NLESk/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 69.7,
-   "first_seen": "2016-08-26",
+   "thumbnail": "https://i.ytimg.com/vi/4dF1DOWzf20/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 69.0,
+   "first_seen": "2017-12-28",
    "subreddits": [
-    "flexibility"
+    "bodyweightfitness",
+    "Fitness"
    ],
    "comments": [
     {
-     "text": "Try typing active splits flexibility into the youtubes. Here is a video from our very own Antarik: https://www.youtube.com/watch?v=kXWtk3NLESk",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/74jvuh/_/dnywltu/"
+     "text": "There's a little bit of cleanup required in the efficiency of your workouts. Here are my suggestions: Ditch the band assisted dips, you're not ready for dips because you can't do pushups, so it's not worth it. Ditch the diamond pushups on the knees. Instead do incline pushups…",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rs1tvv/_/hqkgfrd/"
     },
     {
-     "text": "Video linked by /u/KamikazeHamster: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: MIddle/Straddle Splits Tutorial with Antranik (Gain Passive & ACTIVE flexibility using Horse Stance)|Antranik…",
+     "text": "It is this one https://youtu.be/4dF1DOWzf20?si=nn0IzhMglm0d30lm",
      "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6wmvdp/_/dm9ovtk/"
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt63elz/"
     },
     {
-     "text": "Check out this video. It might give you some extra help. Middle/Straddle Splits Tutorial with Antranik (Gain Passive & ACTIVE flexibility using Horse Stance).",
+     "text": "Wrist mobility stretches. Follow this: https://www.youtube.com/watch?v=4dF1DOWzf20",
      "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6wmvdp/_/dm9ov4w/"
+     "permalink": "https://www.reddit.com/r/Fitness/comments/7mlry1/_/drvgf9p/"
     }
    ],
    "timestamps": [
     {
-     "t": 160,
-     "label": "Dynamic Frog Pose Sequence"
+     "t": 236,
+     "label": "Flexão inclinada"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "upper",
+     "chest"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/pushup_br",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup_br"
     },
     {
-     "t": 661,
-     "label": "1,041+ (98%)|71,608"
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    }
+   ]
+  },
+  {
+   "id": "zdwEWchSjrI",
+   "title": "Shoulder mobility sequence | Yuri's band drill",
+   "channel": "Kit Laughlin (Stretch Therapy)",
+   "thumbnail": "https://i.ytimg.com/vi/zdwEWchSjrI/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 67.5,
+   "first_seen": "2016-03-27",
+   "subreddits": [
+    "bodyweightfitness",
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "I linked the wrong vid. https://youtu.be/1YHIV4a81Os I guess I'm looking for a shoulder warmup but am also interested in scap stabilization. My warmup includes kit's version of yuri's band scap circles. http://youtu.be/zdwEWchSjrI After warmups, I'm doing scap pulls (from…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/4c600t/_/d1fikzy/"
+    },
+    {
+     "text": "I went to my physio, it was actually the long head of the bicep. I remembered this, and tried it: https://youtu.be/zdwEWchSjrI?t=7m9s Fixed it instantly.",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/6aregn/_/dhmn7s2/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 429,
+     "label": ""
     }
    ],
    "tags": {
@@ -2238,22 +2520,25 @@
      "mobility"
     ],
     "body": [
-     "hips"
+     "shoulders"
     ],
-    "equipment": [],
-    "level": "beginner",
+    "equipment": [
+     "band",
+     "kettlebell"
+    ],
+    "level": "any",
     "type": "tutorial"
    },
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "flexibility",
-     "path": "/wiki/beginner_stretching_routine",
-     "url": "https://www.reddit.com/r/flexibility/wiki/beginner_stretching_routine"
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/kb/skillday",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/skillday"
     },
     {
      "kind": "comment",
-     "subreddit": "flexibility"
+     "subreddit": "overcominggravity"
     }
    ]
   },
@@ -2325,12 +2610,12 @@
    ],
    "comments": [
     {
-     "text": "After coming back to it from a two year break, I completed the program on Friday! Here's some stuff I learned, some questions, and thoughts. https://www.reddit.com/r/C25K/comments/8j5gh9/aftercomingbacktoitfromatwoyearbreaki/ Hey all! I started c25k two years ago. However, I…",
+     "text": "After coming back to it from a two year break, I completed the program on Friday! Here's some stuff I learned, some questions, and thoughts. — Hey all! I started c25k two years ago. However, I…",
      "score": 18,
      "permalink": "https://www.reddit.com/r/C25K/comments/8j5gh9/"
     },
     {
-     "text": "What I learned https://www.reddit.com/r/C25K/comments/7xf4im/whatilearned/ So I'm gonna do one one of those advice posts that tells experienced runners everything they already know and new runners useful information, SO, to start! No matter how tired you are, never stop…",
+     "text": "What I learned — So I'm gonna do one one of those advice posts that tells experienced runners everything they already know and new runners useful information, SO, to start! No matter how tired you are, never stop…",
      "score": 6,
      "permalink": "https://www.reddit.com/r/C25K/comments/7xf4im/"
     },
@@ -2419,6 +2704,155 @@
     }
    },
    "needs_llm_check": false
+  },
+  {
+   "id": "qIndmpEwbqM",
+   "title": "One arm pull ups",
+   "channel": "jackson chen",
+   "thumbnail": "https://i.ytimg.com/vi/qIndmpEwbqM/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 65.7,
+   "first_seen": "2013-12-15",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "I have nearly got two full one arm pull ups. Took a break from calisthenics and came back stronger, for me one arm pull ups have always been harder than the one arm chin ups so I felt great about this improvement. http://www.youtube.com/watch?v=qIndmpEwbqM",
+     "score": 22,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1sx8r6/_/ce269ib/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "upper",
+     "back",
+     "arms"
+    ],
+    "equipment": [
+     "bar"
+    ],
+    "level": "advanced",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pulling",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pulling"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    }
+   ]
+  },
+  {
+   "id": "Vwn5hSf3WEg",
+   "title": "One of my Favorite Shoulder Exercises",
+   "channel": "Yuri Marmerstein",
+   "thumbnail": "https://i.ytimg.com/vi/Vwn5hSf3WEg/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 65.5,
+   "first_seen": "2019-07-08",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "I'd like to do the recommended routine /r/bodyweightfitness/wiki/kb/recommendedroutine/ The needed items seems to be a place to do rows, parallel bars, and some kind of band for the stretching exersise. I found these in a local decathlon…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rd7468/_/hnzue4o/"
+    },
+    {
+     "text": "From the bwf wiki: https://www.youtube.com/watch?v=Vwn5hSf3WEg",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1p7hh9u/_/nqzacz9/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [
+     "kettlebell"
+    ],
+    "level": "beginner",
+    "type": "follow-along"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/kb/recommended_routine",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ]
+  },
+  {
+   "id": "Ydaz_E4xZM0",
+   "title": "Front Folding / Prerequisites for Head to Toe",
+   "channel": "Emmet Louis",
+   "thumbnail": "https://i.ytimg.com/vi/Ydaz_E4xZM0/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 65.5,
+   "first_seen": "2018-01-28",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "Yes, Emmet Louis talks through it on this video: https://youtu.be/Ydaz_E4xZM0?si=3bv0gkONDS-zCPJ He gives a protocol for stretching you should follow after a warm up.",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1pee6zs/_/nsebzm1/"
+    },
+    {
+     "text": "This program by Emmet Louis: https://youtu.be/Ydaz_E4xZM0 I have been doing it myself, though not consistently enough",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/1pcc5lv/_/nrxcb78/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "mobility"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "program"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/move/phase5/pike",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase5/pike"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ]
   },
   {
    "id": "HhEqFa9lT80",
@@ -2555,17 +2989,17 @@
    ],
    "comments": [
     {
-     "text": "Finished the program! Here are some tips. https://www.reddit.com/r/C25K/comments/17ysflg/finishedtheprogramherearesometips/ Background: Pretty overweight and I’m not a fan of exercise. I hated running in school and was always last during the pacer test. I loved the program and…",
+     "text": "Finished the program! Here are some tips. — Background: Pretty overweight and I’m not a fan of exercise. I hated running in school and was always last during the pacer test. I loved the program and…",
      "score": 51,
      "permalink": "https://www.reddit.com/r/C25K/comments/17ysflg/"
     },
     {
-     "text": "After years of attempts, I finally graduated and felt good enough to push for an actual 5K! https://www.reddit.com/r/C25K/comments/n9w5er/afteryearsofattemptsifinallygraduatedand/ I have never been very athletic. With COVID plus the holidays, I was pretty heavy and very out of…",
+     "text": "After years of attempts, I finally graduated and felt good enough to push for an actual 5K! — I have never been very athletic. With COVID plus the holidays, I was pretty heavy and very out of…",
      "score": 39,
      "permalink": "https://www.reddit.com/r/C25K/comments/n9w5er/"
     },
     {
-     "text": "W1D1 second attempt: SUCCESS! https://www.reddit.com/r/C25K/comments/1v2ht51/w1d1secondattemptsuccess/ Thank you to everyone who gave me advice on my other post, especially KneelBeforeC who shared this slow running video…",
+     "text": "W1D1 second attempt: SUCCESS! — Thank you to everyone who gave me advice on my other post, especially KneelBeforeC who shared this slow running video…",
      "score": 31,
      "permalink": "https://www.reddit.com/r/C25K/comments/1v2ht51/"
     }
@@ -2603,94 +3037,74 @@
    ]
   },
   {
-   "id": "7FF6VLej_bY",
-   "title": "Squat Form For Your Anatomy [Perfect Depth Stance And Width]",
-   "channel": "Squat University",
-   "thumbnail": "https://i.ytimg.com/vi/7FF6VLej_bY/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 62.0,
-   "first_seen": "2021-01-05",
+   "id": "-RroBmkdBws",
+   "title": "First full tuck planche on the floor",
+   "channel": "Gustav Forsberg",
+   "thumbnail": "https://i.ytimg.com/vi/-RroBmkdBws/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 63.5,
+   "first_seen": "2013-09-29",
    "subreddits": [
-    "xxfitness",
-    "flexibility"
+    "bodyweightfitness"
    ],
    "comments": [
     {
-     "text": "I saw a Squat University video a few years ago that explained it's because of your anatomy. I found two of their videos that will explain. How to Squat for Your Anatomy (FIND THE RIGHT STANCE), 6:53 mins https://youtu.be/ubdIGnX2Hfs?si=9nzeZ-e8tjd0GW9z Squat Form for Your…",
-     "score": 15,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1pydi36/_/nwi7g3x/"
-    },
-    {
-     "text": "You can take a look at this video for the different stances for squatting depending on your anatomy. He also has a different video on toes (pointed out vs forward). I personally have to take a wider stance with my toes pointed outward to squat. You might also check some videos…",
-     "score": 5,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/1wxoypo/_/pdvoy2l/"
+     "text": "I managed to lift my feet and hold a full tuck planche on the floor! http://www.youtube.com/watch?v=-RroBmkdBws",
+     "score": 14,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1nddy5/_/cchodvw/"
     }
    ],
    "timestamps": [],
    "tags": {
-    "goal": [],
+    "goal": [
+     "skill"
+    ],
     "body": [
-     "lower",
-     "legs"
+     "shoulders"
     ],
     "equipment": [],
-    "level": "any",
-    "type": "explainer"
+    "level": "advanced",
+    "type": "tutorial"
    },
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "xxfitness",
-     "path": "/wiki/lifting/squat_guide_resources",
-     "url": "https://www.reddit.com/r/xxfitness/wiki/lifting/squat_guide_resources"
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pushing",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
     },
     {
      "kind": "comment",
-     "subreddit": "flexibility"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "xxfitness"
+     "subreddit": "bodyweightfitness"
     }
    ]
   },
   {
-   "id": "zJBLDJMJiDE",
-   "title": "Deep Squat - Mobility and Technique",
+   "id": "ZzEP7XvkDDk",
+   "title": "How to Bail Out of the Handstand with a Cartwheel or Pirouette",
    "channel": "GMB Fitness (Praxis)",
-   "thumbnail": "https://i.ytimg.com/vi/zJBLDJMJiDE/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 61.0,
-   "first_seen": "2017-08-07",
+   "thumbnail": "https://i.ytimg.com/vi/ZzEP7XvkDDk/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 63.2,
+   "first_seen": "2017-12-26",
    "subreddits": [
-    "bodyweightfitness",
-    "flexibility"
+    "bodyweightfitness"
    ],
    "comments": [
     {
-     "text": "here you go",
-     "score": 5,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rko9nz/_/hpb9wr8/"
-    },
-    {
-     "text": "My favorite https://youtu.be/zJBLDJMJiDE?t=1m2s I know it's a squat video, you can work on that at the same time. Look at his shoulders. Then do upward table top and upward plank as well. Here's the GMB webpage for shoulders https://gmb.io/tag/shoulders/",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6s1f4o/_/dl9jhnv/"
+     "text": "I would highly suggest learning how to safely bail a handstand if you start going over too far or off to the side, either with a roll or turning step out. https://youtu.be/ZzEP7XvkDDk. Is a good video to watch.",
+     "score": 13,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7m50ke/_/drrf2w4/"
     }
    ],
-   "timestamps": [
-    {
-     "t": 62,
-     "label": ""
-    }
-   ],
+   "timestamps": [],
    "tags": {
     "goal": [
-     "mobility"
+     "skill"
     ],
     "body": [
-     "lower",
-     "legs"
+     "shoulders",
+     "upper"
     ],
     "equipment": [],
     "level": "any",
@@ -2700,55 +3114,37 @@
     {
      "kind": "wiki",
      "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/squat",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/squat"
+     "path": "/wiki/exercises/handstand",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/handstand"
     },
     {
      "kind": "comment",
      "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
     }
    ]
   },
   {
-   "id": "ghuaqD8rHvY",
-   "title": "Get the most out of your Standing Pike",
-   "channel": "Mary Nightingale",
-   "thumbnail": "https://i.ytimg.com/vi/ghuaqD8rHvY/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 60.4,
-   "first_seen": "2016-10-10",
+   "id": "Dp53D7Akox4",
+   "title": "Movie on 22 12 13 at 5 28 PM",
+   "channel": "astevo06",
+   "thumbnail": "https://i.ytimg.com/vi/Dp53D7Akox4/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 62.4,
+   "first_seen": "2013-12-22",
    "subreddits": [
-    "flexibility"
+    "bodyweightfitness"
    ],
    "comments": [
     {
-     "text": "Hey, congrats on your progress! I will say though, progress pics should almost always be directly from the side (along with same camera, settings, camera-height/-distance, lighting, etc :-)), otherwise it's impossible to compare (did I really improve, or just take the last pic…",
-     "score": 6,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/77gh5n/_/dom64f9/"
-    },
-    {
-     "text": "Video linked by /u/rumataxyz: Title|Channel|Published|Duration|Likes|Total Views :----------:|:----------:|:----------:|:----------:|:----------:|:----------: Get the most out of your Standing Pike|Mary Nightingale|2015-10-10|0:02:52|486+ (99%)|18,259 --- ^Info ^| ^/u/rumataxyz…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/77gh5n/_/dom6jua/"
+     "text": "I'm three and a half months post shoulder reconstruction (labrum, capsule and bicep tendon), have done nothing but my rehab exercises and a bit of running for the last 6 months. Recently got clearance to push myself a bit, today i did a few proper pull-ups and held a shaky…",
+     "score": 11,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7kxke/"
     }
    ],
-   "timestamps": [
-    {
-     "t": 172,
-     "label": "486+ (99%)|18,259"
-    }
-   ],
+   "timestamps": [],
    "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [
-     "legs"
-    ],
+    "goal": [],
+    "body": [],
     "equipment": [],
     "level": "any",
     "type": "tutorial"
@@ -2756,13 +3152,56 @@
    "sources": [
     {
      "kind": "wiki",
-     "subreddit": "flexibility",
-     "path": "/wiki/faq_hamstrings",
-     "url": "https://www.reddit.com/r/flexibility/wiki/faq_hamstrings"
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/misc",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
     },
     {
      "kind": "comment",
-     "subreddit": "flexibility"
+     "subreddit": "bodyweightfitness"
+    }
+   ]
+  },
+  {
+   "id": "KPCkyzFYZBY",
+   "title": "Planche Progress",
+   "channel": "p nut",
+   "thumbnail": "https://i.ytimg.com/vi/KPCkyzFYZBY/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 62.4,
+   "first_seen": "2013-12-22",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Getting closer to having a decent straddle planche. Still needs some work but I'm at least glad that I'm starting to get back to where I was when I competed.",
+     "score": 11,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7scl0/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "skill"
+    ],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [],
+    "level": "advanced",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/demos/pushing",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
     }
    ]
   },
@@ -2861,70 +3300,6 @@
    ]
   },
   {
-   "id": "4dF1DOWzf20",
-   "title": "How To Do Push Ups with Antranik",
-   "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/4dF1DOWzf20/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 59.0,
-   "first_seen": "2017-12-28",
-   "subreddits": [
-    "bodyweightfitness",
-    "Fitness"
-   ],
-   "comments": [
-    {
-     "text": "There's a little bit of cleanup required in the efficiency of your workouts. Here are my suggestions: Ditch the band assisted dips, you're not ready for dips because you can't do pushups, so it's not worth it. Ditch the diamond pushups on the knees. Instead do incline pushups…",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rs1tvv/_/hqkgfrd/"
-    },
-    {
-     "text": "It is this one https://youtu.be/4dF1DOWzf20?si=nn0IzhMglm0d30lm",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt63elz/"
-    },
-    {
-     "text": "Wrist mobility stretches. Follow this: https://www.youtube.com/watch?v=4dF1DOWzf20",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7mlry1/_/drvgf9p/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 236,
-     "label": "Flexão inclinada"
-    }
-   ],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "upper",
-     "chest"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/pushup_br",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup_br"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    }
-   ]
-  },
-  {
    "id": "6Vf88bhZKBQ",
    "title": "Russel Orhii at 2025 NAPF World Record Total 918kg",
    "channel": "Mass Lift (Mass-Lift)",
@@ -2937,7 +3312,7 @@
    ],
    "comments": [
     {
-     "text": "Russel Orhii Breaks the 93kg World Record with 918kg https://www.reddit.com/r/powerlifting/comments/1mefatv/russelorhiibreaksthe93kgworldrecordwith/ https://www.youtube.com/watch?v=6Vf88bhZKBQ Previous World Record held by Emil Krastev @ 917.5kg. Jonathan Cayco still holds the…",
+     "text": "Russel Orhii Breaks the 93kg World Record with 918kg — https://www.youtube.com/watch?v=6Vf88bhZKBQ Previous World Record held by Emil Krastev @ 917.5kg. Jonathan Cayco still holds the…",
      "score": 246,
      "permalink": "https://www.reddit.com/r/powerlifting/comments/1mefatv/"
     },
@@ -3000,63 +3375,6 @@
     }
    },
    "needs_llm_check": false
-  },
-  {
-   "id": "zdwEWchSjrI",
-   "title": "Shoulder mobility sequence | Yuri's band drill",
-   "channel": "Kit Laughlin (Stretch Therapy)",
-   "thumbnail": "https://i.ytimg.com/vi/zdwEWchSjrI/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 57.5,
-   "first_seen": "2016-03-27",
-   "subreddits": [
-    "bodyweightfitness",
-    "overcominggravity"
-   ],
-   "comments": [
-    {
-     "text": "I linked the wrong vid. https://youtu.be/1YHIV4a81Os I guess I'm looking for a shoulder warmup but am also interested in scap stabilization. My warmup includes kit's version of yuri's band scap circles. http://youtu.be/zdwEWchSjrI After warmups, I'm doing scap pulls (from…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/4c600t/_/d1fikzy/"
-    },
-    {
-     "text": "I went to my physio, it was actually the long head of the bicep. I remembered this, and tried it: https://youtu.be/zdwEWchSjrI?t=7m9s Fixed it instantly.",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/overcominggravity/comments/6aregn/_/dhmn7s2/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 429,
-     "label": ""
-    }
-   ],
-   "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [
-     "band",
-     "kettlebell"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/kb/skillday",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/skillday"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "overcominggravity"
-    }
-   ]
   },
   {
    "id": "0SWilGwXEBM",
@@ -3219,155 +3537,6 @@
     }
    },
    "needs_llm_check": false
-  },
-  {
-   "id": "qIndmpEwbqM",
-   "title": "One arm pull ups",
-   "channel": "jackson chen",
-   "thumbnail": "https://i.ytimg.com/vi/qIndmpEwbqM/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 55.7,
-   "first_seen": "2013-12-15",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "I have nearly got two full one arm pull ups. Took a break from calisthenics and came back stronger, for me one arm pull ups have always been harder than the one arm chin ups so I felt great about this improvement. http://www.youtube.com/watch?v=qIndmpEwbqM",
-     "score": 22,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1sx8r6/_/ce269ib/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength"
-    ],
-    "body": [
-     "upper",
-     "back",
-     "arms"
-    ],
-    "equipment": [
-     "bar"
-    ],
-    "level": "advanced",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/demos/pulling",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pulling"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    }
-   ]
-  },
-  {
-   "id": "Vwn5hSf3WEg",
-   "title": "One of my Favorite Shoulder Exercises",
-   "channel": "Yuri Marmerstein",
-   "thumbnail": "https://i.ytimg.com/vi/Vwn5hSf3WEg/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 55.5,
-   "first_seen": "2019-07-08",
-   "subreddits": [
-    "bodyweightfitness",
-    "flexibility"
-   ],
-   "comments": [
-    {
-     "text": "I'd like to do the recommended routine /r/bodyweightfitness/wiki/kb/recommendedroutine/ The needed items seems to be a place to do rows, parallel bars, and some kind of band for the stretching exersise. I found these in a local decathlon…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rd7468/_/hnzue4o/"
-    },
-    {
-     "text": "From the bwf wiki: https://www.youtube.com/watch?v=Vwn5hSf3WEg",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1p7hh9u/_/nqzacz9/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [
-     "kettlebell"
-    ],
-    "level": "beginner",
-    "type": "follow-along"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/kb/recommended_routine",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/kb/recommended_routine"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    }
-   ]
-  },
-  {
-   "id": "Ydaz_E4xZM0",
-   "title": "Front Folding / Prerequisites for Head to Toe",
-   "channel": "Emmet Louis",
-   "thumbnail": "https://i.ytimg.com/vi/Ydaz_E4xZM0/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 55.5,
-   "first_seen": "2018-01-28",
-   "subreddits": [
-    "bodyweightfitness",
-    "flexibility"
-   ],
-   "comments": [
-    {
-     "text": "Yes, Emmet Louis talks through it on this video: https://youtu.be/YdazE4xZM0?si=3bv0gkONDS-zCPJ He gives a protocol for stretching you should follow after a warm up.",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1pee6zs/_/nsebzm1/"
-    },
-    {
-     "text": "This program by Emmet Louis: https://youtu.be/YdazE4xZM0 I have been doing it myself, though not consistently enough",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/1pcc5lv/_/nrxcb78/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "mobility"
-    ],
-    "body": [],
-    "equipment": [],
-    "level": "any",
-    "type": "program"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/move/phase5/pike",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase5/pike"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    }
-   ]
   },
   {
    "id": "dE5d39sErBU",
@@ -3634,49 +3803,6 @@
    ]
   },
   {
-   "id": "-RroBmkdBws",
-   "title": "First full tuck planche on the floor",
-   "channel": "Gustav Forsberg",
-   "thumbnail": "https://i.ytimg.com/vi/-RroBmkdBws/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 53.5,
-   "first_seen": "2013-09-29",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "I managed to lift my feet and hold a full tuck planche on the floor! http://www.youtube.com/watch?v=-RroBmkdBws",
-     "score": 14,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1nddy5/_/cchodvw/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "skill"
-    ],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [],
-    "level": "advanced",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/demos/pushing",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    }
-   ]
-  },
-  {
    "id": "rxD321l2svE",
    "title": "Learning to Bench Press | The Starting Strength Method",
    "channel": "Starting Strength",
@@ -3805,50 +3931,6 @@
    ]
   },
   {
-   "id": "ZzEP7XvkDDk",
-   "title": "How to Bail Out of the Handstand with a Cartwheel or Pirouette",
-   "channel": "GMB Fitness (Praxis)",
-   "thumbnail": "https://i.ytimg.com/vi/ZzEP7XvkDDk/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 53.2,
-   "first_seen": "2017-12-26",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "I would highly suggest learning how to safely bail a handstand if you start going over too far or off to the side, either with a roll or turning step out. https://youtu.be/ZzEP7XvkDDk. Is a good video to watch.",
-     "score": 13,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7m50ke/_/drrf2w4/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "skill"
-    ],
-    "body": [
-     "shoulders",
-     "upper"
-    ],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/handstand",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/handstand"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    }
-   ]
-  },
-  {
    "id": "bkeWDzUMVZI",
    "title": "How to avoid banging your wrist in Kettlebell Snatch-Steve Cotter",
    "channel": "editstein",
@@ -3912,7 +3994,7 @@
    ],
    "comments": [
     {
-     "text": "Are you talking about squats? Then yes sounds like you need to learn how to squeeze shoulder blades to create a shelf, and not place the bar on your neck or spine. Here's a good video: https://youtu.be/bsEj32IYgo At about the 5 minute mark he talks about how to place the bar",
+     "text": "Are you talking about squats? Then yes sounds like you need to learn how to squeeze shoulder blades to create a shelf, and not place the bar on your neck or spine. Here's a good video: https://youtu.be/bs_Ej32IYgo At about the 5 minute mark he talks about how to place the bar",
      "score": 5,
      "permalink": "https://www.reddit.com/r/xxfitness/comments/r2jw1u/_/hm70rnx/"
     },
@@ -4153,88 +4235,6 @@
      "kind": "comment",
      "subreddit": "Stronglifts5x5",
      "count": 7
-    }
-   ]
-  },
-  {
-   "id": "Dp53D7Akox4",
-   "title": "Movie on 22 12 13 at 5 28 PM",
-   "channel": "astevo06",
-   "thumbnail": "https://i.ytimg.com/vi/Dp53D7Akox4/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 52.4,
-   "first_seen": "2013-12-22",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "I'm three and a half months post shoulder reconstruction (labrum, capsule and bicep tendon), have done nothing but my rehab exercises and a bit of running for the last 6 months. Recently got clearance to push myself a bit, today i did a few proper pull-ups and held a shaky…",
-     "score": 11,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7kxke/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [],
-    "body": [],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/demos/misc",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/misc"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    }
-   ]
-  },
-  {
-   "id": "KPCkyzFYZBY",
-   "title": "Planche Progress",
-   "channel": "p nut",
-   "thumbnail": "https://i.ytimg.com/vi/KPCkyzFYZBY/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 52.4,
-   "first_seen": "2013-12-22",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [
-    {
-     "text": "Getting closer to having a decent straddle planche. Still needs some work but I'm at least glad that I'm starting to get back to where I was when I competed.",
-     "score": 11,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tg1rv/_/ce7scl0/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "skill"
-    ],
-    "body": [
-     "shoulders"
-    ],
-    "equipment": [],
-    "level": "advanced",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/demos/pushing",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/demos/pushing"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
     }
    ]
   },
@@ -4764,7 +4764,7 @@
    ],
    "comments": [
     {
-     "text": "You can learn a lot of the basics by watching Mark Wildman's videos. I think he has one for the first 20 minutes of training. Edit: check this out https://youtu.be/sQxChXs2BY?si=iwXeMGHtW6KgWvN",
+     "text": "You can learn a lot of the basics by watching Mark Wildman's videos. I think he has one for the first 20 minutes of training. Edit: check this out https://youtu.be/sQx_ChXs2BY?si=iwXeMGHtW6KgWvN",
      "score": 26,
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1pa0jxq/_/nrgdhz4/"
     },
@@ -4774,7 +4774,7 @@
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1p9dmuk/_/nrbonzi/"
     },
     {
-     "text": "Stick to some of the basics for now. Examples: Around the world's, halos, in-between leg pass. Dial in your two hand swing form before attempting additional hinge movements. Here's a great starting point to ensure proper swing form. https://youtu.be/sQxChXs2BY?is=ct3cL4R6KbH5qSh",
+     "text": "Stick to some of the basics for now. Examples: Around the world's, halos, in-between leg pass. Dial in your two hand swing form before attempting additional hinge movements. Here's a great starting point to ensure proper swing form. https://youtu.be/sQx_ChXs2BY?is=ct3cL4R6KbH5qSh",
      "score": 1,
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1w9vj4o/_/p8er8yv/"
     }
@@ -4928,12 +4928,12 @@
      "permalink": "https://www.reddit.com/r/flexibility/comments/1onqawp/_/nmymgjh/"
     },
     {
-     "text": "Book Review: Back Mechanic https://www.reddit.com/r/powerlifting/comments/1ce15l4/bookreviewbackmechanic/ I just read Back Mechanic by Stuart McGill and want to share a book review. The book is written for the lay, non-medical, non-powerlifting population. Like a car manual, it…",
+     "text": "Book Review: Back Mechanic — I just read Back Mechanic by Stuart McGill and want to share a book review. The book is written for the lay, non-medical, non-powerlifting population. Like a car manual, it…",
      "score": 22,
      "permalink": "https://www.reddit.com/r/powerlifting/comments/1ce15l4/"
     },
     {
-     "text": "McGill 3 excercises are great for core stability if you haven't tried them yet. Simple quick and low impact [The 3 Best Core Exercises [Do These Every Day]](https://youtu.be/2e4I-brfqs?si=IMhbrkIBDR7hoFqj)",
+     "text": "McGill 3 excercises are great for core stability if you haven't tried them yet. Simple quick and low impact [The 3 Best Core Exercises [Do These Every Day]](https://youtu.be/2_e4I-brfqs?si=IMhbrkIBDR7hoFqj)",
      "score": 8,
      "permalink": "https://www.reddit.com/r/backpain/comments/1x6kf8d/_/pgwekn4/"
     }
@@ -5261,7 +5261,7 @@
      "permalink": "https://www.reddit.com/r/weightroom/comments/rlxifn/_/hpkllyf/"
     },
     {
-     "text": "https://youtu.be/ZXsQAXxao0",
+     "text": "https://youtu.be/ZXsQAXx_ao0",
      "score": 2,
      "permalink": "https://www.reddit.com/r/flexibility/comments/7n1k4v/_/drz6g8w/"
     }
@@ -5576,7 +5576,7 @@
      "permalink": "https://www.reddit.com/r/flexibility/comments/1wwiely/_/pdl2irw/"
     },
     {
-     "text": "https://youtu.be/LxrDAtykMI?is=hHnX5ARb6Fk2HK6P go to the 6:50 mark",
+     "text": "https://youtu.be/L_xrDAtykMI?is=hHnX5ARb6Fk2HK6P go to the 6:50 mark",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1vnos2w/_/p3j84mk/"
     },
@@ -5934,17 +5934,17 @@
    ],
    "comments": [
     {
-     "text": "low volume only works if you take those sets close to failure. like 0-1 rir. jeff nippard did the half-sets thing and it still worked: https://www.youtube.com/watch?v=DzjWEn2BSk",
+     "text": "low volume only works if you take those sets close to failure. like 0-1 rir. jeff nippard did the half-sets thing and it still worked: https://www.youtube.com/watch?v=DzjWEn2BS_k",
      "score": 5,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1wvqmcu/_/pde08q9/"
     },
     {
-     "text": "Definitely very relevant for what you’re asking. https://youtu.be/DzjWEn2BSk?si=VyX61RemhJjvxhF Short answer: Yes, it’s absolutely going to work if you do it right. How effective is it going to be compared to doing additional volume? Well that’s what researchers are trying to…",
+     "text": "Definitely very relevant for what you’re asking. https://youtu.be/DzjWEn2BS_k?si=VyX61RemhJjvxhF Short answer: Yes, it’s absolutely going to work if you do it right. How effective is it going to be compared to doing additional volume? Well that’s what researchers are trying to…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1obyh4b/_/nkjdqq6/"
     },
     {
-     "text": "I came across this video, https://youtu.be/DzjWEn2BSk He shared his DEXA scan linked in the above video. What we see here is: 69.7 kg (153.7 lbs), 9% body fat, Normalized FFMI: 24.4, 164.5 cm (5 feet 4.8 inches) a normalized FFMI of 24.4 that's already near the Genetic elites…",
+     "text": "I came across this video, https://youtu.be/DzjWEn2BS_k He shared his DEXA scan linked in the above video. What we see here is: 69.7 kg (153.7 lbs), 9% body fat, Normalized FFMI: 24.4, 164.5 cm (5 feet 4.8 inches) a normalized FFMI of 24.4 that's already near the Genetic elites…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1o7vcif/_/nk8bp34/"
     }
@@ -14655,12 +14655,12 @@
    ],
    "comments": [
     {
-     "text": "I really think you're into something with the ankle mobility. If you zoom in on the left foot (or look close) it does a bunch of moving around every lift. OP: watch this: https://youtu.be/IikPteeLkI and see if you can atleast do the test. If you need to work on mobility do it.…",
+     "text": "I really think you're into something with the ankle mobility. If you zoom in on the left foot (or look close) it does a bunch of moving around every lift. OP: watch this: https://youtu.be/IikP_teeLkI and see if you can atleast do the test. If you need to work on mobility do it.…",
      "score": 3,
      "permalink": "https://www.reddit.com/r/Stronglifts5x5/comments/r6vjbe/_/hmw8cqh/"
     },
     {
-     "text": "Terrible Ankle Mobility Ruining Squat Mechanics https://www.reddit.com/r/powerlifting/comments/1e5duxs/terribleanklemobilityruiningsquatmechanics/ Hello, firstly I just wanted to say sorry for the lengthy post + kudos to anyone who can help me out based on this post lol. But…",
+     "text": "Terrible Ankle Mobility Ruining Squat Mechanics — Hello, firstly I just wanted to say sorry for the lengthy post + kudos to anyone who can help me out based on this post lol. But…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/powerlifting/comments/1e5duxs/"
     },
@@ -14784,7 +14784,7 @@
    ],
    "comments": [
     {
-     "text": "Yup. 693 DOTS. https://youtu.be/Hl4KLG0vE?si=YTKMNG2bj5OffpL0",
+     "text": "Yup. 693 DOTS. https://youtu.be/H_l4K_LG0vE?si=YTKMNG2bj5OffpL0",
      "score": 32,
      "permalink": "https://www.reddit.com/r/powerlifting/comments/1utlv63/_/owxrjti/"
     },
@@ -15235,7 +15235,7 @@
      "permalink": "https://www.reddit.com/r/flexibility/comments/74jvuh/_/do0n4ts/"
     },
     {
-     "text": "I'm not sure I understand exactly what you mean. Maybe this could help: http://www.cirquephysio.com/blog/every-day-is-glute-dayand-other-stories-from-the-battleofthebooty Scroll down to \"glute med bias\". Plus this: https://youtu.be/1W9aAdogFA",
+     "text": "I'm not sure I understand exactly what you mean. Maybe this could help: http://www.cirquephysio.com/blog/every-day-is-glute-dayand-other-stories-from-the-battleofthebooty Scroll down to \"glute med bias\". Plus this: https://youtu.be/_1W9aAdogFA",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/7bnhd2/_/dpms39d/"
     },
@@ -15372,7 +15372,7 @@
    ],
    "comments": [
     {
-     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
+     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5_Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
      "score": 6,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
     },
@@ -15534,12 +15534,12 @@
    ],
    "comments": [
     {
-     "text": "Good video about this from hownot2. https://youtu.be/nUCRW-xCqY?si=bcQM56oV2CMZ-iYo",
+     "text": "Good video about this from hownot2. https://youtu.be/nUCR_W-xCqY?si=bcQM56oV2CMZ-iYo",
      "score": 19,
      "permalink": "https://www.reddit.com/r/climbing/comments/1p43uud/_/nq9dlko/"
     },
     {
-     "text": "The YouTube channel how not to add a pretty comprehensive video on figure 8 variations including the Yosemite finish https://youtu.be/nUCRW-xCqY",
+     "text": "The YouTube channel how not to add a pretty comprehensive video on figure 8 variations including the Yosemite finish https://youtu.be/nUCR_W-xCqY",
      "score": 11,
      "permalink": "https://www.reddit.com/r/climbing/comments/1p43uud/_/nq9wuth/"
     }
@@ -15629,12 +15629,12 @@
    ],
    "comments": [
     {
-     "text": "This plus push the weight away at the end of each rep - and on the final rep hold at max end range for 30 sec. Get ready for intense DOMS. See the Tom Derrick vid on this: https://youtu.be/yAPeWo643w?si=0W7YJYg5k3QQmOQJ",
+     "text": "This plus push the weight away at the end of each rep - and on the final rep hold at max end range for 30 sec. Get ready for intense DOMS. See the Tom Derrick vid on this: https://youtu.be/y_APeWo643w?si=0W7YJYg5k3QQmOQJ",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1w23jdj/_/p6r9n9z/"
     },
     {
-     "text": "Do it using this method: https://youtu.be/yAPeWo643w?si=DJkjRakJDGmmFPaR",
+     "text": "Do it using this method: https://youtu.be/y_APeWo643w?si=DJkjRakJDGmmFPaR",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1vztt4f/_/p6abxkm/"
     },
@@ -16258,17 +16258,17 @@
    ],
    "comments": [
     {
-     "text": "Shoot! Hope you feel better soon @SveetPickle. I use these--I wonder if they could be helpful for you? http://youtu.be/-hlWgH30NU",
+     "text": "Shoot! Hope you feel better soon @SveetPickle. I use these--I wonder if they could be helpful for you? http://youtu.be/-hlWgH3_0NU",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1mrh3q/_/cd4ia34/"
     },
     {
-     "text": "I looked up on YouTube on hand novel movements. Can you skim it to see if it looks legit to you? https://m.youtube.com/watch?v=-hlWgH30NU&pp=ygUWSGFuZHMgbm92ZWwgbW92bWVuZW50cw%3D%3D",
+     "text": "I looked up on YouTube on hand novel movements. Can you skim it to see if it looks legit to you? https://m.youtube.com/watch?v=-hlWgH3_0NU&pp=ygUWSGFuZHMgbm92ZWwgbW92bWVuZW50cw%3D%3D",
      "score": 1,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1fnxo1i/_/lpgpg7w/"
     },
     {
-     "text": "I am not a physical therapist, but I did find a video of some interesting hand/wrist/elbow exercises which can be done at a desk or while riding in a car. [1] [1] http://www.youtube.com/watch?v=-hlWgH30NU",
+     "text": "I am not a physical therapist, but I did find a video of some interesting hand/wrist/elbow exercises which can be done at a desk or while riding in a car. [1] [1] http://www.youtube.com/watch?v=-hlWgH3_0NU",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=2895498",
      "site": "news.ycombinator.com"
@@ -16333,7 +16333,7 @@
      "permalink": "https://www.reddit.com/r/running/comments/rjw7ft/_/hp6nhix/"
     },
     {
-     "text": "Just found that GTN has a C25K series on youtube following the progress of a beginner through C25K - I enjoyed and thought you all might! Happy New Year & runnings! https://www.youtube.com/watch?v=YACmfwcBDnM&list=PLRjIvR8JIRzE6plDzDDwkUmjR5beaud1&index=1",
+     "text": "Just found that GTN has a C25K series on youtube following the progress of a beginner through C25K - I enjoyed and thought you all might! Happy New Year & runnings!",
      "score": 10,
      "permalink": "https://www.reddit.com/r/C25K/comments/koent9/"
     }
@@ -16845,7 +16845,7 @@
    ],
    "comments": [
     {
-     "text": "Recovered from Severe lowerback/SI joint pain https://www.reddit.com/r/backpain/comments/1u5sryd/recoveredfromseverelowerbacksijointpain/ Hey guys, I am here with a fucked up life update which may help you so when I was healing from cpps i got lower back pain or disc bulge…",
+     "text": "Recovered from Severe lowerback/SI joint pain — Hey guys, I am here with a fucked up life update which may help you so when I was healing from cpps i got lower back pain or disc bulge…",
      "score": 8,
      "permalink": "https://www.reddit.com/r/backpain/comments/1u5sryd/"
     },
@@ -16855,7 +16855,7 @@
      "permalink": "https://www.reddit.com/r/backpain/comments/1wsxq2a/_/pcpmwbk/"
     },
     {
-     "text": "Recovered Severe lower back pain/SI joint pain https://www.reddit.com/r/backpain/comments/1rv99ig/recoveredseverelowerbackpainsijointpain/ Hey guys, I am here with a fucked up life update which may help you so when I was healing from cpps i got lower back pain or disc bulge…",
+     "text": "Recovered Severe lower back pain/SI joint pain — Hey guys, I am here with a fucked up life update which may help you so when I was healing from cpps i got lower back pain or disc bulge…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/backpain/comments/1rv99ig/"
     }
@@ -16912,7 +16912,7 @@
    ],
    "comments": [
     {
-     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
+     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5_Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
      "score": 6,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
     },
@@ -17704,7 +17704,7 @@
      "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/cecgete/"
     },
     {
-     "text": "Watch and learn from Tate: http://youtu.be/QnwAoesJvQ Touch the chest. Touch the lower part of chest just below nipple line. Wrists over elbows. Don't bounce.",
+     "text": "Watch and learn from Tate: http://youtu.be/_QnwAoesJvQ Touch the chest. Touch the lower part of chest just below nipple line. Wrists over elbows. Don't bounce.",
      "score": 7,
      "permalink": "https://www.reddit.com/r/Fitness/comments/1tx6nf/_/ceckrjc/"
     }
@@ -17855,7 +17855,7 @@
      "permalink": "https://www.reddit.com/r/weightroom/comments/qekho4/_/hhuge4u/"
     },
     {
-     "text": "I think there are a lot of supine setups that work; if you have access to a dual cable row (I understand you don’t have a functional trainer), this variation of a lateral raise by John Meadows is also awesome. https://youtu.be/GFxVeOZEPU?is=i3O7LcWbvp7oZ2Ej And the ball helps…",
+     "text": "I think there are a lot of supine setups that work; if you have access to a dual cable row (I understand you don’t have a functional trainer), this variation of a lateral raise by John Meadows is also awesome. https://youtu.be/GFxVeOZEP_U?is=i3O7LcWbvp7oZ2Ej And the ball helps…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1vh8s28/_/p2pk1jm/"
     }
@@ -18124,12 +18124,12 @@
    ],
    "comments": [
     {
-     "text": "Shrimp squats. http://www.youtube.com/watch?v=zmuOZjXz0M Edit-Here is a quicker video with better music and a beginner variation, curtesy of Ido Portal http://www.youtube.com/watch?v=Dpgn6eRtsdw",
+     "text": "Shrimp squats. http://www.youtube.com/watch?v=zmuOZj_Xz0M Edit-Here is a quicker video with better music and a beginner variation, curtesy of Ido Portal http://www.youtube.com/watch?v=Dpgn6eRtsdw",
      "score": 7,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1qqbxp/_/cdfevrp/"
     },
     {
-     "text": "To skip the intro, the Wadsworth Constant works here perfectly. http://www.youtube.com/watch?v=zmuOZjXz0M&wadsworth=1",
+     "text": "To skip the intro, the Wadsworth Constant works here perfectly. http://www.youtube.com/watch?v=zmuOZj_Xz0M&wadsworth=1",
      "score": 6,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1qqbxp/_/cdfh2ju/"
     }
@@ -18490,12 +18490,12 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/yaXbEMDEeI?si=ZRLMFsjTqjH25Gg Fantastic video on this topic here ^^, the solution will always be lower the weight raise the reps, or lower the reps and raise the weight for a block of time (1-2 months) to break the plateau. I’ve reached a total pull of 145kg…",
+     "text": "https://youtu.be/ya_XbEMDEeI?si=ZRLMFsjTqjH25Gg Fantastic video on this topic here ^^, the solution will always be lower the weight raise the reps, or lower the reps and raise the weight for a block of time (1-2 months) to break the plateau. I’ve reached a total pull of 145kg…",
      "score": 7,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1ppbg3c/_/nulljco/"
     },
     {
-     "text": "https://youtu.be/yaXbEMDEeI?feature=shared",
+     "text": "https://youtu.be/ya_XbEMDEeI?feature=shared",
      "score": 2,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/1g73obl/_/lspt5zh/"
     }
@@ -18764,7 +18764,7 @@
      "permalink": "https://www.reddit.com/r/xxfitness/comments/1wo8ig8/_/pbllknz/"
     },
     {
-     "text": "Favorite part is at 1:18 where the wife swole shames the Grandpa by calling the daughter to come talk him down https://youtu.be/ybYjLYXJo0?t=01m17s",
+     "text": "Favorite part is at 1:18 where the wife swole shames the Grandpa by calling the daughter to come talk him down https://youtu.be/y_bYjLYXJo0?t=01m17s",
      "score": 3,
      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/r8pf6w/_/hn9axvz/"
     }
@@ -18895,7 +18895,7 @@
      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/1ptkx6u/_/nvt82ff/"
     },
     {
-     "text": "If you search the sub you will find lots of resources. Look up articles by Adriaan louw for a good start. I have patients watch this video https://youtu.be/C3phB93rvI There are many others, lorimer Moseley has some Ted talks that are good too",
+     "text": "If you search the sub you will find lots of resources. Look up articles by Adriaan louw for a good start. I have patients watch this video https://youtu.be/C_3phB93rvI There are many others, lorimer Moseley has some Ted talks that are good too",
      "score": 2,
      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/msaflq/_/gurkuy8/"
     },
@@ -19054,7 +19054,7 @@
    ],
    "comments": [
     {
-     "text": "THE Problem with dubs https://www.reddit.com/r/crossfit/comments/1j24j1k/theproblemwithdubs/ I'm sure many here are with the guy worried about scaling given dubs are likely upcoming. He has <everything> else CF, including MU!, but no dubs. You just know, guys like this have…",
+     "text": "THE Problem with dubs — I'm sure many here are with the guy worried about scaling given dubs are likely upcoming. He has <everything> else CF, including MU!, but no dubs. You just know, guys like this have…",
      "score": 41,
      "permalink": "https://www.reddit.com/r/crossfit/comments/1j24j1k/"
     },
@@ -19464,7 +19464,7 @@
    ],
    "comments": [
     {
-     "text": "Shrimp squats. http://www.youtube.com/watch?v=zmuOZjXz0M Edit-Here is a quicker video with better music and a beginner variation, curtesy of Ido Portal http://www.youtube.com/watch?v=Dpgn6eRtsdw",
+     "text": "Shrimp squats. http://www.youtube.com/watch?v=zmuOZj_Xz0M Edit-Here is a quicker video with better music and a beginner variation, curtesy of Ido Portal http://www.youtube.com/watch?v=Dpgn6eRtsdw",
      "score": 7,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1qqbxp/_/cdfevrp/"
     },
@@ -19550,7 +19550,7 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "https://www.youtube.com/watch?v=k1luKASXcg I found this Ted talk helped me with some lower back and leg issues. I don't do exactly what she demonstrates in the video, but I find focusing on the 'tail out' posture helps a lot. Also regular breaks and going for walks.",
+     "text": "https://www.youtube.com/watch?v=k1luKAS_Xcg I found this Ted talk helped me with some lower back and leg issues. I don't do exactly what she demonstrates in the video, but I find focusing on the 'tail out' posture helps a lot. Also regular breaks and going for walks.",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=18336159",
      "site": "news.ycombinator.com"
@@ -19562,7 +19562,7 @@
      "site": "news.ycombinator.com"
     },
     {
-     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKASXcg (I only started paying attention after my emergency back surgery)",
+     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKAS_Xcg (I only started paying attention after my emergency back surgery)",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=49838343",
      "site": "news.ycombinator.com"
@@ -19979,7 +19979,7 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/SsTgo-oCcQ",
+     "text": "https://youtu.be/SsT_go-oCcQ",
      "score": 3,
      "permalink": "https://www.reddit.com/r/flexibility/comments/6xg88e/_/dmg6gff/"
     }
@@ -20858,12 +20858,12 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/WWgOPZTFSk?si=JhahvgGCYRCWPrnT Have fun in the rabbit hole",
+     "text": "https://youtu.be/WWgOPZ_TFSk?si=JhahvgGCYRCWPrnT Have fun in the rabbit hole",
      "score": 4,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1o5nf6t/_/njdeh1m/"
     },
     {
-     "text": "lol https://youtu.be/WWgOPZTFSk?si=mZDSuKNc4aPAX81i This was perfect for my walking incline cardio today.",
+     "text": "lol https://youtu.be/WWgOPZ_TFSk?si=mZDSuKNc4aPAX81i This was perfect for my walking incline cardio today.",
      "score": 1,
      "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1oyjzwy/_/np726rv/"
     }
@@ -21998,7 +21998,7 @@
    ],
    "comments": [
     {
-     "text": "Great one here https://youtube.com/shorts/AWpIxh8IJE?feature=share",
+     "text": "Great one here https://youtube.com/shorts/AWp_Ixh8IJE?feature=share",
      "score": 3,
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1woa26w/_/pbm37sx/"
     },
@@ -22248,7 +22248,7 @@
    ],
    "comments": [
     {
-     "text": "I also like doing this, not necessarily the entire thing: https://youtu.be/jaHMG20DS4?is=szUnVmFldfaxbQyj But the glute loops have been great for my lower back. I find if I do the clam shells while bridging and bridges while maintaining the extended clam shell position I can…",
+     "text": "I also like doing this, not necessarily the entire thing: https://youtu.be/jaHMG20D_S4?is=szUnVmFldfaxbQyj But the glute loops have been great for my lower back. I find if I do the clam shells while bridging and bridges while maintaining the extended clam shell position I can…",
      "score": 3,
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1xgtm7c/_/19rqhnye99c74/"
     },
@@ -22845,7 +22845,7 @@
    ],
    "comments": [
     {
-     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
+     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5_Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
      "score": 6,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
     },
@@ -23630,7 +23630,7 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/GlUo5zWd8Q?si=7v7VpeT2wdK4LqZ7 Try all these variations EXACTLY as he does them. More than likely 2-3 of them will feel more beneficial than the others. Start practicing them. Breathe into the restrictions you find. I also recommend doing kettlebell armbars to…",
+     "text": "https://youtu.be/GlU_o5zWd8Q?si=7v7VpeT2wdK4LqZ7 Try all these variations EXACTLY as he does them. More than likely 2-3 of them will feel more beneficial than the others. Start practicing them. Breathe into the restrictions you find. I also recommend doing kettlebell armbars to…",
      "score": 30,
      "permalink": "https://www.reddit.com/r/flexibility/comments/1pk8rmm/_/ntj9a4w/"
     }
@@ -24364,12 +24364,12 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/UvDKDl7EjA",
+     "text": "https://youtu.be/Uv_DKDl7EjA",
      "score": 2,
      "permalink": "https://www.reddit.com/r/flexibility/comments/qdseuf/_/hhpp2pt/"
     },
     {
-     "text": "https://youtu.be/UvDKDl7EjA I would check that video out for form/approach, I would also incorporate some Glute Bridges, Bird-Dog exercises, stretching wise I would try the Pigeon pose and just some generic Hamstring stretches and Calves stretches. As you go up in weight you…",
+     "text": "https://youtu.be/Uv_DKDl7EjA I would check that video out for form/approach, I would also incorporate some Glute Bridges, Bird-Dog exercises, stretching wise I would try the Pigeon pose and just some generic Hamstring stretches and Calves stretches. As you go up in weight you…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/Fitness/comments/rfb4oh/_/hoh4sgt/"
     }
@@ -24517,7 +24517,7 @@
      "permalink": "https://www.reddit.com/r/Fitness/comments/7lgk4c/_/drnc8a1/"
     },
     {
-     "text": "You can try the 90-90 drill showcased in this video to learn how to properly set your back neutral: https://www.youtube.com/watch?v=ZFiosv9vis In fact, the entire video is good, and even showcases an example of an elite lifter who, for the longest time, trained with an arched…",
+     "text": "You can try the 90-90 drill showcased in this video to learn how to properly set your back neutral: https://www.youtube.com/watch?v=ZFiosv9_vis In fact, the entire video is good, and even showcases an example of an elite lifter who, for the longest time, trained with an arched…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/Fitness/comments/1n5hw97/_/nbx45wo/"
     }
@@ -24606,12 +24606,12 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/cPtouxFXQ8 Here is the best tutorial ive found :)",
+     "text": "https://youtu.be/cP_touxFXQ8 Here is the best tutorial ive found :)",
      "score": 2,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/6bgf9m/_/dhn9g9g/"
     },
     {
-     "text": "Here is a useful video on developing your handstand press. https://youtu.be/cPtouxFXQ8",
+     "text": "Here is a useful video on developing your handstand press. https://youtu.be/cP_touxFXQ8",
      "score": 1,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/4fboaj/_/d2pzvl3/"
     }
@@ -24704,7 +24704,7 @@
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7iunta/_/dr31c14/"
     },
     {
-     "text": "This is kind of “bros embarrassing themselves in public”, but it does have some basic tips that should help you. https://youtu.be/rqiTPdK1cI",
+     "text": "This is kind of “bros embarrassing themselves in public”, but it does have some basic tips that should help you. https://youtu.be/rqiTPdK1c_I",
      "score": 1,
      "permalink": "https://www.reddit.com/r/Fitness/comments/rd5e2r/_/ho0zlm1/"
     }
@@ -25410,12 +25410,12 @@
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1wjcpki/_/pahmhd3/"
     },
     {
-     "text": "here's a 2 minute video on proper pullup form from a kinesiologist and strength coach: https://youtu.be/hd2oTEOA1U?si=17jadrs4hzCDkOZJ Your leg swing is a symptom of your shoulder and chest position, so I'd give it a watch (he goes over pullups but the same is true in Chinups)",
+     "text": "here's a 2 minute video on proper pullup form from a kinesiologist and strength coach: https://youtu.be/_hd2oTEOA1U?si=17jadrs4hzCDkOZJ Your leg swing is a symptom of your shoulder and chest position, so I'd give it a watch (he goes over pullups but the same is true in Chinups)",
      "score": 1,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1phb2sq/_/nsxmx9b/"
     },
     {
-     "text": "You're mimicking the \"bad form\" from this video on good form from K Boges (90 seconds): https://youtu.be/hd2oTEOA1U?si=A2ScWMtFbS0tr4xG",
+     "text": "You're mimicking the \"bad form\" from this video on good form from K Boges (90 seconds): https://youtu.be/_hd2oTEOA1U?si=A2ScWMtFbS0tr4xG",
      "score": 2,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1paekpo/_/nrjqrxk/"
     }
@@ -26495,7 +26495,7 @@
    ],
    "comments": [
     {
-     "text": "Dr. Schöffl also had a video with Megos discussing this that I found really interesting: https://youtu.be/w0Evb6w3GY?si=6IBWC6fvsDI3-rAi",
+     "text": "Dr. Schöffl also had a video with Megos discussing this that I found really interesting: https://youtu.be/w0Ev_b6w3GY?si=6IBWC6fvsDI3-rAi",
      "score": 23,
      "permalink": "https://www.reddit.com/r/climbing/comments/1946ltk/_/khfhv96/"
     }
@@ -26891,7 +26891,7 @@
    ],
    "comments": [
     {
-     "text": "That and ballet 🩰 is not uncommon among players. Which is seen as far more feminine in the US than stretching. https://youtu.be/kdKQh2E0Yc",
+     "text": "That and ballet 🩰 is not uncommon among players. Which is seen as far more feminine in the US than stretching. https://youtu.be/kdKQh_2E0Yc",
      "score": 22,
      "permalink": "https://www.reddit.com/r/flexibility/comments/rje8o4/_/hp49vgn/"
     }
@@ -27526,7 +27526,7 @@
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/76v4qe/_/dokno4y/"
     },
     {
-     "text": "https://www.youtube.com/watch?v=LCusW9dvOo",
+     "text": "https://www.youtube.com/watch?v=LCusW9d_vOo",
      "score": 1,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/76v4qe/_/doknnfv/"
     }
@@ -27788,7 +27788,7 @@
    ],
    "comments": [
     {
-     "text": "Idk what you mean by QL. I'll send you what I did. https://youtu.be/3nmuwrb2x8?si=f1LNpf7XMnE5H8uo",
+     "text": "Idk what you mean by QL. I'll send you what I did. https://youtu.be/_3nmuwrb2x8?si=f1LNpf7XMnE5H8uo",
      "score": 1,
      "permalink": "https://www.reddit.com/r/weightroom/comments/1dnwzte/_/laexgkp/"
     },
@@ -27836,7 +27836,7 @@
      "permalink": "https://www.reddit.com/r/Fitness/comments/7mekw5/_/drtlkfp/"
     },
     {
-     "text": "Find some goals that do not involve how you look. Physique goals are fleeting, elusive, and have very few real milestones. Heres some inspiration: https://www.youtube.com/watch?v=Qwqqyj4jkk https://www.youtube.com/watch?v=qHvMDlQ8Zyk",
+     "text": "Find some goals that do not involve how you look. Physique goals are fleeting, elusive, and have very few real milestones. Heres some inspiration: https://www.youtube.com/watch?v=_Qwqqyj4jkk https://www.youtube.com/watch?v=qHvMDlQ8Zyk",
      "score": 2,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7msjdx/_/drwkdcj/"
     }
@@ -28119,7 +28119,7 @@
      "permalink": "https://www.reddit.com/r/Fitness/comments/7mekw5/_/drtlkfp/"
     },
     {
-     "text": "Find some goals that do not involve how you look. Physique goals are fleeting, elusive, and have very few real milestones. Heres some inspiration: https://www.youtube.com/watch?v=Qwqqyj4jkk https://www.youtube.com/watch?v=qHvMDlQ8Zyk",
+     "text": "Find some goals that do not involve how you look. Physique goals are fleeting, elusive, and have very few real milestones. Heres some inspiration: https://www.youtube.com/watch?v=_Qwqqyj4jkk https://www.youtube.com/watch?v=qHvMDlQ8Zyk",
      "score": 2,
      "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/7msjdx/_/drwkdcj/"
     }
@@ -28214,7 +28214,7 @@
      "permalink": "https://www.reddit.com/r/Fitness/comments/rpjrz7/_/hq4wltl/"
     },
     {
-     "text": "I see, Here is a link without the time stamp: https://youtu.be/1L8qTQY4iU And one with the channel tag in the URL: https://www.youtube.com/watch?v=1L8qTQY4iU&abchannel=Jake%7CThatFitFriend Let me know if those still don't work",
+     "text": "I see, Here is a link without the time stamp: https://youtu.be/1L8qTQY4_iU And one with the channel tag in the URL: https://www.youtube.com/watch?v=1L8qTQY4_iU&abchannel=Jake%7CThatFitFriend Let me know if those still don't work",
      "score": 2,
      "permalink": "https://www.reddit.com/r/Fitness/comments/rpjrz7/_/hqa5zpn/"
     }
@@ -28607,7 +28607,7 @@
    ],
    "comments": [
     {
-     "text": "Live stream ended Ritsu: First attempt: https://youtu.be/K6Wj43sTSY?t=1981 Second attempt: https://youtu.be/K6Wj43sTSY?t=4238 Third attempt (fails last move): https://youtu.be/K6Wj43sTSY?t=6271 Makoto: Sending one move in: https://youtu.be/K6Wj43sTSY?t=4466 (basically does this…",
+     "text": "Live stream ended Ritsu: First attempt: https://youtu.be/K6Wj4_3sTSY?t=1981 Second attempt: https://youtu.be/K6Wj4_3sTSY?t=4238 Third attempt (fails last move): https://youtu.be/K6Wj4_3sTSY?t=6271 Makoto: Sending one move in: https://youtu.be/K6Wj4_3sTSY?t=4466 (basically does this…",
      "score": 20,
      "permalink": "https://www.reddit.com/r/climbing/comments/1o15oxb/_/niek1s1/"
     }
@@ -31508,7 +31508,7 @@
    ],
    "comments": [
     {
-     "text": "So hex bar 3\" block pulls are feeling pretty good, hit 730 today: https://youtu.be/zPBG8KGe3E Hopefully I can put a lot more onto these before I leave my college to go home next week.",
+     "text": "So hex bar 3\" block pulls are feeling pretty good, hit 730 today: https://youtu.be/zPB_G8KGe3E Hopefully I can put a lot more onto these before I leave my college to go home next week.",
      "score": 16,
      "permalink": "https://www.reddit.com/r/weightroom/comments/7k58uw/_/drboand/"
     }
@@ -31541,7 +31541,7 @@
    ],
    "comments": [
     {
-     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
+     "text": "This video makes an argument for not rounding: https://youtu.be/5WHdim80e7o For the shoulder impingement and instability: https://youtu.be/-NA8lUy5_Qc https://youtu.be/4mXX2bvlTdE https://youtu.be/GcV1Qdt686E https://youtu.be/Ojstdm0wZaM https://youtu.be/9pR9IuwrdA…",
      "score": 6,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/ltifg1/_/goyuyui/"
     },
@@ -32421,7 +32421,7 @@
      "permalink": "https://www.reddit.com/r/flexibility/comments/6tmi82/_/dlzw0g7/"
     },
     {
-     "text": "whoa!!! I would love to hear more about this. I've seen a few different chiros and a PT for an evaluation. They all said the same thing. Most gave an examination similiar to this guy https://youtu.be/fv5u6vs-L4?t=40s Actually for me, that's when the discrepancy becomes most…",
+     "text": "whoa!!! I would love to hear more about this. I've seen a few different chiros and a PT for an evaluation. They all said the same thing. Most gave an examination similiar to this guy https://youtu.be/fv5u6v_s-L4?t=40s Actually for me, that's when the discrepancy becomes most…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/physicaltherapy/comments/5w7pnx/_/dea3moo/"
     }
@@ -34232,7 +34232,7 @@
    ],
    "comments": [
     {
-     "text": "Berluti knot, it's never failed me. A double locking slip knot. https://youtu.be/QDUex8n1bc?si=d7xmPLMJDtCCjKwU",
+     "text": "Berluti knot, it's never failed me. A double locking slip knot. https://youtu.be/QDUe_x8n1bc?si=d7xmPLMJDtCCjKwU",
      "score": 12,
      "permalink": "https://www.reddit.com/r/running/comments/1ozer3n/_/npbp1p0/"
     }
@@ -36753,7 +36753,7 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/9cvC7kBUs4?si=gz8PQVjJjVxdTHKi",
+     "text": "https://youtu.be/9cvC_7kBUs4?si=gz8PQVjJjVxdTHKi",
      "score": 10,
      "permalink": "https://www.reddit.com/r/kettlebell/comments/1pmb3kr/_/ntz8cnv/"
     }
@@ -37811,7 +37811,7 @@
    ],
    "comments": [
     {
-     "text": "https://youtu.be/oVv7tyZmeQ Check it out",
+     "text": "https://youtu.be/oVv7tyZm_eQ Check it out",
      "score": 10,
      "permalink": "https://www.reddit.com/r/flexibility/comments/qxk6lo/_/hlau6e9/"
     }
@@ -38367,13 +38367,13 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "do a bit of neck mobility drill on a daily basis https://youtu.be/K4dmZ5n6uU",
+     "text": "do a bit of neck mobility drill on a daily basis https://youtu.be/K4dmZ5_n6uU",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=30405108",
      "site": "news.ycombinator.com"
     },
     {
-     "text": "I've been doing these neck mobility exercises, I think they seem to help https://www.youtube.com/watch?v=K4dmZ5n6uU&t=210s",
+     "text": "I've been doing these neck mobility exercises, I think they seem to help https://www.youtube.com/watch?v=K4dmZ5_n6uU&t=210s",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=28653026",
      "site": "news.ycombinator.com"
@@ -38508,13 +38508,13 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "I've been doing this and it's really helped with pain in my back/neck, while improving my posture: https://www.youtube.com/watch?v=LTdFRnmdGs",
+     "text": "I've been doing this and it's really helped with pain in my back/neck, while improving my posture: https://www.youtube.com/watch?v=LT_dFRnmdGs",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=12832833",
      "site": "news.ycombinator.com"
     },
     {
-     "text": "This video[1] shows some simple exercises that target posture. YMMV but it seemed to help me. [1] https://youtu.be/LTdFRnmdGs",
+     "text": "This video[1] shows some simple exercises that target posture. YMMV but it seemed to help me. [1] https://youtu.be/LT_dFRnmdGs",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=9472017",
      "site": "news.ycombinator.com"
@@ -38571,7 +38571,7 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "Without knowing anything, I'd say check your back angle - it's probably too vertical. If you're falling backwards, point your nipples at the floor. https://youtu.be/QhVCAnZYYM?t=427 But really, just find a weightlifting coach and spend some money to get some coaching sessions.…",
+     "text": "Without knowing anything, I'd say check your back angle - it's probably too vertical. If you're falling backwards, point your nipples at the floor. https://youtu.be/QhVC_AnZYYM?t=427 But really, just find a weightlifting coach and spend some money to get some coaching sessions.…",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=16469890",
      "site": "news.ycombinator.com"
@@ -39329,7 +39329,7 @@
    ],
    "comments": [
     {
-     "text": "Something simple that will not fix all of your problems but is easy, therapeutic, and might feel quite good is simple cat - cow movements from yoga. Here's a video which explains them very well: https://youtu.be/y39PrKY4JM. Particularly, you will probably find a wonderful…",
+     "text": "Something simple that will not fix all of your problems but is easy, therapeutic, and might feel quite good is simple cat - cow movements from yoga. Here's a video which explains them very well: https://youtu.be/y39PrKY_4JM. Particularly, you will probably find a wonderful…",
      "score": 1,
      "permalink": "https://www.reddit.com/r/flexibility/comments/76n6t0/_/doft4df/"
     }
