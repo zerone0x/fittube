@@ -137,6 +137,19 @@ class CarryOverTest(unittest.TestCase):
         self.assertEqual((stripped["recommenders"], stripped["score"]), (1, base))
         self.assertEqual(stripped["sources"], [wiki_src])
 
+    def test_repair_excerpts_restores_underscores(self):
+        vid = "_QnwAoesJvQ"
+        texts = ["Source: http://www.youtube.com/watch?v=QnwAoesJvQt=475 Good form",
+                 "Watch: http://youtu.be/QnwAoesJvQ and https://youtu.be/QnwAoesJvQt=12",
+                 "Unrelated https://youtu.be/abcdefghijk and watch?v=ZZZZZZZZZZt=5"]
+        videos = [record(vid, comments=[{"text": t, "score": 1, "permalink": f"p{i}"} for i, t in enumerate(texts)])]
+        self.assertEqual(carryover.repair_excerpts(videos), 2)
+        self.assertEqual([c["text"] for c in videos[0]["comments"]], [
+            "Source: http://www.youtube.com/watch?v=_QnwAoesJvQ&t=475 Good form",
+            "Watch: http://youtu.be/_QnwAoesJvQ and https://youtu.be/_QnwAoesJvQ?t=12",
+            texts[2]])
+        self.assertEqual(carryover.repair_excerpts(videos), 0)  # idempotent
+
     def test_no_previous(self):
         fresh = {"sources": [], "videos": [record(A)]}
         self.assertIs(carryover.merge_previous(fresh, None), fresh)

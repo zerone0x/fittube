@@ -152,6 +152,33 @@ class ValidationTest(unittest.TestCase):
                     {k: x for k, x in ok.items() if k != "goal"}):
             self.assertIsNone(llm.validate_b(bad))
 
+    def test_summary_debris_is_stripped(self):
+        ok = {"keep": True, "reject_reason": "none", "goal": [], "body": [], "equipment": [], "level": "any",
+              "type": "tutorial"}
+        cases = {
+            "Shows how to row with a flat back.}": "Shows how to row with a flat back.",
+            "Exercises to do at a desk or while riding in a car.\u201d}": "Exercises to do at a desk or while riding in a car.",
+            "Easing bicep-related shoulder pain.}</br>": "Easing bicep-related shoulder pain.",
+            "Going back to previous weights.}</parameter>Wait.</br>": "Going back to previous weights.",
+            "Strength training basics.\u201d}<br>```json</br>": "Strength training basics.",
+            "Explains why calves lag as an IFBB pro.</br>": "Explains why calves lag as an IFBB pro.",
+            'A "dead bug" core drill for beginners.': 'A "dead bug" core drill for beginners.',
+            # Provenance filler goes; clauses that add information stay.
+            "A tutorial on how to use the Smith machine, recommended on r/Fitness.":
+                "A tutorial on how to use the Smith machine.",
+            "Demonstrates the wall scissor, a handstand drill, listed in the r/bodyweightfitness wiki's handstand page.":
+                "Demonstrates the wall scissor, a handstand drill.",
+            "A short routine for loosening the shoulders, recommended in flexibility and kettlebell communities.":
+                "A short routine for loosening the shoulders.",
+            "Shows the get-up, recommended in r/kettlebell as a fix for a leg position issue.":
+                "Shows the get-up, recommended in r/kettlebell as a fix for a leg position issue.",
+        }
+        for raw, want in cases.items():
+            self.assertEqual(llm.validate_b({**ok, "summary": raw})["summary"], want, raw)
+            self.assertEqual(llm.clean_summary(want), want)  # idempotent
+        self.assertEqual(llm.validate_b({**ok, "summary": "}</parameter>"})["summary"], "")
+        self.assertEqual(llm.clean_summary(None), "")
+
     def test_validate_a(self):
         out = {"comments": [
             {"index": 1, "is_recommendation": True, "sentiment": "positive", "quality_flags": ["joke", "nope"],
@@ -268,6 +295,82 @@ class PassTest(LLMTestCase):
         self.assertIsNone(llm.stage_a_drop(v, cache))
         self.assertIsNone(llm.stage_a_drop({**v, "sources": [WIKI]}, cache))
 
+    def test_cached_summary_debris_is_cleaned_at_apply_time(self):
+        cache = self.cache()
+        cache.set_video(A, {"keep": True, "reject_reason": "none", "summary": "Squat basics.}</parameter>Wait.",
+                            "tags": {"goal": [], "body": [], "equipment": [], "level": "any", "type": "tutorial"}})
+        data = llm.apply_verdicts({"videos": [video(A, "How to squat", 2)]}, cache)
+        self.assertEqual(data["videos"][0]["summary"], "Squat basics.")
+
+    def test_rejected_excerpt_removes_its_source(self):
+        tn = "https://t-nation.com/t/contest-guess-my-body-fat/292457/1"
+        cache = self.cache()
+        v = video(A, "What body fat looks like", 3,
+                  [comment("g1", "great visual reference"),
+                   {"text": "Guess my body fat", "score": 7, "permalink": tn, "site": "t-nation.com"}],
+                  sources=[{"kind": "comment", "subreddit": "Fitness"},
+                           {"kind": "forum", "site": "t-nation.com", "url": tn, "score": 7, "needs_llm_check": True}])
+        raw = copy.deepcopy(v)
+        cache.set_comment(A, "t1_g1", {"is_recommendation": True, "sentiment": "neutral", "quality_flags": []})
+        cache.set_comment(A, "tn_292457_1", {"is_recommendation": False, "sentiment": "neutral",
+                                             "quality_flags": ["personal-clip"]})
+        data = llm.apply_verdicts({"videos": [v]}, cache)
+        out = data["videos"][0]
+        self.assertEqual(out["sources"], [{"kind": "comment", "subreddit": "Fitness"}])
+        self.assertEqual([c["text"] for c in out["comments"]], ["great visual reference"])
+        restored = llm.strip_llm(copy.deepcopy(data))["videos"][0]
+        self.assertEqual(sorted(map(json.dumps, restored["sources"])), sorted(map(json.dumps, raw["sources"])))
+        again = llm.apply_verdicts(llm.strip_llm(copy.deepcopy(data)), cache)["videos"][0]
+        self.assertEqual(again, out)
+
+    def test_misattributed_excerpts_do_not_drop_a_tutorial(self):
+        # Review of #10: "The Cossack Squat" filed under a thread's off-topic replies
+        # about high-school track; stage A rejects both, stage B keeps it on content.
+        track = [comment("t1", "Sprinting as in track and field in HS", 2, "overcominggravity"),
+                 comment("t2", "We used chairs for hurdles", 2, "overcominggravity")]
+        tutorial = video(A, "The Cossack Squat", 2, track)
+        clip = video(B, "My squat PR", 1, [comment("p1", "new PR today", 3)])
+        song = video(C, "Electric Callboy - PUMP IT", 1, [comment("s1", "my warmup song", 3)])
+        offtopic = {"is_recommendation": False, "sentiment": "neutral", "quality_flags": ["off-topic"]}
+        cache = self.cache()
+        for key in ("t1_t1", "t1_t2"):
+            cache.set_comment(A, key, offtopic)
+        cache.set_comment(B, "t1_p1", {**offtopic, "quality_flags": ["personal-clip"]})
+        cache.set_comment(C, "t1_s1", offtopic)
+        self.assertTrue(llm.rescuable(tutorial, cache))
+        self.assertFalse(llm.rescuable(clip, cache))  # own lift: never reconsidered
+        self.assertTrue(llm.rescuable(song, cache))  # reviewed by stage B, which rejects it
+        cache.save()
+
+        client = FakeClient()
+        data, report = self.run_pass({"sources": [], "videos": [tutorial, clip, song]}, client)
+        # Stage B ran only for the rescuable video, without the rejected excerpts.
+        b_users = [p["messages"][0]["content"] for p in client.calls if p["system"].startswith("You curate")]
+        self.assertTrue(b_users and all("No comment excerpts" in u for u in b_users))
+        self.assertFalse([u for u in b_users if "squat PR" in u])
+        self.assertEqual([v["id"] for v in data["videos"]], [A])
+        out = data["videos"][0]
+        self.assertEqual(out["llm_note"], "kept-by-content")
+        self.assertEqual((out["recommenders"], out["comments"]), (1, []))
+        self.assertEqual([d["id"] for d in report.rescued], [A])
+        self.assertEqual(sorted(d["id"] for d in report.dropped), [B, C])
+        # Idempotent, and strip_llm restores the raw record.
+        again, _ = self.run_pass(copy.deepcopy(data))
+        self.assertEqual(again["videos"], data["videos"])
+        self.assertNotIn("llm_note", llm.strip_llm(copy.deepcopy(data))["videos"][0])
+
+        # A kept video needs a training title/channel (or a channel known from other videos).
+        verdict = {"keep": True, "tags": {"type": "tutorial"}}
+        self.assertFalse(llm.kept_by_content(video(A, "Traveling walks", 2, track), cache, verdict))
+        self.assertTrue(llm.kept_by_content(video(A, "Traveling walks", 2, track), cache, verdict, {"ch"}))
+        # Stage B rejecting it, or calling it motivation, still drops it.
+        for verdict in ({"keep": False, "reject_reason": "non-fitness"}, {"keep": True, "reject_reason": "none"}):
+            cache = self.cache()
+            cache.set_video(A, {**verdict, "summary": "", "tags": {"goal": [], "body": [], "equipment": [],
+                                                                  "level": "any", "type": "motivation"}})
+            data = llm.apply_verdicts({"videos": [video(A, "The Cossack Squat", 2, track)]}, cache)
+            self.assertEqual(data["videos"], [])
+
     def test_needs_llm_check_cleared_when_accepted(self):
         hn = "https://news.ycombinator.com/item?id=5"
         v = video(A, "Zone 2 explained", 2, [{"text": "great zone 2 explainer", "score": None, "permalink": hn,
@@ -382,6 +485,24 @@ class RunTest(LLMTestCase):
         written = json.loads(out.read_text())
         self.assertEqual(len(written["videos"]), 5)
         self.assertIn("Title — body", [c["text"] for v in written["videos"] for c in v["comments"]])
+
+
+    def test_llm_only_starts_from_the_base_snapshot(self):
+        from pipeline import run
+        base = Path(self.tmp.name) / "base.json"
+        out = Path(self.tmp.name) / "out.json"
+        base.write_text(json.dumps(dataset()))
+        out.write_text(json.dumps({"sources": [], "videos": dataset()["videos"][:1]}))  # an earlier, filtered output
+        env = {"ANTHROPIC_API_KEY": ""}
+        with mock.patch.dict("os.environ", env), mock.patch.object(llm.LLMCache.__init__, "__defaults__",
+                                                                   (self.cache_path,)):
+            self.assertEqual(run.main(["--llm-only", "--base", str(base), "--output", str(out)]), 0)
+            self.assertEqual(len(json.loads(out.read_text())["videos"]), 5)
+            self.assertEqual(json.loads(base.read_text()), dataset())  # the snapshot is never rewritten here
+            # Without a snapshot it falls back to --output.
+            base.unlink()
+            self.assertEqual(run.main(["--llm-only", "--base", str(base), "--output", str(out)]), 0)
+            self.assertEqual(len(json.loads(out.read_text())["videos"]), 5)
 
 
 if __name__ == "__main__":

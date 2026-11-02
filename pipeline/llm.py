@@ -43,7 +43,7 @@ from typing import Any, Callable
 
 from . import config
 from .build import rank_score, sources_boost
-from .tagger import BODY, EQUIPMENT, GOALS, LEVELS, TYPES
+from .tagger import BODY, EQUIPMENT, GOALS, LEVELS, TYPES, tag_video
 
 log = logging.getLogger(__name__)
 
@@ -173,7 +173,9 @@ explainer (science, concepts, lecture, podcast), program (a training plan or rou
 motivation (story, documentary, speech).
 
 summary: one plain sentence (max 25 words, max {SUMMARY_CHARS} characters) saying what the video \
-teaches or offers, based only on the given information. No hype; do not invent details.\
+teaches or offers, based only on the given information. No hype; do not invent details. Do not say \
+where or by whom it was recommended (no "recommended in r/...", wiki pages, communities or \
+commenters): the site shows that already. Plain text only: no quotes, braces, markup or JSON.\
 """
 
 
@@ -261,6 +263,47 @@ def request_params(stage: str, model: str, user: str, style: str = "tool") -> di
 
 # -- validation -----------------------------------------------------------------
 
+# Structured-output debris some answers leave in the summary string: a stray
+# ``}`` / ``"}`` closing the JSON, ``</parameter>``, ``<br>```json``, followed
+# by more junk ("Wait."). Everything from the first such character on is cut.
+_SUMMARY_JUNK_RE = re.compile(r"[{}<>]|```")
+# A trailing clause that only says where the video was recommended
+# ("..., recommended in r/flexibility.", "..., listed on the r/bodyweightfitness
+# push-up wiki page."): the site shows the sources already. Clauses that add
+# something ("recommended in r/kettlebell as a fix for ...") are kept.
+_PROVENANCE_RE = re.compile(
+    r"(?:,|;|\s+-|\s+\u2014)?\s+(?:and\s+|as\s+|often\s+|widely\s+|frequently\s+|commonly\s+|also\s+)*"
+    r"(?:recommended|listed|cited|suggested|shared|linked|praised|featured|included|referenced|endorsed|"
+    r"mentioned)\s+(?:in|on|by|among|under|from)\s+"
+    r"(?P<where>[^,;.]*?(?:\br/\w+|wiki|communit(?:y|ies)|commenters?|redditors?|reddit|subreddits?|forums?|"
+    r"lifters|members|users|FAQ)[^,;.]*?)\s*\.?$", re.IGNORECASE)
+_PROVENANCE_EXTRA_RE = re.compile(r"\b(?:as|for|to|because|alongside|with|when|after|while|who|which|that)\b",
+                                  re.IGNORECASE)
+
+
+def clean_summary(text: Any) -> str:
+    """A displayable summary: JSON/markup debris and provenance filler removed;
+    ``""`` when nothing usable is left."""
+    if not isinstance(text, str):
+        return ""
+    text = re.sub(r"\s+", " ", text).strip()
+    m = _SUMMARY_JUNK_RE.search(text)
+    if m:
+        text = text[: m.start()]
+    text = text.rstrip(" \t,;:")
+    # Quotes left unbalanced by the cut (``...in a car.\u201d}``).
+    while text and text[-1] in "\"\u201d'" and (text.count("\"") % 2 or text.count("\u201d") > text.count("\u201c")
+                                                 or (text[-1] == "'" and text.count("'") % 2)):
+        text = text[:-1].rstrip()
+    m = _PROVENANCE_RE.search(text)
+    if m and not _PROVENANCE_EXTRA_RE.search(m.group("where")) and m.start() >= 40:
+        text = text[: m.start()].rstrip(" ,;:-\u2014")
+    if text and text[-1] not in ".!?\u2026)":
+        text += "."
+    text = _clip(text, SUMMARY_CHARS)
+    return text if len(text) >= 10 and not _SUMMARY_JUNK_RE.search(text) else ""
+
+
 def validate_a(out: Any, n: int) -> dict[int, dict] | None:
     """``{index (1-based): verdict}`` from a stage-A tool input, ``None`` if unusable."""
     if not isinstance(out, dict) or not isinstance(out.get("comments"), list):
@@ -304,8 +347,7 @@ def validate_b(out: Any) -> dict | None:
         reason = "none"
     elif reason == "none":
         reason = "non-fitness"
-    summary = out.get("summary") if isinstance(out.get("summary"), str) else ""
-    return {"keep": out["keep"], "reject_reason": reason, "tags": tags, "summary": _clip(summary, SUMMARY_CHARS)}
+    return {"keep": out["keep"], "reject_reason": reason, "tags": tags, "summary": clean_summary(out.get("summary"))}
 
 
 # -- cache ------------------------------------------------------------------------
@@ -583,6 +625,7 @@ def _sum_score(v: dict) -> float:
 def strip_llm(data: dict) -> dict:
     """Undo ``apply_verdicts``' count changes so carry-over sees the raw data; idempotent."""
     for v in data.get("videos", []):
+        v.pop("llm_note", None)
         adj = v.pop("llm_rejected", None)
         if not adj:
             continue
@@ -591,6 +634,8 @@ def strip_llm(data: dict) -> dict:
         restored = list(adj.get("comments") or [])
         if restored:
             v["comments"] = sorted(list(v.get("comments") or []) + restored, key=lambda c: -(c.get("score") or 0))
+        if adj.get("sources"):
+            v["sources"] = list(v.get("sources") or []) + list(adj["sources"])
     return data
 
 
@@ -630,11 +675,65 @@ def stage_a_drop(v: dict, cache: LLMCache) -> str | None:
     return None
 
 
+# Rejection grounds that are about the video, not about a misattributed or
+# off-topic excerpt: such videos are never kept by content alone.
+HARD_REJECT_FLAGS = {"personal-clip", "event-footage", "joke", "self-promotion", "sales/affiliate", "bro-science",
+                     "unsafe-form"}
+RESCUE_TYPES = {"tutorial", "explainer", "follow-along", "program"}
+# Training words in a title or channel name ("PowerMonkeyFitness"); the
+# keyword tagger's title rules count too.
+_FITNESS_WORDS_RE = re.compile(
+    r"fitness|workout|training|strength|calisthenic|kettlebell|physio|athlet|mobility|stretch|yoga|pilates|"
+    r"\b(?:fit|gym|coach\w*|exercises?|rehab\w*|barbell|dumbbells?|lifting|squats?|pistols?|lunges?|deadlifts?|"
+    r"pull-?ups?|push-?ups?|planks?|handstands?)\b", re.IGNORECASE)
+
+
+def rescuable(v: dict, cache: LLMCache) -> bool:
+    """Whether stage B reviews ``v`` although stage A found no recommendation.
+
+    Saved excerpts are sometimes misattributed (a thread's off-topic replies
+    filed under a video linked elsewhere in it), so a ``no-recommendation``
+    drop is reconsidered when no rejected excerpt points at a problem with the
+    video itself: negative, own clip, event footage, joke, promotion,
+    bro-science (``HARD_REJECT_FLAGS``).
+    """
+    if stage_a_drop(v, cache) != "no-recommendation":
+        return False
+    vid = v["id"]
+    for c in v.get("comments") or []:
+        verdict = cache.comment(vid, comment_key(c)) or {}
+        if verdict.get("sentiment") == "negative" or HARD_REJECT_FLAGS & set(verdict.get("quality_flags") or []):
+            return False
+    return True
+
+
+def fitness_channels(videos: list[dict], cache: LLMCache) -> set[str]:
+    """Channels with a video that is wiki-listed or has an accepted excerpt."""
+    out = set()
+    for v in videos:
+        if v.get("channel") and (_n_wikis(v) or any(comment_verdict(cache, v["id"], c) for c in v.get("comments") or [])):
+            out.add(v["channel"])
+    return out
+
+
+def kept_by_content(v: dict, cache: LLMCache, verdict: dict | None, channels: set[str] = frozenset()) -> bool:
+    """A ``rescuable`` video stage B keeps as a tutorial/explainer/follow-along/program,
+    whose title or channel name is about training or whose channel is in ``channels``."""
+    if not (verdict and verdict.get("keep") and (verdict.get("tags") or {}).get("type") in RESCUE_TYPES):
+        return False
+    if not rescuable(v, cache):
+        return False
+    text = f"{v.get('title') or ''} {v.get('channel') or ''}"
+    tags = tag_video(text)
+    return bool(v.get("channel") in channels or tags.get("goal") or tags.get("body") or _FITNESS_WORDS_RE.search(text))
+
+
 @dataclass
 class Report:
     before: int = 0
     after: int = 0
     dropped: list[dict] = field(default_factory=list)
+    rescued: list[dict] = field(default_factory=list)
     adjusted: int = 0
     tagged: int = 0
     invalid_b: int = 0
@@ -651,6 +750,7 @@ class Report:
             reasons[d["reason"]] = reasons.get(d["reason"], 0) + 1
         out = [f"videos: {self.before} -> {self.after} ({len(self.dropped)} dropped: "
                + (", ".join(f"{k} {n}" for k, n in sorted(reasons.items(), key=lambda kv: -kv[1])) or "none") + ")",
+               f"kept by content (stage A found no recommendation, stage B keeps it): {len(self.rescued)}",
                f"recommender/score adjusted (rejected excerpts): {self.adjusted}",
                f"LLM-tagged: {self.tagged}; invalid stage-B output (keyword tags kept): {self.invalid_b}; "
                f"without a stage-B verdict: {self.unverified} (single-recommender / needs_llm_check: "
@@ -661,6 +761,7 @@ class Report:
                        f"${u.cost:.2f}, {u.errors} errors, {u.invalid} invalid")
         out += [f"skipped: {s}" for s in self.skipped]
         out += [f"dropped {d['id']} [{d['reason']}] {d['title']}" for d in self.dropped]
+        out += [f"kept by content {d['id']} {d['title']}" for d in self.rescued]
         return out
 
 
@@ -681,11 +782,18 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
       video whose only comment is an anti-recommendation), or the video is
       contested (only bro-science-flagged support, plus criticism).
       Wiki-listed videos are moderator-curated and never dropped.
+    * Exception: a ``no-recommendation`` video that is ``rescuable`` (only
+      off-topic/misattributed excerpts) and that stage B keeps as a
+      tutorial/explainer/follow-along/program stays when its title or channel
+      is about training (``kept_by_content``), with ``llm_note:
+      "kept-by-content"`` and at least one recommender.
     * Rejected excerpts (not a recommendation, or negative) are hidden and no
       longer count: one recommender each (keeping at least one per accepted
-      excerpt) and their karma; the change is stored in ``llm_rejected``.
-    * Stage-B tags and ``summary`` replace the keyword tags; invalid output
-      keeps the keyword tags. Accepted videos lose ``needs_llm_check``, as do
+      excerpt) and their karma; ``sources`` entries pointing at them (forum /
+      HN posts) are removed too. The change is stored in ``llm_rejected``.
+    * Stage-B tags and ``summary`` (cleaned by ``clean_summary``, also for
+      cached answers) replace the keyword tags; invalid output keeps the
+      keyword tags. Accepted videos lose ``needs_llm_check``, as do
       external ``sources`` whose excerpt was accepted.
     * Videos without verdicts (no API key, budget cap, pending batch) are kept
       unchanged.
@@ -694,6 +802,7 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
     report.before = len(data.get("videos", []))
     report.tags_before = tag_coverage(data.get("videos", []))
     kept = []
+    channels = fitness_channels(data.get("videos", []), cache)
     for v in data.get("videos", []):
         vid = v["id"]
         wikis = _n_wikis(v)
@@ -703,7 +812,8 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
             report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": valid_b["reject_reason"]})
             continue
         reason = stage_a_drop(v, cache)
-        if reason:
+        rescued = reason == "no-recommendation" and not wikis and kept_by_content(v, cache, valid_b, channels)
+        if reason and not rescued:
             report.dropped.append({"id": vid, "title": v.get("title", ""), "reason": reason})
             continue
 
@@ -714,19 +824,29 @@ def apply_verdicts(data: dict, cache: LLMCache, report: Report | None = None) ->
         if rejected:
             rec = int(v.get("recommenders") or 0)
             karma = sum(float(c.get("score") or 0) for c in rejected)
-            new_rec = max(wikis + len(accepted), rec - len(rejected))
+            new_rec = max(wikis + len(accepted), rec - len(rejected), 1 if rescued else 0)
             new_score = round(rank_score(new_rec, max(0.0, _sum_score(v) - karma)) + sources_boost(v.get("sources")), 1)
             new_score = min(new_score, float(v.get("score") or 0))
+            rejected_links = {c.get("permalink") for c in rejected if c.get("permalink")}
+            sources = list(v.get("sources") or [])
+            gone = [s for s in sources if s.get("kind") not in ("wiki", "comment") and s.get("url") in rejected_links]
             v["llm_rejected"] = {"recommenders": rec - new_rec, "score": round(float(v.get("score") or 0) - new_score, 1),
                                  "comments": rejected}
+            if gone:
+                v["llm_rejected"]["sources"] = gone
+                v["sources"] = [s for s in sources if s not in gone]
             v["recommenders"], v["score"] = new_rec, new_score
             v["comments"] = [c for c, ok in zip(comments, verdicts) if ok is not False]
             report.adjusted += 1
 
+        if rescued:
+            v["llm_note"] = "kept-by-content"
+            report.rescued.append({"id": vid, "title": v.get("title", "")})
         if valid_b:
             v["tags"] = dict(valid_b["tags"])
-            if valid_b.get("summary"):
-                v["summary"] = valid_b["summary"]
+            summary = clean_summary(valid_b.get("summary"))
+            if summary:
+                v["summary"] = summary
             report.tagged += 1
         else:
             if b:
@@ -811,7 +931,8 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
                 meta_a[cid] = [comment_key(c) for c in todo]
         budget = _submit(runner, "A", opts.classify_model, req_a, meta_a, ingest_a, opts, budget, report)
 
-        # Stage B: videos stage A did not already drop.
+        # Stage B: videos stage A did not already drop, and those it drops for
+        # lack of a recommendation that may still be kept by content.
         def ingest_b(cid: str, vid: str, message: Any) -> bool:
             verdict = validate_b(tool_input(message, TOOL_B["name"]))
             model = _get(message, "model") or opts.model
@@ -823,7 +944,9 @@ def run_pass(data: dict, cache: LLMCache | None = None, client: Any = None, opti
         req_b, meta_b = {}, {}
         for v in videos:
             cid = f"b-{v['id']}"
-            if cache.video(v["id"]) is not None or cid in pending or stage_a_drop(v, cache):
+            if cache.video(v["id"]) is not None or cid in pending:
+                continue
+            if stage_a_drop(v, cache) and not rescuable(v, cache):
                 continue
             if len(req_b) >= opts.max_items:
                 break

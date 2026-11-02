@@ -113,14 +113,17 @@ def clean_previous(v: dict) -> dict | None:
 
 _POST_PERMALINK_RE = re.compile(r"^https://(?:www\.)?reddit\.com/r/[^/]+/comments/([a-z0-9]+)/$")
 _POST_EXCERPT_RE = re.compile(r"^(.+?) (https?://\S+)(?: (.*))?$", re.DOTALL)
-_ID_FRAGMENT_RE = re.compile(r"(youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)([A-Za-z0-9-]{8,10})(?![A-Za-z0-9_-])")
+# An id fragment ends at a non-id character, or directly at ``t=`` when the
+# ``&`` before a timestamp was lost too (``watch?v=QnwAoesJvQt=475``).
+_ID_FRAGMENT_RE = re.compile(r"(youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)([A-Za-z0-9-]{8,10}?)(?=(t=)|[^A-Za-z0-9_-]|$)")
 
 
 def repair_excerpts(videos: list[dict]) -> int:
     """Fix excerpts saved by older builds; returns the number of excerpts changed.
 
     * Underscores were stripped from URLs (``youtu.be/K4dmZ5n6uU`` for
-      ``K4dmZ5_n6uU``): restored for ids of videos in ``videos``.
+      ``K4dmZ5_n6uU``): restored for ids of videos in ``videos``, with the
+      ``&`` before a timestamp when it was lost as well (``v=IDt=475``).
     * Post excerpts began with the title and the post's raw URL: the URL is
       replaced by an em dash, as ``build.post_text`` now does.
 
@@ -134,7 +137,12 @@ def repair_excerpts(videos: list[dict]) -> int:
             by_stripped[key] = None if key in by_stripped else vid  # ambiguous -> leave alone
 
     def fix_id(m: re.Match) -> str:
-        return m.group(1) + (by_stripped.get(m.group(2)) or m.group(2))
+        vid = by_stripped.get(m.group(2))
+        if not vid:
+            return m.group(0)
+        # Restore the separator before a glued-on timestamp: ``?v=ID&t=``, ``youtu.be/ID?t=``.
+        sep = ("&" if m.group(1).endswith("v=") else "?") if m.group(3) else ""
+        return m.group(1) + vid + sep
 
     changed = 0
     for v in videos:

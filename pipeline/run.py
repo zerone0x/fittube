@@ -8,18 +8,22 @@
     python -m pipeline.run --merge-into site/data/videos.json
                                                 # skip Reddit: merge HN/T-Nation into an existing file
     python -m pipeline.run --time-budget 90     # stop fetching after 90 min, build from the cache
-    python -m pipeline.run --llm-only           # no crawling: LLM pass over the existing videos.json
+    python -m pipeline.run --llm-only           # no crawling: LLM pass over the pre-LLM base snapshot
 
 Sources, in fetch order (so a time-boxed run gets the best signal first):
 subreddit wikis -> posts -> replies of "recommend me videos" posts -> comment
 search -> thread expansion. The result is merged with the previous output
 (see carryover.py) unless --no-carry-over is given, then vetted and tagged by
 the LLM pass (llm.py; needs ANTHROPIC_API_KEY, cached verdicts apply without).
+The data as it was before the LLM pass is saved to --base (pipeline/base_videos.json);
+--llm-only runs and the next carry-over start from it, so nothing the LLM pass
+drops is lost for good.
 """
 
 from __future__ import annotations
 
 import argparse
+import copy
 import json
 import logging
 import os
@@ -92,10 +96,14 @@ def main(argv: list[str] | None = None) -> int:
                    help="stop making API requests after this many minutes and build from what is cached")
     p.add_argument("--previous", type=Path, default=None,
                    help="previous videos.json whose videos are carried over (default: --output)")
+    p.add_argument("--base", type=Path, default=config.BASE_PATH,
+                   help="pre-LLM snapshot: written by full runs, read by --llm-only and carry-over "
+                        "(default: %(default)s; falls back to --output when missing)")
     p.add_argument("--no-carry-over", action="store_true",
                    help="replace the previous videos.json instead of merging with it")
     p.add_argument("--llm-only", action="store_true",
-                   help="skip all sources: run the LLM pass over --output (or --previous) and write --output")
+                   help="skip all sources: run the LLM pass over --previous (default: --base, else --output) "
+                        "and write --output")
     p.add_argument("--no-llm", action="store_true", help="skip the LLM pass (keyword tags, no cached verdicts)")
     p.add_argument("--llm-max-items", type=int, default=config.LLM_MAX_ITEMS,
                    help="max LLM requests per stage (default: %(default)s)")
@@ -112,8 +120,18 @@ def main(argv: list[str] | None = None) -> int:
     log = logging.getLogger("pipeline")
     t0 = time.monotonic()
 
+    def previous_path() -> Path:
+        if args.previous:
+            return args.previous
+        if args.base.exists():
+            return args.base
+        log.warning("no pre-LLM snapshot at %s; starting from %s (videos the LLM pass dropped are missing)",
+                    args.base, args.output)
+        return args.output
+
     if args.llm_only:
-        source = args.previous or args.output
+        source = previous_path()
+        log.info("LLM-only run over %s", source)
         data = llm.strip_llm(json.loads(source.read_text()))
         carryover.repair_excerpts(data["videos"])
         data = llm_pass(data, args, log)
@@ -174,11 +192,16 @@ def main(argv: list[str] | None = None) -> int:
         if not args.no_carry_over:
             # Carry over the previous Reddit data (its HN/T-Nation merge stripped
             # first), then merge the external sources into the combined result.
-            previous = carryover.load(args.previous or args.output)
+            previous = carryover.load(previous_path())
             data = carryover.merge_previous(data, strip_external(llm.strip_llm(previous)) if previous else None)
         data = merge_external(data, collect_external(args, log))
+    base = None if args.limit else copy.deepcopy(data)
     data = llm_pass(data, args, log)
-    return write_checked(data, args, log, t0)
+    status = write_checked(data, args, log, t0)
+    if status == 0 and base is not None:
+        write(base, args.base)
+        log.info("wrote the pre-LLM snapshot (%d videos) to %s", len(base["videos"]), args.base)
+    return status
 
 
 def llm_pass(data: dict, args, log: logging.Logger) -> dict:

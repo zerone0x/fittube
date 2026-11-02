@@ -219,6 +219,10 @@ EXTERNAL_POST_TTL_DAYS = 30
 # (committed) are applied on every run, with or without a key.
 
 LLM_CACHE_PATH = Path(os.environ.get("FITTUBE_LLM_CACHE", PIPELINE_DIR / "llm_cache.json"))
+# The data as it was before the LLM pass (after carry-over and the HN/T-Nation
+# merge), committed: --llm-only runs and the next carry-over start from it, so
+# a video the LLM pass drops can be reconsidered later instead of being lost.
+BASE_PATH = Path(os.environ.get("FITTUBE_BASE", PIPELINE_DIR / "base_videos.json"))
 # Stage B (vetting, tags, summary): FITTUBE_MODEL, default Sonnet. Stage A
 # (is this excerpt a recommendation?) defaults to the same model: in a sample
 # of the 40 top videos Haiku rejected ~25 of 120 excerpts that were plain

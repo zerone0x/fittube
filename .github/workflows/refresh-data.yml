@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       llm_only:
-        description: "Skip crawling: only run the LLM pass over the committed videos.json"
+        description: "Skip crawling: only run the LLM pass over the pre-LLM snapshot (pipeline/base_videos.json)"
         type: boolean
         required: false
         default: false
@@ -77,7 +77,10 @@ jobs:
       # Time-boxed: after --time-budget minutes no new API requests are made and
       # the data is built from what is cached. The previous videos.json is
       # merged in (pipeline/carryover.py), so a rate-limited run never shrinks
-      # the dataset. The LLM pass then vets and tags the result; its verdicts
+      # the dataset. The merged data is saved to pipeline/base_videos.json (the
+      # pre-LLM snapshot that llm_only runs and the next carry-over start from,
+      # so videos the LLM pass drops are not lost). The LLM pass then vets and
+      # tags the result; its verdicts
       # are cached in pipeline/llm_cache.json (committed below), and batches
       # still running after --llm-wait minutes are collected by the next run.
       - name: Run pipeline
@@ -109,8 +112,8 @@ jobs:
           key: pipeline-cache-${{ github.run_id }}
 
       # Also runs when the pipeline failed so LLM results already paid for
-      # (and ids of batches still running) are not lost; videos.json is only
-      # committed from a successful run.
+      # (and ids of batches still running) are not lost; videos.json and the
+      # pre-LLM snapshot are only committed from a successful run.
       - name: Commit updated data
         id: commit
         if: ${{ always() && steps.pipeline.outcome != 'skipped' }}
@@ -128,6 +131,10 @@ jobs:
           PY
           }; then
             files+=(site/data/videos.json)
+          fi
+          if [ "$PIPELINE_OK" = "true" ] && [ -f pipeline/base_videos.json ] \
+              && [ -n "$(git status --porcelain -- pipeline/base_videos.json)" ]; then
+            files+=(pipeline/base_videos.json)
           fi
           if [ -f pipeline/llm_cache.json ] && [ -n "$(git status --porcelain -- pipeline/llm_cache.json)" ]; then
             files+=(pipeline/llm_cache.json)
