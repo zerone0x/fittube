@@ -52,12 +52,32 @@ def permalink(comment: dict) -> str:
     return f"https://www.reddit.com/r/{comment['subreddit']}/comments/{link}/_/{comment['id']}/"
 
 
+# Markdown emphasis markers. URLs are matched first and kept verbatim (minus
+# wrapping ``*``/``~``/backticks): video ids and paths contain underscores.
+# Elsewhere ``_`` is only stripped at word edges (``_italic_``), so
+# ``snake_case`` survives.
+_MARKUP_RE = re.compile(r"(\S*(?:https?://|www\.|youtu\.be/|youtube\.com/)\S*)|[*~`#]+|(?<![A-Za-z0-9])_+|_+(?![A-Za-z0-9])")
+
+
+def strip_markup(text: str) -> str:
+    return _MARKUP_RE.sub(lambda m: m.group(1).strip("*~`") if m.group(1) else "", text)
+
+
+def post_text(body: str) -> str:
+    """Display text of post evidence (``title\\nurl\\nselftext``): the bare URL line is dropped."""
+    title, _, rest = (body or "").partition("\n")
+    url, _, selftext = rest.partition("\n")
+    if not re.fullmatch(r"\s*https?://\S*\s*", url):
+        return body
+    return f"{title} \u2014 {selftext}" if selftext.strip() else title
+
+
 def excerpt(text: str, limit: int = config.EXCERPT_CHARS) -> str:
     text = clean_body(text)
     # Replace markdown links by their text and collapse whitespace.
     text = re.sub(r"\[([^\]]*)\]\(([^)]*)\)", lambda m: m.group(1) or m.group(2), text)
     text = re.sub(r"^\s*>.*$", "", text, flags=re.MULTILINE)  # drop quoted parent text
-    text = re.sub(r"[*_~`#]+", "", text)
+    text = strip_markup(text)
     text = re.sub(r"\s+", " ", text).strip()
     if len(text) > limit:
         text = text[: limit - 1].rsplit(" ", 1)[0].rstrip(",;:") + "…"
@@ -138,7 +158,7 @@ def aggregate(comments: Iterable[dict]) -> dict[str, VideoAgg]:
             if created and (v.first_seen is None or created < v.first_seen):
                 v.first_seen = created
             v.comments.append({
-                "text": body,
+                "text": post_text(body) if kind == "post" else body,
                 "score": score,
                 "permalink": permalink(c),
                 "negative": negative,

@@ -1,1 +1,4 @@
 requests>=2.28,<3
+# LLM pass (pipeline/llm.py); optional at runtime: without it or without
+# ANTHROPIC_API_KEY the pipeline falls back to the keyword tagger.
+anthropic>=2.0,<3

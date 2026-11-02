@@ -237,6 +237,7 @@ function renderCard(v, index) {
     h('div', { class: 'card-body' },
       h('h3', { class: 'card-title', title: v.title }, v.title),
       v.channel ? h('p', { class: 'card-channel' }, v.channel) : null,
+      v.summary ? h('p', { class: 'card-summary' }, v.summary) : null,
       h('p', { class: 'card-meta' }, meta),
       h('div', { class: 'card-tags' }, cardTags(v)),
     ),
@@ -385,7 +386,7 @@ function closeVideo({ fromHistory = false } = {}) {
   setInert(false);
   current = null;
   sessionPlay = null;
-  document.title = 'FitTube · Fitness videos Reddit actually recommends';
+  document.title = 'FitTube · Fitness videos people actually recommend';
   if (!fromHistory) {
     if (history.state && history.state.modal) history.back();
     else history.replaceState(null, '', buildUrl());
@@ -402,6 +403,8 @@ function fillModal(v) {
   if (via.length) meta.push(h('span', {}, via.join(', ')));
   if (v.first_seen) meta.push(h('span', {}, `First recommended ${v.first_seen.slice(0, 4)}`));
   $('#m-meta').replaceChildren(...meta);
+  $('#m-summary').textContent = v.summary;
+  $('#m-summary').hidden = !v.summary;
   renderSources(v);
 
   $('#m-yt').href = `https://www.youtube.com/watch?v=${v.id}`;
@@ -421,11 +424,11 @@ function fillModal(v) {
     list.replaceChildren(...v.comments.map((c) => h('li', { class: 'comment' },
       h('p', {}, c.text),
       h('div', { class: 'comment-foot' },
-        c.score != null ? h('span', { class: 'comment-score', title: `${siteName(c.permalink) || 'Reddit'} score` }, icon('arrowUp'), fmtNum(c.score)) : null,
+        c.score != null ? h('span', { class: 'comment-score', title: siteName(c.permalink) ? `${siteName(c.permalink)} score` : 'Score' }, icon('arrowUp'), fmtNum(c.score)) : null,
         c.permalink ? h('a', { href: c.permalink, target: '_blank', rel: 'noopener nofollow' }, `View on ${siteName(c.permalink)}`) : null,
       ))));
   } else {
-    list.replaceChildren(h('li', { class: 'comment-empty' }, `Linked by ${plural(v.recommenders, 'Redditor')}; no comment excerpts saved.`));
+    list.replaceChildren(h('li', { class: 'comment-empty' }, `Recommended by ${plural(v.recommenders, 'person', 'people')}; no comment excerpts saved.`));
   }
 
   renderSessionNav();

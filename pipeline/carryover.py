@@ -11,8 +11,9 @@ conservative:
 
 * ``recommenders`` = max of the community (non-wiki) recommenders of both,
   plus one per distinct subreddit wiki listing the video;
-* ``score`` = max of the community scores of both (``score`` minus
-  ``build.sources_boost``), plus the wiki boost of the merged ``sources``;
+* ``score`` = max of the community scores of both (``score`` minus what its
+  wiki listings earn: one recommender, i.e. 10 points, plus ``WIKI_BOOST``
+  each), plus what the merged ``sources``' wiki listings earn;
 * ``comments``/``timestamps``/``subreddits``/``sources``/list tags are unioned,
   ``first_seen`` is the earliest date; title/channel come from the fresh build.
 
@@ -24,10 +25,11 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from pathlib import Path
 
 from . import config
-from .build import OEmbed, is_bot_body, rank_score, sources_boost
+from .build import OEmbed, is_bot_body, rank_score, sources_boost, wiki_boost
 
 log = logging.getLogger(__name__)
 
@@ -51,6 +53,18 @@ def legacy_sources(v: dict) -> list[dict]:
 
 def _n_wikis(sources: list[dict]) -> int:
     return len({s.get("subreddit", "").lower() for s in sources if s.get("kind") == "wiki"})
+
+
+def _wiki_score(sources: list[dict]) -> float:
+    """Score a record owes to its wiki listings: each wiki is one recommender
+    (``rank_score``: 10 points) plus ``WIKI_BOOST``."""
+    n = _n_wikis(sources)
+    return rank_score(n, 0) + wiki_boost(n)
+
+
+def _community_score(v: dict, sources: list[dict]) -> float:
+    """``score`` without the part owed to wiki listings."""
+    return float(v.get("score") or 0) - _wiki_score(sources)
 
 
 def _source_key(s: dict) -> tuple:
@@ -97,6 +111,54 @@ def clean_previous(v: dict) -> dict | None:
     return v
 
 
+_POST_PERMALINK_RE = re.compile(r"^https://(?:www\.)?reddit\.com/r/[^/]+/comments/([a-z0-9]+)/$")
+_POST_EXCERPT_RE = re.compile(r"^(.+?) (https?://\S+)(?: (.*))?$", re.DOTALL)
+# An id fragment ends at a non-id character, or directly at ``t=`` when the
+# ``&`` before a timestamp was lost too (``watch?v=QnwAoesJvQt=475``).
+_ID_FRAGMENT_RE = re.compile(r"(youtu\.be/|[?&]v=|/shorts/|/embed/|/live/)([A-Za-z0-9-]{8,10}?)(?=(t=)|[^A-Za-z0-9_-]|$)")
+
+
+def repair_excerpts(videos: list[dict]) -> int:
+    """Fix excerpts saved by older builds; returns the number of excerpts changed.
+
+    * Underscores were stripped from URLs (``youtu.be/K4dmZ5n6uU`` for
+      ``K4dmZ5_n6uU``): restored for ids of videos in ``videos``, with the
+      ``&`` before a timestamp when it was lost as well (``v=IDt=475``).
+    * Post excerpts began with the title and the post's raw URL: the URL is
+      replaced by an em dash, as ``build.post_text`` now does.
+
+    Idempotent.
+    """
+    by_stripped: dict[str, str | None] = {}
+    for v in videos:
+        vid = v.get("id") or ""
+        if "_" in vid:
+            key = vid.replace("_", "")
+            by_stripped[key] = None if key in by_stripped else vid  # ambiguous -> leave alone
+
+    def fix_id(m: re.Match) -> str:
+        vid = by_stripped.get(m.group(2))
+        if not vid:
+            return m.group(0)
+        # Restore the separator before a glued-on timestamp: ``?v=ID&t=``, ``youtu.be/ID?t=``.
+        sep = ("&" if m.group(1).endswith("v=") else "?") if m.group(3) else ""
+        return m.group(1) + vid + sep
+
+    changed = 0
+    for v in videos:
+        for c in v.get("comments") or []:
+            text = c.get("text") or ""
+            new = _ID_FRAGMENT_RE.sub(fix_id, text) if by_stripped else text
+            post = _POST_PERMALINK_RE.match(c.get("permalink") or "")
+            m = _POST_EXCERPT_RE.match(new) if post else None
+            if m and "\u2014" not in m.group(1) and (f"/comments/{post.group(1)}" in m.group(2) or "youtu" in m.group(2)):
+                new = f"{m.group(1)} \u2014 {m.group(3)}" if m.group(3) else m.group(1)
+            if new != text:
+                c["text"] = new
+                changed += 1
+    return changed
+
+
 def _union(*lists: list, key=lambda x: x) -> list:
     seen, out = set(), []
     for items in lists:
@@ -115,8 +177,7 @@ def merge_records(prev: dict, fresh: dict) -> dict:
 
     community_rec = max(int(prev.get("recommenders") or 0) - _n_wikis(prev_sources),
                         int(fresh.get("recommenders") or 0) - _n_wikis(fresh_sources))
-    community_score = max(float(prev.get("score") or 0) - sources_boost(prev_sources),
-                          float(fresh.get("score") or 0) - sources_boost(fresh_sources))
+    community_score = max(_community_score(prev, prev_sources), _community_score(fresh, fresh_sources))
 
     comments = _union(fresh.get("comments"), prev.get("comments"), key=lambda c: c.get("permalink") or c.get("text"))
     comments = _union(comments, key=lambda c: c.get("text"))
@@ -134,7 +195,7 @@ def merge_records(prev: dict, fresh: dict) -> dict:
     out = dict(fresh)
     out.update({
         "recommenders": community_rec + _n_wikis(sources),
-        "score": round(community_score + sources_boost(sources), 1),
+        "score": round(community_score + _wiki_score(sources), 1),
         "first_seen": min(dates) if dates else fresh.get("first_seen", _EPOCH),
         "subreddits": _union(fresh.get("subreddits"), prev.get("subreddits"), key=str.lower),
         "comments": comments[: config.TOP_COMMENTS],
@@ -160,6 +221,7 @@ def merge_previous(fresh: dict, previous: dict | None, oembed: OEmbed | None = N
             continue
         prev_by_id[v["id"]] = cleaned
 
+    repair_excerpts(list(prev_by_id.values()) + list(fresh["videos"]))
     fresh_ids = {v["id"] for v in fresh["videos"]}
     carried_ids = [i for i in prev_by_id if i not in fresh_ids]
     oembed = oembed or OEmbed()

@@ -79,7 +79,8 @@ class CarryOverTest(unittest.TestCase):
         out = carryover.merge_previous({"sources": [], "videos": [fresh]}, {"videos": [prev]}, oembed=FakeOEmbed())
         v = out["videos"][0]
         self.assertEqual(v["recommenders"], 5 + 1)  # community max + the wiki
-        self.assertEqual(v["score"], 70.0 + config.WIKI_BOOST)
+        # The wiki is one more recommender (10 points) on top of WIKI_BOOST (review of #9).
+        self.assertEqual(v["score"], 70.0 + 10 + config.WIKI_BOOST)
         self.assertEqual(v["first_seen"], "2012-03-04")
         self.assertEqual(v["subreddits"], ["bodyweightfitness", "yoga", "Fitness"])
         self.assertEqual([c["text"] for c in v["comments"]], ["old", "new"])
@@ -89,6 +90,18 @@ class CarryOverTest(unittest.TestCase):
         again = carryover.merge_previous({"sources": [], "videos": [fresh]}, out, oembed=FakeOEmbed())
         self.assertEqual(again["videos"][0]["recommenders"], 6)
         self.assertEqual(again["videos"][0]["score"], v["score"])
+
+    def test_gaining_a_wiki_listing_scores_its_recommender(self):
+        # Regression (review of #9, e.g. 2z8JmcrW-As): the previous record has
+        # more community evidence, the fresh one adds a wiki listing. The
+        # merged score must equal the formula for the merged recommenders.
+        wiki_src = {"kind": "wiki", "subreddit": "bodyweightfitness", "path": "/wiki/x",
+                    "url": "https://www.reddit.com/r/bodyweightfitness/wiki/x"}
+        prev = record(A, 4, score=build.rank_score(4, 5))
+        fresh = record(A, 3, score=build.rank_score(3, 2) + config.WIKI_BOOST, sources=[wiki_src])
+        v = carryover.merge_records(carryover.clean_previous(prev), fresh)
+        self.assertEqual(v["recommenders"], 5)
+        self.assertEqual(v["score"], round(build.rank_score(5, 5) + config.WIKI_BOOST, 1))
 
     def test_union_sources(self):
         merged = carryover.union_sources(
@@ -123,6 +136,19 @@ class CarryOverTest(unittest.TestCase):
         stripped = strip_external(merged)["videos"][0]
         self.assertEqual((stripped["recommenders"], stripped["score"]), (1, base))
         self.assertEqual(stripped["sources"], [wiki_src])
+
+    def test_repair_excerpts_restores_underscores(self):
+        vid = "_QnwAoesJvQ"
+        texts = ["Source: http://www.youtube.com/watch?v=QnwAoesJvQt=475 Good form",
+                 "Watch: http://youtu.be/QnwAoesJvQ and https://youtu.be/QnwAoesJvQt=12",
+                 "Unrelated https://youtu.be/abcdefghijk and watch?v=ZZZZZZZZZZt=5"]
+        videos = [record(vid, comments=[{"text": t, "score": 1, "permalink": f"p{i}"} for i, t in enumerate(texts)])]
+        self.assertEqual(carryover.repair_excerpts(videos), 2)
+        self.assertEqual([c["text"] for c in videos[0]["comments"]], [
+            "Source: http://www.youtube.com/watch?v=_QnwAoesJvQ&t=475 Good form",
+            "Watch: http://youtu.be/_QnwAoesJvQ and https://youtu.be/_QnwAoesJvQ?t=12",
+            texts[2]])
+        self.assertEqual(carryover.repair_excerpts(videos), 0)  # idempotent
 
     def test_no_previous(self):
         fresh = {"sources": [], "videos": [record(A)]}

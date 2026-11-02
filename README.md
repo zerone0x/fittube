@@ -4,7 +4,7 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
 
 ## How it works
 
-1. `pipeline/` pulls historical Reddit comments and posts containing YouTube links, plus the moderator-curated wikis, from fitness subreddits (via the public Arctic Shift API), aggregates them per video, filters noise, fetches metadata via YouTube oEmbed (no API key), tags videos, and writes `site/data/videos.json`.
+1. `pipeline/` pulls historical Reddit comments and posts containing YouTube links, plus the moderator-curated wikis, from fitness subreddits (via the public Arctic Shift API), aggregates them per video, filters noise, fetches metadata via YouTube oEmbed (no API key), tags videos, and writes `site/data/videos.json`. An LLM pass (Claude, run in GitHub Actions) then checks that each saved comment really recommends its video, drops non-fitness videos, personal lift clips, event footage and anti-recommendations, and writes the tags and a one-sentence summary (see `pipeline/README.md`). Without `ANTHROPIC_API_KEY` the keyword tagger and the cached LLM verdicts are used.
 2. `site/` is a static, build-free frontend (HTML/CSS/vanilla JS) deployed to GitHub Pages.
 
 ## Data contract: `site/data/videos.json`
@@ -25,6 +25,7 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
       "subreddits": ["bodyweightfitness"],
       "comments": [{"text": "excerpt <=280 chars", "score": 42, "permalink": "https://www.reddit.com/..."}],
       "timestamps": [{"t": 95, "label": "optional label"}],
+      "summary": "optional one-sentence description written by the LLM pass",
       "tags": {
         "goal": ["strength|hypertrophy|fat-loss|mobility|rehab|endurance|skill"],
         "body": ["full|upper|lower|core|back|chest|shoulders|arms|legs|glutes|neck|hips"],
@@ -42,7 +43,7 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
 }
 ```
 
-`recommenders` = number of distinct Reddit authors who linked the video (in comments or posts); each subreddit wiki listing the video counts as one more. `score` = ranking score computed by the pipeline (a wiki listing adds a fixed boost, see `pipeline/README.md`). `timestamps` come from `t=` params / `mm:ss` mentions in comments. Videos are sorted by `score` desc.
+`recommenders` = number of distinct Reddit authors who linked the video (in comments or posts); each subreddit wiki listing the video counts as one more. Authors whose saved comment the LLM pass judged not to be a recommendation are not counted. `score` = ranking score computed by the pipeline (a wiki listing adds a fixed boost, see `pipeline/README.md`). `timestamps` come from `t=` params / `mm:ss` mentions in comments. Videos are sorted by `score` desc.
 
 `sources` (optional) says where the recommendations come from. Entries share a `kind`:
 
@@ -54,6 +55,8 @@ A fitness video site in the spirit of Karpathy's HackerTube: instead of an engag
 | `hn` / `forum` | `site`, `url`, `score` | Non-Reddit sources (Hacker News, forums) |
 
 Consumers must ignore unknown kinds and fields. Records built before `sources` existed may lack it.
+
+`summary` (optional) is a one-sentence, LLM-written description of the video; consumers must treat it as plain text and cope with its absence (videos not yet reviewed by the LLM pass have none). Records may also carry `llm_rejected` (`{"recommenders": n, "score": x, "comments": [...], "sources": [...]}`): the excerpts the LLM pass judged not to be recommendations (and the `sources` entries pointing at them), hidden from `comments`/`sources` and no longer counted. It lets the pipeline undo and re-apply the pass; consumers should ignore it. `llm_note: "kept-by-content"` marks a video kept although none of its saved excerpts was a recommendation (they were off-topic, e.g. misattributed thread replies) because the LLM judged the video itself a training tutorial/explainer/follow-along/program.
 
 ### Non-Reddit sources (Hacker News, T-Nation)
 
@@ -68,5 +71,5 @@ The pipeline also merges YouTube links from Hacker News comments and the T-Natio
 ```
 
 - `comments[]` / `timestamps[]` entries from these sites carry `"site"`; comment `permalink` then points to the HN item / T-Nation post and `score` may be `null` (HN does not expose comment points).
-- `subreddits` is empty for videos found only outside Reddit; such videos have `needs_llm_check: true` (keyword-filtered evidence only, to be vetted by the LLM pass).
+- `subreddits` is empty for videos found only outside Reddit; such videos have `needs_llm_check: true` (keyword-filtered evidence only, to be vetted by the LLM pass). The LLM pass sets it (and the flag on each `sources` entry whose excerpt it accepted) to `false`, and drops videos it rejects.
 - The top-level `sources` list also names the sites (`news.ycombinator.com`, `t-nation.com`).
