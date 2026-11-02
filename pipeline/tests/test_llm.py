@@ -43,7 +43,8 @@ def dataset():
         video(B, "Robert Oberst on deadlifts", 1, [comment("b1", "avoid: Oberst says you shouldn't deadlift", 12)]),
         # Music video linked in a training log.
         video(C, "Electric Callboy - PUMP IT", 3, [comment("c1", "my warmup song", 8), comment("c2", "banger", 5)]),
-        # Wiki-listed: never dropped, even if stage B rejects it.
+        # Wiki-listed: kept although stage B rejects it as spam (a wiki listing
+        # only gives way to video-level grounds: non-fitness, event footage...).
         video(D, "PUMP IT wiki edition", 2, [], sources=[WIKI], karma=0),
         # Stage B returns garbage: keyword tags stay.
         video(E, "Hamstring stretch BROKEN", 3, [comment("e1", "great stretch", 9)]),
@@ -66,7 +67,8 @@ def responder(params):
         out = {"keep": True, "goal": ["not-a-goal"]}
     else:
         music = "PUMP IT" in user
-        out = {"keep": not music, "reject_reason": "non-fitness" if music else "none",
+        reason = ("spam" if "wiki edition" in user else "non-fitness") if music else "none"
+        out = {"keep": not music, "reject_reason": reason,
                "goal": [] if music else ["mobility", "mobility"], "body": ["legs"], "equipment": ["none"],
                "level": "beginner", "type": "tutorial", "summary": "  A short   summary. "}
     if "output_config" in params:  # JSON-schema structured output: the answer is text
@@ -554,6 +556,8 @@ class SummaryPolishTest(LLMTestCase):
             "Demonstrates the hollow body hold, listed in the r/bodyweightfitness wiki.": "provenance",
             "Demonstrates the hollow body hold; details are not provided.": "meta",
             "Demonstrates the hollow body hold, likely for gymnasts.": "meta",
+            'Video titled "Hollow Hold" from channel Joe.': "meta",
+            "Demonstrates the hollow body hold, recommended as the go-to core guide.": "reception",
             "Untitled personal recording of a hollow body hold.": "personal-clip",
             "Demonstrates the hollow body hold for core str\u2026": "truncated",
             "Demonstrates the hollow body hold for core strength. ?": "truncated",
@@ -563,6 +567,57 @@ class SummaryPolishTest(LLMTestCase):
         }
         for text, problem in cases.items():
             self.assertIn(problem, llm.summary_problems(text), text)
+
+    def test_reception_clauses_are_cut_audience_advice_stays(self):
+        cases = {
+            # Issue 13: how the video is regarded, not what it shows.
+            "Starting Strength tutorial on how to perform the barbell bench press using the Starting Strength method, "
+            "recommended as a brief, to-the-point technique guide.":
+                "Starting Strength tutorial on how to perform the barbell bench press using the Starting Strength "
+                "method.",
+            "Dan John's workshop on his Easy Strength approach, a low-volume training program with short workouts, "
+            "recommended as the primary source for the method.":
+                "Dan John's workshop on his Easy Strength approach, a low-volume training program with short workouts.",
+            "A woman in her 50s documents her parents, both in their 80s, starting strength training and the changes "
+            "they saw after one year, as recommended for showing the quality-of-life benefits of lifting.":
+                "A woman in her 50s documents her parents, both in their 80s, starting strength training and the "
+                "changes they saw after one year.",
+            "Explains movement training approaches including Ido Portal's method, Animal Flow and primal-style "
+            "workouts, as recommended for adding varied, full-range bodyweight movement alongside strength "
+            "training.\u201d}<br>```json</br>":
+                "Explains movement training approaches including Ido Portal's method, Animal Flow and primal-style "
+                "workouts.",
+            "Documentary about marathoner and artist Joe Greer and his running and life story; recommended as a film "
+            "rather than for detailed training instruction.":
+                "Documentary about marathoner and artist Joe Greer and his running and life story.",
+        }
+        for raw, want in cases.items():
+            self.assertTrue(llm.summary_problems(raw), raw)
+            got = llm.clean_summary(raw)
+            self.assertEqual(got, want, raw)
+            self.assertEqual(llm.summary_problems(got), [], got)
+        # Audience advice and uses of the video are content: kept as they are.
+        for ok in ("Shows bodyweight exercises for building quad strength and size at home without equipment, "
+                   "recommended for people with limited equipment.",
+                   "Alan Thrall teaches how to perform the Romanian deadlift, focusing on hip hinging and loading the "
+                   "hamstrings, recommended for fixing deadlift form and back-dominant lifting.",
+                   "A bodyweight wrist strength and mobility routine from GMB Fitness, recommended as a warm-up for "
+                   "forearms and wrists before workouts.",
+                   "A beginner kettlebell sport workout covering long cycle, jerk and snatch, recommended as an "
+                   "introduction to sport-style kettlebell training.",
+                   "Demonstrates the side lying hip adduction exercise, recommended as an easier bodyweight option for "
+                   "strengthening the inner thigh and hip muscles.",
+                   "A walkthrough of the Bodyweight Fitness Recommended Routine covering warm-up and skill work."):
+            self.assertEqual(llm.summary_problems(ok), [], ok)
+            self.assertEqual(llm.clean_summary(ok), ok)
+
+    def test_title_and_channel_only_summaries_are_meta(self):
+        for raw in ('Video titled "Dog of Wisdom" from channel Joe.',
+                    'Video titled "Dog of Wisdom" from channel Joe; nothing in the title, channel or listing '
+                    'indicates fitness or training content.',
+                    "A clip called Leg Day from the channel GymBro."):
+            self.assertIn("meta", llm.summary_problems(raw), raw)
+            self.assertEqual(llm.clean_summary(raw), "", raw)
 
     def test_long_summaries_are_cut_at_a_clause_boundary(self):
         raw = ("Demonstrates the hollow body hold, a gymnastics core position, with regressions for beginners, "
@@ -619,13 +674,46 @@ class SummaryPolishTest(LLMTestCase):
         kept_clip = video(B, "18 pull ups sept13", 2)
         cache.set_video(B, {"keep": True, "reject_reason": "none", "tags": TAGS,
                             "summary": "A personal recording of 18 pull-ups with no instruction given."})
-        # A wiki-listed video rejected for another reason stays (moderator-curated).
-        music = video(C, "PUMP IT wiki edition", 2, [], sources=[WIKI], karma=0)
-        cache.set_video(C, {"keep": False, "reject_reason": "non-fitness", "tags": TAGS, "summary": ""})
+        # A wiki-listed video rejected on softer grounds stays (moderator-curated).
+        spam = video(C, "PUMP IT wiki edition", 2, [], sources=[WIKI], karma=0)
+        cache.set_video(C, {"keep": False, "reject_reason": "spam", "tags": TAGS, "summary": ""})
         report = llm.Report()
-        data = llm.apply_verdicts({"videos": [clip, kept_clip, music]}, cache, report)
+        data = llm.apply_verdicts({"videos": [clip, kept_clip, spam]}, cache, report)
         self.assertEqual([v["id"] for v in data["videos"]], [C])
         self.assertEqual({d["id"]: d["reason"] for d in report.dropped}, {A: "personal-clip", B: "personal-clip"})
+
+    def test_wiki_listing_does_not_override_non_fitness_event_footage_off_topic(self):
+        cache = self.cache()
+        cases = {A: ("Dog of Wisdom", "non-fitness", "A meme video.", "non-fitness"),
+                 B: ("Donny Shankle Nor Cal 2011 CJ3", "event-footage", "Competition footage of a clean and jerk.",
+                     "event-footage"),
+                 C: ("Advanced Rappel Techniques", "off-topic", "Rappel technique tutorial.", "off-topic"),
+                 D: ("Figure 8 knot", "event-footage", "Video on figure 8 knot variations.", "off-topic")}
+        videos = []
+        for vid, (title, reason, summary, _) in cases.items():
+            videos.append(video(vid, title, 2, [], sources=[WIKI], karma=0))
+            cache.set_video(vid, {"keep": False, "reject_reason": reason, "tags": TAGS, "summary": summary})
+        anti = video(E, "Wiki-listed, rebutted once", 2, [], sources=[WIKI], karma=0)
+        cache.set_video(E, {"keep": False, "reject_reason": "anti-recommendation", "tags": TAGS, "summary": ""})
+        report = llm.Report()
+        data = llm.apply_verdicts({"videos": videos + [anti]}, cache, report)
+        self.assertEqual([v["id"] for v in data["videos"]], [E])
+        self.assertEqual({d["id"]: d["reason"] for d in report.dropped}, {k: x[3] for k, x in cases.items()})
+
+    def test_moderation_wiki_pages_are_not_wiki_listings(self):
+        mod = {"kind": "wiki", "subreddit": "Fitness", "path": "/wiki/moderation",
+               "url": "https://www.reddit.com/r/Fitness/wiki/moderation"}
+        for path in ("/wiki/moderation", "/wiki/rules", "/wiki/config/automoderator", "/wiki/subreddit_rules"):
+            self.assertFalse(build.is_content_wiki_source({**mod, "path": path}), path)
+        for path in ("/wiki/faq", "/wiki/exercises/handstand", "/wiki/kb/recommended_routine"):
+            self.assertTrue(build.is_content_wiki_source({**mod, "path": path}), path)
+        cache = self.cache()
+        meme = video(A, "Dog of Wisdom", 1, [comment("m1", "lol")], sources=[mod])
+        cache.set_comment(A, "t1_m1", {"is_recommendation": False, "sentiment": "neutral", "quality_flags": ["joke"]})
+        self.assertEqual(llm._n_wikis(meme), 0)
+        self.assertEqual(llm.stage_a_drop(meme, cache), "no-recommendation")  # no wiki shield
+        report = llm.Report()
+        self.assertEqual(llm.apply_verdicts({"videos": [meme]}, cache, report)["videos"], [])
 
     def test_climbing_knots_and_gear_are_off_topic(self):
         cache = self.cache()

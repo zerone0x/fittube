@@ -29,7 +29,7 @@ import re
 from pathlib import Path
 
 from . import config
-from .build import OEmbed, is_bot_body, rank_score, sources_boost, wiki_boost
+from .build import OEmbed, is_bot_body, is_content_wiki_source, rank_score, sources_boost, wiki_boost
 
 log = logging.getLogger(__name__)
 
@@ -95,8 +95,19 @@ def union_sources(*lists: list[dict]) -> list[dict]:
 
 
 def clean_previous(v: dict) -> dict | None:
-    """Drop bot excerpts (and the bot's recommender); ``None`` if nothing is left."""
+    """Drop bot excerpts (and the bot's recommender) and listings on
+    moderation/rules wiki pages (with what they earned); ``None`` if nothing is left."""
     v = dict(v)
+    sources = v.get("sources") or []
+    bad = [s for s in sources if s.get("kind") == "wiki" and not is_content_wiki_source(s)]
+    if bad:
+        kept_sources = [s for s in sources if s not in bad]
+        lost = _n_wikis(sources) - _n_wikis(kept_sources)
+        v["sources"] = kept_sources
+        v["recommenders"] = max(0, int(v.get("recommenders") or 0) - lost)
+        v["score"] = round(max(0.0, float(v.get("score") or 0) - _wiki_score(sources) + _wiki_score(kept_sources)), 1)
+        if v["recommenders"] == 0:
+            return None
     comments = v.get("comments") or []
     kept = [c for c in comments if not is_bot_body(c.get("text") or "")]
     if len(kept) != len(comments):
@@ -246,7 +257,7 @@ def merge_previous(fresh: dict, previous: dict | None, oembed: OEmbed | None = N
     videos += [prev_by_id[i] for i in carried_ids if i not in gone]
     videos.sort(key=lambda r: (-r["score"], -r["recommenders"], r["id"]))
     log.info("carry-over: %d previous videos -> %d merged with fresh, %d carried, %d gone from YouTube, "
-             "%d dropped (bot-only)", len(prev_by_id) + dropped_bot, merged, len(carried_ids) - len(gone),
+             "%d dropped (bot or moderation-wiki only)", len(prev_by_id) + dropped_bot, merged, len(carried_ids) - len(gone),
              len(gone), dropped_bot)
     out = dict(fresh)
     out["sources"] = _union(fresh.get("sources"), previous.get("sources"), key=str.lower)

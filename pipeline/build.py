@@ -193,6 +193,15 @@ def wiki_boost(n_wikis: int) -> float:
     return config.WIKI_BOOST * n_wikis
 
 
+_WIKI_SKIP_RE = re.compile(config.WIKI_SKIP_PATH_RE, re.IGNORECASE)
+
+
+def is_content_wiki_source(s: dict) -> bool:
+    """Whether a ``kind="wiki"`` ``sources`` entry is a content page (not
+    moderation/rules/config plumbing, ``config.WIKI_SKIP_PATH_RE``)."""
+    return not _WIKI_SKIP_RE.search(s.get("path") or "")
+
+
 def sources_boost(sources: Iterable[dict]) -> float:
     """``wiki_boost`` of a ``videos.json`` record's ``sources`` list (its non-community score)."""
     return wiki_boost(len({s.get("subreddit", "").lower() for s in sources or () if s.get("kind") == "wiki"}))

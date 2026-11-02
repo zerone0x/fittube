@@ -71,6 +71,12 @@ class WikiTest(SourceTestCase):
         self.assertFalse(wiki.is_content_path("/r/bodyweightfitness/wiki/edit/exercises/pullup"))
         self.assertFalse(wiki.is_content_path("/r/bodyweightfitness/wiki/revisions/kb/recommended_routine"))
         self.assertFalse(wiki.is_content_path("/r/bodyweightfitness/wiki/automoderator-schedule"))
+        self.assertFalse(wiki.is_content_path("/r/Fitness/wiki/moderation"))
+        self.assertFalse(wiki.is_content_path("/r/Fitness/wiki/rules"))
+        self.assertFalse(wiki.is_content_path("/r/Fitness/wiki/faq/rules"))
+        self.assertFalse(wiki.is_content_path("/r/Fitness/wiki/config/sidebar"))
+        self.assertTrue(wiki.is_content_path("/r/Fitness/wiki/faq"))
+        self.assertTrue(wiki.is_content_path("/r/bodyweightfitness/wiki/kb/recommended_routine"))
         self.assertIsNone(wiki.wiki_path("/user/x/wiki"))
 
     def test_page_evidence(self):
