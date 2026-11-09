@@ -452,6 +452,13 @@
    "reason": "Movie quote clip linked as a joke reply, unrelated to training.",
    "sentiment": "neutral"
   },
+  "a3:1NNqUQvMYGc:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page listing exercises; links video as part of training guidance.",
+   "sentiment": "neutral"
+  },
   "a3:1cVT3ee9mgU:t1_dk5ml94": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -1577,6 +1584,13 @@
    "reason": "Shares link to full body split video as a resource, matter-of-fact.",
    "sentiment": "neutral"
   },
+  "a3:AH_QZLm_0-s:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page linking exercise videos; it reads as a training reference, not a disqualifier.",
+   "sentiment": "neutral"
+  },
   "a3:AJZiHieFiXE:t1_dlmot7l": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -1880,6 +1894,13 @@
    "quality_flags": [],
    "reason": "Lists McGill Big 3 video as good starting resource for posture and hips.",
    "sentiment": "positive"
+  },
+  "a3:C995b3KLXS4:t3_r4m0gi": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Guide author lists the hang video as a prehab resource within a pull-up routine.",
+   "sentiment": "neutral"
   },
   "a3:CN11qsOWaSg:t1_hl8pulq": {
    "is_recommendation": false,
@@ -2541,6 +2562,20 @@
    "reason": "Quotes video to disagree; calls Oberst's claim anecdotal and inaccurate.",
    "sentiment": "negative"
   },
+  "a3:FazlcjNXMwA:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page linking the arch body rock as an exercise tutorial.",
+   "sentiment": "neutral"
+  },
+  "a3:FgYoc4O-cio:t3_1vn1bx0": {
+   "is_recommendation": false,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Asker is confused about scapular pull-up form and cites videos as conflicting examples, not endorsing.",
+   "sentiment": "neutral"
+  },
   "a3:FnfryZmTytI:t1_hefw8yo": {
    "is_recommendation": false,
    "model": "claude-sonnet-5-5",
@@ -2602,6 +2637,13 @@
    "model": "claude-sonnet-5-5",
    "quality_flags": [],
    "reason": "Program review pointing to Brian's video explaining the program; informative share.",
+   "sentiment": "neutral"
+  },
+  "a3:G1_EoDs-G7E:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Wiki-style core progression page linking tutorial resources; counts as pointing people to the video.",
    "sentiment": "neutral"
   },
   "a3:GFxVeOZEP_U:t1_hhuge4u": {
@@ -2785,6 +2827,13 @@
    "model": "claude-sonnet-5-5",
    "quality_flags": [],
    "reason": "Gives tendon rehab advice while linking the video as supporting resource; no disagreement or self-promotion.",
+   "sentiment": "neutral"
+  },
+  "a3:Gw3RyyARhBQ:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page listing exercises with the video as a tutorial link.",
    "sentiment": "neutral"
   },
   "a3:GztOh3xFxG0:t1_hnbr9j3": {
@@ -3022,6 +3071,13 @@
    "quality_flags": [],
    "reason": "Gives advice on back pain and hamstrings, linking the video as a helpful resource.",
    "sentiment": "neutral"
+  },
+  "a3:IUZJoSP66HI:t3_rc371w": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Post shares the L-sit tutorial alongside training advice about ab work; no signs of self-promotion.",
+   "sentiment": "positive"
   },
   "a3:Ic68bks6-Wc:t3_1v2rguf": {
    "is_recommendation": true,
@@ -3429,6 +3485,13 @@
    "model": "claude-sonnet-5-5",
    "quality_flags": [],
    "reason": "Offers frog PAILs/RAILs and half frog videos as methods for progress.",
+   "sentiment": "neutral"
+  },
+  "a3:LBUfnmugKLw:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page linking the rings rollout as a recommended exercise tutorial.",
    "sentiment": "neutral"
   },
   "a3:LCusW9d_vOo:t1_doknnfv": {
@@ -3910,6 +3973,13 @@
    "model": "claude-sonnet-5-5",
    "quality_flags": [],
    "reason": "Links specific timestamp of exercise as a progression challenge, pointing to video demonstration.",
+   "sentiment": "neutral"
+  },
+  "a3:OgyqYuh41Mw:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Wiki-style core progression page listing exercises and resources, including this video as a tutorial.",
    "sentiment": "neutral"
   },
   "a3:On7fApDxHTM:t1_kru5i3u": {
@@ -5302,6 +5372,13 @@
    "reason": "Says the video was extremely useful and hopes it helps.",
    "sentiment": "positive"
   },
+  "a3:YSN3rqhYlKU:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page listing exercises, including this video as a Pallof press example.",
+   "sentiment": "neutral"
+  },
   "a3:YUsGN-OOwzk:t1_p2a7wsk": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -5506,6 +5583,13 @@
    "model": "claude-sonnet-5-5",
    "quality_flags": [],
    "reason": "Lists core exercise videos and advises choosing among them; gives training advice.",
+   "sentiment": "neutral"
+  },
+  "a3:ZeRsNzFcQLQ:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Wiki-style core progression page listing exercises and resources, linking video as reference material.",
    "sentiment": "neutral"
   },
   "a3:ZlRrIsoDpKg:t1_nh6zd1d": {
@@ -7109,6 +7193,13 @@
    "reason": "Lists core exercise videos and advises choosing one; clear recommendation for training.",
    "sentiment": "positive"
   },
+  "a3:kL_NJAkCQBg:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Core progression resource page lists the plank tutorial as part of recommended routine.",
+   "sentiment": "neutral"
+  },
   "a3:kOMeWoGlO6Y:t1_drzssla": {
    "is_recommendation": false,
    "model": "claude-sonnet-5-5",
@@ -7876,6 +7967,13 @@
    "reason": "Says the routine helped a ton and returned to it often.",
    "sentiment": "positive"
   },
+  "a3:ph3pddpKzzw:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Resource page listing core exercises; links video as part of progression guide.",
+   "sentiment": "neutral"
+  },
   "a3:pmt7uSU3mmU:t1_dra7csp": {
    "is_recommendation": true,
    "model": "claude-sonnet-5-5",
@@ -8339,6 +8437,13 @@
     "event-footage"
    ],
    "reason": "Links the clip as an example illustrating how the truck deadlift lever setup works.",
+   "sentiment": "neutral"
+  },
+  "a3:uYBOBBv9GzY:t3_1p6jnrg": {
+   "is_recommendation": true,
+   "model": "claude-sonnet-5-5",
+   "quality_flags": [],
+   "reason": "Wiki-style core progression page listing resources; video linked as part of exercise guidance.",
    "sentiment": "neutral"
   },
   "a3:ubdIGnX2Hfs:t1_hm3f2zb": {
@@ -9360,6 +9465,21 @@
     "invalid": 0,
     "output_tokens": 454,
     "requests": 4
+   }
+  },
+  {
+   "at": "2026-11-09T18:00:28Z",
+   "models": {
+    "A": "claude-sonnet-5-5",
+    "B": "claude-sonnet-5-5"
+   },
+   "stage_A": {
+    "cost_usd": 0.0759,
+    "errors": 0,
+    "input_tokens": 19418,
+    "invalid": 0,
+    "output_tokens": 1174,
+    "requests": 15
    }
   }
  ],

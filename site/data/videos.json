@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-02T17:31:12Z",
+ "generated_at": "2026-11-09T17:57:52Z",
  "sources": [
   "bodyweightfitness",
   "Fitness",
@@ -537,8 +537,8 @@
    "score": 86.3,
    "first_seen": "2022-07-06",
    "subreddits": [
-    "weightroom",
-    "xxfitness"
+    "xxfitness",
+    "weightroom"
    ],
    "comments": [
     {
@@ -1837,6 +1837,12 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
     },
     {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    },
+    {
      "kind": "comment",
      "subreddit": "fitness30plus",
      "count": 1
@@ -1951,8 +1957,8 @@
    "score": 70.0,
    "first_seen": "2021-01-05",
    "subreddits": [
-    "StrongerByScience",
     "xxfitness",
+    "StrongerByScience",
     "flexibility"
    ],
    "comments": [
@@ -2066,6 +2072,62 @@
     }
    ],
    "summary": "Candito Training HQ tutorial on squat technique."
+  },
+  {
+   "id": "C995b3KLXS4",
+   "title": "Arching Active Hang",
+   "channel": "Ido Portal",
+   "thumbnail": "https://i.ytimg.com/vi/C995b3KLXS4/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 67.3,
+   "first_seen": "2018-01-26",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Liam's Comprehensive Weighted Pull-up Guide — Liam’s Ultimate Weighted Pull-Up Guide Some random thoughts before I get into this: Created this because I don't see a lot on prehab stuff as well as those little muscles that need work. IMO this routine is the best. It's not too…",
+     "score": 184,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/r4m0gi/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 7,
+     "label": "Arch Hangs"
+    }
+   ],
+   "tags": {
+    "body": [
+     "back",
+     "shoulders",
+     "upper"
+    ],
+    "equipment": [
+     "bar"
+    ],
+    "goal": [
+     "skill",
+     "strength"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/row",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/row"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/r4m0gi/",
+     "score": 184
+    }
+   ],
+   "summary": "Demonstrates the arching active hang from a bar, a scapular and back-focused hang variation."
   },
   {
    "id": "wol7Hko8RhY",
@@ -2614,6 +2676,83 @@
     }
    ],
    "summary": "Juggernaut Training Systems guide for lifters preparing for their first powerlifting meet."
+  },
+  {
+   "id": "IUZJoSP66HI",
+   "title": "Floor L-sit Progression Tutorial by Antranik",
+   "channel": "Antranik Kizirian",
+   "thumbnail": "https://i.ytimg.com/vi/IUZJoSP66HI/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 60.0,
+   "first_seen": "2013-12-02",
+   "subreddits": [
+    "bodyweightfitness",
+    "flexibility"
+   ],
+   "comments": [
+    {
+     "text": "Floor L-sit Progression Tutorial by Antranik — Hey fitness freaks! I have recently started doing more eccentric/conc/iso type of training and my body has ridiculously changed, muscle mass has improved and my covid weight is officially gone. ​ I have started doing more ab work…",
+     "score": 18,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rc371w/"
+    },
+    {
+     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
+     "score": 11,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 40,
+     "label": "Siad-L z podparciem nóg"
+    },
+    {
+     "t": 153,
+     "label": "Siad-L z podparciem jednej nogi"
+    },
+    {
+     "t": 179,
+     "label": "Siad-L z przykurczonymi nogami"
+    }
+   ],
+   "tags": {
+    "body": [
+     "core",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "skill",
+     "strength"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/l-sit_polish",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit_polish"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/rc371w/",
+     "score": 18
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    }
+   ],
+   "summary": "Step-by-step floor L-sit progression tutorial covering assisted variations such as supported legs, one leg, and tucked legs."
   },
   {
    "id": "kXWtk3NLESk",
@@ -3885,6 +4024,11 @@
      "text": "Mastering the Plank - In Just 2 Minutes The BEST HOLLOW BODY Progressions -Beginner to Advanced The best exercise for the Lower Ab (Reverse crunch) https://youtu.be/QyVq5oUBpss https://youtu.be/3p4b4jVfFU Choose one of the first two, they recruit your entire core. Add one of…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/fitness30plus/comments/1mfz8nm/_/n6kwemy/"
+    },
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
     }
    ],
    "timestamps": [],
@@ -3913,6 +4057,12 @@
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
     },
     {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    },
+    {
      "kind": "comment",
      "subreddit": "fitness30plus",
      "count": 1
@@ -3937,6 +4087,11 @@
      "text": "Mastering the Plank - In Just 2 Minutes The BEST HOLLOW BODY Progressions -Beginner to Advanced The best exercise for the Lower Ab (Reverse crunch) https://youtu.be/QyVq5oUBpss https://youtu.be/3p4b4jVfFU Choose one of the first two, they recruit your entire core. Add one of…",
      "score": 2,
      "permalink": "https://www.reddit.com/r/fitness30plus/comments/1mfz8nm/_/n6kwemy/"
+    },
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
     }
    ],
    "timestamps": [],
@@ -3960,6 +4115,12 @@
      "subreddit": "bodyweightfitness",
      "path": "/wiki/exercises/core",
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
     },
     {
      "kind": "comment",
@@ -4077,42 +4238,127 @@
    "summary": "Runner Phily Bowden's video on easy-run and zone 2 training advice."
   },
   {
-   "id": "IUZJoSP66HI",
-   "title": "Floor L-sit Progression Tutorial by Antranik",
-   "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/IUZJoSP66HI/hqdefault.jpg",
+   "id": "1NNqUQvMYGc",
+   "title": "Copenhagen Plank Progressions",
+   "channel": "[P]rehab",
+   "thumbnail": "https://i.ytimg.com/vi/1NNqUQvMYGc/hqdefault.jpg",
    "recommenders": 2,
-   "score": 50.0,
-   "first_seen": "2013-12-02",
+   "score": 50.4,
+   "first_seen": "2023-05-31",
    "subreddits": [
-    "bodyweightfitness",
-    "flexibility"
+    "bodyweightfitness"
    ],
    "comments": [
     {
-     "text": "A fair amount of people experience low back pain due to tight hamstrings and a weak core from spending so much time sitting. I would start by doing some hamstring stretches. I would start with either a seated or standing pike (hanging down trying to touch your toes while your…",
-     "score": 11,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/qhrqfj/_/hif0c71/"
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
     }
    ],
-   "timestamps": [
-    {
-     "t": 40,
-     "label": "Siad-L z podparciem nóg"
-    },
-    {
-     "t": 153,
-     "label": "Siad-L z podparciem jednej nogi"
-    },
-    {
-     "t": 179,
-     "label": "Siad-L z przykurczonymi nogami"
-    }
-   ],
+   "timestamps": [],
    "tags": {
     "body": [
      "core",
      "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "rehab",
+     "strength"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Explains progressions for the Copenhagen plank, a bodyweight core and hip adductor exercise."
+  },
+  {
+   "id": "AH_QZLm_0-s",
+   "title": "Standing Band Resisted Pallof Press",
+   "channel": "Breathing to Heal",
+   "thumbnail": "https://i.ytimg.com/vi/AH_QZLm_0-s/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core"
+    ],
+    "equipment": [
+     "band"
+    ],
+    "goal": [
+     "strength",
+     "rehab"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Demonstrates how to perform the standing Pallof press with a resistance band as an anti-rotation core exercise."
+  },
+  {
+   "id": "FazlcjNXMwA",
+   "title": "GST - Arch Body Rock",
+   "channel": "Sam Martin",
+   "thumbnail": "https://i.ytimg.com/vi/FazlcjNXMwA/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core",
+     "full"
     ],
     "equipment": [
      "none"
@@ -4128,19 +4374,376 @@
     {
      "kind": "wiki",
      "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/l-sit_polish",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/l-sit_polish"
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
     },
     {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
     }
    ],
-   "summary": "Step-by-step floor L-sit progression tutorial covering assisted variations such as supported legs, one leg, and tucked legs."
+   "summary": "Demonstrates the arch body rock, a bodyweight gymnastics strength training core exercise."
+  },
+  {
+   "id": "G1_EoDs-G7E",
+   "title": "Core Compression (L-Sit, V-Sit) | Do It Right!",
+   "channel": "Tom Merrick",
+   "thumbnail": "https://i.ytimg.com/vi/G1_EoDs-G7E/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 251,
+     "label": "Pike Compressions"
+    }
+   ],
+   "tags": {
+    "body": [
+     "core",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "skill",
+     "strength",
+     "mobility"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Tom Merrick explains how to train core compression for L-sits and V-sits, including pike compressions, with form guidance for bodyweight practice."
+  },
+  {
+   "id": "Gw3RyyARhBQ",
+   "title": "Knee Raises (Hanging)",
+   "channel": "Tom Connr",
+   "thumbnail": "https://i.ytimg.com/vi/Gw3RyyARhBQ/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core"
+    ],
+    "equipment": [
+     "bar"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Demonstrates the hanging knee raise, a bodyweight core exercise performed from a pull-up bar."
+  },
+  {
+   "id": "LBUfnmugKLw",
+   "title": "rings rollout",
+   "channel": "Trainers Revolt",
+   "thumbnail": "https://i.ytimg.com/vi/LBUfnmugKLw/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core"
+    ],
+    "equipment": [
+     "rings"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Demonstrates the rings rollout, a core exercise."
+  },
+  {
+   "id": "OgyqYuh41Mw",
+   "title": "Arch Body Hold: do you REALLY want to know how to do it? | Stretch Therapy",
+   "channel": "Kit Laughlin (Stretch Therapy)",
+   "thumbnail": "https://i.ytimg.com/vi/OgyqYuh41Mw/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 220,
+     "label": "Arch Raises"
+    }
+   ],
+   "tags": {
+    "body": [
+     "back",
+     "core",
+     "glutes",
+     "shoulders"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "skill",
+     "strength"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Kit Laughlin of Stretch Therapy explains how to perform the arch body hold and arch raises, a bodyweight exercise."
+  },
+  {
+   "id": "YSN3rqhYlKU",
+   "title": "Pallof Press (on Rings)",
+   "channel": "Asphodel Fitness, Strength & Conditioning",
+   "thumbnail": "https://i.ytimg.com/vi/YSN3rqhYlKU/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core"
+    ],
+    "equipment": [
+     "rings"
+    ],
+    "goal": [
+     "strength"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Demonstrates how to perform the Pallof press using gymnastics rings as an anti-rotation core exercise."
+  },
+  {
+   "id": "ph3pddpKzzw",
+   "title": "How to Do Back Extensions",
+   "channel": "LIVESTRONG",
+   "thumbnail": "https://i.ytimg.com/vi/ph3pddpKzzw/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "back",
+     "core",
+     "glutes"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "strength",
+     "rehab"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "A tutorial on how to perform back extensions."
+  },
+  {
+   "id": "uYBOBBv9GzY",
+   "title": "AB WHEEL MISTAKES | 7 Most Common Ways..",
+   "channel": "FitnessFAQs",
+   "thumbnail": "https://i.ytimg.com/vi/uYBOBBv9GzY/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 50.4,
+   "first_seen": "2023-05-31",
+   "subreddits": [
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Calisthenics — Link Core Progression Note: As far as \"core\" exercises go, this page will forever be \"incomplete\". Since there are so many different things you can do for your core, we've decided to keep this page centered around the core exercises used in the Recommended…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "core"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/core",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
+    },
+    {
+     "kind": "post",
+     "subreddit": "bodyweightfitness",
+     "url": "https://www.reddit.com/r/bodyweightfitness/comments/1p6jnrg/",
+     "score": 1
+    }
+   ],
+   "summary": "Explains seven common ab wheel mistakes and how to correct them, aimed at improving ab wheel rollout technique for core training."
   },
   {
    "id": "ghuaqD8rHvY",
@@ -4193,6 +4796,102 @@
     }
    ],
    "summary": "Short tutorial on performing the standing pike stretch to get more out of it."
+  },
+  {
+   "id": "-ZX1QMTdAC4",
+   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
+   "channel": "The Ready State",
+   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 49.7,
+   "first_seen": "2013-08-28",
+   "subreddits": [
+    "flexibility",
+    "bodyweightfitness",
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
+    },
+    {
+     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
+    },
+    {
+     "text": "Try the couch stretch, here's a video as well. It hurts...",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
+    },
+    {
+     "text": "If you sit all day the couch stretch [1] helps a lot to undo the shortening in your hip flexors. 2 min a day each side. Really painful if you sit a lot. Kelly Starrett has a lot of great information about mobility. [1]…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=6291682",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 126,
+     "label": ""
+    },
+    {
+     "t": 140,
+     "label": "Couch stretch"
+    }
+   ],
+   "tags": {
+    "body": [
+     "hips",
+     "legs"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "mobility",
+     "rehab"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "flexibility"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=6291682",
+     "score": null,
+     "needs_llm_check": false
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 3,
+     "sum_score": 6.0,
+     "first_seen": "2013-12-10"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work."
   },
   {
    "id": "lshRFK-7QOE",
@@ -4392,15 +5091,15 @@
     }
    ],
    "tags": {
-    "goal": [
-     "hypertrophy",
-     "strength"
-    ],
     "body": [
      "full"
     ],
     "equipment": [
      "barbell"
+    ],
+    "goal": [
+     "hypertrophy",
+     "strength"
     ],
     "level": "intermediate",
     "type": "program"
@@ -4659,14 +5358,14 @@
     }
    ],
    "tags": {
-    "goal": [
-     "strength"
-    ],
     "body": [
      "full"
     ],
     "equipment": [
      "barbell"
+    ],
+    "goal": [
+     "strength"
     ],
     "level": "intermediate",
     "type": "program"
@@ -6031,44 +6730,6 @@
    "summary": "Al Kavadlo's tutorial on the elbow lever, a bodyweight balance skill."
   },
   {
-   "id": "1NNqUQvMYGc",
-   "title": "Copenhagen Plank Progressions",
-   "channel": "[P]rehab",
-   "thumbnail": "https://i.ytimg.com/vi/1NNqUQvMYGc/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core",
-     "hips"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "rehab",
-     "strength"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Explains progressions for the Copenhagen plank, a bodyweight core and hip adductor exercise."
-  },
-  {
    "id": "1UpiP6wXu54",
    "title": "Toe Walks",
    "channel": "bravespt",
@@ -7180,43 +7841,6 @@
    "summary": "Antranik explains the structure and exercises of the Bodyweight Fitness Recommended Routine, a bodyweight strength program."
   },
   {
-   "id": "AH_QZLm_0-s",
-   "title": "Standing Band Resisted Pallof Press",
-   "channel": "Breathing to Heal",
-   "thumbnail": "https://i.ytimg.com/vi/AH_QZLm_0-s/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core"
-    ],
-    "equipment": [
-     "band"
-    ],
-    "goal": [
-     "strength",
-     "rehab"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Demonstrates how to perform the standing Pallof press with a resistance band as an anti-rotation core exercise."
-  },
-  {
    "id": "AkqakLhh1fI",
    "title": "Side Kicks and Front Kicks with Antranik",
    "channel": "Antranik Kizirian",
@@ -7487,50 +8111,6 @@
     }
    ],
    "summary": "A demonstration of maximum compression and L-sit lift technique."
-  },
-  {
-   "id": "C995b3KLXS4",
-   "title": "Arching Active Hang",
-   "channel": "Ido Portal",
-   "thumbnail": "https://i.ytimg.com/vi/C995b3KLXS4/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2018-01-26",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [
-    {
-     "t": 7,
-     "label": "Arch Hangs"
-    }
-   ],
-   "tags": {
-    "body": [
-     "back",
-     "shoulders",
-     "upper"
-    ],
-    "equipment": [
-     "bar"
-    ],
-    "goal": [
-     "skill",
-     "strength"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/row",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/row"
-    }
-   ],
-   "summary": "Demonstrates the arching active hang from a bar, a scapular and back-focused hang variation."
   },
   {
    "id": "CVaEhXotL7M",
@@ -7880,44 +8460,6 @@
    "summary": "Tutorial on the straddle L sit, a bodyweight core and compression skill."
   },
   {
-   "id": "FazlcjNXMwA",
-   "title": "GST - Arch Body Rock",
-   "channel": "Sam Martin",
-   "thumbnail": "https://i.ytimg.com/vi/FazlcjNXMwA/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core",
-     "full"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "skill",
-     "strength"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Demonstrates the arch body rock, a bodyweight gymnastics strength training core exercise."
-  },
-  {
    "id": "FgYoc4O-cio",
    "title": "Bine Suljic | MY TOP 3 EXERCISES TO INCREASE PULL-UP STRENGTH [Beginner - Advanced]",
    "channel": "Bine Beast",
@@ -7960,50 +8502,6 @@
     }
    ],
    "summary": "Bine Suljic demonstrates his top three exercises for building pull-up strength, including scapular pulls, with options scaled from beginner to advanced."
-  },
-  {
-   "id": "G1_EoDs-G7E",
-   "title": "Core Compression (L-Sit, V-Sit) | Do It Right!",
-   "channel": "Tom Merrick",
-   "thumbnail": "https://i.ytimg.com/vi/G1_EoDs-G7E/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [
-    {
-     "t": 251,
-     "label": "Pike Compressions"
-    }
-   ],
-   "tags": {
-    "body": [
-     "core",
-     "hips"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "skill",
-     "strength",
-     "mobility"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Tom Merrick explains how to train core compression for L-sits and V-sits, including pike compressions, with form guidance for bodyweight practice."
   },
   {
    "id": "GAPITSG7fQM",
@@ -8080,43 +8578,6 @@
     }
    ],
    "summary": "A pancake stretching routine with Emmet Louis from Tom Merrick, featuring ballistic stretching work for pancake flexibility."
-  },
-  {
-   "id": "Gw3RyyARhBQ",
-   "title": "Knee Raises (Hanging)",
-   "channel": "Tom Connr",
-   "thumbnail": "https://i.ytimg.com/vi/Gw3RyyARhBQ/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core"
-    ],
-    "equipment": [
-     "bar"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Demonstrates the hanging knee raise, a bodyweight core exercise performed from a pull-up bar."
   },
   {
    "id": "H01oGIS1C_g",
@@ -9013,43 +9474,6 @@
    "summary": "A CrossFit tutorial on how to perform the walking lunge."
   },
   {
-   "id": "LBUfnmugKLw",
-   "title": "rings rollout",
-   "channel": "Trainers Revolt",
-   "thumbnail": "https://i.ytimg.com/vi/LBUfnmugKLw/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core"
-    ],
-    "equipment": [
-     "rings"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Demonstrates the rings rollout, a core exercise."
-  },
-  {
    "id": "LEZq7QZ8ySQ",
    "title": "Shoulder Taps",
    "channel": "Balance In Motion",
@@ -9698,51 +10122,6 @@
     }
    ],
    "summary": "Tutorial on how to bail safely out of a handstand."
-  },
-  {
-   "id": "OgyqYuh41Mw",
-   "title": "Arch Body Hold: do you REALLY want to know how to do it? | Stretch Therapy",
-   "channel": "Kit Laughlin (Stretch Therapy)",
-   "thumbnail": "https://i.ytimg.com/vi/OgyqYuh41Mw/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [
-    {
-     "t": 220,
-     "label": "Arch Raises"
-    }
-   ],
-   "tags": {
-    "body": [
-     "back",
-     "core",
-     "glutes",
-     "shoulders"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "skill",
-     "strength"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Kit Laughlin of Stretch Therapy explains how to perform the arch body hold and arch raises, a bodyweight exercise."
   },
   {
    "id": "OhhaK3nDbbA",
@@ -10560,7 +10939,7 @@
    "thumbnail": "https://i.ytimg.com/vi/VVPyAU4l-sw/hqdefault.jpg",
    "recommenders": 1,
    "score": 40.0,
-   "first_seen": "2025-09-19",
+   "first_seen": "2018-07-26",
    "subreddits": [
     "flexibility",
     "Posture"
@@ -11019,42 +11398,6 @@
     }
    ],
    "summary": "Ido Portal demonstrates the advanced version of the Harop curl, a bodyweight exercise."
-  },
-  {
-   "id": "YSN3rqhYlKU",
-   "title": "Pallof Press (on Rings)",
-   "channel": "Asphodel Fitness, Strength & Conditioning",
-   "thumbnail": "https://i.ytimg.com/vi/YSN3rqhYlKU/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core"
-    ],
-    "equipment": [
-     "rings"
-    ],
-    "goal": [
-     "strength"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Demonstrates how to perform the Pallof press using gymnastics rings as an anti-rotation core exercise."
   },
   {
    "id": "YUD4uTP8w84",
@@ -13181,45 +13524,6 @@
    "summary": "A tutorial on how to perform the bodyweight row."
   },
   {
-   "id": "ph3pddpKzzw",
-   "title": "How to Do Back Extensions",
-   "channel": "LIVESTRONG",
-   "thumbnail": "https://i.ytimg.com/vi/ph3pddpKzzw/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "back",
-     "core",
-     "glutes"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "strength",
-     "rehab"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "A tutorial on how to perform back extensions."
-  },
-  {
    "id": "pq9fN6Q1HQw",
    "title": "Complete Leg Workout At Home: No Weights Needed",
    "channel": "FitnessFAQs",
@@ -13893,43 +14197,6 @@
     }
    ],
    "summary": "Demonstrates the ring inverted hang with a fully extended body."
-  },
-  {
-   "id": "uYBOBBv9GzY",
-   "title": "AB WHEEL MISTAKES | 7 Most Common Ways..",
-   "channel": "FitnessFAQs",
-   "thumbnail": "https://i.ytimg.com/vi/uYBOBBv9GzY/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2023-05-31",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "core"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/core",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/core"
-    }
-   ],
-   "summary": "Explains seven common ab wheel mistakes and how to correct them, aimed at improving ab wheel rollout technique for core training."
   },
   {
    "id": "upYfwjsv3XE",
@@ -14792,77 +15059,6 @@
     }
    ],
    "summary": "Emmet Louis demonstrates using horse stance as a way to work on flexibility and strength for side splits."
-  },
-  {
-   "id": "-ZX1QMTdAC4",
-   "title": "Don't Go In the Pain Cave | Feat. Kelly Starrett | Ep. 2 | MobilityWOD",
-   "channel": "The Ready State",
-   "thumbnail": "https://i.ytimg.com/vi/-ZX1QMTdAC4/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 39.7,
-   "first_seen": "2013-12-10",
-   "subreddits": [
-    "flexibility",
-    "bodyweightfitness",
-    "weightroom"
-   ],
-   "comments": [
-    {
-     "text": "Dude u gotta do the couch-stretch. I've started doing it for 2 minutes. TWO MINUTES EACH SIDE. I put a timer on and just DO IT. It's really, really incredible, and much needed. Here you go: http://youtu.be/-ZX1QMTdAC4?t=2m6s",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1tj73f/_/ce8yvxn/"
-    },
-    {
-     "text": "See a physio. Stretching MAY cause more problems if your issue is in the joint. What worked for me: Couch stretch for hip flexors and quads Lying glute stretch Squatting adductor stretch Hamstring stretch against wall - you'll probably have to ease into this one as most…",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/1sjus2/_/cdybaiz/"
-    },
-    {
-     "text": "Try the couch stretch, here's a video as well. It hurts...",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/7j3v62/_/dr3i6lt/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 126,
-     "label": ""
-    },
-    {
-     "t": 140,
-     "label": "Couch stretch"
-    }
-   ],
-   "tags": {
-    "body": [
-     "hips",
-     "legs"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "mobility",
-     "rehab"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "comment",
-     "subreddit": "flexibility"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "weightroom"
-    }
-   ],
-   "summary": "Kelly Starrett's MobilityWOD episode on not pushing through the pain cave in mobility work."
   },
   {
    "id": "C89EKtI8a3o",
@@ -18545,15 +18741,15 @@
    ],
    "timestamps": [],
    "tags": {
-    "goal": [
-     "mobility"
-    ],
     "body": [
      "legs",
      "hips"
     ],
     "equipment": [
      "none"
+    ],
+    "goal": [
+     "mobility"
     ],
     "level": "any",
     "type": "follow-along"
@@ -19042,92 +19238,6 @@
     }
    ],
    "summary": "Ido Portal demonstrates shrimp squat progressions, with beginner and intermediate variations of this single-leg bodyweight squat exercise."
-  },
-  {
-   "id": "k1luKAS_Xcg",
-   "title": "Find your primal posture and sit without back pain: Esther Gokhale at TEDxStanford",
-   "channel": "TEDx Talks",
-   "thumbnail": "https://i.ytimg.com/vi/k1luKAS_Xcg/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 30.0,
-   "first_seen": "2016-07-26",
-   "subreddits": [],
-   "comments": [
-    {
-     "text": "https://www.youtube.com/watch?v=k1luKAS_Xcg I found this Ted talk helped me with some lower back and leg issues. I don't do exactly what she demonstrates in the video, but I find focusing on the 'tail out' posture helps a lot. Also regular breaks and going for walks.",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=18336159",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "I haven't read all the other comments so not sure if this has been mentioned already. The modern concepts of posture may be wrong. I have a curved butt to shoulder area. It makes me look somewhat duck like. However, I never have any back aches etc. I know of people who are…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=12167648",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKAS_Xcg (I only started paying attention after my emergency back surgery)",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=49838343",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 224,
-     "label": "",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "tags": {
-    "body": [
-     "back",
-     "hips"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "rehab"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=49838343",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=18336159",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=12167648",
-     "score": null,
-     "needs_llm_check": false
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 0,
-     "sum_score": 0.0
-    },
-    "hn": {
-     "recommenders": 3,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain."
   },
   {
    "id": "niKD6byONtM",
@@ -29686,75 +29796,6 @@
    "summary": "ATHLEAN-X video on relieving low back pain."
   },
   {
-   "id": "FTV6UCh-yhs",
-   "title": "Exercises to correct Hunchback Posture, Kyphosis and forward head carriage",
-   "channel": "Mike Brett",
-   "thumbnail": "https://i.ytimg.com/vi/FTV6UCh-yhs/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 20.0,
-   "first_seen": "2015-10-13",
-   "subreddits": [],
-   "comments": [
-    {
-     "text": "Skateboarding, walking, stretching, daily push ups. Also these back stretches at least a few times a week. They help with preventing hunchback from sitting in a chair on a computer all day. https://www.youtube.com/watch?v=FTV6UCh-yhs",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=15605396",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "I've got my monitors on 2 boxes adding about 6 inches each to their height. When I first started looking up to use them it was so uncomfortable and distracting that I could not work. I kept at it though and I find my posture has improved and the thought of going back is now…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=10380739",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "back",
-     "neck",
-     "shoulders"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "rehab",
-     "mobility"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=15605396",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=10380739",
-     "score": null,
-     "needs_llm_check": false
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 0,
-     "sum_score": 0.0
-    },
-    "hn": {
-     "recommenders": 2,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "Demonstrates exercises and stretches aimed at correcting hunchback posture, kyphosis and forward head carriage, recommended for people who sit at a computer all day."
-  },
-  {
    "id": "K4dmZ5_n6uU",
    "title": "A 3 Minute Neck Drill That Will Change Your Life",
    "channel": "Mark Wildman",
@@ -29826,75 +29867,6 @@
    },
    "needs_llm_check": false,
    "summary": "A short neck mobility drill of about three minutes."
-  },
-  {
-   "id": "LT_dFRnmdGs",
-   "title": "Exercise to improve hunchback posture   forward head carriage correction",
-   "channel": "rekrain",
-   "thumbnail": "https://i.ytimg.com/vi/LT_dFRnmdGs/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 20.0,
-   "first_seen": "2015-05-01",
-   "subreddits": [],
-   "comments": [
-    {
-     "text": "I've been doing this and it's really helped with pain in my back/neck, while improving my posture: https://www.youtube.com/watch?v=LT_dFRnmdGs",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=12832833",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "This video[1] shows some simple exercises that target posture. YMMV but it seemed to help me. [1] https://youtu.be/LT_dFRnmdGs",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=9472017",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "neck",
-     "back",
-     "upper"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "rehab",
-     "mobility"
-    ],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=12832833",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=9472017",
-     "score": null,
-     "needs_llm_check": false
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 0,
-     "sum_score": 0.0
-    },
-    "hn": {
-     "recommenders": 2,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "Simple exercises aimed at correcting hunchback posture and forward head carriage."
   },
   {
    "id": "QhVC_AnZYYM",
@@ -30087,12 +30059,6 @@
    "subreddits": [],
    "comments": [
     {
-     "text": "A while back someone on HN recommended Sivananda Yoga. The first part of it includes some breathing exercises. I was suffering from repeated flu-like symptoms, sinus, etc since the beginning of this year. I had some difficulty breathing and actually had to get tested for corona…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=23277157",
-     "site": "news.ycombinator.com"
-    },
-    {
      "text": "Lot of people tend to have respiratory failure before situation gets worrisome and breath exercises are a definite way to help your body do what a ventilator does In yoga asanas, there are few breathing exercises that existed in ancient India and I myself can attest to it that…",
      "score": null,
      "permalink": "https://news.ycombinator.com/item?id=22659990",
@@ -30137,13 +30103,6 @@
     {
      "kind": "hn",
      "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=23277157",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
      "url": "https://news.ycombinator.com/item?id=22659990",
      "score": null,
      "needs_llm_check": false
@@ -30161,6 +30120,79 @@
    },
    "needs_llm_check": false,
    "summary": "A 90-minute follow-along Sivananda yoga class that opens with breathing exercises and continues through yoga postures."
+  },
+  {
+   "id": "k1luKAS_Xcg",
+   "title": "Find your primal posture and sit without back pain: Esther Gokhale at TEDxStanford",
+   "channel": "TEDx Talks",
+   "thumbnail": "https://i.ytimg.com/vi/k1luKAS_Xcg/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2016-07-26",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "I haven't read all the other comments so not sure if this has been mentioned already. The modern concepts of posture may be wrong. I have a curved butt to shoulder area. It makes me look somewhat duck like. However, I never have any back aches etc. I know of people who are…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12167648",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKAS_Xcg (I only started paying attention after my emergency back surgery)",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=49838343",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 224,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "body": [
+     "back",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "rehab"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=49838343",
+     "score": null,
+     "needs_llm_check": false
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12167648",
+     "score": null,
+     "needs_llm_check": false
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain."
   },
   {
    "id": "l8c9BPtwXMs",
@@ -32132,15 +32164,15 @@
    ],
    "timestamps": [],
    "tags": {
-    "goal": [
-     "mobility"
-    ],
     "body": [
      "legs",
      "hips"
     ],
     "equipment": [
      "none"
+    ],
+    "goal": [
+     "mobility"
     ],
     "level": "beginner",
     "type": "explainer"
