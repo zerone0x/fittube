@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T17:57:52Z",
+ "generated_at": "2026-11-16T17:22:13Z",
  "sources": [
   "bodyweightfitness",
   "Fitness",
@@ -144,9 +144,9 @@
    "score": 148.3,
    "first_seen": "2015-07-30",
    "subreddits": [
+    "overcominggravity",
     "bodyweightfitness",
     "flexibility",
-    "overcominggravity",
     "naturalbodybuilding",
     "xxfitness"
    ],
@@ -157,14 +157,14 @@
      "permalink": "https://www.reddit.com/r/flexibility/comments/re8n6l/_/ho6iaic/"
     },
     {
+     "text": "My Full Body Routine — English is not my first language, so apologies in advance Hello Folks, I made up a routine based on OG and I just need some critique for my program. My goals are Free Handstand, SA into Handstand Press, Back Lever and Manna progression Warmup (20-25min)…",
+     "score": 8,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/4oy71i/"
+    },
+    {
      "text": "This wrist routine was recomendet to me on here and it has helped me tremendously. I do it before every workout",
      "score": 4,
      "permalink": "https://www.reddit.com/r/overcominggravity/comments/krl74c/_/giamoab/"
-    },
-    {
-     "text": "I do these every day--either modified at my desk or on the floor as demonstrated. Wrist Exercises for Strength and Flexibility",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/flexibility/comments/6r4vu8/_/dl2mld1/"
     }
    ],
    "timestamps": [],
@@ -190,6 +190,24 @@
      "subreddit": "bodyweightfitness",
      "path": "/wiki/faq",
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/faq"
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/4oy71i/",
+     "score": 8
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/4suyfn/",
+     "score": 3
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/ho1ik9/",
+     "score": 3
     },
     {
      "kind": "comment",
@@ -1957,8 +1975,8 @@
    "score": 70.0,
    "first_seen": "2021-01-05",
    "subreddits": [
-    "xxfitness",
     "StrongerByScience",
+    "xxfitness",
     "flexibility"
    ],
    "comments": [
@@ -2379,6 +2397,99 @@
     }
    ],
    "summary": "Explains the slow jogging approach to natural running, covering the science behind it and its benefits for weight loss, health and running performance."
+  },
+  {
+   "id": "Av3LO2GwpAk",
+   "title": "Squats Part 1: Fold-Ability and Proportions",
+   "channel": "PersonalTrainingdotcom",
+   "thumbnail": "https://i.ytimg.com/vi/Av3LO2GwpAk/hqdefault.jpg",
+   "recommenders": 5,
+   "score": 64.0,
+   "first_seen": "2021-11-27",
+   "subreddits": [
+    "naturalbodybuilding",
+    "Fitness",
+    "weightroom",
+    "xxfitness"
+   ],
+   "comments": [
+    {
+     "text": "I spam this video to people struggling with squats. It was a real eureka thing for me. Having said that, for bodybuilding squats are entirely optional. I do exclusively ssb and walking lunges these days.",
+     "score": 7,
+     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1xj07b3/_/19ruso0k3awaq/"
+    },
+    {
+     "text": "I found this quite helpful",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/r3cvet/_/hmb434s/"
+    },
+    {
+     "text": "I posted this a couple of days ago but mods took it down and thought it would be better here: 'Body proportions as determinents for lift form/stance/variants - what are some of r/weightroom's insights?' tl;dr this topic has been discussed in good detail about squats and…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/199i49f/_/kigb7nj/"
+    },
+    {
+     "text": "Excellent video that discusses how different body types reflect how you can do squats - https://www.youtube.com/watch?v=Av3LO2GwpAk",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=32191517",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "lower",
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "naturalbodybuilding"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "xxfitness"
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=32191517",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 4,
+     "sum_score": 15.4,
+     "first_seen": "2021-11-27"
+    },
+    "hn": {
+     "recommenders": 1,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "Explains how individual body proportions and hip 'fold-ability' affect squat stance and form, helping lifters who struggle with squatting find a position that suits their build."
   },
   {
    "id": "7FF6VLej_bY",
@@ -3210,6 +3321,57 @@
    "summary": "Dr. Mark Cucuzzella explains the principles of natural running and running form."
   },
   {
+   "id": "5EJtZsA43vI",
+   "title": "The Shrimp Advanced",
+   "channel": "Ido Portal",
+   "thumbnail": "https://i.ytimg.com/vi/5EJtZsA43vI/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 55.9,
+   "first_seen": "2017-07-19",
+   "subreddits": [
+    "overcominggravity",
+    "bodyweightfitness"
+   ],
+   "comments": [
+    {
+     "text": "Some elements that may be worth adding into the progression charts. — Hi, I have some suggestions to expand the progression table since I haven't seen them on the online chart or on the Second Edition's one (great book by the way, currently reading and I'll leave a review when…",
+     "score": 9,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/6obtmh/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "legs",
+     "glutes"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "advanced",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/shrimp-squat",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/shrimp-squat"
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/6obtmh/",
+     "score": 9
+    }
+   ],
+   "summary": "Ido Portal demonstrates an advanced version of the shrimp squat, a single-leg bodyweight exercise."
+  },
+  {
    "id": "Vwn5hSf3WEg",
    "title": "One of my Favorite Shoulder Exercises",
    "channel": "Yuri Marmerstein",
@@ -3379,10 +3541,16 @@
    "score": 55.5,
    "first_seen": "2019-07-08",
    "subreddits": [
+    "overcominggravity",
     "bodyweightfitness",
     "Stronglifts5x5"
    ],
    "comments": [
+    {
+     "text": "Transitioning from the BWF RR to UL Hypertrophy focused Intermediate Routine — 26M | 187cm (6’2”) | 74.5kg (165lbs) · Background: Been doing BWF’s RR consistently for over a year now (I’d already done it in the past for another year or so but I was less consistent). I’ve been…",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/haomyl/"
+    },
     {
      "text": "Where does it hurt? just everywhere? I'd say review your form, make sure you're loading your spine safely and not rounding on any lifts. I get knee pain, taping and knee sleeves have helped there. Maybe getting a belt might help if you don't have one. Maybe try a stretching…",
      "score": 2,
@@ -3418,6 +3586,12 @@
      "subreddit": "bodyweightfitness",
      "path": "/wiki/move/phase2",
      "url": "https://www.reddit.com/r/bodyweightfitness/wiki/move/phase2"
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/haomyl/",
+     "score": 6
     },
     {
      "kind": "comment",
@@ -3486,74 +3660,6 @@
     }
    ],
    "summary": "Alan Thrall explains what to do after a back injury."
-  },
-  {
-   "id": "Av3LO2GwpAk",
-   "title": "Squats Part 1: Fold-Ability and Proportions",
-   "channel": "PersonalTrainingdotcom",
-   "thumbnail": "https://i.ytimg.com/vi/Av3LO2GwpAk/hqdefault.jpg",
-   "recommenders": 4,
-   "score": 54.0,
-   "first_seen": "2021-11-27",
-   "subreddits": [
-    "naturalbodybuilding",
-    "Fitness",
-    "weightroom",
-    "xxfitness"
-   ],
-   "comments": [
-    {
-     "text": "I spam this video to people struggling with squats. It was a real eureka thing for me. Having said that, for bodybuilding squats are entirely optional. I do exclusively ssb and walking lunges these days.",
-     "score": 7,
-     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1xj07b3/_/19ruso0k3awaq/"
-    },
-    {
-     "text": "I found this quite helpful",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/r3cvet/_/hmb434s/"
-    },
-    {
-     "text": "I posted this a couple of days ago but mods took it down and thought it would be better here: 'Body proportions as determinents for lift form/stance/variants - what are some of r/weightroom's insights?' tl;dr this topic has been discussed in good detail about squats and…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/199i49f/_/kigb7nj/"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "lower",
-     "legs",
-     "hips"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "comment",
-     "subreddit": "naturalbodybuilding"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "weightroom"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "xxfitness"
-    }
-   ],
-   "summary": "Explains how individual body proportions and hip 'fold-ability' affect squat stance and form, helping lifters who struggle with squatting find a position that suits their build."
   },
   {
    "id": "rxD321l2svE",
@@ -7210,44 +7316,6 @@
     }
    ],
    "summary": "Demonstrates leg swings in two directions, side to side and front to back, a dynamic mobility drill."
-  },
-  {
-   "id": "5EJtZsA43vI",
-   "title": "The Shrimp Advanced",
-   "channel": "Ido Portal",
-   "thumbnail": "https://i.ytimg.com/vi/5EJtZsA43vI/hqdefault.jpg",
-   "recommenders": 1,
-   "score": 40.0,
-   "first_seen": "2019-05-03",
-   "subreddits": [
-    "bodyweightfitness"
-   ],
-   "comments": [],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "legs",
-     "glutes"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "advanced",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/shrimp-squat",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/shrimp-squat"
-    }
-   ],
-   "summary": "Ido Portal demonstrates an advanced version of the shrimp squat, a single-leg bodyweight exercise."
   },
   {
    "id": "5KaDOUeMY98",
@@ -10941,8 +11009,8 @@
    "score": 40.0,
    "first_seen": "2018-07-26",
    "subreddits": [
-    "flexibility",
-    "Posture"
+    "Posture",
+    "flexibility"
    ],
    "comments": [],
    "timestamps": [
@@ -17571,6 +17639,63 @@
    "summary": "Short tutorial on how to perform the kettlebell clean."
   },
   {
+   "id": "Pg4X26PbdS4",
+   "title": "Mechanics Of Shoulder Mobility & Flexibility",
+   "channel": "matthewismith",
+   "thumbnail": "https://i.ytimg.com/vi/Pg4X26PbdS4/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 33.0,
+   "first_seen": "2023-10-10",
+   "subreddits": [
+    "overcominggravity",
+    "Posture"
+   ],
+   "comments": [
+    {
+     "text": "Fix Your Posture with Me! (My Notes on Body Mechanics ) — Read Time : About 8 minutes Adding headers so it’s easier to skim! (26 F) My collection of notes, tips, and resources taken throughout my posture correction journey 💖 I posted my progress pics yesterday and had a few…",
+     "score": 153,
+     "permalink": "https://www.reddit.com/r/Posture/comments/1sk7taq/"
+    },
+    {
+     "text": "Lack of external rotation creating pain in my arm — After discovering this YouTube video on shoulder mechanics (https://youtu.be/Pg4X26PbdS4?si=hH8soP8pVSDuoF1h) I’ve wanted to fix my shoulders as my left is less flexible and has some scapula winging. One of the shoulder…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/174px7c/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 235,
+     "label": "brought extreme bicep tightness on this side. My scapula was already winging…"
+    }
+   ],
+   "tags": {
+    "goal": [
+     "mobility",
+     "rehab"
+    ],
+    "body": [
+     "shoulders"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "Posture",
+     "url": "https://www.reddit.com/r/Posture/comments/1sk7taq/",
+     "score": 153
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/174px7c/",
+     "score": 4
+    }
+   ]
+  },
+  {
    "id": "RQU8wZPbioA",
    "title": "How To Barbell Row",
    "channel": "Alan Thrall (Untamed Strength)",
@@ -18285,6 +18410,66 @@
     }
    ],
    "summary": "A beginner kettlebell sport workout covering long cycle, jerk and snatch, recommended as an introduction to sport-style kettlebell training."
+  },
+  {
+   "id": "uCYybClJ5Zk",
+   "title": "Core Strength 1: Decline sit-ups, long version.",
+   "channel": "Joshua Naterman",
+   "thumbnail": "https://i.ytimg.com/vi/uCYybClJ5Zk/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 31.5,
+   "first_seen": "2016-04-01",
+   "subreddits": [
+    "overcominggravity"
+   ],
+   "comments": [
+    {
+     "text": "1 Preventing APT from decline sit ups with hip flexor stretches — I do decline sit ups and will eventually move to the weighted variation after I hit the max decline. You have to maintain PPT throughout the exercise. Joshua Naterman said it's a very effective exercise for…",
+     "score": 5,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/4cvny4/"
+    },
+    {
+     "text": "Position of weight during weighted decline situps. — I've recently added weighted decline situps into my routine, but I'm not sure where the best place to hold the weight is. If I place a plate on my chest and hold it there, it has a much lesser effect, and feels like it almost…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/7jkjbq/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 1,
+     "label": ""
+    },
+    {
+     "t": 230,
+     "label": "For context, this is where Josh brings it up."
+    }
+   ],
+   "tags": {
+    "goal": [
+     "strength",
+     "mobility"
+    ],
+    "body": [
+     "core"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/4cvny4/",
+     "score": 5
+    },
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/7jkjbq/",
+     "score": 4
+    }
+   ]
   },
   {
    "id": "ya_XbEMDEeI",
@@ -21416,23 +21601,24 @@
    "thumbnail": "https://i.ytimg.com/vi/IikP_teeLkI/hqdefault.jpg",
    "recommenders": 2,
    "score": 28.0,
-   "first_seen": "2021-10-23",
+   "first_seen": "2020-12-12",
    "subreddits": [
-    "Stronglifts5x5",
+    "overcominggravity",
     "powerlifting",
+    "Stronglifts5x5",
     "flexibility",
     "weightroom"
    ],
    "comments": [
     {
+     "text": "Difficulties in intermediate leg hypertrophy training and pistol squats — I've been doing bodybuilder-style high volume calisthenics workouts for a few months now. Everything's been going good but I'm having trouble particularly with leg training, specifically the quads. Here…",
+     "score": 6,
+     "permalink": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/"
+    },
+    {
      "text": "I really think you're into something with the ankle mobility. If you zoom in on the left foot (or look close) it does a bunch of moving around every lift. OP: watch this: https://youtu.be/IikP_teeLkI and see if you can atleast do the test. If you need to work on mobility do it.…",
      "score": 3,
      "permalink": "https://www.reddit.com/r/Stronglifts5x5/comments/r6vjbe/_/hmw8cqh/"
-    },
-    {
-     "text": "No worries man, yeah my ankles were so bad that I used to not be able to hit depth at all without heeled squat shoes. For the hips I sat in the bottom position of a wide seated good morning (like this but without any weight on my back), gives a great stretch of the abductors.…",
-     "score": 2,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/qd8tos/_/hhq8c0a/"
     }
    ],
    "timestamps": [],
@@ -21451,6 +21637,12 @@
     "type": "tutorial"
    },
    "sources": [
+    {
+     "kind": "post",
+     "subreddit": "overcominggravity",
+     "url": "https://www.reddit.com/r/overcominggravity/comments/kbmgt7/",
+     "score": 6
+    },
     {
      "kind": "comment",
      "subreddit": "Stronglifts5x5",
@@ -29725,6 +29917,89 @@
     }
    ],
    "summary": "Steven Low discusses how to structure a training routine for long-term health and longevity."
+  },
+  {
+   "id": "2PdJFbjWHEU",
+   "title": "Paleo Diet & Strength Training Biochemistry | Doug McGuff M.D. | Full Length HD",
+   "channel": "21 Studios",
+   "thumbnail": "https://i.ytimg.com/vi/2PdJFbjWHEU/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2016-09-08",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "If you want to do Super Slow, great, but that is the original HIT, High Intensity (Strength) Training from Arthur Jones of Nautilus fame. I just went to YouTube and searched for HIIT. I don't see any videos of \"moving slowly with form\" (which is exactly what Super Slow is built…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=48738622",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Julian Shapiro, YCombinator alum, has a very nice guide to building muscle.[0] The gateway drug to the HIT tradition, which began with genius Arthur Jones and Nautilus in the early 1970s, is this video presentation by Doug McGuff[1], author of Body by Science[2]. Whether you…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=29405286",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "It's surprising that no one has mentioned Body by Science[1], SuperSlow from Ken Hutchins, Arthur Jones and Nautilus, and other research based programs from the last forty years. Free weights can be very dangerous as you approach muscle failure, and all sorts of momentum…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=14539640",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength",
+     "fat-loss",
+     "hypertrophy"
+    ],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=48738622",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=29405286",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=14539640",
+     "score": null,
+     "needs_llm_check": true
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12453587",
+     "score": null,
+     "needs_llm_check": true
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": true
   },
   {
    "id": "DWmGArQBtFI",
