@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T17:22:13Z",
+ "generated_at": "2026-11-23T19:46:08Z",
  "sources": [
   "bodyweightfitness",
   "Fitness",
@@ -144,8 +144,8 @@
    "score": 148.3,
    "first_seen": "2015-07-30",
    "subreddits": [
-    "overcominggravity",
     "bodyweightfitness",
+    "overcominggravity",
     "flexibility",
     "naturalbodybuilding",
     "xxfitness"
@@ -555,8 +555,8 @@
    "score": 86.3,
    "first_seen": "2022-07-06",
    "subreddits": [
-    "xxfitness",
-    "weightroom"
+    "weightroom",
+    "xxfitness"
    ],
    "comments": [
     {
@@ -2092,6 +2092,87 @@
    "summary": "Candito Training HQ tutorial on squat technique."
   },
   {
+   "id": "4dF1DOWzf20",
+   "title": "How To Do Push Ups with Antranik",
+   "channel": "Antranik Kizirian",
+   "thumbnail": "https://i.ytimg.com/vi/4dF1DOWzf20/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 67.8,
+   "first_seen": "2017-01-17",
+   "subreddits": [
+    "weightroom",
+    "bodyweightfitness",
+    "Fitness"
+   ],
+   "comments": [
+    {
+     "text": "Max Shank with the Barbell Shrugged guys talking about shoulder health, worth a watch IMO — https://www.youtube.com/watch?v=AkyeqhoUpv4 Here's Max Shank with Mike Bledsoe and Doug Larson from Barbell Shrugged, talking prevention of shoulder injuries, a few key points: - 6:57…",
+     "score": 170,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/5oem4r/"
+    },
+    {
+     "text": "There's a little bit of cleanup required in the efficiency of your workouts. Here are my suggestions: Ditch the band assisted dips, you're not ready for dips because you can't do pushups, so it's not worth it. Ditch the diamond pushups on the knees. Instead do incline pushups…",
+     "score": 12,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rs1tvv/_/hqkgfrd/"
+    },
+    {
+     "text": "It is this one https://youtu.be/4dF1DOWzf20?si=nn0IzhMglm0d30lm",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt63elz/"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 97,
+     "label": ""
+    },
+    {
+     "t": 236,
+     "label": "Flexão inclinada"
+    }
+   ],
+   "tags": {
+    "body": [
+     "chest",
+     "shoulders",
+     "arms",
+     "core"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "beginner",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "wiki",
+     "subreddit": "bodyweightfitness",
+     "path": "/wiki/exercises/pushup_br",
+     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup_br"
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/5oem4r/",
+     "score": 170
+    },
+    {
+     "kind": "comment",
+     "subreddit": "bodyweightfitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    }
+   ],
+   "summary": "A tutorial on how to perform push-ups with proper form."
+  },
+  {
    "id": "C995b3KLXS4",
    "title": "Arching Active Hang",
    "channel": "Ido Portal",
@@ -2397,99 +2478,6 @@
     }
    ],
    "summary": "Explains the slow jogging approach to natural running, covering the science behind it and its benefits for weight loss, health and running performance."
-  },
-  {
-   "id": "Av3LO2GwpAk",
-   "title": "Squats Part 1: Fold-Ability and Proportions",
-   "channel": "PersonalTrainingdotcom",
-   "thumbnail": "https://i.ytimg.com/vi/Av3LO2GwpAk/hqdefault.jpg",
-   "recommenders": 5,
-   "score": 64.0,
-   "first_seen": "2021-11-27",
-   "subreddits": [
-    "naturalbodybuilding",
-    "Fitness",
-    "weightroom",
-    "xxfitness"
-   ],
-   "comments": [
-    {
-     "text": "I spam this video to people struggling with squats. It was a real eureka thing for me. Having said that, for bodybuilding squats are entirely optional. I do exclusively ssb and walking lunges these days.",
-     "score": 7,
-     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1xj07b3/_/19ruso0k3awaq/"
-    },
-    {
-     "text": "I found this quite helpful",
-     "score": 4,
-     "permalink": "https://www.reddit.com/r/xxfitness/comments/r3cvet/_/hmb434s/"
-    },
-    {
-     "text": "I posted this a couple of days ago but mods took it down and thought it would be better here: 'Body proportions as determinents for lift form/stance/variants - what are some of r/weightroom's insights?' tl;dr this topic has been discussed in good detail about squats and…",
-     "score": 3,
-     "permalink": "https://www.reddit.com/r/weightroom/comments/199i49f/_/kigb7nj/"
-    },
-    {
-     "text": "Excellent video that discusses how different body types reflect how you can do squats - https://www.youtube.com/watch?v=Av3LO2GwpAk",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=32191517",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "body": [
-     "lower",
-     "legs",
-     "hips"
-    ],
-    "equipment": [
-     "barbell"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "comment",
-     "subreddit": "naturalbodybuilding"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "weightroom"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "xxfitness"
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=32191517",
-     "score": null,
-     "needs_llm_check": true
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 4,
-     "sum_score": 15.4,
-     "first_seen": "2021-11-27"
-    },
-    "hn": {
-     "recommenders": 1,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "Explains how individual body proportions and hip 'fold-ability' affect squat stance and form, helping lifters who struggle with squatting find a position that suits their build."
   },
   {
    "id": "7FF6VLej_bY",
@@ -2928,76 +2916,6 @@
    "summary": "Antranik teaches a middle/straddle splits tutorial using horse stance and a dynamic frog pose sequence to build passive and active flexibility."
   },
   {
-   "id": "4dF1DOWzf20",
-   "title": "How To Do Push Ups with Antranik",
-   "channel": "Antranik Kizirian",
-   "thumbnail": "https://i.ytimg.com/vi/4dF1DOWzf20/hqdefault.jpg",
-   "recommenders": 3,
-   "score": 59.0,
-   "first_seen": "2017-12-28",
-   "subreddits": [
-    "bodyweightfitness",
-    "Fitness"
-   ],
-   "comments": [
-    {
-     "text": "There's a little bit of cleanup required in the efficiency of your workouts. Here are my suggestions: Ditch the band assisted dips, you're not ready for dips because you can't do pushups, so it's not worth it. Ditch the diamond pushups on the knees. Instead do incline pushups…",
-     "score": 12,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/rs1tvv/_/hqkgfrd/"
-    },
-    {
-     "text": "It is this one https://youtu.be/4dF1DOWzf20?si=nn0IzhMglm0d30lm",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/bodyweightfitness/comments/1picl4c/_/nt63elz/"
-    },
-    {
-     "text": "Wrist mobility stretches. Follow this: https://www.youtube.com/watch?v=4dF1DOWzf20",
-     "score": 1,
-     "permalink": "https://www.reddit.com/r/Fitness/comments/7mlry1/_/drvgf9p/"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 236,
-     "label": "Flexão inclinada"
-    }
-   ],
-   "tags": {
-    "body": [
-     "chest",
-     "shoulders",
-     "arms",
-     "core"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "strength",
-     "skill"
-    ],
-    "level": "beginner",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "wiki",
-     "subreddit": "bodyweightfitness",
-     "path": "/wiki/exercises/pushup_br",
-     "url": "https://www.reddit.com/r/bodyweightfitness/wiki/exercises/pushup_br"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "bodyweightfitness"
-    },
-    {
-     "kind": "comment",
-     "subreddit": "Fitness"
-    }
-   ],
-   "summary": "A tutorial on how to perform push-ups with proper form."
-  },
-  {
    "id": "zdwEWchSjrI",
    "title": "Shoulder mobility sequence | Yuri's band drill",
    "channel": "Kit Laughlin (Stretch Therapy)",
@@ -3329,8 +3247,8 @@
    "score": 55.9,
    "first_seen": "2017-07-19",
    "subreddits": [
-    "overcominggravity",
-    "bodyweightfitness"
+    "bodyweightfitness",
+    "overcominggravity"
    ],
    "comments": [
     {
@@ -3541,8 +3459,8 @@
    "score": 55.5,
    "first_seen": "2019-07-08",
    "subreddits": [
-    "overcominggravity",
     "bodyweightfitness",
+    "overcominggravity",
     "Stronglifts5x5"
    ],
    "comments": [
@@ -3660,6 +3578,74 @@
     }
    ],
    "summary": "Alan Thrall explains what to do after a back injury."
+  },
+  {
+   "id": "Av3LO2GwpAk",
+   "title": "Squats Part 1: Fold-Ability and Proportions",
+   "channel": "PersonalTrainingdotcom",
+   "thumbnail": "https://i.ytimg.com/vi/Av3LO2GwpAk/hqdefault.jpg",
+   "recommenders": 4,
+   "score": 54.0,
+   "first_seen": "2021-11-27",
+   "subreddits": [
+    "naturalbodybuilding",
+    "Fitness",
+    "weightroom",
+    "xxfitness"
+   ],
+   "comments": [
+    {
+     "text": "I spam this video to people struggling with squats. It was a real eureka thing for me. Having said that, for bodybuilding squats are entirely optional. I do exclusively ssb and walking lunges these days.",
+     "score": 7,
+     "permalink": "https://www.reddit.com/r/naturalbodybuilding/comments/1xj07b3/_/19ruso0k3awaq/"
+    },
+    {
+     "text": "I found this quite helpful",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/xxfitness/comments/r3cvet/_/hmb434s/"
+    },
+    {
+     "text": "I posted this a couple of days ago but mods took it down and thought it would be better here: 'Body proportions as determinents for lift form/stance/variants - what are some of r/weightroom's insights?' tl;dr this topic has been discussed in good detail about squats and…",
+     "score": 3,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/199i49f/_/kigb7nj/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "lower",
+     "legs",
+     "hips"
+    ],
+    "equipment": [
+     "barbell"
+    ],
+    "goal": [
+     "strength",
+     "skill"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "comment",
+     "subreddit": "naturalbodybuilding"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "Fitness"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "weightroom"
+    },
+    {
+     "kind": "comment",
+     "subreddit": "xxfitness"
+    }
+   ],
+   "summary": "Explains how individual body proportions and hip 'fold-ability' affect squat stance and form, helping lifters who struggle with squatting find a position that suits their build."
   },
   {
    "id": "rxD321l2svE",
@@ -6247,6 +6233,62 @@
     }
    ],
    "summary": "Jeff Nippard cuts his training volume in half and examines whether low-volume training near failure still builds muscle, drawing on research and his own results."
+  },
+  {
+   "id": "mUJzKY4vrQA",
+   "title": "335 lb curl, 815 lb hack squat, 770 lb jefferson deadlift, 910 lb trap bar deadlift, 600 lb rows",
+   "channel": "Eric Bugenhagen",
+   "thumbnail": "https://i.ytimg.com/vi/mUJzKY4vrQA/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 40.9,
+   "first_seen": "2017-03-20",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "Bulgarian Lite or: How I Learned to Stop Worrying and Love the Jefferson — Training With Eric And The Bulgarian Lite Method Disclaimer: These are my words, not Eric’s. They are completely from my perspective. Eric may feel differently about some things. First off, if you don’t…",
+     "score": 119,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/60h9e8/"
+    },
+    {
+     "text": "Training Tuesdays: Bulgarian Light — Welcome to Training Tuesdays, the weekly /r/weightroom training thread. We will feature discussions over training methodologies, program templates, and general weightlifting topics. (Questions not related to todays topic should he directed…",
+     "score": 48,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/6pfg8d/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [
+     "strength"
+    ],
+    "body": [
+     "full",
+     "lower",
+     "back",
+     "legs"
+    ],
+    "equipment": [
+     "barbell",
+     "machine"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/60h9e8/",
+     "score": 119
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/6pfg8d/",
+     "score": 48
+    }
+   ]
   },
   {
    "id": "BHsMW1jQqEE",
@@ -11009,8 +11051,8 @@
    "score": 40.0,
    "first_seen": "2018-07-26",
    "subreddits": [
-    "Posture",
-    "flexibility"
+    "flexibility",
+    "Posture"
    ],
    "comments": [],
    "timestamps": [
@@ -16358,6 +16400,55 @@
    "summary": "Demonstrates an eccentric biceps exercise."
   },
   {
+   "id": "V5eKgpZobA4",
+   "title": "405lbs Steinborn Squat",
+   "channel": "Alexander Mercieca",
+   "thumbnail": "https://i.ytimg.com/vi/V5eKgpZobA4/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 35.5,
+   "first_seen": "2016-11-30",
+   "subreddits": [
+    "weightroom"
+   ],
+   "comments": [
+    {
+     "text": "[Lifting Challenge] December 2016 — - - SUBMISSIONS ARE CLOSED -- Welcome to the Weightroom Lifting Challenge for December 1st - December 31st 2016 THIS POST IS FOR VIDEO SUBMISSIONS AND RESPONSES TO THEM. IF YOU HAVE QUESTIONS, SUBMIT THEM TO THE DAILY THREAD Since…",
+     "score": 38,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/5fpr0p/"
+    },
+    {
+     "text": "405lbs Steinborn Squat - YouTube",
+     "score": 2,
+     "permalink": "https://www.reddit.com/r/weightroom/comments/6ws3ck/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [
+     "lower",
+     "legs"
+    ],
+    "equipment": [],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/5fpr0p/",
+     "score": 38
+    },
+    {
+     "kind": "post",
+     "subreddit": "weightroom",
+     "url": "https://www.reddit.com/r/weightroom/comments/6ws3ck/",
+     "score": 2
+    }
+   ]
+  },
+  {
    "id": "YACmfwcBDnM",
    "title": "Couch To 5K: Week 1 | Starting Running For The First Time",
    "channel": "Global Triathlon Network",
@@ -19423,6 +19514,92 @@
     }
    ],
    "summary": "Ido Portal demonstrates shrimp squat progressions, with beginner and intermediate variations of this single-leg bodyweight squat exercise."
+  },
+  {
+   "id": "k1luKAS_Xcg",
+   "title": "Find your primal posture and sit without back pain: Esther Gokhale at TEDxStanford",
+   "channel": "TEDx Talks",
+   "thumbnail": "https://i.ytimg.com/vi/k1luKAS_Xcg/hqdefault.jpg",
+   "recommenders": 3,
+   "score": 30.0,
+   "first_seen": "2016-07-26",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "https://www.youtube.com/watch?v=k1luKAS_Xcg I found this Ted talk helped me with some lower back and leg issues. I don't do exactly what she demonstrates in the video, but I find focusing on the 'tail out' posture helps a lot. Also regular breaks and going for walks.",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=18336159",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I haven't read all the other comments so not sure if this has been mentioned already. The modern concepts of posture may be wrong. I have a curved butt to shoulder area. It makes me look somewhat duck like. However, I never have any back aches etc. I know of people who are…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12167648",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKAS_Xcg (I only started paying attention after my emergency back surgery)",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=49838343",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [
+    {
+     "t": 224,
+     "label": "",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "tags": {
+    "body": [
+     "back",
+     "hips"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "rehab"
+    ],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=49838343",
+     "score": null,
+     "needs_llm_check": false
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=18336159",
+     "score": null,
+     "needs_llm_check": false
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12167648",
+     "score": null,
+     "needs_llm_check": false
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 3,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain."
   },
   {
    "id": "niKD6byONtM",
@@ -25603,6 +25780,52 @@
    "summary": "Guide to lat anatomy and function, explaining how different parts of the muscle are trained through pulling angles and exercise selection for muscle growth."
   },
   {
+   "id": "9321DD_3gVQ",
+   "title": "Crush Cancer 2013 - Recap Video",
+   "channel": "Dusty Hyland",
+   "thumbnail": "https://i.ytimg.com/vi/9321DD_3gVQ/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 24.9,
+   "first_seen": "2017-10-19",
+   "subreddits": [
+    "crossfit"
+   ],
+   "comments": [
+    {
+     "text": "Dogtown CrossFit’s 7th Annual Crush Cancer Event - Oct 21, 2017 — On October 21st, 2017, DogTown CrossFit will be hosting its 7th annual Crush Cancer event that benefits Stand Up To Cancer’s collaborative cancer research. We have raised over $875,000 in the past 7 years from…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/crossfit/comments/77jj1a/"
+    },
+    {
+     "text": "DogTown CrossFit's 7th Annual Crush Cancer Event - Oct 21st 2017 — On October 21st, 2017, DogTown CrossFit will be hosting its 7th annual Crush Cancer event that benefits Stand Up To Cancer’s collaborative cancer research. We have raised over $875,000 in the past 7 years from…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/crossfit/comments/77iei5/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "crossfit",
+     "url": "https://www.reddit.com/r/crossfit/comments/77jj1a/",
+     "score": 4
+    },
+    {
+     "kind": "post",
+     "subreddit": "crossfit",
+     "url": "https://www.reddit.com/r/crossfit/comments/77iei5/",
+     "score": 1
+    }
+   ]
+  },
+  {
    "id": "DqQqE6oZdWY",
    "title": "Progression Within a Mesocycle | Advanced Hypertrophy Concepts and Tools | Lecture 9",
    "channel": "Renaissance Periodization",
@@ -25649,6 +25872,52 @@
     }
    ],
    "summary": "Lecture on how to progress training variables such as sets and RIR across a mesocycle, part of an advanced hypertrophy concepts series from Renaissance Periodization."
+  },
+  {
+   "id": "zkTsnF4A-FY",
+   "title": "Crush Cancer 2012",
+   "channel": "Dusty Hyland",
+   "thumbnail": "https://i.ytimg.com/vi/zkTsnF4A-FY/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 24.9,
+   "first_seen": "2017-10-19",
+   "subreddits": [
+    "crossfit"
+   ],
+   "comments": [
+    {
+     "text": "Dogtown CrossFit’s 7th Annual Crush Cancer Event - Oct 21, 2017 — On October 21st, 2017, DogTown CrossFit will be hosting its 7th annual Crush Cancer event that benefits Stand Up To Cancer’s collaborative cancer research. We have raised over $875,000 in the past 7 years from…",
+     "score": 4,
+     "permalink": "https://www.reddit.com/r/crossfit/comments/77jj1a/"
+    },
+    {
+     "text": "DogTown CrossFit's 7th Annual Crush Cancer Event - Oct 21st 2017 — On October 21st, 2017, DogTown CrossFit will be hosting its 7th annual Crush Cancer event that benefits Stand Up To Cancer’s collaborative cancer research. We have raised over $875,000 in the past 7 years from…",
+     "score": 1,
+     "permalink": "https://www.reddit.com/r/crossfit/comments/77iei5/"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "goal": [],
+    "body": [],
+    "equipment": [],
+    "level": "any",
+    "type": "explainer"
+   },
+   "sources": [
+    {
+     "kind": "post",
+     "subreddit": "crossfit",
+     "url": "https://www.reddit.com/r/crossfit/comments/77jj1a/",
+     "score": 4
+    },
+    {
+     "kind": "post",
+     "subreddit": "crossfit",
+     "url": "https://www.reddit.com/r/crossfit/comments/77iei5/",
+     "score": 1
+    }
+   ]
   },
   {
    "id": "Ntyhn542i9g",
@@ -29919,89 +30188,6 @@
    "summary": "Steven Low discusses how to structure a training routine for long-term health and longevity."
   },
   {
-   "id": "2PdJFbjWHEU",
-   "title": "Paleo Diet & Strength Training Biochemistry | Doug McGuff M.D. | Full Length HD",
-   "channel": "21 Studios",
-   "thumbnail": "https://i.ytimg.com/vi/2PdJFbjWHEU/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 20.0,
-   "first_seen": "2016-09-08",
-   "subreddits": [],
-   "comments": [
-    {
-     "text": "If you want to do Super Slow, great, but that is the original HIT, High Intensity (Strength) Training from Arthur Jones of Nautilus fame. I just went to YouTube and searched for HIIT. I don't see any videos of \"moving slowly with form\" (which is exactly what Super Slow is built…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=48738622",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "Julian Shapiro, YCombinator alum, has a very nice guide to building muscle.[0] The gateway drug to the HIT tradition, which began with genius Arthur Jones and Nautilus in the early 1970s, is this video presentation by Doug McGuff[1], author of Body by Science[2]. Whether you…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=29405286",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "It's surprising that no one has mentioned Body by Science[1], SuperSlow from Ken Hutchins, Arthur Jones and Nautilus, and other research based programs from the last forty years. Free weights can be very dangerous as you approach muscle failure, and all sorts of momentum…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=14539640",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [],
-   "tags": {
-    "goal": [
-     "strength",
-     "fat-loss",
-     "hypertrophy"
-    ],
-    "body": [],
-    "equipment": [],
-    "level": "any",
-    "type": "tutorial"
-   },
-   "sources": [
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=48738622",
-     "score": null,
-     "needs_llm_check": true
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=29405286",
-     "score": null,
-     "needs_llm_check": true
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=14539640",
-     "score": null,
-     "needs_llm_check": true
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=12453587",
-     "score": null,
-     "needs_llm_check": true
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 0,
-     "sum_score": 0.0
-    },
-    "hn": {
-     "recommenders": 2,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": true
-  },
-  {
    "id": "DWmGArQBtFI",
    "title": "How to Fix “Low Back” Pain (INSTANTLY!)",
    "channel": "ATHLEAN-X™",
@@ -30069,6 +30255,75 @@
    },
    "needs_llm_check": false,
    "summary": "ATHLEAN-X video on relieving low back pain."
+  },
+  {
+   "id": "FTV6UCh-yhs",
+   "title": "Exercises to correct Hunchback Posture, Kyphosis and forward head carriage",
+   "channel": "Mike Brett",
+   "thumbnail": "https://i.ytimg.com/vi/FTV6UCh-yhs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2015-10-13",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "Skateboarding, walking, stretching, daily push ups. Also these back stretches at least a few times a week. They help with preventing hunchback from sitting in a chair on a computer all day. https://www.youtube.com/watch?v=FTV6UCh-yhs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=15605396",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "I've got my monitors on 2 boxes adding about 6 inches each to their height. When I first started looking up to use them it was so uncomfortable and distracting that I could not work. I kept at it though and I find my posture has improved and the thought of going back is now…",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=10380739",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "back",
+     "neck",
+     "shoulders"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "rehab",
+     "mobility"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=15605396",
+     "score": null,
+     "needs_llm_check": false
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=10380739",
+     "score": null,
+     "needs_llm_check": false
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "Demonstrates exercises and stretches aimed at correcting hunchback posture, kyphosis and forward head carriage, recommended for people who sit at a computer all day."
   },
   {
    "id": "K4dmZ5_n6uU",
@@ -30142,6 +30397,75 @@
    },
    "needs_llm_check": false,
    "summary": "A short neck mobility drill of about three minutes."
+  },
+  {
+   "id": "LT_dFRnmdGs",
+   "title": "Exercise to improve hunchback posture   forward head carriage correction",
+   "channel": "rekrain",
+   "thumbnail": "https://i.ytimg.com/vi/LT_dFRnmdGs/hqdefault.jpg",
+   "recommenders": 2,
+   "score": 20.0,
+   "first_seen": "2015-05-01",
+   "subreddits": [],
+   "comments": [
+    {
+     "text": "I've been doing this and it's really helped with pain in my back/neck, while improving my posture: https://www.youtube.com/watch?v=LT_dFRnmdGs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=12832833",
+     "site": "news.ycombinator.com"
+    },
+    {
+     "text": "This video[1] shows some simple exercises that target posture. YMMV but it seemed to help me. [1] https://youtu.be/LT_dFRnmdGs",
+     "score": null,
+     "permalink": "https://news.ycombinator.com/item?id=9472017",
+     "site": "news.ycombinator.com"
+    }
+   ],
+   "timestamps": [],
+   "tags": {
+    "body": [
+     "neck",
+     "back",
+     "upper"
+    ],
+    "equipment": [
+     "none"
+    ],
+    "goal": [
+     "rehab",
+     "mobility"
+    ],
+    "level": "any",
+    "type": "tutorial"
+   },
+   "sources": [
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=12832833",
+     "score": null,
+     "needs_llm_check": false
+    },
+    {
+     "kind": "hn",
+     "site": "news.ycombinator.com",
+     "url": "https://news.ycombinator.com/item?id=9472017",
+     "score": null,
+     "needs_llm_check": false
+    }
+   ],
+   "source_stats": {
+    "reddit": {
+     "recommenders": 0,
+     "sum_score": 0.0
+    },
+    "hn": {
+     "recommenders": 2,
+     "sum_score": 0.0
+    }
+   },
+   "needs_llm_check": false,
+   "summary": "Simple exercises aimed at correcting hunchback posture and forward head carriage."
   },
   {
    "id": "QhVC_AnZYYM",
@@ -30395,79 +30719,6 @@
    },
    "needs_llm_check": false,
    "summary": "A 90-minute follow-along Sivananda yoga class that opens with breathing exercises and continues through yoga postures."
-  },
-  {
-   "id": "k1luKAS_Xcg",
-   "title": "Find your primal posture and sit without back pain: Esther Gokhale at TEDxStanford",
-   "channel": "TEDx Talks",
-   "thumbnail": "https://i.ytimg.com/vi/k1luKAS_Xcg/hqdefault.jpg",
-   "recommenders": 2,
-   "score": 20.0,
-   "first_seen": "2016-07-26",
-   "subreddits": [],
-   "comments": [
-    {
-     "text": "I haven't read all the other comments so not sure if this has been mentioned already. The modern concepts of posture may be wrong. I have a curved butt to shoulder area. It makes me look somewhat duck like. However, I never have any back aches etc. I know of people who are…",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=12167648",
-     "site": "news.ycombinator.com"
-    },
-    {
-     "text": "Physical therapy helps. Check this out https://youtu.be/n9CDhcVTAdc and https://youtu.be/k1luKAS_Xcg (I only started paying attention after my emergency back surgery)",
-     "score": null,
-     "permalink": "https://news.ycombinator.com/item?id=49838343",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "timestamps": [
-    {
-     "t": 224,
-     "label": "",
-     "site": "news.ycombinator.com"
-    }
-   ],
-   "tags": {
-    "body": [
-     "back",
-     "hips"
-    ],
-    "equipment": [
-     "none"
-    ],
-    "goal": [
-     "rehab"
-    ],
-    "level": "any",
-    "type": "explainer"
-   },
-   "sources": [
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=49838343",
-     "score": null,
-     "needs_llm_check": false
-    },
-    {
-     "kind": "hn",
-     "site": "news.ycombinator.com",
-     "url": "https://news.ycombinator.com/item?id=12167648",
-     "score": null,
-     "needs_llm_check": false
-    }
-   ],
-   "source_stats": {
-    "reddit": {
-     "recommenders": 0,
-     "sum_score": 0.0
-    },
-    "hn": {
-     "recommenders": 2,
-     "sum_score": 0.0
-    }
-   },
-   "needs_llm_check": false,
-   "summary": "TEDx talk by Esther Gokhale on posture and sitting to avoid back pain."
   },
   {
    "id": "l8c9BPtwXMs",
